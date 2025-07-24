@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>ACBrAPI.Sdk</AssemblyName>
+    <PackageId>ACBrAPI.Sdk</PackageId>
+    <OutputType>Library</OutputType>
+    <Authors>ACBr API</Authors>
+    <Company>ACBr API</Company>
+    <AssemblyTitle>ACBr API SDK</AssemblyTitle>
+    <Description>Biblioteca .NET para uso da ACBr API</Description>
+    <Copyright>Copyright Projeto ACBr</Copyright>
+    <RootNamespace>ACBrAPI.Sdk</RootNamespace>
+    <Version>2.57.5</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\ACBrAPI.Sdk.xml</DocumentationFile>
+    <RepositoryUrl>https://github.com/projeto-acbr-oficial/acbrapi-sdk-net.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageTags>API;NFe;NFSe;CNPJ;Sefaz;Nota Fiscal</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JsonSubTypes" Version="1.8.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+
+</Project>

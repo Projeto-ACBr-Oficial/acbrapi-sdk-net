@@ -1,0 +1,220 @@
+/*
+ * ACBr API - SDK para .NET
+ * https://www.acbrapi.com.br
+ */
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel.DataAnnotations;
+using FileParameter = ACBrAPI.Sdk.Client.FileParameter;
+using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
+
+namespace ACBrAPI.Sdk.Model
+{
+    /// <summary>
+    /// Tributação do ICMS pelo SIMPLES NACIONAL e CSOSN&#x3D;101 (v.2.0).
+    /// </summary>
+    [DataContract(Name = "NfeSefazICMSSN101")]
+    public partial class NfeSefazICMSSN101 : IEquatable<NfeSefazICMSSN101>, IValidatableObject
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NfeSefazICMSSN101" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected NfeSefazICMSSN101() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NfeSefazICMSSN101" /> class.
+        /// </summary>
+        /// <param name="orig">Origem da mercadoria:  * 0 - Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8;  * 1 - Estrangeira - Importação direta, exceto a indicada no código 6;  * 2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7;  * 3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40%% e inferior ou igual a 70%%;  * 4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes;  * 5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%%;  * 6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX e gás natural;  * 7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante lista CAMEX e gás natural;  * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%%. (required).</param>
+        /// <param name="cSOSN">* 101 - Tributada pelo Simples Nacional com permissão de crédito. (v.2.0) (required).</param>
+        /// <param name="pCredSN">Alíquota aplicável de cálculo do crédito (Simples Nacional). (v2.0). (required).</param>
+        /// <param name="vCredICMSSN">Valor crédito do ICMS que pode ser aproveitado nos termos do art. 23 da LC 123 (Simples Nacional) (v2.0). (required).</param>
+        public NfeSefazICMSSN101(int? orig = default(int?), string cSOSN = default(string), decimal? pCredSN = default(decimal?), decimal? vCredICMSSN = default(decimal?))
+        {
+            // to ensure "orig" is required (not null)
+            if (orig == null)
+            {
+                throw new ArgumentNullException("orig is a required property for NfeSefazICMSSN101 and cannot be null");
+            }
+            this.orig = orig;
+            // to ensure "cSOSN" is required (not null)
+            if (cSOSN == null)
+            {
+                throw new ArgumentNullException("cSOSN is a required property for NfeSefazICMSSN101 and cannot be null");
+            }
+            this.CSOSN = cSOSN;
+            // to ensure "pCredSN" is required (not null)
+            if (pCredSN == null)
+            {
+                throw new ArgumentNullException("pCredSN is a required property for NfeSefazICMSSN101 and cannot be null");
+            }
+            this.pCredSN = pCredSN;
+            // to ensure "vCredICMSSN" is required (not null)
+            if (vCredICMSSN == null)
+            {
+                throw new ArgumentNullException("vCredICMSSN is a required property for NfeSefazICMSSN101 and cannot be null");
+            }
+            this.vCredICMSSN = vCredICMSSN;
+        }
+
+        /// <summary>
+        /// Origem da mercadoria:  * 0 - Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8;  * 1 - Estrangeira - Importação direta, exceto a indicada no código 6;  * 2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7;  * 3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40%% e inferior ou igual a 70%%;  * 4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes;  * 5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%%;  * 6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX e gás natural;  * 7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante lista CAMEX e gás natural;  * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%%.
+        /// </summary>
+        /// <value>Origem da mercadoria:  * 0 - Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8;  * 1 - Estrangeira - Importação direta, exceto a indicada no código 6;  * 2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7;  * 3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40%% e inferior ou igual a 70%%;  * 4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes;  * 5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%%;  * 6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX e gás natural;  * 7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante lista CAMEX e gás natural;  * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%%.</value>
+        [DataMember(Name = "orig", IsRequired = true, EmitDefaultValue = true)]
+        public int? orig { get; set; }
+
+        /// <summary>
+        /// * 101 - Tributada pelo Simples Nacional com permissão de crédito. (v.2.0)
+        /// </summary>
+        /// <value>* 101 - Tributada pelo Simples Nacional com permissão de crédito. (v.2.0)</value>
+        [DataMember(Name = "CSOSN", IsRequired = true, EmitDefaultValue = true)]
+        public string CSOSN { get; set; }
+
+        /// <summary>
+        /// Alíquota aplicável de cálculo do crédito (Simples Nacional). (v2.0).
+        /// </summary>
+        /// <value>Alíquota aplicável de cálculo do crédito (Simples Nacional). (v2.0).</value>
+        [DataMember(Name = "pCredSN", IsRequired = true, EmitDefaultValue = true)]
+        public decimal? pCredSN { get; set; }
+
+        /// <summary>
+        /// Valor crédito do ICMS que pode ser aproveitado nos termos do art. 23 da LC 123 (Simples Nacional) (v2.0).
+        /// </summary>
+        /// <value>Valor crédito do ICMS que pode ser aproveitado nos termos do art. 23 da LC 123 (Simples Nacional) (v2.0).</value>
+        [DataMember(Name = "vCredICMSSN", IsRequired = true, EmitDefaultValue = true)]
+        public decimal? vCredICMSSN { get; set; }
+
+        /// <summary>
+        /// Returns the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("class NfeSefazICMSSN101 {\n");
+            sb.Append("  orig: ").Append(orig).Append("\n");
+            sb.Append("  CSOSN: ").Append(CSOSN).Append("\n");
+            sb.Append("  pCredSN: ").Append(pCredSN).Append("\n");
+            sb.Append("  vCredICMSSN: ").Append(vCredICMSSN).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public virtual string ToJson()
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as NfeSefazICMSSN101);
+        }
+
+        /// <summary>
+        /// Returns true if NfeSefazICMSSN101 instances are equal
+        /// </summary>
+        /// <param name="input">Instance of NfeSefazICMSSN101 to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(NfeSefazICMSSN101 input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.orig == input.orig ||
+                    (this.orig != null &&
+                    this.orig.Equals(input.orig))
+                ) && 
+                (
+                    this.CSOSN == input.CSOSN ||
+                    (this.CSOSN != null &&
+                    this.CSOSN.Equals(input.CSOSN))
+                ) && 
+                (
+                    this.pCredSN == input.pCredSN ||
+                    (this.pCredSN != null &&
+                    this.pCredSN.Equals(input.pCredSN))
+                ) && 
+                (
+                    this.vCredICMSSN == input.vCredICMSSN ||
+                    (this.vCredICMSSN != null &&
+                    this.vCredICMSSN.Equals(input.vCredICMSSN))
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.orig != null)
+                {
+                    hashCode = (hashCode * 59) + this.orig.GetHashCode();
+                }
+                if (this.CSOSN != null)
+                {
+                    hashCode = (hashCode * 59) + this.CSOSN.GetHashCode();
+                }
+                if (this.pCredSN != null)
+                {
+                    hashCode = (hashCode * 59) + this.pCredSN.GetHashCode();
+                }
+                if (this.vCredICMSSN != null)
+                {
+                    hashCode = (hashCode * 59) + this.vCredICMSSN.GetHashCode();
+                }
+                return hashCode;
+            }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // pCredSN (decimal?) minimum
+            if (this.pCredSN < (decimal?)0)
+            {
+                yield return new ValidationResult("Invalid value for pCredSN, must be a value greater than or equal to 0.", new [] { "pCredSN" });
+            }
+
+            // vCredICMSSN (decimal?) minimum
+            if (this.vCredICMSSN < (decimal?)0)
+            {
+                yield return new ValidationResult("Invalid value for vCredICMSSN, must be a value greater than or equal to 0.", new [] { "vCredICMSSN" });
+            }
+
+            yield break;
+        }
+    }
+
+}

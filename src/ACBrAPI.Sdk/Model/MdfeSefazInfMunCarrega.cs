@@ -1,0 +1,172 @@
+/*
+ * ACBr API - SDK para .NET
+ * https://www.acbrapi.com.br
+ */
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel.DataAnnotations;
+using FileParameter = ACBrAPI.Sdk.Client.FileParameter;
+using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
+
+namespace ACBrAPI.Sdk.Model
+{
+    /// <summary>
+    /// Informações dos Municípios de Carregamento.
+    /// </summary>
+    [DataContract(Name = "MdfeSefazInfMunCarrega")]
+    public partial class MdfeSefazInfMunCarrega : IEquatable<MdfeSefazInfMunCarrega>, IValidatableObject
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MdfeSefazInfMunCarrega" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected MdfeSefazInfMunCarrega() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MdfeSefazInfMunCarrega" /> class.
+        /// </summary>
+        /// <param name="cMunCarrega">Código do Município de Carregamento. (required).</param>
+        /// <param name="xMunCarrega">Nome do Município de Carregamento. (required).</param>
+        public MdfeSefazInfMunCarrega(string cMunCarrega = default(string), string xMunCarrega = default(string))
+        {
+            // to ensure "cMunCarrega" is required (not null)
+            if (cMunCarrega == null)
+            {
+                throw new ArgumentNullException("cMunCarrega is a required property for MdfeSefazInfMunCarrega and cannot be null");
+            }
+            this.cMunCarrega = cMunCarrega;
+            // to ensure "xMunCarrega" is required (not null)
+            if (xMunCarrega == null)
+            {
+                throw new ArgumentNullException("xMunCarrega is a required property for MdfeSefazInfMunCarrega and cannot be null");
+            }
+            this.xMunCarrega = xMunCarrega;
+        }
+
+        /// <summary>
+        /// Código do Município de Carregamento.
+        /// </summary>
+        /// <value>Código do Município de Carregamento.</value>
+        [DataMember(Name = "cMunCarrega", IsRequired = true, EmitDefaultValue = true)]
+        public string cMunCarrega { get; set; }
+
+        /// <summary>
+        /// Nome do Município de Carregamento.
+        /// </summary>
+        /// <value>Nome do Município de Carregamento.</value>
+        [DataMember(Name = "xMunCarrega", IsRequired = true, EmitDefaultValue = true)]
+        public string xMunCarrega { get; set; }
+
+        /// <summary>
+        /// Returns the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("class MdfeSefazInfMunCarrega {\n");
+            sb.Append("  cMunCarrega: ").Append(cMunCarrega).Append("\n");
+            sb.Append("  xMunCarrega: ").Append(xMunCarrega).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public virtual string ToJson()
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as MdfeSefazInfMunCarrega);
+        }
+
+        /// <summary>
+        /// Returns true if MdfeSefazInfMunCarrega instances are equal
+        /// </summary>
+        /// <param name="input">Instance of MdfeSefazInfMunCarrega to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(MdfeSefazInfMunCarrega input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.cMunCarrega == input.cMunCarrega ||
+                    (this.cMunCarrega != null &&
+                    this.cMunCarrega.Equals(input.cMunCarrega))
+                ) && 
+                (
+                    this.xMunCarrega == input.xMunCarrega ||
+                    (this.xMunCarrega != null &&
+                    this.xMunCarrega.Equals(input.xMunCarrega))
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.cMunCarrega != null)
+                {
+                    hashCode = (hashCode * 59) + this.cMunCarrega.GetHashCode();
+                }
+                if (this.xMunCarrega != null)
+                {
+                    hashCode = (hashCode * 59) + this.xMunCarrega.GetHashCode();
+                }
+                return hashCode;
+            }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // xMunCarrega (string) maxLength
+            if (this.xMunCarrega != null && this.xMunCarrega.Length > 60)
+            {
+                yield return new ValidationResult("Invalid value for xMunCarrega, length must be less than 60.", new [] { "xMunCarrega" });
+            }
+
+            // xMunCarrega (string) minLength
+            if (this.xMunCarrega != null && this.xMunCarrega.Length < 2)
+            {
+                yield return new ValidationResult("Invalid value for xMunCarrega, length must be greater than 2.", new [] { "xMunCarrega" });
+            }
+
+            yield break;
+        }
+    }
+
+}
