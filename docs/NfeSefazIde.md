@@ -16,11 +16,14 @@ Nome | Tipo | Descrição | Comentários
 **tpNF** | **int?** | Tipo do Documento Fiscal:  * 0 - Entrada  * 1 - Saída | 
 **idDest** | **int?** | Identificador de Local de destino da operação:  * 1 - Interna  * 2 - Interestadual  * 3 - Exterior | 
 **cMunFG** | **string** | Código do Município de Ocorrência do Fato Gerador (utilizar a tabela do IBGE). | 
+**cMunFGIBS** | **string** | Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando “indPres &#x3D; 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01). | [optional] 
 **tpImp** | **int?** | Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica | 
 **tpEmis** | **int?** | Forma de emissão da NF-e  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line NFC-e | 
 **cDV** | **int?** | Digito Verificador da Chave de Acesso da NF-e.    *Geramos automaticamente quando nenhum valor é informado.* | [optional] 
 **tpAmb** | **int?** | Identificação do Ambiente:  * 1 - Produção  * 2 - Homologação | [optional] 
-**finNFe** | **int?** | Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno | 
+**finNFe** | **int?** | Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno  * 5 - Nota de crédito  * 6 - Nota de débito | 
+**tpNFDebito** | **string** | Tipo de Nota de Débito:  * 01 - Transferência de créditos para Cooperativas  * 02 - Anulação de Crédito por Saídas Imunes/Isentas  * 03 - Débitos de notas fiscais não processadas na apuração  * 04 - Multa e juros  * 05 - Transferência de crédito de sucessão | [optional] 
+**tpNFCredito** | **string** | Tipo de Nota de Crédito. | [optional] 
 **indFinal** | **int?** | Indica operação com consumidor final:  * 0 - Não  * 1 - Consumidor Final | 
 **indPres** | **int?** | Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - NFC-e entrega em domicílio  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros | 
 **indIntermed** | **int?** | Indicador de intermediador/marketplace  * 0 - Operação sem intermediador (em site ou plataforma própria)  * 1 - Operação em site ou plataforma de terceiros (intermediadores/marketplace) | [optional] 
@@ -29,6 +32,8 @@ Nome | Tipo | Descrição | Comentários
 **dhCont** | **DateTime?** | Informar a data e hora de entrada em contingência contingência no formato  (AAAA-MM-DDThh:mm:ssTZD) ex.: 2012-09-01T13:00:00-03:00. | [optional] 
 **xJust** | **string** | Informar a Justificativa da entrada. | [optional] 
 **NFref** | [**List&lt;NfeSefazNFref&gt;**](NfeSefazNFref.md) |  | [optional] 
+**gCompraGov** | [**NfeSefazCompraGov**](NfeSefazCompraGov.md) |  | [optional] 
+**gPagAntecipado** | [**NfeSefazGPagAntecipado**](NfeSefazGPagAntecipado.md) |  | [optional] 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 

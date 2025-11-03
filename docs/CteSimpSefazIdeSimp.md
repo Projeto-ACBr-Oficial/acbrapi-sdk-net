@@ -31,6 +31,7 @@ Nome | Tipo | Descrição | Comentários
 **xDetRetira** | **string** | Detalhes do retira. | [optional] 
 **dhCont** | **DateTime?** | Data e Hora da entrada em contingência.  Informar a data e hora no formato AAAA-MM-DDTHH:MM:SS. | [optional] 
 **xJust** | **string** | Justificativa da entrada em contingência. | [optional] 
+**gCompraGov** | [**CteSimpSefazCompraGovReduzidoSimp**](CteSimpSefazCompraGovReduzidoSimp.md) |  | [optional] 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 

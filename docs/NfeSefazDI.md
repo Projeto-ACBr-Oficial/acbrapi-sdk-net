@@ -1,5 +1,5 @@
 # ACBrAPI.Sdk.Model.NfeSefazDI
-Delcaração de Importação  (NT 2011/004).
+Declaração de Importação (NT 2011/004).
 
 ## Propriedades
 

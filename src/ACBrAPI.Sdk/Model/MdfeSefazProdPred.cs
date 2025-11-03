@@ -23,7 +23,7 @@ using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
 namespace ACBrAPI.Sdk.Model
 {
     /// <summary>
-    /// Produto predominante.  Informar a descrição do produto predominante.
+    /// Produto predominante.  Informar a descrição do produto predominante, conforme o item de maior valor financeiro conforme Resolução ANTT n° 5.867 de 2020).
     /// </summary>
     [DataContract(Name = "MdfeSefazProdPred")]
     public partial class MdfeSefazProdPred : IEquatable<MdfeSefazProdPred>, IValidatableObject
@@ -36,7 +36,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MdfeSefazProdPred" /> class.
         /// </summary>
-        /// <param name="tpCarga">Tipo de Carga.  Conforme Resolução ANTT nº.  5.849/2019.  * 01 - Granel sólido  * 02 - Granel líquido  * 03 - Frigorificada  * 04 - Conteinerizada  * 05 - Carga Geral  * 06 - Neogranel  * 07 - Perigosa (granel sólido)  * 08 - Perigosa (granel líquido)  * 09 - Perigosa (carga frigorificada)  * 10 - Perigosa (conteinerizada)  * 11 - Perigosa (carga geral) (required).</param>
+        /// <param name="tpCarga">Tipo de Carga.  Conforme Resolução ANTT nº.  5.849/2019.  * 01 - Granel sólido  * 02 - Granel líquido  * 03 - Frigorificada  * 04 - Conteinerizada  * 05 - Carga Geral  * 06 - Neogranel  * 07 - Perigosa (granel sólido)  * 08 - Perigosa (granel líquido)  * 09 - Perigosa (carga frigorificada)  * 10 - Perigosa (conteinerizada)  * 11 - Perigosa (carga geral)  * 12 - Granel pressurizada (required).</param>
         /// <param name="xProd">Descrição do produto. (required).</param>
         /// <param name="cEAN">GTIN (Global Trade Item Number) do produto, antigo código EAN ou código de barras..</param>
         /// <param name="nCM">Código NCM..</param>
@@ -61,9 +61,9 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// Tipo de Carga.  Conforme Resolução ANTT nº.  5.849/2019.  * 01 - Granel sólido  * 02 - Granel líquido  * 03 - Frigorificada  * 04 - Conteinerizada  * 05 - Carga Geral  * 06 - Neogranel  * 07 - Perigosa (granel sólido)  * 08 - Perigosa (granel líquido)  * 09 - Perigosa (carga frigorificada)  * 10 - Perigosa (conteinerizada)  * 11 - Perigosa (carga geral)
+        /// Tipo de Carga.  Conforme Resolução ANTT nº.  5.849/2019.  * 01 - Granel sólido  * 02 - Granel líquido  * 03 - Frigorificada  * 04 - Conteinerizada  * 05 - Carga Geral  * 06 - Neogranel  * 07 - Perigosa (granel sólido)  * 08 - Perigosa (granel líquido)  * 09 - Perigosa (carga frigorificada)  * 10 - Perigosa (conteinerizada)  * 11 - Perigosa (carga geral)  * 12 - Granel pressurizada
         /// </summary>
-        /// <value>Tipo de Carga.  Conforme Resolução ANTT nº.  5.849/2019.  * 01 - Granel sólido  * 02 - Granel líquido  * 03 - Frigorificada  * 04 - Conteinerizada  * 05 - Carga Geral  * 06 - Neogranel  * 07 - Perigosa (granel sólido)  * 08 - Perigosa (granel líquido)  * 09 - Perigosa (carga frigorificada)  * 10 - Perigosa (conteinerizada)  * 11 - Perigosa (carga geral)</value>
+        /// <value>Tipo de Carga.  Conforme Resolução ANTT nº.  5.849/2019.  * 01 - Granel sólido  * 02 - Granel líquido  * 03 - Frigorificada  * 04 - Conteinerizada  * 05 - Carga Geral  * 06 - Neogranel  * 07 - Perigosa (granel sólido)  * 08 - Perigosa (granel líquido)  * 09 - Perigosa (carga frigorificada)  * 10 - Perigosa (conteinerizada)  * 11 - Perigosa (carga geral)  * 12 - Granel pressurizada</value>
         [DataMember(Name = "tpCarga", IsRequired = true, EmitDefaultValue = true)]
         public string tpCarga { get; set; }
 

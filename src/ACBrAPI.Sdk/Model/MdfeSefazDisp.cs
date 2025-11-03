@@ -39,9 +39,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cNPJForn">CNPJ da empresa fornecedora do Vale-Pedágio.  * CNPJ da Empresa Fornecedora do Vale-Pedágio, ou seja, empresa que fornece ao Responsável pelo Pagamento do Vale-Pedágio os dispositivos do Vale-Pedágio.  * Informar os zeros não significativos. (required).</param>
         /// <param name="cNPJPg">CNPJ do responsável pelo pagamento do Vale-Pedágio.  * responsável pelo pagamento do Vale Pedágio. Informar somente quando o responsável não for o emitente do MDF-e.  * Informar os zeros não significativos..</param>
         /// <param name="cPFPg">CNPJ do responsável pelo pagamento do Vale-Pedágio.  Informar os zeros não significativos..</param>
-        /// <param name="nCompra">Número do comprovante de compra.  Número de ordem do comprovante de compra do Vale-Pedágio fornecido para cada veículo ou combinação veicular, por viagem..</param>
+        /// <param name="nCompra">Identificador do vale pedagio obrigatório - IDVPO..</param>
         /// <param name="vValePed">Valor do Vale-Pedagio.  Valor do Vale-Pedágio obrigatório necessário à livre circulação, desde a origem da operação de transporte até o destino, do transportador contratado. (required).</param>
-        /// <param name="tpValePed">Tipo do Vale Pedagio.  * 01 - TAG  * 02 - Cupom  * 03 - Cartão.</param>
+        /// <param name="tpValePed">Tipo do Vale Pedagio.  * 01 - TAG; 04 - Leitura de placa (pela placa de identificação veicular).</param>
         public MdfeSefazDisp(string cNPJForn = default(string), string cNPJPg = default(string), string cPFPg = default(string), string nCompra = default(string), decimal? vValePed = default(decimal?), string tpValePed = default(string))
         {
             // to ensure "cNPJForn" is required (not null)
@@ -84,9 +84,9 @@ namespace ACBrAPI.Sdk.Model
         public string CPFPg { get; set; }
 
         /// <summary>
-        /// Número do comprovante de compra.  Número de ordem do comprovante de compra do Vale-Pedágio fornecido para cada veículo ou combinação veicular, por viagem.
+        /// Identificador do vale pedagio obrigatório - IDVPO.
         /// </summary>
-        /// <value>Número do comprovante de compra.  Número de ordem do comprovante de compra do Vale-Pedágio fornecido para cada veículo ou combinação veicular, por viagem.</value>
+        /// <value>Identificador do vale pedagio obrigatório - IDVPO.</value>
         [DataMember(Name = "nCompra", EmitDefaultValue = true)]
         public string nCompra { get; set; }
 
@@ -98,9 +98,9 @@ namespace ACBrAPI.Sdk.Model
         public decimal? vValePed { get; set; }
 
         /// <summary>
-        /// Tipo do Vale Pedagio.  * 01 - TAG  * 02 - Cupom  * 03 - Cartão
+        /// Tipo do Vale Pedagio.  * 01 - TAG; 04 - Leitura de placa (pela placa de identificação veicular)
         /// </summary>
-        /// <value>Tipo do Vale Pedagio.  * 01 - TAG  * 02 - Cupom  * 03 - Cartão</value>
+        /// <value>Tipo do Vale Pedagio.  * 01 - TAG; 04 - Leitura de placa (pela placa de identificação veicular)</value>
         [DataMember(Name = "tpValePed", EmitDefaultValue = true)]
         public string tpValePed { get; set; }
 

@@ -1,6 +1,6 @@
 # ACBrAPI.Sdk.Api.DistribuioNFEApi
 
-Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
+Todas as URIs relativas a *https://prod.acbr.api.br*
 
 | Método | Endpoint | Descrição |
 |--------|--------------|-------------|
@@ -40,7 +40,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -52,7 +52,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DistribuioNFEApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do documento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do documento gerado pela API.
 
             try
             {
@@ -95,7 +95,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do documento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do documento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -142,7 +142,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -154,7 +154,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DistribuioNFEApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do documento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do documento gerado pela API.
 
             try
             {
@@ -197,7 +197,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do documento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do documento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -242,7 +242,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -254,7 +254,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DistribuioNFEApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da distribuição de NF-e gerada pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da distribuição de NF-e gerada pela API.
 
             try
             {
@@ -297,7 +297,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da distribuição de NF-e gerada pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da distribuição de NF-e gerada pela API. |  |
 
 ### Tipo de retorno
 
@@ -344,7 +344,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -356,7 +356,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DistribuioNFEApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do documento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do documento gerado pela API.
 
             try
             {
@@ -399,7 +399,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do documento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do documento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -428,7 +428,7 @@ catch (ApiException e)
 
 Consultar manifestação
 
-Consulta os detalhes de uma manifestação de NF-e já existente. Forneça o ID único obtido de uma requisição de manifestação ou de listagem de manifestações e a Nuvem Fiscal irá retornar as informações da manifestação correspondente.
+Consulta os detalhes de uma manifestação de NF-e já existente. Forneça o ID único obtido de uma requisição de manifestação ou de listagem de manifestações e a API irá retornar as informações da manifestação correspondente.
 
 ### Exemplo
 ```csharp
@@ -446,7 +446,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -458,7 +458,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DistribuioNFEApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da manifestação gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da manifestação gerado pela API.
 
             try
             {
@@ -501,7 +501,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da manifestação gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da manifestação gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -548,7 +548,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -650,7 +650,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -760,7 +760,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -878,7 +878,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -970,7 +970,7 @@ catch (ApiException e)
 
 Listar notas sem manifestação
 
-No processo de distribuição de DF-e, as notas fiscais eletrônicas (NF-e)  são inicialmente disponibilizadas de forma resumida. Para obter o XML  completo, o destinatário deve manifestar a ciência da operação e,  posteriormente, uma manifestação conclusiva dentro de um prazo legal.    Para facilitar essa gestão e o cumprimento dos prazos legais de manifestação,  a API da Nuvem Fiscal permite listar as notas que ainda não  possuem manifestação, ajudando os usuários a identificar rapidamente as  notas que necessitam de ação.    O usuário pode optar por listar apenas as notas que não possuem manifestação  conclusiva ou que não possuem qualquer tipo de manifestação. Essa flexibilidade  permite um controle mais preciso e adequado às necessidades operacionais  de cada empresa.    Os documentos são retornados ordenados decrescentemente pela data de  distribuição, permitindo uma visualização clara e organizada das notas  mais recentes.    **Cenários de uso:**  * Identificar rapidamente as notas que ainda precisam de manifestação para obter o XML completo.  * Listar todas as notas fiscais eletrônicas que foram registradas com ciência da operação, mas ainda não possuem uma manifestação conclusiva (confirmação da operação, desconhecimento da operação ou operação não realizada).  * Listar todas as notas fiscais eletrônicas que não possuem nenhum tipo de manifestação registrada (nem ciência da operação, nem manifestação conclusiva).
+No processo de distribuição de DF-e, as notas fiscais eletrônicas (NF-e)  são inicialmente disponibilizadas de forma resumida. Para obter o XML  completo, o destinatário deve manifestar a ciência da operação e,  posteriormente, uma manifestação conclusiva dentro de um prazo legal.    Para facilitar essa gestão e o cumprimento dos prazos legais de manifestação,  a API permite listar as notas que ainda não  possuem manifestação, ajudando os usuários a identificar rapidamente as  notas que necessitam de ação.    O usuário pode optar por listar apenas as notas que não possuem manifestação  conclusiva ou que não possuem qualquer tipo de manifestação. Essa flexibilidade  permite um controle mais preciso e adequado às necessidades operacionais  de cada empresa.    Os documentos são retornados ordenados decrescentemente pela data de  distribuição, permitindo uma visualização clara e organizada das notas  mais recentes.    **Cenários de uso:**  * Identificar rapidamente as notas que ainda precisam de manifestação para obter o XML completo.  * Listar todas as notas fiscais eletrônicas que foram registradas com ciência da operação, mas ainda não possuem uma manifestação conclusiva (confirmação da operação, desconhecimento da operação ou operação não realizada).  * Listar todas as notas fiscais eletrônicas que não possuem nenhum tipo de manifestação registrada (nem ciência da operação, nem manifestação conclusiva).
 
 ### Exemplo
 ```csharp
@@ -988,7 +988,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1100,7 +1100,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed

@@ -31,21 +31,11 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MdfeSefazInfCIOT" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected MdfeSefazInfCIOT() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MdfeSefazInfCIOT" /> class.
-        /// </summary>
-        /// <param name="cIOT">Código Identificador da Operação de Transporte.  Também Conhecido como conta frete. (required).</param>
+        /// <param name="cIOT">Código Identificador da Operação de Transporte.  Também Conhecido como conta frete..</param>
         /// <param name="cPF">Número do CPF responsável pela geração do CIOT.  Informar os zeros não significativos..</param>
         /// <param name="cNPJ">Número do CNPJ responsável pela geração do CIOT.  Informar os zeros não significativos..</param>
         public MdfeSefazInfCIOT(string cIOT = default(string), string cPF = default(string), string cNPJ = default(string))
         {
-            // to ensure "cIOT" is required (not null)
-            if (cIOT == null)
-            {
-                throw new ArgumentNullException("cIOT is a required property for MdfeSefazInfCIOT and cannot be null");
-            }
             this.CIOT = cIOT;
             this.CPF = cPF;
             this.CNPJ = cNPJ;
@@ -55,7 +45,7 @@ namespace ACBrAPI.Sdk.Model
         /// Código Identificador da Operação de Transporte.  Também Conhecido como conta frete.
         /// </summary>
         /// <value>Código Identificador da Operação de Transporte.  Também Conhecido como conta frete.</value>
-        [DataMember(Name = "CIOT", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "CIOT", EmitDefaultValue = true)]
         public string CIOT { get; set; }
 
         /// <summary>

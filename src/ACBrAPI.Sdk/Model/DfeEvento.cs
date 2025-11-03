@@ -97,7 +97,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DfeEvento" /> class.
         /// </summary>
-        /// <param name="id">ID único gerado pela Nuvem Fiscal para este evento..</param>
+        /// <param name="id">ID único gerado pela API para este evento..</param>
         /// <param name="ambiente">Identificação do ambiente..</param>
         /// <param name="status">Status do Evento..</param>
         /// <param name="autor">autor.</param>
@@ -130,9 +130,9 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// ID único gerado pela Nuvem Fiscal para este evento.
+        /// ID único gerado pela API para este evento.
         /// </summary>
-        /// <value>ID único gerado pela Nuvem Fiscal para este evento.</value>
+        /// <value>ID único gerado pela API para este evento.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string id { get; set; }
 

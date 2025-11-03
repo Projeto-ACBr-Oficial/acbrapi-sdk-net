@@ -19,6 +19,7 @@ Nome | Tipo | Descrição | Comentários
 **infEmbComb** | [**List&lt;MdfeSefazInfEmbComb&gt;**](MdfeSefazInfEmbComb.md) |  | [optional] 
 **infUnidCargaVazia** | [**List&lt;MdfeSefazInfUnidCargaVazia&gt;**](MdfeSefazInfUnidCargaVazia.md) |  | [optional] 
 **infUnidTranspVazia** | [**List&lt;MdfeSefazInfUnidTranspVazia&gt;**](MdfeSefazInfUnidTranspVazia.md) |  | [optional] 
+**MMSI** | **string** | Maritime Mobile Service Identify.  Preencher com o MMSI (Maritime Mobile Service Identify) fornecido pela ANATEL ou autoridade de telecomunicações de origem da embarcação. | [optional] 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 

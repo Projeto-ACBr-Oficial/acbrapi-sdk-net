@@ -31,8 +31,8 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NfseCidadesAtendidas" /> class.
         /// </summary>
-        /// <param name="count">Quantidade de cidades atendidas pela Nuvem Fiscal..</param>
-        /// <param name="data">Lista com os códigos IBGE das cidades atendidas pela Nuvem Fiscal..</param>
+        /// <param name="count">Quantidade de cidades atendidas pela API..</param>
+        /// <param name="data">Lista com os códigos IBGE das cidades atendidas pela API..</param>
         public NfseCidadesAtendidas(int count = default(int), List<string> data = default(List<string>))
         {
             this.count = count;
@@ -40,16 +40,16 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// Quantidade de cidades atendidas pela Nuvem Fiscal.
+        /// Quantidade de cidades atendidas pela API.
         /// </summary>
-        /// <value>Quantidade de cidades atendidas pela Nuvem Fiscal.</value>
+        /// <value>Quantidade de cidades atendidas pela API.</value>
         [DataMember(Name = "@count", EmitDefaultValue = false)]
         public int count { get; set; }
 
         /// <summary>
-        /// Lista com os códigos IBGE das cidades atendidas pela Nuvem Fiscal.
+        /// Lista com os códigos IBGE das cidades atendidas pela API.
         /// </summary>
-        /// <value>Lista com os códigos IBGE das cidades atendidas pela Nuvem Fiscal.</value>
+        /// <value>Lista com os códigos IBGE das cidades atendidas pela API.</value>
         [DataMember(Name = "data", EmitDefaultValue = false)]
         public List<string> data { get; set; }
 

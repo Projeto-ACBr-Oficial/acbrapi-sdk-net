@@ -206,12 +206,6 @@ namespace ACBrAPI.Sdk.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // chNFe (string) maxLength
-            if (this.chNFe != null && this.chNFe.Length > 44)
-            {
-                yield return new ValidationResult("Invalid value for chNFe, length must be less than 44.", new [] { "chNFe" });
-            }
-
             // PIN (string) maxLength
             if (this.PIN != null && this.PIN.Length > 9)
             {

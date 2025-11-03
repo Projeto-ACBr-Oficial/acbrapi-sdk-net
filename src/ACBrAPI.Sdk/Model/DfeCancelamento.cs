@@ -98,7 +98,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="DfeCancelamento" /> class.
         /// </summary>
         /// <param name="justificativa">Justificativa do cancelamento..</param>
-        /// <param name="id">ID único gerado pela Nuvem Fiscal para este evento..</param>
+        /// <param name="id">ID único gerado pela API para este evento..</param>
         /// <param name="ambiente">Identificação do ambiente..</param>
         /// <param name="status">Status do Evento..</param>
         /// <param name="autor">autor.</param>
@@ -139,9 +139,9 @@ namespace ACBrAPI.Sdk.Model
         public string justificativa { get; set; }
 
         /// <summary>
-        /// ID único gerado pela Nuvem Fiscal para este evento.
+        /// ID único gerado pela API para este evento.
         /// </summary>
-        /// <value>ID único gerado pela Nuvem Fiscal para este evento.</value>
+        /// <value>ID único gerado pela API para este evento.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string id { get; set; }
 

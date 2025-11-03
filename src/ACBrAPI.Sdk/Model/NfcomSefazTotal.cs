@@ -46,7 +46,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vDesc">Valor Total do Desconto. (required).</param>
         /// <param name="vOutro">Outras Despesas acessórias. (required).</param>
         /// <param name="vNF">Valor Total da NFCom. (required).</param>
-        public NfcomSefazTotal(decimal? vProd = default(decimal?), NfcomSefazICMSTot iCMSTot = default(NfcomSefazICMSTot), decimal? vCOFINS = default(decimal?), decimal? vPIS = default(decimal?), decimal? vFUNTTEL = default(decimal?), decimal? vFUST = default(decimal?), NfcomSefazVRetTribTot vRetTribTot = default(NfcomSefazVRetTribTot), decimal? vDesc = default(decimal?), decimal? vOutro = default(decimal?), decimal? vNF = default(decimal?))
+        /// <param name="iBSCBSTot">iBSCBSTot.</param>
+        /// <param name="vTotDFe">Valor total do documento fiscal  (vNF + total do IBS + total da CBS)..</param>
+        public NfcomSefazTotal(decimal? vProd = default(decimal?), NfcomSefazICMSTot iCMSTot = default(NfcomSefazICMSTot), decimal? vCOFINS = default(decimal?), decimal? vPIS = default(decimal?), decimal? vFUNTTEL = default(decimal?), decimal? vFUST = default(decimal?), NfcomSefazVRetTribTot vRetTribTot = default(NfcomSefazVRetTribTot), decimal? vDesc = default(decimal?), decimal? vOutro = default(decimal?), decimal? vNF = default(decimal?), NfcomSefazIBSCBSTot iBSCBSTot = default(NfcomSefazIBSCBSTot), decimal? vTotDFe = default(decimal?))
         {
             // to ensure "vProd" is required (not null)
             if (vProd == null)
@@ -108,6 +110,8 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("vNF is a required property for NfcomSefazTotal and cannot be null");
             }
             this.vNF = vNF;
+            this.IBSCBSTot = iBSCBSTot;
+            this.vTotDFe = vTotDFe;
         }
 
         /// <summary>
@@ -179,6 +183,19 @@ namespace ACBrAPI.Sdk.Model
         public decimal? vNF { get; set; }
 
         /// <summary>
+        /// Gets or Sets IBSCBSTot
+        /// </summary>
+        [DataMember(Name = "IBSCBSTot", EmitDefaultValue = false)]
+        public NfcomSefazIBSCBSTot IBSCBSTot { get; set; }
+
+        /// <summary>
+        /// Valor total do documento fiscal  (vNF + total do IBS + total da CBS).
+        /// </summary>
+        /// <value>Valor total do documento fiscal  (vNF + total do IBS + total da CBS).</value>
+        [DataMember(Name = "vTotDFe", EmitDefaultValue = true)]
+        public decimal? vTotDFe { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -196,6 +213,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vDesc: ").Append(vDesc).Append("\n");
             sb.Append("  vOutro: ").Append(vOutro).Append("\n");
             sb.Append("  vNF: ").Append(vNF).Append("\n");
+            sb.Append("  IBSCBSTot: ").Append(IBSCBSTot).Append("\n");
+            sb.Append("  vTotDFe: ").Append(vTotDFe).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -280,6 +299,16 @@ namespace ACBrAPI.Sdk.Model
                     this.vNF == input.vNF ||
                     (this.vNF != null &&
                     this.vNF.Equals(input.vNF))
+                ) && 
+                (
+                    this.IBSCBSTot == input.IBSCBSTot ||
+                    (this.IBSCBSTot != null &&
+                    this.IBSCBSTot.Equals(input.IBSCBSTot))
+                ) && 
+                (
+                    this.vTotDFe == input.vTotDFe ||
+                    (this.vTotDFe != null &&
+                    this.vTotDFe.Equals(input.vTotDFe))
                 );
         }
 
@@ -331,6 +360,14 @@ namespace ACBrAPI.Sdk.Model
                 if (this.vNF != null)
                 {
                     hashCode = (hashCode * 59) + this.vNF.GetHashCode();
+                }
+                if (this.IBSCBSTot != null)
+                {
+                    hashCode = (hashCode * 59) + this.IBSCBSTot.GetHashCode();
+                }
+                if (this.vTotDFe != null)
+                {
+                    hashCode = (hashCode * 59) + this.vTotDFe.GetHashCode();
                 }
                 return hashCode;
             }
@@ -389,6 +426,12 @@ namespace ACBrAPI.Sdk.Model
             if (this.vNF < (decimal?)0)
             {
                 yield return new ValidationResult("Invalid value for vNF, must be a value greater than or equal to 0.", new [] { "vNF" });
+            }
+
+            // vTotDFe (decimal?) minimum
+            if (this.vTotDFe < (decimal?)0)
+            {
+                yield return new ValidationResult("Invalid value for vTotDFe, must be a value greater than or equal to 0.", new [] { "vTotDFe" });
             }
 
             yield break;

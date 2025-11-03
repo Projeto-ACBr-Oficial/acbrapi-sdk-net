@@ -1,6 +1,6 @@
 # ACBrAPI.Sdk.Api.EmailApi
 
-Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
+Todas as URIs relativas a *https://prod.acbr.api.br*
 
 | Método | Endpoint | Descrição |
 |--------|--------------|-------------|
@@ -31,7 +31,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -43,7 +43,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new EmailApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do e-mail.    Esse parâmetro é obtido após o envio do email por qualquer endpoint da  API da Nuvem Fiscal que realize disparos de email.    Exemplos:  * <a href=\"#tag/Nfe/operation/EnviarEmailNfe\">Envio de XML e PDF de NF-e</a>.  * <a href=\"#tag/Nfce/operation/EnviarEmailNfce\">Envio de XML e PDF de NFC-e</a>.
+            var id = "id_example";  // string | ID único do e-mail.    Esse parâmetro é obtido após o envio do email por qualquer endpoint da  API que realize disparos de email.    Exemplos:  * <a href=\"#tag/Nfe/operation/EnviarEmailNfe\">Envio de XML e PDF de NF-e</a>.  * <a href=\"#tag/Nfce/operation/EnviarEmailNfce\">Envio de XML e PDF de NFC-e</a>.
 
             try
             {
@@ -86,7 +86,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do e-mail.    Esse parâmetro é obtido após o envio do email por qualquer endpoint da  API da Nuvem Fiscal que realize disparos de email.    Exemplos:  * &lt;a href&#x3D;\&quot;#tag/Nfe/operation/EnviarEmailNfe\&quot;&gt;Envio de XML e PDF de NF-e&lt;/a&gt;.  * &lt;a href&#x3D;\&quot;#tag/Nfce/operation/EnviarEmailNfce\&quot;&gt;Envio de XML e PDF de NFC-e&lt;/a&gt;. |  |
+| **id** | **string** | ID único do e-mail.    Esse parâmetro é obtido após o envio do email por qualquer endpoint da  API que realize disparos de email.    Exemplos:  * &lt;a href&#x3D;\&quot;#tag/Nfe/operation/EnviarEmailNfe\&quot;&gt;Envio de XML e PDF de NF-e&lt;/a&gt;.  * &lt;a href&#x3D;\&quot;#tag/Nfce/operation/EnviarEmailNfce\&quot;&gt;Envio de XML e PDF de NFC-e&lt;/a&gt;. |  |
 
 ### Tipo de retorno
 
@@ -133,7 +133,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed

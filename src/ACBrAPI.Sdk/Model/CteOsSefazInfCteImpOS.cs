@@ -41,7 +41,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="infAdFisco">Informações adicionais de interesse do Fisco.  Norma referenciada, informações complementares, etc..</param>
         /// <param name="iCMSUFFim">iCMSUFFim.</param>
         /// <param name="infTribFed">infTribFed.</param>
-        public CteOsSefazInfCteImpOS(CteOsSefazImpOS iCMS = default(CteOsSefazImpOS), decimal? vTotTrib = default(decimal?), string infAdFisco = default(string), CteOsSefazICMSUFFimOS iCMSUFFim = default(CteOsSefazICMSUFFimOS), CteOsSefazInfTribFedOS infTribFed = default(CteOsSefazInfTribFedOS))
+        /// <param name="iBSCBS">iBSCBS.</param>
+        /// <param name="vTotDFe">Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS)..</param>
+        public CteOsSefazInfCteImpOS(CteOsSefazImpOS iCMS = default(CteOsSefazImpOS), decimal? vTotTrib = default(decimal?), string infAdFisco = default(string), CteOsSefazICMSUFFimOS iCMSUFFim = default(CteOsSefazICMSUFFimOS), CteOsSefazInfTribFedOS infTribFed = default(CteOsSefazInfTribFedOS), CteOsSefazTribCTeOS iBSCBS = default(CteOsSefazTribCTeOS), decimal? vTotDFe = default(decimal?))
         {
             // to ensure "iCMS" is required (not null)
             if (iCMS == null)
@@ -53,6 +55,8 @@ namespace ACBrAPI.Sdk.Model
             this.infAdFisco = infAdFisco;
             this.ICMSUFFim = iCMSUFFim;
             this.infTribFed = infTribFed;
+            this.IBSCBS = iBSCBS;
+            this.vTotDFe = vTotDFe;
         }
 
         /// <summary>
@@ -88,6 +92,19 @@ namespace ACBrAPI.Sdk.Model
         public CteOsSefazInfTribFedOS infTribFed { get; set; }
 
         /// <summary>
+        /// Gets or Sets IBSCBS
+        /// </summary>
+        [DataMember(Name = "IBSCBS", EmitDefaultValue = false)]
+        public CteOsSefazTribCTeOS IBSCBS { get; set; }
+
+        /// <summary>
+        /// Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS).
+        /// </summary>
+        /// <value>Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS).</value>
+        [DataMember(Name = "vTotDFe", EmitDefaultValue = true)]
+        public decimal? vTotDFe { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -100,6 +117,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  infAdFisco: ").Append(infAdFisco).Append("\n");
             sb.Append("  ICMSUFFim: ").Append(ICMSUFFim).Append("\n");
             sb.Append("  infTribFed: ").Append(infTribFed).Append("\n");
+            sb.Append("  IBSCBS: ").Append(IBSCBS).Append("\n");
+            sb.Append("  vTotDFe: ").Append(vTotDFe).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -159,6 +178,16 @@ namespace ACBrAPI.Sdk.Model
                     this.infTribFed == input.infTribFed ||
                     (this.infTribFed != null &&
                     this.infTribFed.Equals(input.infTribFed))
+                ) && 
+                (
+                    this.IBSCBS == input.IBSCBS ||
+                    (this.IBSCBS != null &&
+                    this.IBSCBS.Equals(input.IBSCBS))
+                ) && 
+                (
+                    this.vTotDFe == input.vTotDFe ||
+                    (this.vTotDFe != null &&
+                    this.vTotDFe.Equals(input.vTotDFe))
                 );
         }
 
@@ -191,6 +220,14 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.infTribFed.GetHashCode();
                 }
+                if (this.IBSCBS != null)
+                {
+                    hashCode = (hashCode * 59) + this.IBSCBS.GetHashCode();
+                }
+                if (this.vTotDFe != null)
+                {
+                    hashCode = (hashCode * 59) + this.vTotDFe.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -218,6 +255,12 @@ namespace ACBrAPI.Sdk.Model
             if (this.infAdFisco != null && this.infAdFisco.Length < 1)
             {
                 yield return new ValidationResult("Invalid value for infAdFisco, length must be greater than 1.", new [] { "infAdFisco" });
+            }
+
+            // vTotDFe (decimal?) minimum
+            if (this.vTotDFe < (decimal?)0)
+            {
+                yield return new ValidationResult("Invalid value for vTotDFe, must be a value greater than or equal to 0.", new [] { "vTotDFe" });
             }
 
             yield break;

@@ -4,6 +4,8 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [optional] 
+**created_at** | **DateTime** |  | [optional] 
 **serial_number** | **string** |  | [optional] 
 **issuer_name** | **string** |  | [optional] 
 **not_valid_before** | **DateTime** |  | [optional] 

@@ -37,8 +37,8 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="RpsPedidoEmissao" /> class.
         /// </summary>
         /// <param name="referencia">Seu identificador único para este documento. Opcional, ajuda a evitar o envio duplicado de um mesmo documento..</param>
-        /// <param name="dataEmissao">Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.  Caso não informado, será considerada a data/hora da requisição à API da Nuvem Fiscal..</param>
-        /// <param name="competencia">Competência do RPS, no formato AAAA-MM-DD.  Caso não informado, será considerada a data da requisição à API da Nuvem Fiscal..</param>
+        /// <param name="dataEmissao">Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.  Caso não informado, será considerada a data/hora da requisição à API..</param>
+        /// <param name="competencia">Competência do RPS, no formato AAAA-MM-DD.  Caso não informado, será considerada a data da requisição à API..</param>
         /// <param name="naturezaTributacao">Natureza da tributação:  * 1 - Simples Nacional;  * 2 - Fixo;  * 3 - Depósito em juízo;  * 4 - Exigibilidade suspensa por decisão judicial;  * 5 - Exigibilidade suspensa por procedimento administrativo;  * 6 - Isenção parcial..</param>
         /// <param name="prestador">prestador (required).</param>
         /// <param name="tomador">tomador (required).</param>
@@ -83,16 +83,16 @@ namespace ACBrAPI.Sdk.Model
         public string referencia { get; set; }
 
         /// <summary>
-        /// Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.  Caso não informado, será considerada a data/hora da requisição à API da Nuvem Fiscal.
+        /// Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.  Caso não informado, será considerada a data/hora da requisição à API.
         /// </summary>
-        /// <value>Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.  Caso não informado, será considerada a data/hora da requisição à API da Nuvem Fiscal.</value>
+        /// <value>Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.  Caso não informado, será considerada a data/hora da requisição à API.</value>
         [DataMember(Name = "data_emissao", EmitDefaultValue = false)]
         public DateTime data_emissao { get; set; }
 
         /// <summary>
-        /// Competência do RPS, no formato AAAA-MM-DD.  Caso não informado, será considerada a data da requisição à API da Nuvem Fiscal.
+        /// Competência do RPS, no formato AAAA-MM-DD.  Caso não informado, será considerada a data da requisição à API.
         /// </summary>
-        /// <value>Competência do RPS, no formato AAAA-MM-DD.  Caso não informado, será considerada a data da requisição à API da Nuvem Fiscal.</value>
+        /// <value>Competência do RPS, no formato AAAA-MM-DD.  Caso não informado, será considerada a data da requisição à API.</value>
         [DataMember(Name = "competencia", EmitDefaultValue = false)]
         public DateTime competencia { get; set; }
 

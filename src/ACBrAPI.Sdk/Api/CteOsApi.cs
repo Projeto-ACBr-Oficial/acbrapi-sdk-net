@@ -27,7 +27,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfCancelamentoCteOs(string id);
 
@@ -38,14 +38,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfCancelamentoCteOsWithHttpInfo(string id);
         /// <summary>
         /// Baixar PDF da carta de correção
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfCartaCorrecaoCteOs(string id);
 
@@ -56,14 +56,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfCartaCorrecaoCteOsWithHttpInfo(string id);
         /// <summary>
         /// Baixar PDF do DACTE
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfCteOs(string id, bool? logotipo = default(bool?));
@@ -75,7 +75,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfCteOsWithHttpInfo(string id, bool? logotipo = default(bool?));
@@ -83,7 +83,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfEventoCteOs(string id);
 
@@ -94,14 +94,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfEventoCteOsWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML do cancelamento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlCancelamentoCteOs(string id);
 
@@ -112,14 +112,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlCancelamentoCteOsWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML da carta de correção
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlCartaCorrecaoCteOs(string id);
 
@@ -130,7 +130,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlCartaCorrecaoCteOsWithHttpInfo(string id);
         /// <summary>
@@ -140,7 +140,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz &#x60;cteProc&#x60;).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /cteos/{id}/xml/conhecimento&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlCteOs(string id);
 
@@ -151,7 +151,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz &#x60;cteProc&#x60;).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /cteos/{id}/xml/conhecimento&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlCteOsWithHttpInfo(string id);
         /// <summary>
@@ -161,7 +161,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlCteOsConhecimento(string id);
 
@@ -172,14 +172,14 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlCteOsConhecimentoWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML do Protocolo da SEFAZ
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlCteOsProtocolo(string id);
 
@@ -190,14 +190,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlCteOsProtocoloWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML do evento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlEventoCteOs(string id);
 
@@ -208,7 +208,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlEventoCteOsWithHttpInfo(string id);
         /// <summary>
@@ -218,7 +218,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>DfeCancelamento</returns>
         DfeCancelamento CancelarCteOs(string id, CteOsPedidoCancelamento body = default(CteOsPedidoCancelamento));
@@ -230,7 +230,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         ApiResponse<DfeCancelamento> CancelarCteOsWithHttpInfo(string id, CteOsPedidoCancelamento body = default(CteOsPedidoCancelamento));
@@ -238,7 +238,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do CT-e OS
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>DfeCancelamento</returns>
         DfeCancelamento ConsultarCancelamentoCteOs(string id);
 
@@ -249,14 +249,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         ApiResponse<DfeCancelamento> ConsultarCancelamentoCteOsWithHttpInfo(string id);
         /// <summary>
         /// Consultar a solicitação de correção do CT-e OS
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>CteOsCartaCorrecao</returns>
         CteOsCartaCorrecao ConsultarCartaCorrecaoCteOs(string id);
 
@@ -267,17 +267,17 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of CteOsCartaCorrecao</returns>
         ApiResponse<CteOsCartaCorrecao> ConsultarCartaCorrecaoCteOsWithHttpInfo(string id);
         /// <summary>
         /// Consultar CT-e OS
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+        /// Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>Dfe</returns>
         Dfe ConsultarCteOs(string id);
 
@@ -285,17 +285,17 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar CT-e OS
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+        /// Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of Dfe</returns>
         ApiResponse<Dfe> ConsultarCteOsWithHttpInfo(string id);
         /// <summary>
         /// Consultar evento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>DfeEvento</returns>
         DfeEvento ConsultarEventoCteOs(string id);
 
@@ -306,14 +306,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of DfeEvento</returns>
         ApiResponse<DfeEvento> ConsultarEventoCteOsWithHttpInfo(string id);
         /// <summary>
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -325,7 +325,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -339,7 +339,7 @@ namespace ACBrAPI.Sdk.Api
         /// É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>CteOsCartaCorrecao</returns>
         CteOsCartaCorrecao CriarCartaCorrecaoCteOs(string id, CteOsPedidoCartaCorrecao body);
@@ -351,7 +351,7 @@ namespace ACBrAPI.Sdk.Api
         /// É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of CteOsCartaCorrecao</returns>
         ApiResponse<CteOsCartaCorrecao> CriarCartaCorrecaoCteOsWithHttpInfo(string id, CteOsPedidoCartaCorrecao body);
@@ -415,10 +415,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados no CT-e OS a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>DfeSincronizacao</returns>
         DfeSincronizacao SincronizarCteOs(string id);
 
@@ -426,10 +426,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados no CT-e OS a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of DfeSincronizacao</returns>
         ApiResponse<DfeSincronizacao> SincronizarCteOsWithHttpInfo(string id);
         #endregion Synchronous Operations
@@ -448,7 +448,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfCancelamentoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -460,7 +460,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfCancelamentoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -471,7 +471,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfCartaCorrecaoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -483,7 +483,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfCartaCorrecaoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -494,7 +494,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
@@ -507,7 +507,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
@@ -519,7 +519,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfEventoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -531,7 +531,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfEventoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -542,7 +542,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlCancelamentoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -554,7 +554,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlCancelamentoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -565,7 +565,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlCartaCorrecaoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -577,7 +577,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlCartaCorrecaoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -588,7 +588,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz &#x60;cteProc&#x60;).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /cteos/{id}/xml/conhecimento&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -600,7 +600,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz &#x60;cteProc&#x60;).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /cteos/{id}/xml/conhecimento&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -611,7 +611,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlCteOsConhecimentoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -623,7 +623,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlCteOsConhecimentoWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -634,7 +634,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlCteOsProtocoloAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -646,7 +646,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlCteOsProtocoloWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -657,7 +657,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlEventoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -669,7 +669,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlEventoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -680,7 +680,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
@@ -693,7 +693,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
@@ -705,7 +705,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
         System.Threading.Tasks.Task<DfeCancelamento> ConsultarCancelamentoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -717,7 +717,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeCancelamento>> ConsultarCancelamentoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -728,7 +728,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CteOsCartaCorrecao</returns>
         System.Threading.Tasks.Task<CteOsCartaCorrecao> ConsultarCartaCorrecaoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -740,7 +740,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CteOsCartaCorrecao)</returns>
         System.Threading.Tasks.Task<ApiResponse<CteOsCartaCorrecao>> ConsultarCartaCorrecaoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -748,10 +748,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar CT-e OS
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+        /// Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dfe</returns>
         System.Threading.Tasks.Task<Dfe> ConsultarCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -760,10 +760,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar CT-e OS
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+        /// Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dfe)</returns>
         System.Threading.Tasks.Task<ApiResponse<Dfe>> ConsultarCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -774,7 +774,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeEvento</returns>
         System.Threading.Tasks.Task<DfeEvento> ConsultarEventoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -786,7 +786,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeEvento)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeEvento>> ConsultarEventoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -794,7 +794,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -807,7 +807,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -822,7 +822,7 @@ namespace ACBrAPI.Sdk.Api
         /// É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CteOsCartaCorrecao</returns>
@@ -835,7 +835,7 @@ namespace ACBrAPI.Sdk.Api
         /// É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CteOsCartaCorrecao)</returns>
@@ -904,10 +904,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados no CT-e OS a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeSincronizacao</returns>
         System.Threading.Tasks.Task<DfeSincronizacao> SincronizarCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -916,10 +916,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados no CT-e OS a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeSincronizacao)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeSincronizacao>> SincronizarCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1140,7 +1140,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfCancelamentoCteOs(string id)
         {
@@ -1152,7 +1152,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfCancelamentoCteOsWithHttpInfo(string id)
         {
@@ -1206,7 +1206,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfCancelamentoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1219,7 +1219,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfCancelamentoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1277,7 +1277,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF da carta de correção 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfCartaCorrecaoCteOs(string id)
         {
@@ -1289,7 +1289,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF da carta de correção 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfCartaCorrecaoCteOsWithHttpInfo(string id)
         {
@@ -1343,7 +1343,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF da carta de correção 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfCartaCorrecaoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1356,7 +1356,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF da carta de correção 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfCartaCorrecaoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1414,7 +1414,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DACTE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfCteOs(string id, bool? logotipo = default(bool?))
@@ -1427,7 +1427,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DACTE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfCteOsWithHttpInfo(string id, bool? logotipo = default(bool?))
@@ -1486,7 +1486,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DACTE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
@@ -1500,7 +1500,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DACTE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
@@ -1563,7 +1563,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfEventoCteOs(string id)
         {
@@ -1575,7 +1575,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfEventoCteOsWithHttpInfo(string id)
         {
@@ -1629,7 +1629,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfEventoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1642,7 +1642,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfEventoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1700,7 +1700,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlCancelamentoCteOs(string id)
         {
@@ -1712,7 +1712,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlCancelamentoCteOsWithHttpInfo(string id)
         {
@@ -1766,7 +1766,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlCancelamentoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1779,7 +1779,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlCancelamentoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1837,7 +1837,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da carta de correção 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlCartaCorrecaoCteOs(string id)
         {
@@ -1849,7 +1849,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da carta de correção 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlCartaCorrecaoCteOsWithHttpInfo(string id)
         {
@@ -1903,7 +1903,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da carta de correção 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlCartaCorrecaoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1916,7 +1916,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da carta de correção 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlCartaCorrecaoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1974,7 +1974,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do CT-e OS processado Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz &#x60;cteProc&#x60;).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /cteos/{id}/xml/conhecimento&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlCteOs(string id)
         {
@@ -1986,7 +1986,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do CT-e OS processado Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz &#x60;cteProc&#x60;).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /cteos/{id}/xml/conhecimento&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlCteOsWithHttpInfo(string id)
         {
@@ -2040,7 +2040,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do CT-e OS processado Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz &#x60;cteProc&#x60;).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /cteos/{id}/xml/conhecimento&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2053,7 +2053,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do CT-e OS processado Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz &#x60;cteProc&#x60;).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /cteos/{id}/xml/conhecimento&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2111,7 +2111,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do CT-e OS Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlCteOsConhecimento(string id)
         {
@@ -2123,7 +2123,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do CT-e OS Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlCteOsConhecimentoWithHttpInfo(string id)
         {
@@ -2177,7 +2177,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do CT-e OS Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlCteOsConhecimentoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2190,7 +2190,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do CT-e OS Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlCteOsConhecimentoWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2248,7 +2248,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlCteOsProtocolo(string id)
         {
@@ -2260,7 +2260,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlCteOsProtocoloWithHttpInfo(string id)
         {
@@ -2314,7 +2314,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlCteOsProtocoloAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2327,7 +2327,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlCteOsProtocoloWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2385,7 +2385,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlEventoCteOs(string id)
         {
@@ -2397,7 +2397,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlEventoCteOsWithHttpInfo(string id)
         {
@@ -2451,7 +2451,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlEventoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2464,7 +2464,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlEventoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2522,7 +2522,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar um CT-e OS autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>DfeCancelamento</returns>
         public DfeCancelamento CancelarCteOs(string id, CteOsPedidoCancelamento body = default(CteOsPedidoCancelamento))
@@ -2535,7 +2535,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar um CT-e OS autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> CancelarCteOsWithHttpInfo(string id, CteOsPedidoCancelamento body = default(CteOsPedidoCancelamento))
@@ -2592,7 +2592,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar um CT-e OS autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
@@ -2606,7 +2606,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar um CT-e OS autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
@@ -2667,7 +2667,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do CT-e OS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>DfeCancelamento</returns>
         public DfeCancelamento ConsultarCancelamentoCteOs(string id)
         {
@@ -2679,7 +2679,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do CT-e OS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> ConsultarCancelamentoCteOsWithHttpInfo(string id)
         {
@@ -2733,7 +2733,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do CT-e OS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
         public async System.Threading.Tasks.Task<DfeCancelamento> ConsultarCancelamentoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2746,7 +2746,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do CT-e OS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento>> ConsultarCancelamentoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2804,7 +2804,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar a solicitação de correção do CT-e OS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>CteOsCartaCorrecao</returns>
         public CteOsCartaCorrecao ConsultarCartaCorrecaoCteOs(string id)
         {
@@ -2816,7 +2816,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar a solicitação de correção do CT-e OS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of CteOsCartaCorrecao</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<CteOsCartaCorrecao> ConsultarCartaCorrecaoCteOsWithHttpInfo(string id)
         {
@@ -2870,7 +2870,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar a solicitação de correção do CT-e OS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CteOsCartaCorrecao</returns>
         public async System.Threading.Tasks.Task<CteOsCartaCorrecao> ConsultarCartaCorrecaoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2883,7 +2883,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar a solicitação de correção do CT-e OS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CteOsCartaCorrecao)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<CteOsCartaCorrecao>> ConsultarCartaCorrecaoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2938,10 +2938,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar CT-e OS Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+        /// Consultar CT-e OS Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>Dfe</returns>
         public Dfe ConsultarCteOs(string id)
         {
@@ -2950,10 +2950,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar CT-e OS Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+        /// Consultar CT-e OS Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of Dfe</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<Dfe> ConsultarCteOsWithHttpInfo(string id)
         {
@@ -3004,10 +3004,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar CT-e OS Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+        /// Consultar CT-e OS Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dfe</returns>
         public async System.Threading.Tasks.Task<Dfe> ConsultarCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3017,10 +3017,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar CT-e OS Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+        /// Consultar CT-e OS Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dfe)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<Dfe>> ConsultarCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3078,7 +3078,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>DfeEvento</returns>
         public DfeEvento ConsultarEventoCteOs(string id)
         {
@@ -3090,7 +3090,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of DfeEvento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeEvento> ConsultarEventoCteOsWithHttpInfo(string id)
         {
@@ -3144,7 +3144,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeEvento</returns>
         public async System.Threading.Tasks.Task<DfeEvento> ConsultarEventoCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3157,7 +3157,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeEvento)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeEvento>> ConsultarEventoCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3212,7 +3212,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -3225,7 +3225,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -3284,7 +3284,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -3298,7 +3298,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -3364,7 +3364,7 @@ namespace ACBrAPI.Sdk.Api
         /// Solicitar correção do CT-e OS É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>CteOsCartaCorrecao</returns>
         public CteOsCartaCorrecao CriarCartaCorrecaoCteOs(string id, CteOsPedidoCartaCorrecao body)
@@ -3377,7 +3377,7 @@ namespace ACBrAPI.Sdk.Api
         /// Solicitar correção do CT-e OS É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of CteOsCartaCorrecao</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<CteOsCartaCorrecao> CriarCartaCorrecaoCteOsWithHttpInfo(string id, CteOsPedidoCartaCorrecao body)
@@ -3438,7 +3438,7 @@ namespace ACBrAPI.Sdk.Api
         /// Solicitar correção do CT-e OS É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CteOsCartaCorrecao</returns>
@@ -3452,7 +3452,7 @@ namespace ACBrAPI.Sdk.Api
         /// Solicitar correção do CT-e OS É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CteOsCartaCorrecao)</returns>
@@ -3876,10 +3876,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados no CT-e OS a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados no CT-e OS a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>DfeSincronizacao</returns>
         public DfeSincronizacao SincronizarCteOs(string id)
         {
@@ -3888,10 +3888,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados no CT-e OS a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados no CT-e OS a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <returns>ApiResponse of DfeSincronizacao</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeSincronizacao> SincronizarCteOsWithHttpInfo(string id)
         {
@@ -3942,10 +3942,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados no CT-e OS a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados no CT-e OS a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeSincronizacao</returns>
         public async System.Threading.Tasks.Task<DfeSincronizacao> SincronizarCteOsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3955,10 +3955,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados no CT-e OS a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados no CT-e OS a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do CT-e OS gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do CT-e OS gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeSincronizacao)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeSincronizacao>> SincronizarCteOsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

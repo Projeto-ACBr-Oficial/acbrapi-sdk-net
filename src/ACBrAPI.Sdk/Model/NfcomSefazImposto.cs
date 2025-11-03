@@ -44,7 +44,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="fUST">fUST.</param>
         /// <param name="fUNTTEL">fUNTTEL.</param>
         /// <param name="retTrib">retTrib.</param>
-        public NfcomSefazImposto(NfcomSefazICMS00 iCMS00 = default(NfcomSefazICMS00), NfcomSefazICMS20 iCMS20 = default(NfcomSefazICMS20), NfcomSefazICMS40 iCMS40 = default(NfcomSefazICMS40), NfcomSefazICMS51 iCMS51 = default(NfcomSefazICMS51), NfcomSefazICMS90 iCMS90 = default(NfcomSefazICMS90), NfcomSefazICMSSN iCMSSN = default(NfcomSefazICMSSN), List<NfcomSefazICMSUFDest> iCMSUFDest = default(List<NfcomSefazICMSUFDest>), int? indSemCST = default(int?), NfcomSefazPIS pIS = default(NfcomSefazPIS), NfcomSefazCOFINS cOFINS = default(NfcomSefazCOFINS), NfcomSefazFUST fUST = default(NfcomSefazFUST), NfcomSefazFUNTTEL fUNTTEL = default(NfcomSefazFUNTTEL), NfcomSefazRetTrib retTrib = default(NfcomSefazRetTrib))
+        /// <param name="iBSCBS">iBSCBS.</param>
+        public NfcomSefazImposto(NfcomSefazICMS00 iCMS00 = default(NfcomSefazICMS00), NfcomSefazICMS20 iCMS20 = default(NfcomSefazICMS20), NfcomSefazICMS40 iCMS40 = default(NfcomSefazICMS40), NfcomSefazICMS51 iCMS51 = default(NfcomSefazICMS51), NfcomSefazICMS90 iCMS90 = default(NfcomSefazICMS90), NfcomSefazICMSSN iCMSSN = default(NfcomSefazICMSSN), List<NfcomSefazICMSUFDest> iCMSUFDest = default(List<NfcomSefazICMSUFDest>), int? indSemCST = default(int?), NfcomSefazPIS pIS = default(NfcomSefazPIS), NfcomSefazCOFINS cOFINS = default(NfcomSefazCOFINS), NfcomSefazFUST fUST = default(NfcomSefazFUST), NfcomSefazFUNTTEL fUNTTEL = default(NfcomSefazFUNTTEL), NfcomSefazRetTrib retTrib = default(NfcomSefazRetTrib), NfcomSefazTribNFCom iBSCBS = default(NfcomSefazTribNFCom))
         {
             this.ICMS00 = iCMS00;
             this.ICMS20 = iCMS20;
@@ -59,6 +60,7 @@ namespace ACBrAPI.Sdk.Model
             this.FUST = fUST;
             this.FUNTTEL = fUNTTEL;
             this.retTrib = retTrib;
+            this.IBSCBS = iBSCBS;
         }
 
         /// <summary>
@@ -141,6 +143,12 @@ namespace ACBrAPI.Sdk.Model
         public NfcomSefazRetTrib retTrib { get; set; }
 
         /// <summary>
+        /// Gets or Sets IBSCBS
+        /// </summary>
+        [DataMember(Name = "IBSCBS", EmitDefaultValue = false)]
+        public NfcomSefazTribNFCom IBSCBS { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -161,6 +169,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  FUST: ").Append(FUST).Append("\n");
             sb.Append("  FUNTTEL: ").Append(FUNTTEL).Append("\n");
             sb.Append("  retTrib: ").Append(retTrib).Append("\n");
+            sb.Append("  IBSCBS: ").Append(IBSCBS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -261,6 +270,11 @@ namespace ACBrAPI.Sdk.Model
                     this.retTrib == input.retTrib ||
                     (this.retTrib != null &&
                     this.retTrib.Equals(input.retTrib))
+                ) && 
+                (
+                    this.IBSCBS == input.IBSCBS ||
+                    (this.IBSCBS != null &&
+                    this.IBSCBS.Equals(input.IBSCBS))
                 );
         }
 
@@ -324,6 +338,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.retTrib != null)
                 {
                     hashCode = (hashCode * 59) + this.retTrib.GetHashCode();
+                }
+                if (this.IBSCBS != null)
+                {
+                    hashCode = (hashCode * 59) + this.IBSCBS.GetHashCode();
                 }
                 return hashCode;
             }

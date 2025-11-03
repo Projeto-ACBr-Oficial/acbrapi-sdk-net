@@ -31,6 +31,8 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EmpresaCertificado" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
+        /// <param name="createdAt">createdAt.</param>
         /// <param name="serialNumber">serialNumber.</param>
         /// <param name="issuerName">issuerName.</param>
         /// <param name="notValidBefore">notValidBefore.</param>
@@ -39,8 +41,10 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="subjectName">subjectName.</param>
         /// <param name="cpfCnpj">cpfCnpj.</param>
         /// <param name="nomeRazaoSocial">nomeRazaoSocial.</param>
-        public EmpresaCertificado(string serialNumber = default(string), string issuerName = default(string), DateTime notValidBefore = default(DateTime), DateTime notValidAfter = default(DateTime), string thumbprint = default(string), string subjectName = default(string), string cpfCnpj = default(string), string nomeRazaoSocial = default(string))
+        public EmpresaCertificado(string id = default(string), DateTime createdAt = default(DateTime), string serialNumber = default(string), string issuerName = default(string), DateTime notValidBefore = default(DateTime), DateTime notValidAfter = default(DateTime), string thumbprint = default(string), string subjectName = default(string), string cpfCnpj = default(string), string nomeRazaoSocial = default(string))
         {
+            this.id = id;
+            this.created_at = createdAt;
             this.serial_number = serialNumber;
             this.issuer_name = issuerName;
             this.not_valid_before = notValidBefore;
@@ -50,6 +54,18 @@ namespace ACBrAPI.Sdk.Model
             this.cpf_cnpj = cpfCnpj;
             this.nome_razao_social = nomeRazaoSocial;
         }
+
+        /// <summary>
+        /// Gets or Sets id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets created_at
+        /// </summary>
+        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        public DateTime created_at { get; set; }
 
         /// <summary>
         /// Gets or Sets serial_number
@@ -107,6 +123,8 @@ namespace ACBrAPI.Sdk.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class EmpresaCertificado {\n");
+            sb.Append("  id: ").Append(id).Append("\n");
+            sb.Append("  created_at: ").Append(created_at).Append("\n");
             sb.Append("  serial_number: ").Append(serial_number).Append("\n");
             sb.Append("  issuer_name: ").Append(issuer_name).Append("\n");
             sb.Append("  not_valid_before: ").Append(not_valid_before).Append("\n");
@@ -150,6 +168,16 @@ namespace ACBrAPI.Sdk.Model
                 return false;
             }
             return 
+                (
+                    this.id == input.id ||
+                    (this.id != null &&
+                    this.id.Equals(input.id))
+                ) && 
+                (
+                    this.created_at == input.created_at ||
+                    (this.created_at != null &&
+                    this.created_at.Equals(input.created_at))
+                ) && 
                 (
                     this.serial_number == input.serial_number ||
                     (this.serial_number != null &&
@@ -201,6 +229,14 @@ namespace ACBrAPI.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.id != null)
+                {
+                    hashCode = (hashCode * 59) + this.id.GetHashCode();
+                }
+                if (this.created_at != null)
+                {
+                    hashCode = (hashCode * 59) + this.created_at.GetHashCode();
+                }
                 if (this.serial_number != null)
                 {
                     hashCode = (hashCode * 59) + this.serial_number.GetHashCode();

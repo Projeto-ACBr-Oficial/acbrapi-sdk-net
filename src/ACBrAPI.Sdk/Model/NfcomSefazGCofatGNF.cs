@@ -280,18 +280,6 @@ namespace ACBrAPI.Sdk.Model
                 yield return new ValidationResult("Invalid value for CompetEmis, length must be greater than 6.", new [] { "CompetEmis" });
             }
 
-            // hash115 (string) maxLength
-            if (this.hash115 != null && this.hash115.Length > 44)
-            {
-                yield return new ValidationResult("Invalid value for hash115, length must be less than 44.", new [] { "hash115" });
-            }
-
-            // hash115 (string) minLength
-            if (this.hash115 != null && this.hash115.Length < 44)
-            {
-                yield return new ValidationResult("Invalid value for hash115, length must be greater than 44.", new [] { "hash115" });
-            }
-
             yield break;
         }
     }

@@ -4,7 +4,7 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | ID único do lote gerado automaticamente pela Nuvem Fiscal. | [optional] 
+**id** | **string** | ID único do lote gerado automaticamente pela API. | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **status** | **string** |  | [optional] 
 **numero** | **string** |  | [optional] 

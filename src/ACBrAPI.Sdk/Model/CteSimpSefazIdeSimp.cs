@@ -62,7 +62,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="xDetRetira">Detalhes do retira..</param>
         /// <param name="dhCont">Data e Hora da entrada em contingência.  Informar a data e hora no formato AAAA-MM-DDTHH:MM:SS..</param>
         /// <param name="xJust">Justificativa da entrada em contingência..</param>
-        public CteSimpSefazIdeSimp(int? cUF = default(int?), string cCT = default(string), string cFOP = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nCT = default(int?), DateTime? dhEmi = default(DateTime?), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? tpCTe = default(int?), int? procEmi = default(int?), string verProc = default(string), string cMunEnv = default(string), string xMunEnv = default(string), string uFEnv = default(string), string modal = default(string), int? tpServ = default(int?), string uFIni = default(string), string uFFim = default(string), int? retira = default(int?), string xDetRetira = default(string), DateTime? dhCont = default(DateTime?), string xJust = default(string))
+        /// <param name="gCompraGov">gCompraGov.</param>
+        public CteSimpSefazIdeSimp(int? cUF = default(int?), string cCT = default(string), string cFOP = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nCT = default(int?), DateTime? dhEmi = default(DateTime?), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? tpCTe = default(int?), int? procEmi = default(int?), string verProc = default(string), string cMunEnv = default(string), string xMunEnv = default(string), string uFEnv = default(string), string modal = default(string), int? tpServ = default(int?), string uFIni = default(string), string uFFim = default(string), int? retira = default(int?), string xDetRetira = default(string), DateTime? dhCont = default(DateTime?), string xJust = default(string), CteSimpSefazCompraGovReduzidoSimp gCompraGov = default(CteSimpSefazCompraGovReduzidoSimp))
         {
             // to ensure "cUF" is required (not null)
             if (cUF == null)
@@ -185,6 +186,7 @@ namespace ACBrAPI.Sdk.Model
             this.xDetRetira = xDetRetira;
             this.dhCont = dhCont;
             this.xJust = xJust;
+            this.gCompraGov = gCompraGov;
         }
 
         /// <summary>
@@ -370,6 +372,12 @@ namespace ACBrAPI.Sdk.Model
         public string xJust { get; set; }
 
         /// <summary>
+        /// Gets or Sets gCompraGov
+        /// </summary>
+        [DataMember(Name = "gCompraGov", EmitDefaultValue = false)]
+        public CteSimpSefazCompraGovReduzidoSimp gCompraGov { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -403,6 +411,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  xDetRetira: ").Append(xDetRetira).Append("\n");
             sb.Append("  dhCont: ").Append(dhCont).Append("\n");
             sb.Append("  xJust: ").Append(xJust).Append("\n");
+            sb.Append("  gCompraGov: ").Append(gCompraGov).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -567,6 +576,11 @@ namespace ACBrAPI.Sdk.Model
                     this.xJust == input.xJust ||
                     (this.xJust != null &&
                     this.xJust.Equals(input.xJust))
+                ) && 
+                (
+                    this.gCompraGov == input.gCompraGov ||
+                    (this.gCompraGov != null &&
+                    this.gCompraGov.Equals(input.gCompraGov))
                 );
         }
 
@@ -682,6 +696,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.xJust != null)
                 {
                     hashCode = (hashCode * 59) + this.xJust.GetHashCode();
+                }
+                if (this.gCompraGov != null)
+                {
+                    hashCode = (hashCode * 59) + this.gCompraGov.GetHashCode();
                 }
                 return hashCode;
             }

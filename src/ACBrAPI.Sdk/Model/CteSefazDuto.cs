@@ -39,7 +39,12 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vTar">Valor da tarifa..</param>
         /// <param name="dIni">Data de Início da prestação do serviço. (required).</param>
         /// <param name="dFim">Data de Fim da prestação do serviço. (required).</param>
-        public CteSefazDuto(decimal? vTar = default(decimal?), DateTime? dIni = default(DateTime?), DateTime? dFim = default(DateTime?))
+        /// <param name="classDuto">Classificação do Dutoviário.  Informar: 1 - Gasoduto 2 - Mineroduto 3 - Oleoduto..</param>
+        /// <param name="tpContratacao">Tipo de contratação do serviço de transporte (apenas para gasoduto).  Informar:  * 0 - Ponta a ponto  * 1 - Capacidade de Entrada  * 2 - Capacidade de Saida.</param>
+        /// <param name="codPontoEntrada">Código do Ponto de Entrada..</param>
+        /// <param name="codPontoSaida">Código do Ponto de Saída..</param>
+        /// <param name="nContrato">Número do Contrato de Capacidade..</param>
+        public CteSefazDuto(decimal? vTar = default(decimal?), DateTime? dIni = default(DateTime?), DateTime? dFim = default(DateTime?), int? classDuto = default(int?), int? tpContratacao = default(int?), string codPontoEntrada = default(string), string codPontoSaida = default(string), string nContrato = default(string))
         {
             // to ensure "dIni" is required (not null)
             if (dIni == null)
@@ -54,6 +59,11 @@ namespace ACBrAPI.Sdk.Model
             }
             this.dFim = dFim;
             this.vTar = vTar;
+            this.classDuto = classDuto;
+            this.tpContratacao = tpContratacao;
+            this.codPontoEntrada = codPontoEntrada;
+            this.codPontoSaida = codPontoSaida;
+            this.nContrato = nContrato;
         }
 
         /// <summary>
@@ -80,6 +90,41 @@ namespace ACBrAPI.Sdk.Model
         public DateTime? dFim { get; set; }
 
         /// <summary>
+        /// Classificação do Dutoviário.  Informar: 1 - Gasoduto 2 - Mineroduto 3 - Oleoduto.
+        /// </summary>
+        /// <value>Classificação do Dutoviário.  Informar: 1 - Gasoduto 2 - Mineroduto 3 - Oleoduto.</value>
+        [DataMember(Name = "classDuto", EmitDefaultValue = true)]
+        public int? classDuto { get; set; }
+
+        /// <summary>
+        /// Tipo de contratação do serviço de transporte (apenas para gasoduto).  Informar:  * 0 - Ponta a ponto  * 1 - Capacidade de Entrada  * 2 - Capacidade de Saida
+        /// </summary>
+        /// <value>Tipo de contratação do serviço de transporte (apenas para gasoduto).  Informar:  * 0 - Ponta a ponto  * 1 - Capacidade de Entrada  * 2 - Capacidade de Saida</value>
+        [DataMember(Name = "tpContratacao", EmitDefaultValue = true)]
+        public int? tpContratacao { get; set; }
+
+        /// <summary>
+        /// Código do Ponto de Entrada.
+        /// </summary>
+        /// <value>Código do Ponto de Entrada.</value>
+        [DataMember(Name = "codPontoEntrada", EmitDefaultValue = true)]
+        public string codPontoEntrada { get; set; }
+
+        /// <summary>
+        /// Código do Ponto de Saída.
+        /// </summary>
+        /// <value>Código do Ponto de Saída.</value>
+        [DataMember(Name = "codPontoSaida", EmitDefaultValue = true)]
+        public string codPontoSaida { get; set; }
+
+        /// <summary>
+        /// Número do Contrato de Capacidade.
+        /// </summary>
+        /// <value>Número do Contrato de Capacidade.</value>
+        [DataMember(Name = "nContrato", EmitDefaultValue = true)]
+        public string nContrato { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -90,6 +135,11 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vTar: ").Append(vTar).Append("\n");
             sb.Append("  dIni: ").Append(dIni).Append("\n");
             sb.Append("  dFim: ").Append(dFim).Append("\n");
+            sb.Append("  classDuto: ").Append(classDuto).Append("\n");
+            sb.Append("  tpContratacao: ").Append(tpContratacao).Append("\n");
+            sb.Append("  codPontoEntrada: ").Append(codPontoEntrada).Append("\n");
+            sb.Append("  codPontoSaida: ").Append(codPontoSaida).Append("\n");
+            sb.Append("  nContrato: ").Append(nContrato).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +189,31 @@ namespace ACBrAPI.Sdk.Model
                     this.dFim == input.dFim ||
                     (this.dFim != null &&
                     this.dFim.Equals(input.dFim))
+                ) && 
+                (
+                    this.classDuto == input.classDuto ||
+                    (this.classDuto != null &&
+                    this.classDuto.Equals(input.classDuto))
+                ) && 
+                (
+                    this.tpContratacao == input.tpContratacao ||
+                    (this.tpContratacao != null &&
+                    this.tpContratacao.Equals(input.tpContratacao))
+                ) && 
+                (
+                    this.codPontoEntrada == input.codPontoEntrada ||
+                    (this.codPontoEntrada != null &&
+                    this.codPontoEntrada.Equals(input.codPontoEntrada))
+                ) && 
+                (
+                    this.codPontoSaida == input.codPontoSaida ||
+                    (this.codPontoSaida != null &&
+                    this.codPontoSaida.Equals(input.codPontoSaida))
+                ) && 
+                (
+                    this.nContrato == input.nContrato ||
+                    (this.nContrato != null &&
+                    this.nContrato.Equals(input.nContrato))
                 );
         }
 
@@ -163,6 +238,26 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.dFim.GetHashCode();
                 }
+                if (this.classDuto != null)
+                {
+                    hashCode = (hashCode * 59) + this.classDuto.GetHashCode();
+                }
+                if (this.tpContratacao != null)
+                {
+                    hashCode = (hashCode * 59) + this.tpContratacao.GetHashCode();
+                }
+                if (this.codPontoEntrada != null)
+                {
+                    hashCode = (hashCode * 59) + this.codPontoEntrada.GetHashCode();
+                }
+                if (this.codPontoSaida != null)
+                {
+                    hashCode = (hashCode * 59) + this.codPontoSaida.GetHashCode();
+                }
+                if (this.nContrato != null)
+                {
+                    hashCode = (hashCode * 59) + this.nContrato.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -178,6 +273,42 @@ namespace ACBrAPI.Sdk.Model
             if (this.vTar < (decimal?)0)
             {
                 yield return new ValidationResult("Invalid value for vTar, must be a value greater than or equal to 0.", new [] { "vTar" });
+            }
+
+            // codPontoEntrada (string) maxLength
+            if (this.codPontoEntrada != null && this.codPontoEntrada.Length > 20)
+            {
+                yield return new ValidationResult("Invalid value for codPontoEntrada, length must be less than 20.", new [] { "codPontoEntrada" });
+            }
+
+            // codPontoEntrada (string) minLength
+            if (this.codPontoEntrada != null && this.codPontoEntrada.Length < 2)
+            {
+                yield return new ValidationResult("Invalid value for codPontoEntrada, length must be greater than 2.", new [] { "codPontoEntrada" });
+            }
+
+            // codPontoSaida (string) maxLength
+            if (this.codPontoSaida != null && this.codPontoSaida.Length > 20)
+            {
+                yield return new ValidationResult("Invalid value for codPontoSaida, length must be less than 20.", new [] { "codPontoSaida" });
+            }
+
+            // codPontoSaida (string) minLength
+            if (this.codPontoSaida != null && this.codPontoSaida.Length < 2)
+            {
+                yield return new ValidationResult("Invalid value for codPontoSaida, length must be greater than 2.", new [] { "codPontoSaida" });
+            }
+
+            // nContrato (string) maxLength
+            if (this.nContrato != null && this.nContrato.Length > 20)
+            {
+                yield return new ValidationResult("Invalid value for nContrato, length must be less than 20.", new [] { "nContrato" });
+            }
+
+            // nContrato (string) minLength
+            if (this.nContrato != null && this.nContrato.Length < 2)
+            {
+                yield return new ValidationResult("Invalid value for nContrato, length must be greater than 2.", new [] { "nContrato" });
             }
 
             yield break;

@@ -55,7 +55,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="indNotaEntrada">Indicador de nota de entrada.  * 1 - Informar quando for nota de ajuste e possuir itens com CFOP de entrada.</param>
         /// <param name="dhCont">Data e Hora da entrada em contingência.  Informar a data e hora no formato AAAA-MM-DDTHH:MM:SS..</param>
         /// <param name="xJust">Justificativa da entrada em contingência..</param>
-        public NfcomSefazIde(int? cUF = default(int?), int? tpAmb = default(int?), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), string cNF = default(string), int? cDV = default(int?), DateTime? dhEmi = default(DateTime?), int? tpEmis = default(int?), int? nSiteAutoriz = default(int?), string cMunFG = default(string), int? finNFCom = default(int?), int? tpFat = default(int?), string verProc = default(string), int? indPrePago = default(int?), int? indCessaoMeiosRede = default(int?), int? indNotaEntrada = default(int?), DateTime? dhCont = default(DateTime?), string xJust = default(string))
+        /// <param name="gCompraGov">gCompraGov.</param>
+        public NfcomSefazIde(int? cUF = default(int?), int? tpAmb = default(int?), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), string cNF = default(string), int? cDV = default(int?), DateTime? dhEmi = default(DateTime?), int? tpEmis = default(int?), int? nSiteAutoriz = default(int?), string cMunFG = default(string), int? finNFCom = default(int?), int? tpFat = default(int?), string verProc = default(string), int? indPrePago = default(int?), int? indCessaoMeiosRede = default(int?), int? indNotaEntrada = default(int?), DateTime? dhCont = default(DateTime?), string xJust = default(string), NfcomSefazCompraGovReduzido gCompraGov = default(NfcomSefazCompraGovReduzido))
         {
             // to ensure "cUF" is required (not null)
             if (cUF == null)
@@ -126,6 +127,7 @@ namespace ACBrAPI.Sdk.Model
             this.indNotaEntrada = indNotaEntrada;
             this.dhCont = dhCont;
             this.xJust = xJust;
+            this.gCompraGov = gCompraGov;
         }
 
         /// <summary>
@@ -262,6 +264,12 @@ namespace ACBrAPI.Sdk.Model
         public string xJust { get; set; }
 
         /// <summary>
+        /// Gets or Sets gCompraGov
+        /// </summary>
+        [DataMember(Name = "gCompraGov", EmitDefaultValue = false)]
+        public NfcomSefazCompraGovReduzido gCompraGov { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -288,6 +296,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  indNotaEntrada: ").Append(indNotaEntrada).Append("\n");
             sb.Append("  dhCont: ").Append(dhCont).Append("\n");
             sb.Append("  xJust: ").Append(xJust).Append("\n");
+            sb.Append("  gCompraGov: ").Append(gCompraGov).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -417,6 +426,11 @@ namespace ACBrAPI.Sdk.Model
                     this.xJust == input.xJust ||
                     (this.xJust != null &&
                     this.xJust.Equals(input.xJust))
+                ) && 
+                (
+                    this.gCompraGov == input.gCompraGov ||
+                    (this.gCompraGov != null &&
+                    this.gCompraGov.Equals(input.gCompraGov))
                 );
         }
 
@@ -504,6 +518,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.xJust != null)
                 {
                     hashCode = (hashCode * 59) + this.xJust.GetHashCode();
+                }
+                if (this.gCompraGov != null)
+                {
+                    hashCode = (hashCode * 59) + this.gCompraGov.GetHashCode();
                 }
                 return hashCode;
             }

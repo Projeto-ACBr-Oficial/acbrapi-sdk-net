@@ -127,8 +127,8 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DistribuicaoNfe" /> class.
         /// </summary>
-        /// <param name="id">ID único gerado pela Nuvem Fiscal para o pedido de distribuição. (required).</param>
-        /// <param name="createdAt">Data/hora em que o pedido foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;..</param>
+        /// <param name="id">ID único gerado pela API para o pedido de distribuição. (required).</param>
+        /// <param name="createdAt">Data/hora em que o pedido foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;..</param>
         /// <param name="status">Indica o status da distribuição. (required).</param>
         /// <param name="ambiente">Identificação do Ambiente. (required).</param>
         /// <param name="ufAutor">Sigla da UF do autor..</param>
@@ -187,16 +187,16 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// ID único gerado pela Nuvem Fiscal para o pedido de distribuição.
+        /// ID único gerado pela API para o pedido de distribuição.
         /// </summary>
-        /// <value>ID único gerado pela Nuvem Fiscal para o pedido de distribuição.</value>
+        /// <value>ID único gerado pela API para o pedido de distribuição.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string id { get; set; }
 
         /// <summary>
-        /// Data/hora em que o pedido foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.
+        /// Data/hora em que o pedido foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.
         /// </summary>
-        /// <value>Data/hora em que o pedido foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.</value>
+        /// <value>Data/hora em que o pedido foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime created_at { get; set; }
 

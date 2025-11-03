@@ -97,8 +97,8 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DistribuicaoNfeEvento" /> class.
         /// </summary>
-        /// <param name="id">ID único gerado pela Nuvem Fiscal para este evento..</param>
-        /// <param name="createdAt">Data/hora em que o evento foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;..</param>
+        /// <param name="id">ID único gerado pela API para este evento..</param>
+        /// <param name="createdAt">Data/hora em que o evento foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;..</param>
         /// <param name="ambiente">Identificação do ambiente..</param>
         /// <param name="status">Status do Evento..</param>
         /// <param name="cpfCnpjAutor">CPF/CNPJ do autor do evento..</param>
@@ -130,16 +130,16 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// ID único gerado pela Nuvem Fiscal para este evento.
+        /// ID único gerado pela API para este evento.
         /// </summary>
-        /// <value>ID único gerado pela Nuvem Fiscal para este evento.</value>
+        /// <value>ID único gerado pela API para este evento.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string id { get; set; }
 
         /// <summary>
-        /// Data/hora em que o evento foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.
+        /// Data/hora em que o evento foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.
         /// </summary>
-        /// <value>Data/hora em que o evento foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.</value>
+        /// <value>Data/hora em que o evento foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime created_at { get; set; }
 

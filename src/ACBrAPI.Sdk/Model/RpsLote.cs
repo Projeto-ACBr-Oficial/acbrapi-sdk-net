@@ -99,7 +99,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RpsLote" /> class.
         /// </summary>
-        /// <param name="id">ID único do lote gerado automaticamente pela Nuvem Fiscal..</param>
+        /// <param name="id">ID único do lote gerado automaticamente pela API..</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="status">status.</param>
         /// <param name="numero">numero.</param>
@@ -118,9 +118,9 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// ID único do lote gerado automaticamente pela Nuvem Fiscal.
+        /// ID único do lote gerado automaticamente pela API.
         /// </summary>
-        /// <value>ID único do lote gerado automaticamente pela Nuvem Fiscal.</value>
+        /// <value>ID único do lote gerado automaticamente pela API.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string id { get; set; }
 

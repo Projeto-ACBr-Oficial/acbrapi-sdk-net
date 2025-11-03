@@ -4,8 +4,8 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | ID único gerado pela Nuvem Fiscal para o pedido de distribuição. | 
-**created_at** | **DateTime** | Data/hora em que o pedido foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;. | [optional] 
+**id** | **string** | ID único gerado pela API para o pedido de distribuição. | 
+**created_at** | **DateTime** | Data/hora em que o pedido foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;. | [optional] 
 **status** | **string** | Indica o status da distribuição. | 
 **ambiente** | **string** | Identificação do Ambiente. | 
 **uf_autor** | **string** | Sigla da UF do autor. | [optional] 

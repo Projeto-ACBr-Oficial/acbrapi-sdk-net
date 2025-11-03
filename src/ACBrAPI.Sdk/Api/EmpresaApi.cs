@@ -587,6 +587,35 @@ namespace ACBrAPI.Sdk.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ExcluirLogotipoEmpresaWithHttpInfo(string cpfCnpj);
         /// <summary>
+        /// Listar certificados
+        /// </summary>
+        /// <remarks>
+        /// Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
+        /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
+        /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
+        /// <param name="expiresIn">Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)</param>
+        /// <param name="includeExpired">Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)</param>
+        /// <returns>EmpresaCertificadoListagem</returns>
+        EmpresaCertificadoListagem ListarCertificados(int? top = default(int?), int? skip = default(int?), bool? inlinecount = default(bool?), int? expiresIn = default(int?), bool? includeExpired = default(bool?));
+
+        /// <summary>
+        /// Listar certificados
+        /// </summary>
+        /// <remarks>
+        /// Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
+        /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
+        /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
+        /// <param name="expiresIn">Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)</param>
+        /// <param name="includeExpired">Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)</param>
+        /// <returns>ApiResponse of EmpresaCertificadoListagem</returns>
+        ApiResponse<EmpresaCertificadoListagem> ListarCertificadosWithHttpInfo(int? top = default(int?), int? skip = default(int?), bool? inlinecount = default(bool?), int? expiresIn = default(int?), bool? includeExpired = default(bool?));
+        /// <summary>
         /// Listar empresas
         /// </summary>
         /// <remarks>
@@ -1315,6 +1344,37 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ExcluirLogotipoEmpresaWithHttpInfoAsync(string cpfCnpj, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Listar certificados
+        /// </summary>
+        /// <remarks>
+        /// Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
+        /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
+        /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
+        /// <param name="expiresIn">Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)</param>
+        /// <param name="includeExpired">Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EmpresaCertificadoListagem</returns>
+        System.Threading.Tasks.Task<EmpresaCertificadoListagem> ListarCertificadosAsync(int? top = default(int?), int? skip = default(int?), bool? inlinecount = default(bool?), int? expiresIn = default(int?), bool? includeExpired = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Listar certificados
+        /// </summary>
+        /// <remarks>
+        /// Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
+        /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
+        /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
+        /// <param name="expiresIn">Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)</param>
+        /// <param name="includeExpired">Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EmpresaCertificadoListagem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EmpresaCertificadoListagem>> ListarCertificadosWithHttpInfoAsync(int? top = default(int?), int? skip = default(int?), bool? inlinecount = default(bool?), int? expiresIn = default(int?), bool? includeExpired = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Listar empresas
         /// </summary>
@@ -5714,6 +5774,189 @@ namespace ACBrAPI.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ExcluirLogotipoEmpresa", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Listar certificados Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
+        /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
+        /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
+        /// <param name="expiresIn">Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)</param>
+        /// <param name="includeExpired">Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)</param>
+        /// <returns>EmpresaCertificadoListagem</returns>
+        public EmpresaCertificadoListagem ListarCertificados(int? top = default(int?), int? skip = default(int?), bool? inlinecount = default(bool?), int? expiresIn = default(int?), bool? includeExpired = default(bool?))
+        {
+            ACBrAPI.Sdk.Client.ApiResponse<EmpresaCertificadoListagem> localVarResponse = ListarCertificadosWithHttpInfo(top, skip, inlinecount, expiresIn, includeExpired);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Listar certificados Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
+        /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
+        /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
+        /// <param name="expiresIn">Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)</param>
+        /// <param name="includeExpired">Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)</param>
+        /// <returns>ApiResponse of EmpresaCertificadoListagem</returns>
+        public ACBrAPI.Sdk.Client.ApiResponse<EmpresaCertificadoListagem> ListarCertificadosWithHttpInfo(int? top = default(int?), int? skip = default(int?), bool? inlinecount = default(bool?), int? expiresIn = default(int?), bool? includeExpired = default(bool?))
+        {
+            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (top != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "$top", top));
+            }
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "$skip", skip));
+            }
+            if (inlinecount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "$inlinecount", inlinecount));
+            }
+            if (expiresIn != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "expires_in", expiresIn));
+            }
+            if (includeExpired != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "include_expired", includeExpired));
+            }
+
+            // authentication (jwt) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (oauth2) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<EmpresaCertificadoListagem>("/empresas/certificados", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListarCertificados", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Listar certificados Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
+        /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
+        /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
+        /// <param name="expiresIn">Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)</param>
+        /// <param name="includeExpired">Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EmpresaCertificadoListagem</returns>
+        public async System.Threading.Tasks.Task<EmpresaCertificadoListagem> ListarCertificadosAsync(int? top = default(int?), int? skip = default(int?), bool? inlinecount = default(bool?), int? expiresIn = default(int?), bool? includeExpired = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            ACBrAPI.Sdk.Client.ApiResponse<EmpresaCertificadoListagem> localVarResponse = await ListarCertificadosWithHttpInfoAsync(top, skip, inlinecount, expiresIn, includeExpired, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Listar certificados Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
+        /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
+        /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
+        /// <param name="expiresIn">Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)</param>
+        /// <param name="includeExpired">Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EmpresaCertificadoListagem)</returns>
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<EmpresaCertificadoListagem>> ListarCertificadosWithHttpInfoAsync(int? top = default(int?), int? skip = default(int?), bool? inlinecount = default(bool?), int? expiresIn = default(int?), bool? includeExpired = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (top != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "$top", top));
+            }
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "$skip", skip));
+            }
+            if (inlinecount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "$inlinecount", inlinecount));
+            }
+            if (expiresIn != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "expires_in", expiresIn));
+            }
+            if (includeExpired != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "include_expired", includeExpired));
+            }
+
+            // authentication (jwt) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (oauth2) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<EmpresaCertificadoListagem>("/empresas/certificados", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListarCertificados", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

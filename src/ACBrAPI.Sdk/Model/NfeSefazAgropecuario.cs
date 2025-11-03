@@ -33,7 +33,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="defensivo">defensivo.</param>
         /// <param name="guiaTransito">guiaTransito.</param>
-        public NfeSefazAgropecuario(NfeSefazDefensivo defensivo = default(NfeSefazDefensivo), NfeSefazGuiaTransito guiaTransito = default(NfeSefazGuiaTransito))
+        public NfeSefazAgropecuario(List<NfeSefazDefensivo> defensivo = default(List<NfeSefazDefensivo>), NfeSefazGuiaTransito guiaTransito = default(NfeSefazGuiaTransito))
         {
             this.defensivo = defensivo;
             this.guiaTransito = guiaTransito;
@@ -43,7 +43,7 @@ namespace ACBrAPI.Sdk.Model
         /// Gets or Sets defensivo
         /// </summary>
         [DataMember(Name = "defensivo", EmitDefaultValue = false)]
-        public NfeSefazDefensivo defensivo { get; set; }
+        public List<NfeSefazDefensivo> defensivo { get; set; }
 
         /// <summary>
         /// Gets or Sets guiaTransito
@@ -98,8 +98,9 @@ namespace ACBrAPI.Sdk.Model
             return 
                 (
                     this.defensivo == input.defensivo ||
-                    (this.defensivo != null &&
-                    this.defensivo.Equals(input.defensivo))
+                    this.defensivo != null &&
+                    input.defensivo != null &&
+                    this.defensivo.SequenceEqual(input.defensivo)
                 ) && 
                 (
                     this.guiaTransito == input.guiaTransito ||

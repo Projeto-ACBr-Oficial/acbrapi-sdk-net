@@ -1,6 +1,6 @@
 # ACBrAPI.Sdk.Api.DceApi
 
-Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
+Todas as URIs relativas a *https://prod.acbr.api.br*
 
 | Método | Endpoint | Descrição |
 |--------|--------------|-------------|
@@ -38,7 +38,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -50,7 +50,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DceApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da DC-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da DC-e gerado pela API.
 
             try
             {
@@ -93,7 +93,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da DC-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da DC-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -138,7 +138,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -150,7 +150,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DceApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da DC-e gerada pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da DC-e gerada pela API.
 
             try
             {
@@ -193,7 +193,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da DC-e gerada pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da DC-e gerada pela API. |  |
 
 ### Tipo de retorno
 
@@ -240,7 +240,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -252,7 +252,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DceApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da DC-e gerada pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da DC-e gerada pela API.
 
             try
             {
@@ -295,7 +295,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da DC-e gerada pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da DC-e gerada pela API. |  |
 
 ### Tipo de retorno
 
@@ -342,7 +342,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -354,7 +354,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DceApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da DC-e gerada pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da DC-e gerada pela API.
 
             try
             {
@@ -397,7 +397,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da DC-e gerada pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da DC-e gerada pela API. |  |
 
 ### Tipo de retorno
 
@@ -442,7 +442,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -454,7 +454,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DceApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da DC-e gerada pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da DC-e gerada pela API.
 
             try
             {
@@ -497,7 +497,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da DC-e gerada pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da DC-e gerada pela API. |  |
 
 ### Tipo de retorno
 
@@ -544,7 +544,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -556,7 +556,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DceApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da DC-e gerada pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da DC-e gerada pela API.
             var body = new DcePedidoCancelamento(); // DcePedidoCancelamento |  (optional) 
 
             try
@@ -600,7 +600,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da DC-e gerada pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da DC-e gerada pela API. |  |
 | **body** | [**DcePedidoCancelamento**](DcePedidoCancelamento.md) |  | [optional]  |
 
 ### Tipo de retorno
@@ -646,7 +646,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -658,7 +658,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DceApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da DC-e gerada pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da DC-e gerada pela API.
 
             try
             {
@@ -701,7 +701,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da DC-e gerada pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da DC-e gerada pela API. |  |
 
 ### Tipo de retorno
 
@@ -730,7 +730,7 @@ catch (ApiException e)
 
 Consultar DC-e
 
-Consulta os detalhes de uma DC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de DC-e e a Nuvem Fiscal irá retornar as informações da DC-e correspondente.
+Consulta os detalhes de uma DC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de DC-e e a API irá retornar as informações da DC-e correspondente.
 
 ### Exemplo
 ```csharp
@@ -748,7 +748,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -760,7 +760,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DceApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da DC-e gerada pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da DC-e gerada pela API.
 
             try
             {
@@ -803,7 +803,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da DC-e gerada pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da DC-e gerada pela API. |  |
 
 ### Tipo de retorno
 
@@ -832,7 +832,7 @@ catch (ApiException e)
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ.
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ.
 
 ### Exemplo
 ```csharp
@@ -850,7 +850,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -954,7 +954,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1056,7 +1056,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed

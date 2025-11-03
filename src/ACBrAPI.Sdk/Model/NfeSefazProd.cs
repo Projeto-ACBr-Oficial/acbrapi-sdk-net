@@ -57,12 +57,13 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cBarraTrib">Código de barras da unidade tributável diferente do padrão GTIN..</param>
         /// <param name="uTrib">Unidade Tributável. (required).</param>
         /// <param name="qTrib">Quantidade Tributável - alterado para aceitar de 0 a 4 casas decimais e 11 inteiros. (required).</param>
-        /// <param name="vUnTrib">Valor unitário de tributação - - alterado para aceitar 0 a 10 casas decimais e 11 inteiros. (required).</param>
+        /// <param name="vUnTrib">Valor unitário de tributação - alterado para aceitar 0 a 10 casas decimais e 11 inteiros. (required).</param>
         /// <param name="vFrete">Valor Total do Frete..</param>
         /// <param name="vSeg">Valor Total do Seguro..</param>
         /// <param name="vDesc">Valor do Desconto..</param>
         /// <param name="vOutro">Outras despesas acessórias..</param>
         /// <param name="indTot">Este campo deverá ser preenchido com:  * 0 - o valor do item (vProd) não compõe o valor total da NF-e (vProd)  * 1 - o valor do item (vProd) compõe o valor total da NF-e (vProd) (required).</param>
+        /// <param name="indBemMovelUsado">Indicador de fornecimento de bem móvel usado: 1-Bem Móvel Usado..</param>
         /// <param name="dI">dI.</param>
         /// <param name="detExport">detExport.</param>
         /// <param name="xPed">pedido de compra - Informação de interesse do emissor para controle do B2B..</param>
@@ -76,7 +77,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="arma">arma.</param>
         /// <param name="comb">comb.</param>
         /// <param name="nRECOPI">Número do RECOPI..</param>
-        public NfeSefazProd(string cProd = default(string), string cEAN = default(string), string cBarra = default(string), string xProd = default(string), string nCM = default(string), List<string> nVE = default(List<string>), string cEST = default(string), string indEscala = default(string), string cNPJFab = default(string), string cBenef = default(string), List<NfeSefazGCred> gCred = default(List<NfeSefazGCred>), string eXTIPI = default(string), string cFOP = default(string), string uCom = default(string), decimal? qCom = default(decimal?), decimal? vUnCom = default(decimal?), decimal? vProd = default(decimal?), string cEANTrib = default(string), string cBarraTrib = default(string), string uTrib = default(string), decimal? qTrib = default(decimal?), decimal? vUnTrib = default(decimal?), decimal? vFrete = default(decimal?), decimal? vSeg = default(decimal?), decimal? vDesc = default(decimal?), decimal? vOutro = default(decimal?), int? indTot = default(int?), List<NfeSefazDI> dI = default(List<NfeSefazDI>), List<NfeSefazDetExport> detExport = default(List<NfeSefazDetExport>), string xPed = default(string), int? nItemPed = default(int?), string nFCI = default(string), List<NfeSefazRastro> rastro = default(List<NfeSefazRastro>), NfeSefazInfProdNFF infProdNFF = default(NfeSefazInfProdNFF), NfeSefazInfProdEmb infProdEmb = default(NfeSefazInfProdEmb), NfeSefazVeicProd veicProd = default(NfeSefazVeicProd), NfeSefazMed med = default(NfeSefazMed), List<NfeSefazArma> arma = default(List<NfeSefazArma>), NfeSefazComb comb = default(NfeSefazComb), string nRECOPI = default(string))
+        public NfeSefazProd(string cProd = default(string), string cEAN = default(string), string cBarra = default(string), string xProd = default(string), string nCM = default(string), List<string> nVE = default(List<string>), string cEST = default(string), string indEscala = default(string), string cNPJFab = default(string), string cBenef = default(string), List<NfeSefazGCred> gCred = default(List<NfeSefazGCred>), string eXTIPI = default(string), string cFOP = default(string), string uCom = default(string), decimal? qCom = default(decimal?), decimal? vUnCom = default(decimal?), decimal? vProd = default(decimal?), string cEANTrib = default(string), string cBarraTrib = default(string), string uTrib = default(string), decimal? qTrib = default(decimal?), decimal? vUnTrib = default(decimal?), decimal? vFrete = default(decimal?), decimal? vSeg = default(decimal?), decimal? vDesc = default(decimal?), decimal? vOutro = default(decimal?), int? indTot = default(int?), int? indBemMovelUsado = default(int?), List<NfeSefazDI> dI = default(List<NfeSefazDI>), List<NfeSefazDetExport> detExport = default(List<NfeSefazDetExport>), string xPed = default(string), int? nItemPed = default(int?), string nFCI = default(string), List<NfeSefazRastro> rastro = default(List<NfeSefazRastro>), NfeSefazInfProdNFF infProdNFF = default(NfeSefazInfProdNFF), NfeSefazInfProdEmb infProdEmb = default(NfeSefazInfProdEmb), NfeSefazVeicProd veicProd = default(NfeSefazVeicProd), NfeSefazMed med = default(NfeSefazMed), List<NfeSefazArma> arma = default(List<NfeSefazArma>), NfeSefazComb comb = default(NfeSefazComb), string nRECOPI = default(string))
         {
             // to ensure "cProd" is required (not null)
             if (cProd == null)
@@ -175,6 +176,7 @@ namespace ACBrAPI.Sdk.Model
             this.vSeg = vSeg;
             this.vDesc = vDesc;
             this.vOutro = vOutro;
+            this.indBemMovelUsado = indBemMovelUsado;
             this.DI = dI;
             this.detExport = detExport;
             this.xPed = xPed;
@@ -335,9 +337,9 @@ namespace ACBrAPI.Sdk.Model
         public decimal? qTrib { get; set; }
 
         /// <summary>
-        /// Valor unitário de tributação - - alterado para aceitar 0 a 10 casas decimais e 11 inteiros.
+        /// Valor unitário de tributação - alterado para aceitar 0 a 10 casas decimais e 11 inteiros.
         /// </summary>
-        /// <value>Valor unitário de tributação - - alterado para aceitar 0 a 10 casas decimais e 11 inteiros.</value>
+        /// <value>Valor unitário de tributação - alterado para aceitar 0 a 10 casas decimais e 11 inteiros.</value>
         [DataMember(Name = "vUnTrib", IsRequired = true, EmitDefaultValue = true)]
         public decimal? vUnTrib { get; set; }
 
@@ -375,6 +377,13 @@ namespace ACBrAPI.Sdk.Model
         /// <value>Este campo deverá ser preenchido com:  * 0 - o valor do item (vProd) não compõe o valor total da NF-e (vProd)  * 1 - o valor do item (vProd) compõe o valor total da NF-e (vProd)</value>
         [DataMember(Name = "indTot", IsRequired = true, EmitDefaultValue = true)]
         public int? indTot { get; set; }
+
+        /// <summary>
+        /// Indicador de fornecimento de bem móvel usado: 1-Bem Móvel Usado.
+        /// </summary>
+        /// <value>Indicador de fornecimento de bem móvel usado: 1-Bem Móvel Usado.</value>
+        [DataMember(Name = "indBemMovelUsado", EmitDefaultValue = true)]
+        public int? indBemMovelUsado { get; set; }
 
         /// <summary>
         /// Gets or Sets DI
@@ -493,6 +502,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vDesc: ").Append(vDesc).Append("\n");
             sb.Append("  vOutro: ").Append(vOutro).Append("\n");
             sb.Append("  indTot: ").Append(indTot).Append("\n");
+            sb.Append("  indBemMovelUsado: ").Append(indBemMovelUsado).Append("\n");
             sb.Append("  DI: ").Append(DI).Append("\n");
             sb.Append("  detExport: ").Append(detExport).Append("\n");
             sb.Append("  xPed: ").Append(xPed).Append("\n");
@@ -677,6 +687,11 @@ namespace ACBrAPI.Sdk.Model
                     this.indTot == input.indTot ||
                     (this.indTot != null &&
                     this.indTot.Equals(input.indTot))
+                ) && 
+                (
+                    this.indBemMovelUsado == input.indBemMovelUsado ||
+                    (this.indBemMovelUsado != null &&
+                    this.indBemMovelUsado.Equals(input.indBemMovelUsado))
                 ) && 
                 (
                     this.DI == input.DI ||
@@ -865,6 +880,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.indTot != null)
                 {
                     hashCode = (hashCode * 59) + this.indTot.GetHashCode();
+                }
+                if (this.indBemMovelUsado != null)
+                {
+                    hashCode = (hashCode * 59) + this.indBemMovelUsado.GetHashCode();
                 }
                 if (this.DI != null)
                 {

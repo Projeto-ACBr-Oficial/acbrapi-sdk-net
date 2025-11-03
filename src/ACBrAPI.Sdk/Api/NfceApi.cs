@@ -30,7 +30,7 @@ namespace ACBrAPI.Sdk.Api
         /// ESC/POS é um sistema de comando criado pela Epson usado em diversos sistemas de impressoras POS.    Com o formato ESC/POS, você poderá imprimir nativamente em uma vasta quantidade de modelos de impressora térmicas utilizadas no Brasil e no mundo. Com ela, você consegue fazer o envio de comandos em ESC/POS direto para a porta da impressora.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="modelo">Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo (optional, default to 1)</param>
         /// <param name="colunas">Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. (optional, default to 48)</param>
         /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. (optional, default to false)</param>
@@ -44,7 +44,7 @@ namespace ACBrAPI.Sdk.Api
         /// ESC/POS é um sistema de comando criado pela Epson usado em diversos sistemas de impressoras POS.    Com o formato ESC/POS, você poderá imprimir nativamente em uma vasta quantidade de modelos de impressora térmicas utilizadas no Brasil e no mundo. Com ela, você consegue fazer o envio de comandos em ESC/POS direto para a porta da impressora.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="modelo">Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo (optional, default to 1)</param>
         /// <param name="colunas">Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. (optional, default to 48)</param>
         /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. (optional, default to false)</param>
@@ -54,7 +54,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfCancelamentoNfce(string id);
 
@@ -65,14 +65,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfCancelamentoNfceWithHttpInfo(string id);
         /// <summary>
         /// Baixar PDF do evento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfEventoNfce(string id);
 
@@ -83,14 +83,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfEventoNfceWithHttpInfo(string id);
         /// <summary>
         /// Baixar PDF da inutilização
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfInutilizacaoNfce(string id);
 
@@ -101,14 +101,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfInutilizacaoNfceWithHttpInfo(string id);
         /// <summary>
         /// Baixar PDF do DANFCE
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
@@ -126,7 +126,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
@@ -196,7 +196,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlCancelamentoNfce(string id);
 
@@ -207,14 +207,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlCancelamentoNfceWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML do evento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlEventoNfce(string id);
 
@@ -225,14 +225,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlEventoNfceWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML da inutilização
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlInutilizacaoNfce(string id);
 
@@ -243,7 +243,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlInutilizacaoNfceWithHttpInfo(string id);
         /// <summary>
@@ -253,7 +253,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;nfeProc&#x60;).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /nfce/{id}/xml/nota&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlNfce(string id);
 
@@ -264,7 +264,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;nfeProc&#x60;).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /nfce/{id}/xml/nota&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlNfceWithHttpInfo(string id);
         /// <summary>
@@ -274,7 +274,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlNfceNota(string id);
 
@@ -285,14 +285,14 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlNfceNotaWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML do Protocolo da SEFAZ
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlNfceProtocolo(string id);
 
@@ -303,7 +303,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlNfceProtocoloWithHttpInfo(string id);
         /// <summary>
@@ -313,7 +313,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>DfeCancelamento</returns>
         DfeCancelamento CancelarNfce(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento));
@@ -325,7 +325,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         ApiResponse<DfeCancelamento> CancelarNfceWithHttpInfo(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento));
@@ -333,7 +333,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFC-e
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>DfeCancelamento</returns>
         DfeCancelamento ConsultarCancelamentoNfce(string id);
 
@@ -344,14 +344,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         ApiResponse<DfeCancelamento> ConsultarCancelamentoNfceWithHttpInfo(string id);
         /// <summary>
         /// Consultar evento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>DfeEvento</returns>
         DfeEvento ConsultarEventoNfce(string id);
 
@@ -362,14 +362,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of DfeEvento</returns>
         ApiResponse<DfeEvento> ConsultarEventoNfceWithHttpInfo(string id);
         /// <summary>
         /// Consultar a inutilização de sequência de numeração
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>DfeInutilizacao</returns>
         DfeInutilizacao ConsultarInutilizacaoNfce(string id);
 
@@ -380,17 +380,17 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of DfeInutilizacao</returns>
         ApiResponse<DfeInutilizacao> ConsultarInutilizacaoNfceWithHttpInfo(string id);
         /// <summary>
         /// Consultar lote de NFC-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>DfeLote</returns>
         DfeLote ConsultarLoteNfce(string id);
 
@@ -398,20 +398,20 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de NFC-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>ApiResponse of DfeLote</returns>
         ApiResponse<DfeLote> ConsultarLoteNfceWithHttpInfo(string id);
         /// <summary>
         /// Consultar NFC-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>Dfe</returns>
         Dfe ConsultarNfce(string id);
 
@@ -419,17 +419,17 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar NFC-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of Dfe</returns>
         ApiResponse<Dfe> ConsultarNfceWithHttpInfo(string id);
         /// <summary>
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -441,7 +441,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -497,7 +497,7 @@ namespace ACBrAPI.Sdk.Api
         /// Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>EmailStatusResponse</returns>
         EmailStatusResponse EnviarEmailNfce(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
@@ -509,7 +509,7 @@ namespace ACBrAPI.Sdk.Api
         /// Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of EmailStatusResponse</returns>
         ApiResponse<EmailStatusResponse> EnviarEmailNfceWithHttpInfo(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
@@ -541,7 +541,7 @@ namespace ACBrAPI.Sdk.Api
         /// Retorna a lista de eventos vinculados a um documento fiscal de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dfeId">ID único gerado pela Nuvem Fiscal para o documento fiscal.</param>
+        /// <param name="dfeId">ID único gerado pela API para o documento fiscal.</param>
         /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
         /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
         /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
@@ -555,7 +555,7 @@ namespace ACBrAPI.Sdk.Api
         /// Retorna a lista de eventos vinculados a um documento fiscal de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dfeId">ID único gerado pela Nuvem Fiscal para o documento fiscal.</param>
+        /// <param name="dfeId">ID único gerado pela API para o documento fiscal.</param>
         /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
         /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
         /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
@@ -631,10 +631,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFC-e a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>DfeSincronizacao</returns>
         DfeSincronizacao SincronizarNfce(string id);
 
@@ -642,10 +642,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFC-e a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of DfeSincronizacao</returns>
         ApiResponse<DfeSincronizacao> SincronizarNfceWithHttpInfo(string id);
         #endregion Synchronous Operations
@@ -664,7 +664,7 @@ namespace ACBrAPI.Sdk.Api
         /// ESC/POS é um sistema de comando criado pela Epson usado em diversos sistemas de impressoras POS.    Com o formato ESC/POS, você poderá imprimir nativamente em uma vasta quantidade de modelos de impressora térmicas utilizadas no Brasil e no mundo. Com ela, você consegue fazer o envio de comandos em ESC/POS direto para a porta da impressora.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="modelo">Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo (optional, default to 1)</param>
         /// <param name="colunas">Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. (optional, default to 48)</param>
         /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. (optional, default to false)</param>
@@ -679,7 +679,7 @@ namespace ACBrAPI.Sdk.Api
         /// ESC/POS é um sistema de comando criado pela Epson usado em diversos sistemas de impressoras POS.    Com o formato ESC/POS, você poderá imprimir nativamente em uma vasta quantidade de modelos de impressora térmicas utilizadas no Brasil e no mundo. Com ela, você consegue fazer o envio de comandos em ESC/POS direto para a porta da impressora.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="modelo">Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo (optional, default to 1)</param>
         /// <param name="colunas">Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. (optional, default to 48)</param>
         /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. (optional, default to false)</param>
@@ -693,7 +693,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfCancelamentoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -705,7 +705,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfCancelamentoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -716,7 +716,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfEventoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -728,7 +728,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfEventoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -739,7 +739,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfInutilizacaoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -751,7 +751,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfInutilizacaoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -762,7 +762,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
@@ -781,7 +781,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
@@ -859,7 +859,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlCancelamentoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -871,7 +871,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlCancelamentoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -882,7 +882,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlEventoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -894,7 +894,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlEventoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -905,7 +905,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlInutilizacaoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -917,7 +917,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlInutilizacaoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -928,7 +928,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;nfeProc&#x60;).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /nfce/{id}/xml/nota&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -940,7 +940,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;nfeProc&#x60;).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /nfce/{id}/xml/nota&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -951,7 +951,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlNfceNotaAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -963,7 +963,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlNfceNotaWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -974,7 +974,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlNfceProtocoloAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -986,7 +986,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlNfceProtocoloWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -997,7 +997,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
@@ -1010,7 +1010,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
@@ -1022,7 +1022,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
         System.Threading.Tasks.Task<DfeCancelamento> ConsultarCancelamentoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1034,7 +1034,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeCancelamento>> ConsultarCancelamentoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1045,7 +1045,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeEvento</returns>
         System.Threading.Tasks.Task<DfeEvento> ConsultarEventoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1057,7 +1057,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeEvento)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeEvento>> ConsultarEventoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1068,7 +1068,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeInutilizacao</returns>
         System.Threading.Tasks.Task<DfeInutilizacao> ConsultarInutilizacaoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1080,7 +1080,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeInutilizacao)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeInutilizacao>> ConsultarInutilizacaoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1088,10 +1088,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de NFC-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeLote</returns>
         System.Threading.Tasks.Task<DfeLote> ConsultarLoteNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1100,10 +1100,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de NFC-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeLote)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeLote>> ConsultarLoteNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1111,10 +1111,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar NFC-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dfe</returns>
         System.Threading.Tasks.Task<Dfe> ConsultarNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1123,10 +1123,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar NFC-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dfe)</returns>
         System.Threading.Tasks.Task<ApiResponse<Dfe>> ConsultarNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1134,7 +1134,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -1147,7 +1147,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -1208,7 +1208,7 @@ namespace ACBrAPI.Sdk.Api
         /// Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmailStatusResponse</returns>
@@ -1221,7 +1221,7 @@ namespace ACBrAPI.Sdk.Api
         /// Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmailStatusResponse)</returns>
@@ -1256,7 +1256,7 @@ namespace ACBrAPI.Sdk.Api
         /// Retorna a lista de eventos vinculados a um documento fiscal de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dfeId">ID único gerado pela Nuvem Fiscal para o documento fiscal.</param>
+        /// <param name="dfeId">ID único gerado pela API para o documento fiscal.</param>
         /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
         /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
         /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
@@ -1271,7 +1271,7 @@ namespace ACBrAPI.Sdk.Api
         /// Retorna a lista de eventos vinculados a um documento fiscal de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dfeId">ID único gerado pela Nuvem Fiscal para o documento fiscal.</param>
+        /// <param name="dfeId">ID único gerado pela API para o documento fiscal.</param>
         /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
         /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
         /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
@@ -1352,10 +1352,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFC-e a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeSincronizacao</returns>
         System.Threading.Tasks.Task<DfeSincronizacao> SincronizarNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1364,10 +1364,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFC-e a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeSincronizacao)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeSincronizacao>> SincronizarNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1588,7 +1588,7 @@ namespace ACBrAPI.Sdk.Api
         /// Comandos ESC/POS para impressão do DANFCE ESC/POS é um sistema de comando criado pela Epson usado em diversos sistemas de impressoras POS.    Com o formato ESC/POS, você poderá imprimir nativamente em uma vasta quantidade de modelos de impressora térmicas utilizadas no Brasil e no mundo. Com ela, você consegue fazer o envio de comandos em ESC/POS direto para a porta da impressora.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="modelo">Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo (optional, default to 1)</param>
         /// <param name="colunas">Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. (optional, default to 48)</param>
         /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. (optional, default to false)</param>
@@ -1603,7 +1603,7 @@ namespace ACBrAPI.Sdk.Api
         /// Comandos ESC/POS para impressão do DANFCE ESC/POS é um sistema de comando criado pela Epson usado em diversos sistemas de impressoras POS.    Com o formato ESC/POS, você poderá imprimir nativamente em uma vasta quantidade de modelos de impressora térmicas utilizadas no Brasil e no mundo. Com ela, você consegue fazer o envio de comandos em ESC/POS direto para a porta da impressora.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="modelo">Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo (optional, default to 1)</param>
         /// <param name="colunas">Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. (optional, default to 48)</param>
         /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. (optional, default to false)</param>
@@ -1672,7 +1672,7 @@ namespace ACBrAPI.Sdk.Api
         /// Comandos ESC/POS para impressão do DANFCE ESC/POS é um sistema de comando criado pela Epson usado em diversos sistemas de impressoras POS.    Com o formato ESC/POS, você poderá imprimir nativamente em uma vasta quantidade de modelos de impressora térmicas utilizadas no Brasil e no mundo. Com ela, você consegue fazer o envio de comandos em ESC/POS direto para a porta da impressora.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="modelo">Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo (optional, default to 1)</param>
         /// <param name="colunas">Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. (optional, default to 48)</param>
         /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. (optional, default to false)</param>
@@ -1688,7 +1688,7 @@ namespace ACBrAPI.Sdk.Api
         /// Comandos ESC/POS para impressão do DANFCE ESC/POS é um sistema de comando criado pela Epson usado em diversos sistemas de impressoras POS.    Com o formato ESC/POS, você poderá imprimir nativamente em uma vasta quantidade de modelos de impressora térmicas utilizadas no Brasil e no mundo. Com ela, você consegue fazer o envio de comandos em ESC/POS direto para a porta da impressora.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="modelo">Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo (optional, default to 1)</param>
         /// <param name="colunas">Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. (optional, default to 48)</param>
         /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. (optional, default to false)</param>
@@ -1761,7 +1761,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfCancelamentoNfce(string id)
         {
@@ -1773,7 +1773,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfCancelamentoNfceWithHttpInfo(string id)
         {
@@ -1827,7 +1827,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfCancelamentoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1840,7 +1840,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfCancelamentoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1898,7 +1898,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfEventoNfce(string id)
         {
@@ -1910,7 +1910,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfEventoNfceWithHttpInfo(string id)
         {
@@ -1964,7 +1964,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfEventoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1977,7 +1977,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfEventoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2035,7 +2035,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF da inutilização 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfInutilizacaoNfce(string id)
         {
@@ -2047,7 +2047,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF da inutilização 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfInutilizacaoNfceWithHttpInfo(string id)
         {
@@ -2101,7 +2101,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF da inutilização 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfInutilizacaoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2114,7 +2114,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF da inutilização 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfInutilizacaoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2172,7 +2172,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFCE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
@@ -2191,7 +2191,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFCE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
@@ -2280,7 +2280,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFCE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
@@ -2300,7 +2300,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFCE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
@@ -2755,7 +2755,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlCancelamentoNfce(string id)
         {
@@ -2767,7 +2767,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlCancelamentoNfceWithHttpInfo(string id)
         {
@@ -2821,7 +2821,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlCancelamentoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2834,7 +2834,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlCancelamentoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2892,7 +2892,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlEventoNfce(string id)
         {
@@ -2904,7 +2904,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlEventoNfceWithHttpInfo(string id)
         {
@@ -2958,7 +2958,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlEventoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2971,7 +2971,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlEventoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3029,7 +3029,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da inutilização 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlInutilizacaoNfce(string id)
         {
@@ -3041,7 +3041,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da inutilização 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlInutilizacaoNfceWithHttpInfo(string id)
         {
@@ -3095,7 +3095,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da inutilização 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlInutilizacaoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3108,7 +3108,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da inutilização 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlInutilizacaoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3166,7 +3166,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFC-e processada Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;nfeProc&#x60;).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /nfce/{id}/xml/nota&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlNfce(string id)
         {
@@ -3178,7 +3178,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFC-e processada Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;nfeProc&#x60;).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /nfce/{id}/xml/nota&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlNfceWithHttpInfo(string id)
         {
@@ -3232,7 +3232,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFC-e processada Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;nfeProc&#x60;).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /nfce/{id}/xml/nota&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3245,7 +3245,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFC-e processada Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;nfeProc&#x60;).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /nfce/{id}/xml/nota&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3303,7 +3303,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFC-e Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlNfceNota(string id)
         {
@@ -3315,7 +3315,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFC-e Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlNfceNotaWithHttpInfo(string id)
         {
@@ -3369,7 +3369,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFC-e Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlNfceNotaAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3382,7 +3382,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFC-e Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlNfceNotaWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3440,7 +3440,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlNfceProtocolo(string id)
         {
@@ -3452,7 +3452,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlNfceProtocoloWithHttpInfo(string id)
         {
@@ -3506,7 +3506,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlNfceProtocoloAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3519,7 +3519,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlNfceProtocoloWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3577,7 +3577,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFC-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>DfeCancelamento</returns>
         public DfeCancelamento CancelarNfce(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento))
@@ -3590,7 +3590,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFC-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> CancelarNfceWithHttpInfo(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento))
@@ -3647,7 +3647,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFC-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
@@ -3661,7 +3661,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFC-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
@@ -3722,7 +3722,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFC-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>DfeCancelamento</returns>
         public DfeCancelamento ConsultarCancelamentoNfce(string id)
         {
@@ -3734,7 +3734,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFC-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> ConsultarCancelamentoNfceWithHttpInfo(string id)
         {
@@ -3788,7 +3788,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFC-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
         public async System.Threading.Tasks.Task<DfeCancelamento> ConsultarCancelamentoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3801,7 +3801,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFC-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento>> ConsultarCancelamentoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3859,7 +3859,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>DfeEvento</returns>
         public DfeEvento ConsultarEventoNfce(string id)
         {
@@ -3871,7 +3871,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of DfeEvento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeEvento> ConsultarEventoNfceWithHttpInfo(string id)
         {
@@ -3925,7 +3925,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeEvento</returns>
         public async System.Threading.Tasks.Task<DfeEvento> ConsultarEventoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3938,7 +3938,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeEvento)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeEvento>> ConsultarEventoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3996,7 +3996,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar a inutilização de sequência de numeração 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>DfeInutilizacao</returns>
         public DfeInutilizacao ConsultarInutilizacaoNfce(string id)
         {
@@ -4008,7 +4008,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar a inutilização de sequência de numeração 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of DfeInutilizacao</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeInutilizacao> ConsultarInutilizacaoNfceWithHttpInfo(string id)
         {
@@ -4062,7 +4062,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar a inutilização de sequência de numeração 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeInutilizacao</returns>
         public async System.Threading.Tasks.Task<DfeInutilizacao> ConsultarInutilizacaoNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4075,7 +4075,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar a inutilização de sequência de numeração 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeInutilizacao)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeInutilizacao>> ConsultarInutilizacaoNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4130,10 +4130,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de NFC-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de NFC-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>DfeLote</returns>
         public DfeLote ConsultarLoteNfce(string id)
         {
@@ -4142,10 +4142,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de NFC-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de NFC-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>ApiResponse of DfeLote</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeLote> ConsultarLoteNfceWithHttpInfo(string id)
         {
@@ -4196,10 +4196,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de NFC-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de NFC-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeLote</returns>
         public async System.Threading.Tasks.Task<DfeLote> ConsultarLoteNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4209,10 +4209,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de NFC-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de NFC-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeLote)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeLote>> ConsultarLoteNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4267,10 +4267,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar NFC-e Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consultar NFC-e Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>Dfe</returns>
         public Dfe ConsultarNfce(string id)
         {
@@ -4279,10 +4279,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar NFC-e Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consultar NFC-e Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of Dfe</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<Dfe> ConsultarNfceWithHttpInfo(string id)
         {
@@ -4333,10 +4333,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar NFC-e Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consultar NFC-e Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dfe</returns>
         public async System.Threading.Tasks.Task<Dfe> ConsultarNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4346,10 +4346,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar NFC-e Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consultar NFC-e Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dfe)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<Dfe>> ConsultarNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4404,7 +4404,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -4417,7 +4417,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -4476,7 +4476,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -4490,7 +4490,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -4834,7 +4834,7 @@ namespace ACBrAPI.Sdk.Api
         /// Enviar e-mail Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>EmailStatusResponse</returns>
         public EmailStatusResponse EnviarEmailNfce(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
@@ -4847,7 +4847,7 @@ namespace ACBrAPI.Sdk.Api
         /// Enviar e-mail Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of EmailStatusResponse</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> EnviarEmailNfceWithHttpInfo(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
@@ -4904,7 +4904,7 @@ namespace ACBrAPI.Sdk.Api
         /// Enviar e-mail Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmailStatusResponse</returns>
@@ -4918,7 +4918,7 @@ namespace ACBrAPI.Sdk.Api
         /// Enviar e-mail Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmailStatusResponse)</returns>
@@ -5118,7 +5118,7 @@ namespace ACBrAPI.Sdk.Api
         /// Listar eventos Retorna a lista de eventos vinculados a um documento fiscal de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dfeId">ID único gerado pela Nuvem Fiscal para o documento fiscal.</param>
+        /// <param name="dfeId">ID único gerado pela API para o documento fiscal.</param>
         /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
         /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
         /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
@@ -5133,7 +5133,7 @@ namespace ACBrAPI.Sdk.Api
         /// Listar eventos Retorna a lista de eventos vinculados a um documento fiscal de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dfeId">ID único gerado pela Nuvem Fiscal para o documento fiscal.</param>
+        /// <param name="dfeId">ID único gerado pela API para o documento fiscal.</param>
         /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
         /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
         /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
@@ -5202,7 +5202,7 @@ namespace ACBrAPI.Sdk.Api
         /// Listar eventos Retorna a lista de eventos vinculados a um documento fiscal de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dfeId">ID único gerado pela Nuvem Fiscal para o documento fiscal.</param>
+        /// <param name="dfeId">ID único gerado pela API para o documento fiscal.</param>
         /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
         /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
         /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
@@ -5218,7 +5218,7 @@ namespace ACBrAPI.Sdk.Api
         /// Listar eventos Retorna a lista de eventos vinculados a um documento fiscal de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dfeId">ID único gerado pela Nuvem Fiscal para o documento fiscal.</param>
+        /// <param name="dfeId">ID único gerado pela API para o documento fiscal.</param>
         /// <param name="top">Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)</param>
         /// <param name="skip">Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)</param>
         /// <param name="inlinecount">Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)</param>
@@ -5710,10 +5710,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFC-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFC-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>DfeSincronizacao</returns>
         public DfeSincronizacao SincronizarNfce(string id)
         {
@@ -5722,10 +5722,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFC-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFC-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <returns>ApiResponse of DfeSincronizacao</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeSincronizacao> SincronizarNfceWithHttpInfo(string id)
         {
@@ -5776,10 +5776,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFC-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFC-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeSincronizacao</returns>
         public async System.Threading.Tasks.Task<DfeSincronizacao> SincronizarNfceAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5789,10 +5789,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFC-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFC-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFC-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeSincronizacao)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeSincronizacao>> SincronizarNfceWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

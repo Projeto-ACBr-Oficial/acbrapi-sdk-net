@@ -1,11 +1,11 @@
 # ACBrAPI.Sdk.Model.MdfeSefazComp
-Componentes do Pagamentoi do Frete.
+Componentes do Pagamentoi do Contrato.
 
 ## Propriedades
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**tpComp** | **string** | Tipo do Componente.  Preencher com: 01 - Vale Pedágio  * 02 - Impostos, taxas e contribuições  * 03 - Despesas (bancárias, meios de pagamento, outras)  * 99 - Outros | 
+**tpComp** | **string** | Tipo do Componente.  Preencher com:  * 01 - Vale Pedágio  * 02 - Impostos, taxas e contribuições  * 03 - Despesas (bancárias, meios de pagamento, outras)  * 04 - Frete  * 99 - Outros | 
 **vComp** | **decimal?** | Valor do componente. | 
 **xComp** | **string** | Descrição do componente do tipo Outros. | [optional] 
 

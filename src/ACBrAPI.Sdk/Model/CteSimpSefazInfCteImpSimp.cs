@@ -40,7 +40,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vTotTrib">Valor Total dos Tributos..</param>
         /// <param name="infAdFisco">Informações adicionais de interesse do Fisco.  Norma referenciada, informações complementares, etc..</param>
         /// <param name="iCMSUFFim">iCMSUFFim.</param>
-        public CteSimpSefazInfCteImpSimp(CteSimpSefazImpSimp iCMS = default(CteSimpSefazImpSimp), decimal? vTotTrib = default(decimal?), string infAdFisco = default(string), CteSimpSefazICMSUFFimSimp iCMSUFFim = default(CteSimpSefazICMSUFFimSimp))
+        /// <param name="iBSCBS">iBSCBS.</param>
+        public CteSimpSefazInfCteImpSimp(CteSimpSefazImpSimp iCMS = default(CteSimpSefazImpSimp), decimal? vTotTrib = default(decimal?), string infAdFisco = default(string), CteSimpSefazICMSUFFimSimp iCMSUFFim = default(CteSimpSefazICMSUFFimSimp), CteSimpSefazTribCTeSimp iBSCBS = default(CteSimpSefazTribCTeSimp))
         {
             // to ensure "iCMS" is required (not null)
             if (iCMS == null)
@@ -51,6 +52,7 @@ namespace ACBrAPI.Sdk.Model
             this.vTotTrib = vTotTrib;
             this.infAdFisco = infAdFisco;
             this.ICMSUFFim = iCMSUFFim;
+            this.IBSCBS = iBSCBS;
         }
 
         /// <summary>
@@ -80,6 +82,12 @@ namespace ACBrAPI.Sdk.Model
         public CteSimpSefazICMSUFFimSimp ICMSUFFim { get; set; }
 
         /// <summary>
+        /// Gets or Sets IBSCBS
+        /// </summary>
+        [DataMember(Name = "IBSCBS", EmitDefaultValue = false)]
+        public CteSimpSefazTribCTeSimp IBSCBS { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -91,6 +99,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vTotTrib: ").Append(vTotTrib).Append("\n");
             sb.Append("  infAdFisco: ").Append(infAdFisco).Append("\n");
             sb.Append("  ICMSUFFim: ").Append(ICMSUFFim).Append("\n");
+            sb.Append("  IBSCBS: ").Append(IBSCBS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,6 +154,11 @@ namespace ACBrAPI.Sdk.Model
                     this.ICMSUFFim == input.ICMSUFFim ||
                     (this.ICMSUFFim != null &&
                     this.ICMSUFFim.Equals(input.ICMSUFFim))
+                ) && 
+                (
+                    this.IBSCBS == input.IBSCBS ||
+                    (this.IBSCBS != null &&
+                    this.IBSCBS.Equals(input.IBSCBS))
                 );
         }
 
@@ -172,6 +186,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.ICMSUFFim != null)
                 {
                     hashCode = (hashCode * 59) + this.ICMSUFFim.GetHashCode();
+                }
+                if (this.IBSCBS != null)
+                {
+                    hashCode = (hashCode * 59) + this.IBSCBS.GetHashCode();
                 }
                 return hashCode;
             }

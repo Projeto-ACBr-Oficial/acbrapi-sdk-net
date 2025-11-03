@@ -139,15 +139,15 @@ namespace ACBrAPI.Sdk.Model
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // qrCode (string) maxLength
-            if (this.qrCode != null && this.qrCode.Length > 600)
+            if (this.qrCode != null && this.qrCode.Length > 1000)
             {
-                yield return new ValidationResult("Invalid value for qrCode, length must be less than 600.", new [] { "qrCode" });
+                yield return new ValidationResult("Invalid value for qrCode, length must be less than 1000.", new [] { "qrCode" });
             }
 
             // qrCode (string) minLength
-            if (this.qrCode != null && this.qrCode.Length < 100)
+            if (this.qrCode != null && this.qrCode.Length < 60)
             {
-                yield return new ValidationResult("Invalid value for qrCode, length must be greater than 100.", new [] { "qrCode" });
+                yield return new ValidationResult("Invalid value for qrCode, length must be greater than 60.", new [] { "qrCode" });
             }
 
             // urlChave (string) maxLength

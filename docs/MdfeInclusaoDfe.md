@@ -7,7 +7,7 @@ Nome | Tipo | Descrição | Comentários
 **codigo_municipio_carrega** | **string** | Código do Município de carregamento. | [optional] 
 **municipio_carrega** | **string** | Nome do Município de carregamento. | [optional] 
 **documentos** | [**List&lt;MdfeDocumentoVinculado&gt;**](MdfeDocumentoVinculado.md) | Informações dos documentos fiscais vinculados ao manifesto. | [optional] 
-**id** | **string** | ID único gerado pela Nuvem Fiscal para este evento. | [optional] 
+**id** | **string** | ID único gerado pela API para este evento. | [optional] 
 **ambiente** | **string** | Identificação do ambiente. | [optional] 
 **status** | **string** | Status do Evento. | [optional] 
 **autor** | [**DfeAutorEvento**](DfeAutorEvento.md) |  | [optional] 

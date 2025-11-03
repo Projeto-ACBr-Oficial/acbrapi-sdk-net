@@ -29,7 +29,7 @@ namespace ACBrAPI.Sdk.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "2.57.5";
+        public const string Version = "2.61.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -109,7 +109,7 @@ namespace ACBrAPI.Sdk.Client
         {
             Proxy = null;
             UserAgent = WebUtility.UrlEncode("acbrapi-sdk/{packageVersion}/{language}");
-            BasePath = "https://api.nuvemfiscal.com.br";
+            BasePath = "https://prod.acbr.api.br";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -117,7 +117,7 @@ namespace ACBrAPI.Sdk.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://api.nuvemfiscal.com.br"},
+                        {"url", "https://prod.acbr.api.br"},
                         {"description", "No description provided"},
                     }
                 }
@@ -138,7 +138,7 @@ namespace ACBrAPI.Sdk.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://api.nuvemfiscal.com.br") : this()
+            string basePath = "https://prod.acbr.api.br") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
@@ -530,8 +530,8 @@ namespace ACBrAPI.Sdk.Client
             string report = "C# SDK (ACBrAPI.Sdk) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
-            report += "    Version of the API: 2.57.5\n";
-            report += "    SDK Package Version: 2.57.5\n";
+            report += "    Version of the API: 2.61.0\n";
+            report += "    SDK Package Version: 2.61.0\n";
 
             return report;
         }

@@ -38,7 +38,8 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="vTPrest">Valor Total da Prestação do Serviço.  Pode conter zeros quando o CT-e for de complemento de ICMS. (required).</param>
         /// <param name="vTRec">Valor total a Receber. (required).</param>
-        public CteSimpSefazTotalSimp(decimal? vTPrest = default(decimal?), decimal? vTRec = default(decimal?))
+        /// <param name="vTotDFe">Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS)..</param>
+        public CteSimpSefazTotalSimp(decimal? vTPrest = default(decimal?), decimal? vTRec = default(decimal?), decimal? vTotDFe = default(decimal?))
         {
             // to ensure "vTPrest" is required (not null)
             if (vTPrest == null)
@@ -52,6 +53,7 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("vTRec is a required property for CteSimpSefazTotalSimp and cannot be null");
             }
             this.vTRec = vTRec;
+            this.vTotDFe = vTotDFe;
         }
 
         /// <summary>
@@ -69,6 +71,13 @@ namespace ACBrAPI.Sdk.Model
         public decimal? vTRec { get; set; }
 
         /// <summary>
+        /// Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS).
+        /// </summary>
+        /// <value>Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS).</value>
+        [DataMember(Name = "vTotDFe", EmitDefaultValue = true)]
+        public decimal? vTotDFe { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -78,6 +87,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("class CteSimpSefazTotalSimp {\n");
             sb.Append("  vTPrest: ").Append(vTPrest).Append("\n");
             sb.Append("  vTRec: ").Append(vTRec).Append("\n");
+            sb.Append("  vTotDFe: ").Append(vTotDFe).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,6 +132,11 @@ namespace ACBrAPI.Sdk.Model
                     this.vTRec == input.vTRec ||
                     (this.vTRec != null &&
                     this.vTRec.Equals(input.vTRec))
+                ) && 
+                (
+                    this.vTotDFe == input.vTotDFe ||
+                    (this.vTotDFe != null &&
+                    this.vTotDFe.Equals(input.vTotDFe))
                 );
         }
 
@@ -141,6 +156,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.vTRec != null)
                 {
                     hashCode = (hashCode * 59) + this.vTRec.GetHashCode();
+                }
+                if (this.vTotDFe != null)
+                {
+                    hashCode = (hashCode * 59) + this.vTotDFe.GetHashCode();
                 }
                 return hashCode;
             }
@@ -163,6 +182,12 @@ namespace ACBrAPI.Sdk.Model
             if (this.vTRec < (decimal?)0)
             {
                 yield return new ValidationResult("Invalid value for vTRec, must be a value greater than or equal to 0.", new [] { "vTRec" });
+            }
+
+            // vTotDFe (decimal?) minimum
+            if (this.vTotDFe < (decimal?)0)
+            {
+                yield return new ValidationResult("Invalid value for vTotDFe, must be a value greater than or equal to 0.", new [] { "vTotDFe" });
             }
 
             yield break;

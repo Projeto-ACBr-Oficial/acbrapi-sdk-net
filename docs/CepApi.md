@@ -1,6 +1,6 @@
 # ACBrAPI.Sdk.Api.CepApi
 
-Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
+Todas as URIs relativas a *https://prod.acbr.api.br*
 
 | Método | Endpoint | Descrição |
 |--------|--------------|-------------|
@@ -30,7 +30,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed

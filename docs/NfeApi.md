@@ -1,6 +1,6 @@
 # ACBrAPI.Sdk.Api.NfeApi
 
-Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
+Todas as URIs relativas a *https://prod.acbr.api.br*
 
 | Método | Endpoint | Descrição |
 |--------|--------------|-------------|
@@ -59,7 +59,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -71,7 +71,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -114,7 +114,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -159,7 +159,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -171,7 +171,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -214,7 +214,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -259,7 +259,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -271,7 +271,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -314,7 +314,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -359,7 +359,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -371,7 +371,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -414,7 +414,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -459,7 +459,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -471,7 +471,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
             var logotipo = false;  // bool? | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional)  (default to false)
             var nomeFantasia = false;  // bool? | Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional)  (default to false)
             var formato = "\"padrao\"";  // string | Formato de impressão do DANFE.    Valores disponíveis:  - `padrao`: será utilizado o formato definido no XML da NF-e (tag \"tpImp\");  - `retrato`: tamanho A4 em modo retrato;  - `paisagem`: tamanho A4 em modo paisagem;  - `simplificado`: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - `etiqueta`: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional)  (default to "padrao")
@@ -519,7 +519,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 | **logotipo** | **bool?** | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
 | **nomeFantasia** | **bool?** | Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. | [optional] [default to false] |
 | **formato** | **string** | Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). | [optional] [default to &quot;padrao&quot;] |
@@ -571,7 +571,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -683,7 +683,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -783,7 +783,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -795,7 +795,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -838,7 +838,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -883,7 +883,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -895,7 +895,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -938,7 +938,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -983,7 +983,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -995,7 +995,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -1038,7 +1038,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1083,7 +1083,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1095,7 +1095,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -1138,7 +1138,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1185,7 +1185,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1197,7 +1197,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -1240,7 +1240,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1287,7 +1287,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1299,7 +1299,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -1342,7 +1342,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1387,7 +1387,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1399,7 +1399,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -1442,7 +1442,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1489,7 +1489,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1501,7 +1501,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
             var body = new NfePedidoCancelamento(); // NfePedidoCancelamento |  (optional) 
 
             try
@@ -1545,7 +1545,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 | **body** | [**NfePedidoCancelamento**](NfePedidoCancelamento.md) |  | [optional]  |
 
 ### Tipo de retorno
@@ -1591,7 +1591,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1603,7 +1603,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -1646,7 +1646,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1691,7 +1691,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1703,7 +1703,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -1746,7 +1746,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1793,7 +1793,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1899,7 +1899,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1911,7 +1911,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -1954,7 +1954,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1999,7 +1999,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2011,7 +2011,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -2054,7 +2054,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -2083,7 +2083,7 @@ catch (ApiException e)
 
 Consultar lote de NF-e
 
-Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
 
 ### Exemplo
 ```csharp
@@ -2101,7 +2101,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2113,7 +2113,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do lote gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do lote gerado pela API.
 
             try
             {
@@ -2156,7 +2156,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do lote gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do lote gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -2185,7 +2185,7 @@ catch (ApiException e)
 
 Consultar NF-e
 
-Consulta os detalhes de uma NF-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+Consulta os detalhes de uma NF-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
 
 ### Exemplo
 ```csharp
@@ -2203,7 +2203,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2215,7 +2215,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -2258,7 +2258,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -2287,7 +2287,7 @@ catch (ApiException e)
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
 
 ### Exemplo
 ```csharp
@@ -2305,7 +2305,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2409,7 +2409,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2421,7 +2421,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
             var body = new NfePedidoCartaCorrecao(); // NfePedidoCartaCorrecao | Contém os dados do pedido para carta de correção.
 
             try
@@ -2465,7 +2465,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 | **body** | [**NfePedidoCartaCorrecao**](NfePedidoCartaCorrecao.md) | Contém os dados do pedido para carta de correção. |  |
 
 ### Tipo de retorno
@@ -2513,7 +2513,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2615,7 +2615,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2717,7 +2717,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2729,7 +2729,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
             var body = new DfePedidoEnvioEmail(); // DfePedidoEnvioEmail |  (optional) 
 
             try
@@ -2773,7 +2773,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 | **body** | [**DfePedidoEnvioEmail**](DfePedidoEnvioEmail.md) |  | [optional]  |
 
 ### Tipo de retorno
@@ -2821,7 +2821,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2923,7 +2923,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2935,7 +2935,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var dfeId = "dfeId_example";  // string | ID único gerado pela Nuvem Fiscal para o documento fiscal.
+            var dfeId = "dfeId_example";  // string | ID único gerado pela API para o documento fiscal.
             var top = 10;  // int? | Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional)  (default to 10)
             var skip = 0;  // int? | Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional)  (default to 0)
             var inlinecount = false;  // bool? | Inclui no JSON de resposta, na propriedade `@count`, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional)  (default to false)
@@ -2981,7 +2981,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **dfeId** | **string** | ID único gerado pela Nuvem Fiscal para o documento fiscal. |  |
+| **dfeId** | **string** | ID único gerado pela API para o documento fiscal. |  |
 | **top** | **int?** | Limite no número de objetos a serem retornados pela API, entre 1 e 100. | [optional] [default to 10] |
 | **skip** | **int?** | Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. | [optional] [default to 0] |
 | **inlinecount** | **bool?** | Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. | [optional] [default to false] |
@@ -3031,7 +3031,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -3143,7 +3143,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -3241,7 +3241,7 @@ catch (ApiException e)
 
 Sincroniza dados na NF-e a partir da SEFAZ
 
-Realiza a sincronização dos dados a partir da consulta da situação atual da NF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status `erro` na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status `autorizado`na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual da NF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status `erro` na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status `autorizado`na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 ```csharp
@@ -3259,7 +3259,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -3271,7 +3271,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da NF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da NF-e gerado pela API.
 
             try
             {
@@ -3314,7 +3314,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da NF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da NF-e gerado pela API. |  |
 
 ### Tipo de retorno
 

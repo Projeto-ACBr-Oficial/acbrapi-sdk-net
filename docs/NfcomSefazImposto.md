@@ -18,6 +18,7 @@ Nome | Tipo | Descrição | Comentários
 **FUST** | [**NfcomSefazFUST**](NfcomSefazFUST.md) |  | [optional] 
 **FUNTTEL** | [**NfcomSefazFUNTTEL**](NfcomSefazFUNTTEL.md) |  | [optional] 
 **retTrib** | [**NfcomSefazRetTrib**](NfcomSefazRetTrib.md) |  | [optional] 
+**IBSCBS** | [**NfcomSefazTribNFCom**](NfcomSefazTribNFCom.md) |  | [optional] 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 

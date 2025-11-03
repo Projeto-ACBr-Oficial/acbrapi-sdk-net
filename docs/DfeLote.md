@@ -4,7 +4,7 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | ID único gerado pela Nuvem Fiscal para este documento. | [optional] 
+**id** | **string** | ID único gerado pela API para este documento. | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **status** | **string** |  | [optional] 
 **ambiente** | **string** |  | [optional] 

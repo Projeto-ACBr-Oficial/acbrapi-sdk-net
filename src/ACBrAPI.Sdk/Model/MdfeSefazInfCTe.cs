@@ -42,7 +42,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="infUnidTransp">infUnidTransp.</param>
         /// <param name="peri">peri.</param>
         /// <param name="infEntregaParcial">infEntregaParcial.</param>
-        public MdfeSefazInfCTe(string chCTe = default(string), string segCodBarra = default(string), int? indReentrega = default(int?), List<MdfeSefazUnidadeTransp> infUnidTransp = default(List<MdfeSefazUnidadeTransp>), List<MdfeSefazPeri> peri = default(List<MdfeSefazPeri>), MdfeSefazInfEntregaParcial infEntregaParcial = default(MdfeSefazInfEntregaParcial))
+        /// <param name="indPrestacaoParcial">Indicador de Prestação parcial..</param>
+        /// <param name="infNFePrestParcial">infNFePrestParcial.</param>
+        public MdfeSefazInfCTe(string chCTe = default(string), string segCodBarra = default(string), int? indReentrega = default(int?), List<MdfeSefazUnidadeTransp> infUnidTransp = default(List<MdfeSefazUnidadeTransp>), List<MdfeSefazPeri> peri = default(List<MdfeSefazPeri>), MdfeSefazInfEntregaParcial infEntregaParcial = default(MdfeSefazInfEntregaParcial), int? indPrestacaoParcial = default(int?), List<MdfeSefazInfNFePrestParcial> infNFePrestParcial = default(List<MdfeSefazInfNFePrestParcial>))
         {
             // to ensure "chCTe" is required (not null)
             if (chCTe == null)
@@ -55,6 +57,8 @@ namespace ACBrAPI.Sdk.Model
             this.infUnidTransp = infUnidTransp;
             this.peri = peri;
             this.infEntregaParcial = infEntregaParcial;
+            this.indPrestacaoParcial = indPrestacaoParcial;
+            this.infNFePrestParcial = infNFePrestParcial;
         }
 
         /// <summary>
@@ -97,6 +101,19 @@ namespace ACBrAPI.Sdk.Model
         public MdfeSefazInfEntregaParcial infEntregaParcial { get; set; }
 
         /// <summary>
+        /// Indicador de Prestação parcial.
+        /// </summary>
+        /// <value>Indicador de Prestação parcial.</value>
+        [DataMember(Name = "indPrestacaoParcial", EmitDefaultValue = true)]
+        public int? indPrestacaoParcial { get; set; }
+
+        /// <summary>
+        /// Gets or Sets infNFePrestParcial
+        /// </summary>
+        [DataMember(Name = "infNFePrestParcial", EmitDefaultValue = false)]
+        public List<MdfeSefazInfNFePrestParcial> infNFePrestParcial { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -110,6 +127,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  infUnidTransp: ").Append(infUnidTransp).Append("\n");
             sb.Append("  peri: ").Append(peri).Append("\n");
             sb.Append("  infEntregaParcial: ").Append(infEntregaParcial).Append("\n");
+            sb.Append("  indPrestacaoParcial: ").Append(indPrestacaoParcial).Append("\n");
+            sb.Append("  infNFePrestParcial: ").Append(infNFePrestParcial).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -176,6 +195,17 @@ namespace ACBrAPI.Sdk.Model
                     this.infEntregaParcial == input.infEntregaParcial ||
                     (this.infEntregaParcial != null &&
                     this.infEntregaParcial.Equals(input.infEntregaParcial))
+                ) && 
+                (
+                    this.indPrestacaoParcial == input.indPrestacaoParcial ||
+                    (this.indPrestacaoParcial != null &&
+                    this.indPrestacaoParcial.Equals(input.indPrestacaoParcial))
+                ) && 
+                (
+                    this.infNFePrestParcial == input.infNFePrestParcial ||
+                    this.infNFePrestParcial != null &&
+                    input.infNFePrestParcial != null &&
+                    this.infNFePrestParcial.SequenceEqual(input.infNFePrestParcial)
                 );
         }
 
@@ -211,6 +241,14 @@ namespace ACBrAPI.Sdk.Model
                 if (this.infEntregaParcial != null)
                 {
                     hashCode = (hashCode * 59) + this.infEntregaParcial.GetHashCode();
+                }
+                if (this.indPrestacaoParcial != null)
+                {
+                    hashCode = (hashCode * 59) + this.indPrestacaoParcial.GetHashCode();
+                }
+                if (this.infNFePrestParcial != null)
+                {
+                    hashCode = (hashCode * 59) + this.infNFePrestParcial.GetHashCode();
                 }
                 return hashCode;
             }

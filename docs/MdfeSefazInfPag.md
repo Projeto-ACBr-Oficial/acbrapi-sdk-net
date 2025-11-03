@@ -1,5 +1,5 @@
 # ACBrAPI.Sdk.Model.MdfeSefazInfPag
-Informações do Pagamento do Frete.
+Informações do Pagamento do Contrato.
 
 ## Propriedades
 

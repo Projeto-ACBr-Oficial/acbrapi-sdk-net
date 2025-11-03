@@ -63,8 +63,8 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DistribuicaoNfeDocumento" /> class.
         /// </summary>
-        /// <param name="id">ID único gerado pela Nuvem Fiscal para identificar o documento. (required).</param>
-        /// <param name="createdAt">Data/hora em que o documento foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;..</param>
+        /// <param name="id">ID único gerado pela API para identificar o documento. (required).</param>
+        /// <param name="createdAt">Data/hora em que o documento foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;..</param>
         /// <param name="nsu">NSU do documento fiscal..</param>
         /// <param name="schema">Identificação do Schema XML que será utilizado para validar o XML existente no conteúdo da tag docZip. Vai identificar o tipo do documento e sua versão. Exemplos: resNFe_v1.00.xsd, procNFe_v3.10.xsd, resEvento_1.00.xsd, procEventoNFe_v1.00.xsd. (required).</param>
         /// <param name="tipoDocumento">Tipo do documento de interesse da pessoa ou empresa..</param>
@@ -114,16 +114,16 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// ID único gerado pela Nuvem Fiscal para identificar o documento.
+        /// ID único gerado pela API para identificar o documento.
         /// </summary>
-        /// <value>ID único gerado pela Nuvem Fiscal para identificar o documento.</value>
+        /// <value>ID único gerado pela API para identificar o documento.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string id { get; set; }
 
         /// <summary>
-        /// Data/hora em que o documento foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.
+        /// Data/hora em que o documento foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.
         /// </summary>
-        /// <value>Data/hora em que o documento foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.</value>
+        /// <value>Data/hora em que o documento foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime created_at { get; set; }
 

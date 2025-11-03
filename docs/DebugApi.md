@@ -1,6 +1,6 @@
 # ACBrAPI.Sdk.Api.DebugApi
 
-Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
+Todas as URIs relativas a *https://prod.acbr.api.br*
 
 | Método | Endpoint | Descrição |
 |--------|--------------|-------------|
@@ -15,7 +15,7 @@ Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
 
 Debug de DF-e
 
-Este endpoint retorna informações detalhadas de debug sobre o processamento de um documento fiscal eletrônico (DFe),  como NF-e, NFC-e, MDF-e, CT-e, NFS-e, dentre outros. Ele permite inspecionar o conteúdo original enviado à Nuvem Fiscal e analisar  todas as interações realizadas com os serviços autorizadores (SEFAZ ou prefeituras) durante o fluxo de emissão.    **Informações retornadas**:  - JSON original recebido no momento da criação do documento.  - Histórico das etapas de envio e consulta.  - Status e mensagens retornadas pelo autorizador.    **Cenários de uso**:  - Diagnóstico de falhas no processamento do documento.  - Verificação da resposta da SEFAZ ou prefeitura.  - Apoio ao suporte técnico e análise de integração.
+Este endpoint retorna informações detalhadas de debug sobre o processamento de um documento fiscal eletrônico (DFe),  como NF-e, NFC-e, MDF-e, CT-e, NFS-e, dentre outros. Ele permite inspecionar o conteúdo original enviado à API e analisar  todas as interações realizadas com os serviços autorizadores (SEFAZ ou prefeituras) durante o fluxo de emissão.    **Informações retornadas**:  - JSON original recebido no momento da criação do documento.  - Histórico das etapas de envio e consulta.  - Status e mensagens retornadas pelo autorizador.    **Cenários de uso**:  - Diagnóstico de falhas no processamento do documento.  - Verificação da resposta da SEFAZ ou prefeitura.  - Apoio ao suporte técnico e análise de integração.
 
 ### Exemplo
 ```csharp
@@ -33,7 +33,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -45,7 +45,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DebugApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do documento fiscal gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do documento fiscal gerado pela API.
 
             try
             {
@@ -88,7 +88,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do documento fiscal gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do documento fiscal gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -117,7 +117,7 @@ catch (ApiException e)
 
 Payload original recebido
 
-Este endpoint retorna o conteúdo original recebido pela Nuvem Fiscal no momento da criação do documento fiscal.    **Cenários de uso**:  - Inspeção detalhada dos dados enviados à API.  - Verificação de divergências entre o payload fornecido e o processado.  - Encaminhamento do conteúdo original ao suporte da Nuvem Fiscal.
+Este endpoint retorna o conteúdo original recebido pela API no momento da criação do documento fiscal.    **Cenários de uso**:  - Inspeção detalhada dos dados enviados à API.  - Verificação de divergências entre o payload fornecido e o processado.  - Encaminhamento do conteúdo original ao suporte da API.
 
 ### Exemplo
 ```csharp
@@ -135,7 +135,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -147,7 +147,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new DebugApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID do documento fiscal gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID do documento fiscal gerado pela API.
 
             try
             {
@@ -190,7 +190,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID do documento fiscal gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID do documento fiscal gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -219,7 +219,7 @@ catch (ApiException e)
 
 Corpo da requisição HTTP
 
-Este endpoint retorna apenas o corpo da requisição HTTP enviada ao autorizador,  preservando o conteúdo exatamente como foi armazenado pela Nuvem Fiscal.    **Informações retornadas**:  - Envelope SOAP da requisição, possivelmente compactado.    **Cenários de uso**:  - Verificação do XML ou SOAP efetivamente enviado.  - Encaminhamento ao suporte da SEFAZ ou prefeitura para análise.  - Diagnóstico técnico do conteúdo de envio.
+Este endpoint retorna apenas o corpo da requisição HTTP enviada ao autorizador,  preservando o conteúdo exatamente como foi armazenado pela API.    **Informações retornadas**:  - Envelope SOAP da requisição, possivelmente compactado.    **Cenários de uso**:  - Verificação do XML ou SOAP efetivamente enviado.  - Encaminhamento ao suporte da SEFAZ ou prefeitura para análise.  - Diagnóstico técnico do conteúdo de envio.
 
 ### Exemplo
 ```csharp
@@ -237,7 +237,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -339,7 +339,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed

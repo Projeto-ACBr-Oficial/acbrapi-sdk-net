@@ -34,11 +34,13 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="infNF">infNF.</param>
         /// <param name="infNFe">infNFe.</param>
         /// <param name="infOutros">infOutros.</param>
-        public CteSefazInfDoc(List<CteSefazInfNF> infNF = default(List<CteSefazInfNF>), List<CteSefazInfNFe> infNFe = default(List<CteSefazInfNFe>), List<CteSefazInfOutros> infOutros = default(List<CteSefazInfOutros>))
+        /// <param name="infDCe">infDCe.</param>
+        public CteSefazInfDoc(List<CteSefazInfNF> infNF = default(List<CteSefazInfNF>), List<CteSefazInfNFe> infNFe = default(List<CteSefazInfNFe>), List<CteSefazInfOutros> infOutros = default(List<CteSefazInfOutros>), List<CteSefazInfDCe> infDCe = default(List<CteSefazInfDCe>))
         {
             this.infNF = infNF;
             this.infNFe = infNFe;
             this.infOutros = infOutros;
+            this.infDCe = infDCe;
         }
 
         /// <summary>
@@ -60,6 +62,12 @@ namespace ACBrAPI.Sdk.Model
         public List<CteSefazInfOutros> infOutros { get; set; }
 
         /// <summary>
+        /// Gets or Sets infDCe
+        /// </summary>
+        [DataMember(Name = "infDCe", EmitDefaultValue = false)]
+        public List<CteSefazInfDCe> infDCe { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -70,6 +78,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  infNF: ").Append(infNF).Append("\n");
             sb.Append("  infNFe: ").Append(infNFe).Append("\n");
             sb.Append("  infOutros: ").Append(infOutros).Append("\n");
+            sb.Append("  infDCe: ").Append(infDCe).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,6 +131,12 @@ namespace ACBrAPI.Sdk.Model
                     this.infOutros != null &&
                     input.infOutros != null &&
                     this.infOutros.SequenceEqual(input.infOutros)
+                ) && 
+                (
+                    this.infDCe == input.infDCe ||
+                    this.infDCe != null &&
+                    input.infDCe != null &&
+                    this.infDCe.SequenceEqual(input.infDCe)
                 );
         }
 
@@ -145,6 +160,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.infOutros != null)
                 {
                     hashCode = (hashCode * 59) + this.infOutros.GetHashCode();
+                }
+                if (this.infDCe != null)
+                {
+                    hashCode = (hashCode * 59) + this.infDCe.GetHashCode();
                 }
                 return hashCode;
             }

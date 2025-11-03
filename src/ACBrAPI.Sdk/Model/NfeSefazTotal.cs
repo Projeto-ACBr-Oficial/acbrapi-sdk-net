@@ -39,7 +39,10 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="iCMSTot">iCMSTot (required).</param>
         /// <param name="iSSQNtot">iSSQNtot.</param>
         /// <param name="retTrib">retTrib.</param>
-        public NfeSefazTotal(NfeSefazICMSTot iCMSTot = default(NfeSefazICMSTot), NfeSefazISSQNtot iSSQNtot = default(NfeSefazISSQNtot), NfeSefazRetTrib retTrib = default(NfeSefazRetTrib))
+        /// <param name="iSTot">iSTot.</param>
+        /// <param name="iBSCBSTot">iBSCBSTot.</param>
+        /// <param name="vNFTot">Valor Total da NF considerando os impostos por fora IBS, CBS e IS..</param>
+        public NfeSefazTotal(NfeSefazICMSTot iCMSTot = default(NfeSefazICMSTot), NfeSefazISSQNtot iSSQNtot = default(NfeSefazISSQNtot), NfeSefazRetTrib retTrib = default(NfeSefazRetTrib), NfeSefazISTot iSTot = default(NfeSefazISTot), NfeSefazIBSCBSMonoTot iBSCBSTot = default(NfeSefazIBSCBSMonoTot), decimal? vNFTot = default(decimal?))
         {
             // to ensure "iCMSTot" is required (not null)
             if (iCMSTot == null)
@@ -49,6 +52,9 @@ namespace ACBrAPI.Sdk.Model
             this.ICMSTot = iCMSTot;
             this.ISSQNtot = iSSQNtot;
             this.retTrib = retTrib;
+            this.ISTot = iSTot;
+            this.IBSCBSTot = iBSCBSTot;
+            this.vNFTot = vNFTot;
         }
 
         /// <summary>
@@ -70,6 +76,25 @@ namespace ACBrAPI.Sdk.Model
         public NfeSefazRetTrib retTrib { get; set; }
 
         /// <summary>
+        /// Gets or Sets ISTot
+        /// </summary>
+        [DataMember(Name = "ISTot", EmitDefaultValue = false)]
+        public NfeSefazISTot ISTot { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IBSCBSTot
+        /// </summary>
+        [DataMember(Name = "IBSCBSTot", EmitDefaultValue = false)]
+        public NfeSefazIBSCBSMonoTot IBSCBSTot { get; set; }
+
+        /// <summary>
+        /// Valor Total da NF considerando os impostos por fora IBS, CBS e IS.
+        /// </summary>
+        /// <value>Valor Total da NF considerando os impostos por fora IBS, CBS e IS.</value>
+        [DataMember(Name = "vNFTot", EmitDefaultValue = true)]
+        public decimal? vNFTot { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -80,6 +105,9 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  ICMSTot: ").Append(ICMSTot).Append("\n");
             sb.Append("  ISSQNtot: ").Append(ISSQNtot).Append("\n");
             sb.Append("  retTrib: ").Append(retTrib).Append("\n");
+            sb.Append("  ISTot: ").Append(ISTot).Append("\n");
+            sb.Append("  IBSCBSTot: ").Append(IBSCBSTot).Append("\n");
+            sb.Append("  vNFTot: ").Append(vNFTot).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,6 +157,21 @@ namespace ACBrAPI.Sdk.Model
                     this.retTrib == input.retTrib ||
                     (this.retTrib != null &&
                     this.retTrib.Equals(input.retTrib))
+                ) && 
+                (
+                    this.ISTot == input.ISTot ||
+                    (this.ISTot != null &&
+                    this.ISTot.Equals(input.ISTot))
+                ) && 
+                (
+                    this.IBSCBSTot == input.IBSCBSTot ||
+                    (this.IBSCBSTot != null &&
+                    this.IBSCBSTot.Equals(input.IBSCBSTot))
+                ) && 
+                (
+                    this.vNFTot == input.vNFTot ||
+                    (this.vNFTot != null &&
+                    this.vNFTot.Equals(input.vNFTot))
                 );
         }
 
@@ -153,6 +196,18 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.retTrib.GetHashCode();
                 }
+                if (this.ISTot != null)
+                {
+                    hashCode = (hashCode * 59) + this.ISTot.GetHashCode();
+                }
+                if (this.IBSCBSTot != null)
+                {
+                    hashCode = (hashCode * 59) + this.IBSCBSTot.GetHashCode();
+                }
+                if (this.vNFTot != null)
+                {
+                    hashCode = (hashCode * 59) + this.vNFTot.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -164,6 +219,12 @@ namespace ACBrAPI.Sdk.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // vNFTot (decimal?) minimum
+            if (this.vNFTot < (decimal?)0)
+            {
+                yield return new ValidationResult("Invalid value for vNFTot, must be a value greater than or equal to 0.", new [] { "vNFTot" });
+            }
+
             yield break;
         }
     }

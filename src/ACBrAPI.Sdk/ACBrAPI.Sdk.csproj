@@ -12,7 +12,7 @@
     <Description>Biblioteca .NET para uso da ACBr API</Description>
     <Copyright>Copyright Projeto ACBr</Copyright>
     <RootNamespace>ACBrAPI.Sdk</RootNamespace>
-    <Version>2.57.5</Version>
+    <Version>2.61.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\ACBrAPI.Sdk.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/projeto-acbr-oficial/acbrapi-sdk-net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

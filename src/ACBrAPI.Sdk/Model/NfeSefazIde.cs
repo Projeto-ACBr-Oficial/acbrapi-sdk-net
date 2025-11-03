@@ -47,11 +47,14 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="tpNF">Tipo do Documento Fiscal:  * 0 - Entrada  * 1 - Saída (required).</param>
         /// <param name="idDest">Identificador de Local de destino da operação:  * 1 - Interna  * 2 - Interestadual  * 3 - Exterior (required).</param>
         /// <param name="cMunFG">Código do Município de Ocorrência do Fato Gerador (utilizar a tabela do IBGE). (required).</param>
+        /// <param name="cMunFGIBS">Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando “indPres &#x3D; 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01)..</param>
         /// <param name="tpImp">Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica (required).</param>
         /// <param name="tpEmis">Forma de emissão da NF-e  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line NFC-e (required).</param>
         /// <param name="cDV">Digito Verificador da Chave de Acesso da NF-e.    *Geramos automaticamente quando nenhum valor é informado.*.</param>
         /// <param name="tpAmb">Identificação do Ambiente:  * 1 - Produção  * 2 - Homologação.</param>
-        /// <param name="finNFe">Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno (required).</param>
+        /// <param name="finNFe">Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno  * 5 - Nota de crédito  * 6 - Nota de débito (required).</param>
+        /// <param name="tpNFDebito">Tipo de Nota de Débito:  * 01 - Transferência de créditos para Cooperativas  * 02 - Anulação de Crédito por Saídas Imunes/Isentas  * 03 - Débitos de notas fiscais não processadas na apuração  * 04 - Multa e juros  * 05 - Transferência de crédito de sucessão.</param>
+        /// <param name="tpNFCredito">Tipo de Nota de Crédito..</param>
         /// <param name="indFinal">Indica operação com consumidor final:  * 0 - Não  * 1 - Consumidor Final (required).</param>
         /// <param name="indPres">Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - NFC-e entrega em domicílio  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros (required).</param>
         /// <param name="indIntermed">Indicador de intermediador/marketplace  * 0 - Operação sem intermediador (em site ou plataforma própria)  * 1 - Operação em site ou plataforma de terceiros (intermediadores/marketplace).</param>
@@ -60,7 +63,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="dhCont">Informar a data e hora de entrada em contingência contingência no formato  (AAAA-MM-DDThh:mm:ssTZD) ex.: 2012-09-01T13:00:00-03:00..</param>
         /// <param name="xJust">Informar a Justificativa da entrada..</param>
         /// <param name="nFref">nFref.</param>
-        public NfeSefazIde(int? cUF = default(int?), string cNF = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), DateTime? dhEmi = default(DateTime?), DateTime? dhSaiEnt = default(DateTime?), int? tpNF = default(int?), int? idDest = default(int?), string cMunFG = default(string), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? finNFe = default(int?), int? indFinal = default(int?), int? indPres = default(int?), int? indIntermed = default(int?), int? procEmi = default(int?), string verProc = default(string), DateTime? dhCont = default(DateTime?), string xJust = default(string), List<NfeSefazNFref> nFref = default(List<NfeSefazNFref>))
+        /// <param name="gCompraGov">gCompraGov.</param>
+        /// <param name="gPagAntecipado">gPagAntecipado.</param>
+        public NfeSefazIde(int? cUF = default(int?), string cNF = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), DateTime? dhEmi = default(DateTime?), DateTime? dhSaiEnt = default(DateTime?), int? tpNF = default(int?), int? idDest = default(int?), string cMunFG = default(string), string cMunFGIBS = default(string), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? finNFe = default(int?), string tpNFDebito = default(string), string tpNFCredito = default(string), int? indFinal = default(int?), int? indPres = default(int?), int? indIntermed = default(int?), int? procEmi = default(int?), string verProc = default(string), DateTime? dhCont = default(DateTime?), string xJust = default(string), List<NfeSefazNFref> nFref = default(List<NfeSefazNFref>), NfeSefazCompraGov gCompraGov = default(NfeSefazCompraGov), NfeSefazGPagAntecipado gPagAntecipado = default(NfeSefazGPagAntecipado))
         {
             // to ensure "cUF" is required (not null)
             if (cUF == null)
@@ -155,12 +160,17 @@ namespace ACBrAPI.Sdk.Model
             this.cNF = cNF;
             this.mod = mod;
             this.dhSaiEnt = dhSaiEnt;
+            this.cMunFGIBS = cMunFGIBS;
             this.cDV = cDV;
             this.tpAmb = tpAmb;
+            this.tpNFDebito = tpNFDebito;
+            this.tpNFCredito = tpNFCredito;
             this.indIntermed = indIntermed;
             this.dhCont = dhCont;
             this.xJust = xJust;
             this.NFref = nFref;
+            this.gCompraGov = gCompraGov;
+            this.gPagAntecipado = gPagAntecipado;
         }
 
         /// <summary>
@@ -241,6 +251,13 @@ namespace ACBrAPI.Sdk.Model
         public string cMunFG { get; set; }
 
         /// <summary>
+        /// Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando “indPres &#x3D; 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01).
+        /// </summary>
+        /// <value>Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando “indPres &#x3D; 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01).</value>
+        [DataMember(Name = "cMunFGIBS", EmitDefaultValue = true)]
+        public string cMunFGIBS { get; set; }
+
+        /// <summary>
         /// Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica
         /// </summary>
         /// <value>Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica</value>
@@ -269,11 +286,25 @@ namespace ACBrAPI.Sdk.Model
         public int? tpAmb { get; set; }
 
         /// <summary>
-        /// Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno
+        /// Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno  * 5 - Nota de crédito  * 6 - Nota de débito
         /// </summary>
-        /// <value>Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno</value>
+        /// <value>Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno  * 5 - Nota de crédito  * 6 - Nota de débito</value>
         [DataMember(Name = "finNFe", IsRequired = true, EmitDefaultValue = true)]
         public int? finNFe { get; set; }
+
+        /// <summary>
+        /// Tipo de Nota de Débito:  * 01 - Transferência de créditos para Cooperativas  * 02 - Anulação de Crédito por Saídas Imunes/Isentas  * 03 - Débitos de notas fiscais não processadas na apuração  * 04 - Multa e juros  * 05 - Transferência de crédito de sucessão
+        /// </summary>
+        /// <value>Tipo de Nota de Débito:  * 01 - Transferência de créditos para Cooperativas  * 02 - Anulação de Crédito por Saídas Imunes/Isentas  * 03 - Débitos de notas fiscais não processadas na apuração  * 04 - Multa e juros  * 05 - Transferência de crédito de sucessão</value>
+        [DataMember(Name = "tpNFDebito", EmitDefaultValue = true)]
+        public string tpNFDebito { get; set; }
+
+        /// <summary>
+        /// Tipo de Nota de Crédito.
+        /// </summary>
+        /// <value>Tipo de Nota de Crédito.</value>
+        [DataMember(Name = "tpNFCredito", EmitDefaultValue = true)]
+        public string tpNFCredito { get; set; }
 
         /// <summary>
         /// Indica operação com consumidor final:  * 0 - Não  * 1 - Consumidor Final
@@ -331,6 +362,18 @@ namespace ACBrAPI.Sdk.Model
         public List<NfeSefazNFref> NFref { get; set; }
 
         /// <summary>
+        /// Gets or Sets gCompraGov
+        /// </summary>
+        [DataMember(Name = "gCompraGov", EmitDefaultValue = false)]
+        public NfeSefazCompraGov gCompraGov { get; set; }
+
+        /// <summary>
+        /// Gets or Sets gPagAntecipado
+        /// </summary>
+        [DataMember(Name = "gPagAntecipado", EmitDefaultValue = false)]
+        public NfeSefazGPagAntecipado gPagAntecipado { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -349,11 +392,14 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  tpNF: ").Append(tpNF).Append("\n");
             sb.Append("  idDest: ").Append(idDest).Append("\n");
             sb.Append("  cMunFG: ").Append(cMunFG).Append("\n");
+            sb.Append("  cMunFGIBS: ").Append(cMunFGIBS).Append("\n");
             sb.Append("  tpImp: ").Append(tpImp).Append("\n");
             sb.Append("  tpEmis: ").Append(tpEmis).Append("\n");
             sb.Append("  cDV: ").Append(cDV).Append("\n");
             sb.Append("  tpAmb: ").Append(tpAmb).Append("\n");
             sb.Append("  finNFe: ").Append(finNFe).Append("\n");
+            sb.Append("  tpNFDebito: ").Append(tpNFDebito).Append("\n");
+            sb.Append("  tpNFCredito: ").Append(tpNFCredito).Append("\n");
             sb.Append("  indFinal: ").Append(indFinal).Append("\n");
             sb.Append("  indPres: ").Append(indPres).Append("\n");
             sb.Append("  indIntermed: ").Append(indIntermed).Append("\n");
@@ -362,6 +408,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  dhCont: ").Append(dhCont).Append("\n");
             sb.Append("  xJust: ").Append(xJust).Append("\n");
             sb.Append("  NFref: ").Append(NFref).Append("\n");
+            sb.Append("  gCompraGov: ").Append(gCompraGov).Append("\n");
+            sb.Append("  gPagAntecipado: ").Append(gPagAntecipado).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -453,6 +501,11 @@ namespace ACBrAPI.Sdk.Model
                     this.cMunFG.Equals(input.cMunFG))
                 ) && 
                 (
+                    this.cMunFGIBS == input.cMunFGIBS ||
+                    (this.cMunFGIBS != null &&
+                    this.cMunFGIBS.Equals(input.cMunFGIBS))
+                ) && 
+                (
                     this.tpImp == input.tpImp ||
                     (this.tpImp != null &&
                     this.tpImp.Equals(input.tpImp))
@@ -476,6 +529,16 @@ namespace ACBrAPI.Sdk.Model
                     this.finNFe == input.finNFe ||
                     (this.finNFe != null &&
                     this.finNFe.Equals(input.finNFe))
+                ) && 
+                (
+                    this.tpNFDebito == input.tpNFDebito ||
+                    (this.tpNFDebito != null &&
+                    this.tpNFDebito.Equals(input.tpNFDebito))
+                ) && 
+                (
+                    this.tpNFCredito == input.tpNFCredito ||
+                    (this.tpNFCredito != null &&
+                    this.tpNFCredito.Equals(input.tpNFCredito))
                 ) && 
                 (
                     this.indFinal == input.indFinal ||
@@ -517,6 +580,16 @@ namespace ACBrAPI.Sdk.Model
                     this.NFref != null &&
                     input.NFref != null &&
                     this.NFref.SequenceEqual(input.NFref)
+                ) && 
+                (
+                    this.gCompraGov == input.gCompraGov ||
+                    (this.gCompraGov != null &&
+                    this.gCompraGov.Equals(input.gCompraGov))
+                ) && 
+                (
+                    this.gPagAntecipado == input.gPagAntecipado ||
+                    (this.gPagAntecipado != null &&
+                    this.gPagAntecipado.Equals(input.gPagAntecipado))
                 );
         }
 
@@ -573,6 +646,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.cMunFG.GetHashCode();
                 }
+                if (this.cMunFGIBS != null)
+                {
+                    hashCode = (hashCode * 59) + this.cMunFGIBS.GetHashCode();
+                }
                 if (this.tpImp != null)
                 {
                     hashCode = (hashCode * 59) + this.tpImp.GetHashCode();
@@ -592,6 +669,14 @@ namespace ACBrAPI.Sdk.Model
                 if (this.finNFe != null)
                 {
                     hashCode = (hashCode * 59) + this.finNFe.GetHashCode();
+                }
+                if (this.tpNFDebito != null)
+                {
+                    hashCode = (hashCode * 59) + this.tpNFDebito.GetHashCode();
+                }
+                if (this.tpNFCredito != null)
+                {
+                    hashCode = (hashCode * 59) + this.tpNFCredito.GetHashCode();
                 }
                 if (this.indFinal != null)
                 {
@@ -624,6 +709,14 @@ namespace ACBrAPI.Sdk.Model
                 if (this.NFref != null)
                 {
                     hashCode = (hashCode * 59) + this.NFref.GetHashCode();
+                }
+                if (this.gCompraGov != null)
+                {
+                    hashCode = (hashCode * 59) + this.gCompraGov.GetHashCode();
+                }
+                if (this.gPagAntecipado != null)
+                {
+                    hashCode = (hashCode * 59) + this.gPagAntecipado.GetHashCode();
                 }
                 return hashCode;
             }

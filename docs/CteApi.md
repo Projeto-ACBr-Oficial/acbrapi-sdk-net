@@ -1,6 +1,6 @@
 # ACBrAPI.Sdk.Api.CteApi
 
-Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
+Todas as URIs relativas a *https://prod.acbr.api.br*
 
 | Método | Endpoint | Descrição |
 |--------|--------------|-------------|
@@ -48,7 +48,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -60,7 +60,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -103,7 +103,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -148,7 +148,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -160,7 +160,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -203,7 +203,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -248,7 +248,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -260,7 +260,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
             var logotipo = false;  // bool? | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional)  (default to false)
 
             try
@@ -304,7 +304,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 | **logotipo** | **bool?** | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
 
 ### Tipo de retorno
@@ -350,7 +350,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -362,7 +362,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -405,7 +405,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -450,7 +450,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -462,7 +462,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -505,7 +505,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -550,7 +550,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -562,7 +562,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -605,7 +605,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -652,7 +652,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -664,7 +664,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -707,7 +707,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -754,7 +754,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -766,7 +766,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da CT-e gerado pela API.
 
             try
             {
@@ -809,7 +809,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -854,7 +854,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -866,7 +866,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da CT-e gerado pela API.
 
             try
             {
@@ -909,7 +909,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -954,7 +954,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -966,7 +966,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -1009,7 +1009,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1056,7 +1056,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1068,7 +1068,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
             var body = new CtePedidoCancelamento(); // CtePedidoCancelamento |  (optional) 
 
             try
@@ -1112,7 +1112,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 | **body** | [**CtePedidoCancelamento**](CtePedidoCancelamento.md) |  | [optional]  |
 
 ### Tipo de retorno
@@ -1158,7 +1158,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1170,7 +1170,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -1213,7 +1213,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1258,7 +1258,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1270,7 +1270,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -1313,7 +1313,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1342,7 +1342,7 @@ catch (ApiException e)
 
 Consultar CT-e
 
-Consulta os detalhes de um CT-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e e a Nuvem Fiscal irá retornar as informações do CT-e correspondente.
+Consulta os detalhes de um CT-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e e a API irá retornar as informações do CT-e correspondente.
 
 ### Exemplo
 ```csharp
@@ -1360,7 +1360,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1372,7 +1372,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -1415,7 +1415,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1460,7 +1460,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1472,7 +1472,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -1515,7 +1515,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1544,7 +1544,7 @@ catch (ApiException e)
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
 
 ### Exemplo
 ```csharp
@@ -1562,7 +1562,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1666,7 +1666,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1678,7 +1678,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
             var body = new CtePedidoCartaCorrecao(); // CtePedidoCartaCorrecao | 
 
             try
@@ -1722,7 +1722,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 | **body** | [**CtePedidoCartaCorrecao**](CtePedidoCartaCorrecao.md) |  |  |
 
 ### Tipo de retorno
@@ -1770,7 +1770,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1872,7 +1872,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1974,7 +1974,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2072,7 +2072,7 @@ catch (ApiException e)
 
 Sincroniza dados no CT-e a partir da SEFAZ
 
-Realiza a sincronização dos dados a partir da consulta da situação atual da CT-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e que se encontra com o status `erro` na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e que se encontra com o status `autorizado`na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual da CT-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e que se encontra com o status `erro` na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e que se encontra com o status `autorizado`na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 ```csharp
@@ -2090,7 +2090,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2102,7 +2102,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CteApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do CT-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do CT-e gerado pela API.
 
             try
             {
@@ -2145,7 +2145,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do CT-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do CT-e gerado pela API. |  |
 
 ### Tipo de retorno
 

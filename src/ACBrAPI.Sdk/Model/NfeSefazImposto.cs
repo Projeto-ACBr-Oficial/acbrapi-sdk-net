@@ -41,7 +41,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cOFINS">cOFINS.</param>
         /// <param name="cOFINSST">cOFINSST.</param>
         /// <param name="iCMSUFDest">iCMSUFDest.</param>
-        public NfeSefazImposto(decimal? vTotTrib = default(decimal?), NfeSefazICMS iCMS = default(NfeSefazICMS), NfeSefazIpi iPI = default(NfeSefazIpi), NfeSefazII iI = default(NfeSefazII), NfeSefazISSQN iSSQN = default(NfeSefazISSQN), NfeSefazPIS pIS = default(NfeSefazPIS), NfeSefazPISST pISST = default(NfeSefazPISST), NfeSefazCOFINS cOFINS = default(NfeSefazCOFINS), NfeSefazCOFINSST cOFINSST = default(NfeSefazCOFINSST), NfeSefazICMSUFDest iCMSUFDest = default(NfeSefazICMSUFDest))
+        /// <param name="iS">iS.</param>
+        /// <param name="iBSCBS">iBSCBS.</param>
+        public NfeSefazImposto(decimal? vTotTrib = default(decimal?), NfeSefazICMS iCMS = default(NfeSefazICMS), NfeSefazIpi iPI = default(NfeSefazIpi), NfeSefazII iI = default(NfeSefazII), NfeSefazISSQN iSSQN = default(NfeSefazISSQN), NfeSefazPIS pIS = default(NfeSefazPIS), NfeSefazPISST pISST = default(NfeSefazPISST), NfeSefazCOFINS cOFINS = default(NfeSefazCOFINS), NfeSefazCOFINSST cOFINSST = default(NfeSefazCOFINSST), NfeSefazICMSUFDest iCMSUFDest = default(NfeSefazICMSUFDest), NfeSefazIS iS = default(NfeSefazIS), NfeSefazTribNFe iBSCBS = default(NfeSefazTribNFe))
         {
             this.vTotTrib = vTotTrib;
             this.ICMS = iCMS;
@@ -53,6 +55,8 @@ namespace ACBrAPI.Sdk.Model
             this.COFINS = cOFINS;
             this.COFINSST = cOFINSST;
             this.ICMSUFDest = iCMSUFDest;
+            this.IS = iS;
+            this.IBSCBS = iBSCBS;
         }
 
         /// <summary>
@@ -117,6 +121,18 @@ namespace ACBrAPI.Sdk.Model
         public NfeSefazICMSUFDest ICMSUFDest { get; set; }
 
         /// <summary>
+        /// Gets or Sets IS
+        /// </summary>
+        [DataMember(Name = "IS", EmitDefaultValue = false)]
+        public NfeSefazIS IS { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IBSCBS
+        /// </summary>
+        [DataMember(Name = "IBSCBS", EmitDefaultValue = false)]
+        public NfeSefazTribNFe IBSCBS { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -134,6 +150,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  COFINS: ").Append(COFINS).Append("\n");
             sb.Append("  COFINSST: ").Append(COFINSST).Append("\n");
             sb.Append("  ICMSUFDest: ").Append(ICMSUFDest).Append("\n");
+            sb.Append("  IS: ").Append(IS).Append("\n");
+            sb.Append("  IBSCBS: ").Append(IBSCBS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -218,6 +236,16 @@ namespace ACBrAPI.Sdk.Model
                     this.ICMSUFDest == input.ICMSUFDest ||
                     (this.ICMSUFDest != null &&
                     this.ICMSUFDest.Equals(input.ICMSUFDest))
+                ) && 
+                (
+                    this.IS == input.IS ||
+                    (this.IS != null &&
+                    this.IS.Equals(input.IS))
+                ) && 
+                (
+                    this.IBSCBS == input.IBSCBS ||
+                    (this.IBSCBS != null &&
+                    this.IBSCBS.Equals(input.IBSCBS))
                 );
         }
 
@@ -269,6 +297,14 @@ namespace ACBrAPI.Sdk.Model
                 if (this.ICMSUFDest != null)
                 {
                     hashCode = (hashCode * 59) + this.ICMSUFDest.GetHashCode();
+                }
+                if (this.IS != null)
+                {
+                    hashCode = (hashCode * 59) + this.IS.GetHashCode();
+                }
+                if (this.IBSCBS != null)
+                {
+                    hashCode = (hashCode * 59) + this.IBSCBS.GetHashCode();
                 }
                 return hashCode;
             }

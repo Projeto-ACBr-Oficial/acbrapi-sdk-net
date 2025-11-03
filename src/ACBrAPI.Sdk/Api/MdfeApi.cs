@@ -27,7 +27,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfCancelamentoMdfe(string id);
 
@@ -38,14 +38,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfCancelamentoMdfeWithHttpInfo(string id);
         /// <summary>
         /// Baixar PDF do encerramento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfEncerramentoMdfe(string id);
 
@@ -56,14 +56,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfEncerramentoMdfeWithHttpInfo(string id);
         /// <summary>
         /// Baixar PDF do evento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfEventoMdfe(string id);
 
@@ -74,14 +74,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfEventoMdfeWithHttpInfo(string id);
         /// <summary>
         /// Baixar PDF do DAMDFE
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarPdfMdfe(string id, bool? logotipo = default(bool?));
@@ -93,7 +93,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarPdfMdfeWithHttpInfo(string id, bool? logotipo = default(bool?));
@@ -101,7 +101,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlCancelamentoMdfe(string id);
 
@@ -112,14 +112,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlCancelamentoMdfeWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML do encerramento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlEncerramentoMdfe(string id);
 
@@ -130,14 +130,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlEncerramentoMdfeWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML do evento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlEventoMdfe(string id);
 
@@ -148,7 +148,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlEventoMdfeWithHttpInfo(string id);
         /// <summary>
@@ -158,7 +158,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;mdfeProc&#x60;).    O XML só estará disponível nesse endpoint caso o manifesto tenha sido autorizado ou denegado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /mdfe/{id}/xml/manifesto&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlMdfe(string id);
 
@@ -169,7 +169,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;mdfeProc&#x60;).    O XML só estará disponível nesse endpoint caso o manifesto tenha sido autorizado ou denegado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /mdfe/{id}/xml/manifesto&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlMdfeWithHttpInfo(string id);
         /// <summary>
@@ -179,7 +179,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o manifesto tenha sido rejeitado.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlMdfeManifesto(string id);
 
@@ -190,14 +190,14 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o manifesto tenha sido rejeitado.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlMdfeManifestoWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML do Protocolo da SEFAZ
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlMdfeProtocolo(string id);
 
@@ -208,7 +208,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlMdfeProtocoloWithHttpInfo(string id);
         /// <summary>
@@ -218,7 +218,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body">Dados do cancelamento. (optional)</param>
         /// <returns>DfeCancelamento</returns>
         DfeCancelamento CancelarMdfe(string id, MdfePedidoCancelamento body = default(MdfePedidoCancelamento));
@@ -230,7 +230,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body">Dados do cancelamento. (optional)</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         ApiResponse<DfeCancelamento> CancelarMdfeWithHttpInfo(string id, MdfePedidoCancelamento body = default(MdfePedidoCancelamento));
@@ -238,7 +238,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do MDF-e
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>DfeCancelamento</returns>
         DfeCancelamento ConsultarCancelamentoMdfe(string id);
 
@@ -249,14 +249,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         ApiResponse<DfeCancelamento> ConsultarCancelamentoMdfeWithHttpInfo(string id);
         /// <summary>
         /// Consultar encerramento do MDF-e
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>MdfeEncerramento</returns>
         MdfeEncerramento ConsultarEncerramentoMdfe(string id);
 
@@ -267,14 +267,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of MdfeEncerramento</returns>
         ApiResponse<MdfeEncerramento> ConsultarEncerramentoMdfeWithHttpInfo(string id);
         /// <summary>
         /// Consultar evento do MDF-e
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>DfeEvento</returns>
         DfeEvento ConsultarEventoMdfe(string id);
 
@@ -285,17 +285,17 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of DfeEvento</returns>
         ApiResponse<DfeEvento> ConsultarEventoMdfeWithHttpInfo(string id);
         /// <summary>
         /// Consultar lote de MDF-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>DfeLote</returns>
         DfeLote ConsultarLoteMdfe(string id);
 
@@ -303,20 +303,20 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de MDF-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>ApiResponse of DfeLote</returns>
         ApiResponse<DfeLote> ConsultarLoteMdfeWithHttpInfo(string id);
         /// <summary>
         /// Consultar manifesto
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+        /// Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>Dfe</returns>
         Dfe ConsultarMdfe(string id);
 
@@ -324,10 +324,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar manifesto
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+        /// Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of Dfe</returns>
         ApiResponse<Dfe> ConsultarMdfeWithHttpInfo(string id);
         /// <summary>
@@ -352,7 +352,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -364,7 +364,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -420,7 +420,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>MdfeEncerramento</returns>
         MdfeEncerramento EncerrarMdfe(string id, MdfePedidoEncerramento body);
@@ -432,7 +432,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of MdfeEncerramento</returns>
         ApiResponse<MdfeEncerramento> EncerrarMdfeWithHttpInfo(string id, MdfePedidoEncerramento body);
@@ -443,7 +443,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>MdfeInclusaoCondutor</returns>
         MdfeInclusaoCondutor IncluirCondutorMdfe(string id, MdfePedidoInclusaoCondutor body);
@@ -455,7 +455,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of MdfeInclusaoCondutor</returns>
         ApiResponse<MdfeInclusaoCondutor> IncluirCondutorMdfeWithHttpInfo(string id, MdfePedidoInclusaoCondutor body);
@@ -466,7 +466,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>MdfeInclusaoDfe</returns>
         MdfeInclusaoDfe IncluirDfeMdfe(string id, MdfePedidoInclusaoDfe body);
@@ -478,7 +478,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of MdfeInclusaoDfe</returns>
         ApiResponse<MdfeInclusaoDfe> IncluirDfeMdfeWithHttpInfo(string id, MdfePedidoInclusaoDfe body);
@@ -552,10 +552,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados no MDF-e a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>DfeSincronizacao</returns>
         DfeSincronizacao SincronizarMdfe(string id);
 
@@ -563,10 +563,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados no MDF-e a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of DfeSincronizacao</returns>
         ApiResponse<DfeSincronizacao> SincronizarMdfeWithHttpInfo(string id);
         #endregion Synchronous Operations
@@ -585,7 +585,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfCancelamentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -597,7 +597,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfCancelamentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -608,7 +608,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfEncerramentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -620,7 +620,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfEncerramentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -631,7 +631,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarPdfEventoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -643,7 +643,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfEventoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -654,7 +654,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
@@ -667,7 +667,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
@@ -679,7 +679,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlCancelamentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -691,7 +691,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlCancelamentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -702,7 +702,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlEncerramentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -714,7 +714,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlEncerramentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -725,7 +725,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlEventoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -737,7 +737,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlEventoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -748,7 +748,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;mdfeProc&#x60;).    O XML só estará disponível nesse endpoint caso o manifesto tenha sido autorizado ou denegado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /mdfe/{id}/xml/manifesto&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -760,7 +760,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;mdfeProc&#x60;).    O XML só estará disponível nesse endpoint caso o manifesto tenha sido autorizado ou denegado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /mdfe/{id}/xml/manifesto&#x60;.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -771,7 +771,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o manifesto tenha sido rejeitado.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlMdfeManifestoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -783,7 +783,7 @@ namespace ACBrAPI.Sdk.Api
         /// Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o manifesto tenha sido rejeitado.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlMdfeManifestoWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -794,7 +794,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlMdfeProtocoloAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -806,7 +806,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlMdfeProtocoloWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -817,7 +817,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body">Dados do cancelamento. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
@@ -830,7 +830,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body">Dados do cancelamento. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
@@ -842,7 +842,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
         System.Threading.Tasks.Task<DfeCancelamento> ConsultarCancelamentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -854,7 +854,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeCancelamento>> ConsultarCancelamentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -865,7 +865,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MdfeEncerramento</returns>
         System.Threading.Tasks.Task<MdfeEncerramento> ConsultarEncerramentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -877,7 +877,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MdfeEncerramento)</returns>
         System.Threading.Tasks.Task<ApiResponse<MdfeEncerramento>> ConsultarEncerramentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -888,7 +888,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeEvento</returns>
         System.Threading.Tasks.Task<DfeEvento> ConsultarEventoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -900,7 +900,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeEvento)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeEvento>> ConsultarEventoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -908,10 +908,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de MDF-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeLote</returns>
         System.Threading.Tasks.Task<DfeLote> ConsultarLoteMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -920,10 +920,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de MDF-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeLote)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeLote>> ConsultarLoteMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -931,10 +931,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar manifesto
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+        /// Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dfe</returns>
         System.Threading.Tasks.Task<Dfe> ConsultarMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -943,10 +943,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar manifesto
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+        /// Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dfe)</returns>
         System.Threading.Tasks.Task<ApiResponse<Dfe>> ConsultarMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -977,7 +977,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -990,7 +990,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consulta do Status do Serviço na SEFAZ Autorizadora
         /// </summary>
         /// <remarks>
-        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -1051,7 +1051,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MdfeEncerramento</returns>
@@ -1064,7 +1064,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MdfeEncerramento)</returns>
@@ -1076,7 +1076,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MdfeInclusaoCondutor</returns>
@@ -1089,7 +1089,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MdfeInclusaoCondutor)</returns>
@@ -1101,7 +1101,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MdfeInclusaoDfe</returns>
@@ -1114,7 +1114,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MdfeInclusaoDfe)</returns>
@@ -1193,10 +1193,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados no MDF-e a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeSincronizacao</returns>
         System.Threading.Tasks.Task<DfeSincronizacao> SincronizarMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1205,10 +1205,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados no MDF-e a partir da SEFAZ
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeSincronizacao)</returns>
         System.Threading.Tasks.Task<ApiResponse<DfeSincronizacao>> SincronizarMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1429,7 +1429,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfCancelamentoMdfe(string id)
         {
@@ -1441,7 +1441,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfCancelamentoMdfeWithHttpInfo(string id)
         {
@@ -1495,7 +1495,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfCancelamentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1508,7 +1508,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfCancelamentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1566,7 +1566,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do encerramento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfEncerramentoMdfe(string id)
         {
@@ -1578,7 +1578,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do encerramento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfEncerramentoMdfeWithHttpInfo(string id)
         {
@@ -1632,7 +1632,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do encerramento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfEncerramentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1645,7 +1645,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do encerramento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfEncerramentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1703,7 +1703,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfEventoMdfe(string id)
         {
@@ -1715,7 +1715,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfEventoMdfeWithHttpInfo(string id)
         {
@@ -1769,7 +1769,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarPdfEventoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1782,7 +1782,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfEventoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1840,7 +1840,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DAMDFE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarPdfMdfe(string id, bool? logotipo = default(bool?))
@@ -1853,7 +1853,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DAMDFE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfMdfeWithHttpInfo(string id, bool? logotipo = default(bool?))
@@ -1912,7 +1912,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DAMDFE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
@@ -1926,7 +1926,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DAMDFE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
@@ -1989,7 +1989,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlCancelamentoMdfe(string id)
         {
@@ -2001,7 +2001,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlCancelamentoMdfeWithHttpInfo(string id)
         {
@@ -2055,7 +2055,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlCancelamentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2068,7 +2068,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlCancelamentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2126,7 +2126,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do encerramento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlEncerramentoMdfe(string id)
         {
@@ -2138,7 +2138,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do encerramento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlEncerramentoMdfeWithHttpInfo(string id)
         {
@@ -2192,7 +2192,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do encerramento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlEncerramentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2205,7 +2205,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do encerramento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlEncerramentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2263,7 +2263,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlEventoMdfe(string id)
         {
@@ -2275,7 +2275,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlEventoMdfeWithHttpInfo(string id)
         {
@@ -2329,7 +2329,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlEventoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2342,7 +2342,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlEventoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2400,7 +2400,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do MDF-e processado Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;mdfeProc&#x60;).    O XML só estará disponível nesse endpoint caso o manifesto tenha sido autorizado ou denegado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /mdfe/{id}/xml/manifesto&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlMdfe(string id)
         {
@@ -2412,7 +2412,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do MDF-e processado Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;mdfeProc&#x60;).    O XML só estará disponível nesse endpoint caso o manifesto tenha sido autorizado ou denegado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /mdfe/{id}/xml/manifesto&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlMdfeWithHttpInfo(string id)
         {
@@ -2466,7 +2466,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do MDF-e processado Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;mdfeProc&#x60;).    O XML só estará disponível nesse endpoint caso o manifesto tenha sido autorizado ou denegado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /mdfe/{id}/xml/manifesto&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2479,7 +2479,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do MDF-e processado Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz &#x60;mdfeProc&#x60;).    O XML só estará disponível nesse endpoint caso o manifesto tenha sido autorizado ou denegado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint &#x60;GET /mdfe/{id}/xml/manifesto&#x60;.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2537,7 +2537,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do MDF-e Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o manifesto tenha sido rejeitado.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlMdfeManifesto(string id)
         {
@@ -2549,7 +2549,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do MDF-e Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o manifesto tenha sido rejeitado.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlMdfeManifestoWithHttpInfo(string id)
         {
@@ -2603,7 +2603,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do MDF-e Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o manifesto tenha sido rejeitado.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlMdfeManifestoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2616,7 +2616,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do MDF-e Utilize esse endpoint para obter o XML do manifesto enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o manifesto tenha sido rejeitado.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlMdfeManifestoWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2674,7 +2674,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlMdfeProtocolo(string id)
         {
@@ -2686,7 +2686,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlMdfeProtocoloWithHttpInfo(string id)
         {
@@ -2740,7 +2740,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlMdfeProtocoloAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2753,7 +2753,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do Protocolo da SEFAZ 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlMdfeProtocoloWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2811,7 +2811,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body">Dados do cancelamento. (optional)</param>
         /// <returns>DfeCancelamento</returns>
         public DfeCancelamento CancelarMdfe(string id, MdfePedidoCancelamento body = default(MdfePedidoCancelamento))
@@ -2824,7 +2824,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body">Dados do cancelamento. (optional)</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> CancelarMdfeWithHttpInfo(string id, MdfePedidoCancelamento body = default(MdfePedidoCancelamento))
@@ -2881,7 +2881,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body">Dados do cancelamento. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
@@ -2895,7 +2895,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body">Dados do cancelamento. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
@@ -2956,7 +2956,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>DfeCancelamento</returns>
         public DfeCancelamento ConsultarCancelamentoMdfe(string id)
         {
@@ -2968,7 +2968,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> ConsultarCancelamentoMdfeWithHttpInfo(string id)
         {
@@ -3022,7 +3022,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
         public async System.Threading.Tasks.Task<DfeCancelamento> ConsultarCancelamentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3035,7 +3035,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento>> ConsultarCancelamentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3093,7 +3093,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar encerramento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>MdfeEncerramento</returns>
         public MdfeEncerramento ConsultarEncerramentoMdfe(string id)
         {
@@ -3105,7 +3105,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar encerramento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of MdfeEncerramento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<MdfeEncerramento> ConsultarEncerramentoMdfeWithHttpInfo(string id)
         {
@@ -3159,7 +3159,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar encerramento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MdfeEncerramento</returns>
         public async System.Threading.Tasks.Task<MdfeEncerramento> ConsultarEncerramentoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3172,7 +3172,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar encerramento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MdfeEncerramento)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<MdfeEncerramento>> ConsultarEncerramentoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3230,7 +3230,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>DfeEvento</returns>
         public DfeEvento ConsultarEventoMdfe(string id)
         {
@@ -3242,7 +3242,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <returns>ApiResponse of DfeEvento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeEvento> ConsultarEventoMdfeWithHttpInfo(string id)
         {
@@ -3296,7 +3296,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeEvento</returns>
         public async System.Threading.Tasks.Task<DfeEvento> ConsultarEventoMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3309,7 +3309,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar evento do MDF-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do evento gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do evento gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeEvento)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeEvento>> ConsultarEventoMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3364,10 +3364,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de MDF-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de MDF-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>DfeLote</returns>
         public DfeLote ConsultarLoteMdfe(string id)
         {
@@ -3376,10 +3376,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de MDF-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de MDF-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>ApiResponse of DfeLote</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeLote> ConsultarLoteMdfeWithHttpInfo(string id)
         {
@@ -3430,10 +3430,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de MDF-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de MDF-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeLote</returns>
         public async System.Threading.Tasks.Task<DfeLote> ConsultarLoteMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3443,10 +3443,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de MDF-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de MDF-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeLote)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeLote>> ConsultarLoteMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3501,10 +3501,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar manifesto Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+        /// Consultar manifesto Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>Dfe</returns>
         public Dfe ConsultarMdfe(string id)
         {
@@ -3513,10 +3513,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar manifesto Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+        /// Consultar manifesto Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of Dfe</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<Dfe> ConsultarMdfeWithHttpInfo(string id)
         {
@@ -3567,10 +3567,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar manifesto Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+        /// Consultar manifesto Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dfe</returns>
         public async System.Threading.Tasks.Task<Dfe> ConsultarMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3580,10 +3580,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar manifesto Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+        /// Consultar manifesto Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dfe)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<Dfe>> ConsultarMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3775,7 +3775,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -3788,7 +3788,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -3847,7 +3847,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -3861,7 +3861,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+        /// Consulta do Status do Serviço na SEFAZ Autorizadora Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cpfCnpj">CPF/CNPJ do emitente.  Utilize o valor sem máscara.</param>
@@ -4205,7 +4205,7 @@ namespace ACBrAPI.Sdk.Api
         /// Encerrar um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>MdfeEncerramento</returns>
         public MdfeEncerramento EncerrarMdfe(string id, MdfePedidoEncerramento body)
@@ -4218,7 +4218,7 @@ namespace ACBrAPI.Sdk.Api
         /// Encerrar um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of MdfeEncerramento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<MdfeEncerramento> EncerrarMdfeWithHttpInfo(string id, MdfePedidoEncerramento body)
@@ -4279,7 +4279,7 @@ namespace ACBrAPI.Sdk.Api
         /// Encerrar um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MdfeEncerramento</returns>
@@ -4293,7 +4293,7 @@ namespace ACBrAPI.Sdk.Api
         /// Encerrar um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MdfeEncerramento)</returns>
@@ -4358,7 +4358,7 @@ namespace ACBrAPI.Sdk.Api
         /// Incluir um condutor em um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>MdfeInclusaoCondutor</returns>
         public MdfeInclusaoCondutor IncluirCondutorMdfe(string id, MdfePedidoInclusaoCondutor body)
@@ -4371,7 +4371,7 @@ namespace ACBrAPI.Sdk.Api
         /// Incluir um condutor em um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of MdfeInclusaoCondutor</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<MdfeInclusaoCondutor> IncluirCondutorMdfeWithHttpInfo(string id, MdfePedidoInclusaoCondutor body)
@@ -4432,7 +4432,7 @@ namespace ACBrAPI.Sdk.Api
         /// Incluir um condutor em um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MdfeInclusaoCondutor</returns>
@@ -4446,7 +4446,7 @@ namespace ACBrAPI.Sdk.Api
         /// Incluir um condutor em um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MdfeInclusaoCondutor)</returns>
@@ -4511,7 +4511,7 @@ namespace ACBrAPI.Sdk.Api
         /// Incluir um DF-e em um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>MdfeInclusaoDfe</returns>
         public MdfeInclusaoDfe IncluirDfeMdfe(string id, MdfePedidoInclusaoDfe body)
@@ -4524,7 +4524,7 @@ namespace ACBrAPI.Sdk.Api
         /// Incluir um DF-e em um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of MdfeInclusaoDfe</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<MdfeInclusaoDfe> IncluirDfeMdfeWithHttpInfo(string id, MdfePedidoInclusaoDfe body)
@@ -4585,7 +4585,7 @@ namespace ACBrAPI.Sdk.Api
         /// Incluir um DF-e em um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MdfeInclusaoDfe</returns>
@@ -4599,7 +4599,7 @@ namespace ACBrAPI.Sdk.Api
         /// Incluir um DF-e em um MDF-e autorizado **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MdfeInclusaoDfe)</returns>
@@ -5083,10 +5083,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados no MDF-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados no MDF-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>DfeSincronizacao</returns>
         public DfeSincronizacao SincronizarMdfe(string id)
         {
@@ -5095,10 +5095,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados no MDF-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados no MDF-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <returns>ApiResponse of DfeSincronizacao</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<DfeSincronizacao> SincronizarMdfeWithHttpInfo(string id)
         {
@@ -5149,10 +5149,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados no MDF-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados no MDF-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeSincronizacao</returns>
         public async System.Threading.Tasks.Task<DfeSincronizacao> SincronizarMdfeAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5162,10 +5162,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados no MDF-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados no MDF-e a partir da SEFAZ Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status &#x60;erro&#x60; na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status &#x60;autorizado&#x60;na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do MDF-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do MDF-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeSincronizacao)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeSincronizacao>> SincronizarMdfeWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

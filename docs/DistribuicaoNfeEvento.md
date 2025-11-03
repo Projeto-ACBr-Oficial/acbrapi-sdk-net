@@ -4,8 +4,8 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | ID único gerado pela Nuvem Fiscal para este evento. | [optional] 
-**created_at** | **DateTime** | Data/hora em que o evento foi criado na Nuvem Fiscal. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;. | [optional] 
+**id** | **string** | ID único gerado pela API para este evento. | [optional] 
+**created_at** | **DateTime** | Data/hora em que o evento foi criado na API. Representado no formato &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_8601\&quot; target&#x3D;\&quot;blank\&quot;&gt;&#x60;ISO 8601&#x60;&lt;/a&gt;. | [optional] 
 **ambiente** | **string** | Identificação do ambiente. | [optional] 
 **status** | **string** | Status do Evento. | [optional] 
 **cpf_cnpj_autor** | **string** | CPF/CNPJ do autor do evento. | [optional] 

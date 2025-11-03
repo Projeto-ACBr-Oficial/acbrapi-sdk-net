@@ -130,9 +130,9 @@ namespace ACBrAPI.Sdk.Model
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // xSolic (string) maxLength
-            if (this.xSolic != null && this.xSolic.Length > 2000)
+            if (this.xSolic != null && this.xSolic.Length > 8000)
             {
-                yield return new ValidationResult("Invalid value for xSolic, length must be less than 2000.", new [] { "xSolic" });
+                yield return new ValidationResult("Invalid value for xSolic, length must be less than 8000.", new [] { "xSolic" });
             }
 
             // xSolic (string) minLength

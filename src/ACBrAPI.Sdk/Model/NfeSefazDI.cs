@@ -23,7 +23,7 @@ using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
 namespace ACBrAPI.Sdk.Model
 {
     /// <summary>
-    /// Delcaração de Importação  (NT 2011/004).
+    /// Declaração de Importação (NT 2011/004).
     /// </summary>
     [DataContract(Name = "NfeSefazDI")]
     public partial class NfeSefazDI : IEquatable<NfeSefazDI>, IValidatableObject

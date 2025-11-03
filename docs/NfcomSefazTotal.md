@@ -15,6 +15,8 @@ Nome | Tipo | Descrição | Comentários
 **vDesc** | **decimal?** | Valor Total do Desconto. | 
 **vOutro** | **decimal?** | Outras Despesas acessórias. | 
 **vNF** | **decimal?** | Valor Total da NFCom. | 
+**IBSCBSTot** | [**NfcomSefazIBSCBSTot**](NfcomSefazIBSCBSTot.md) |  | [optional] 
+**vTotDFe** | **decimal?** | Valor total do documento fiscal  (vNF + total do IBS + total da CBS). | [optional] 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 

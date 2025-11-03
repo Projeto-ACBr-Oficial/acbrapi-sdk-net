@@ -1,6 +1,6 @@
 # ACBrAPI.Sdk.Api.MdfeApi
 
-Todas as URIs relativas a *https://api.nuvemfiscal.com.br*
+Todas as URIs relativas a *https://prod.acbr.api.br*
 
 | Método | Endpoint | Descrição |
 |--------|--------------|-------------|
@@ -53,7 +53,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -65,7 +65,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -108,7 +108,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -153,7 +153,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -165,7 +165,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -208,7 +208,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -253,7 +253,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -265,7 +265,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -308,7 +308,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -353,7 +353,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -365,7 +365,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
             var logotipo = false;  // bool? | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional)  (default to false)
 
             try
@@ -409,7 +409,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 | **logotipo** | **bool?** | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
 
 ### Tipo de retorno
@@ -455,7 +455,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -467,7 +467,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -510,7 +510,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -555,7 +555,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -567,7 +567,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -610,7 +610,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -655,7 +655,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -667,7 +667,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -710,7 +710,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -757,7 +757,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -769,7 +769,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -812,7 +812,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -859,7 +859,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -871,7 +871,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da MDF-e gerado pela API.
 
             try
             {
@@ -914,7 +914,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -959,7 +959,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -971,7 +971,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único da MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único da MDF-e gerado pela API.
 
             try
             {
@@ -1014,7 +1014,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único da MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único da MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1061,7 +1061,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1073,7 +1073,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
             var body = new MdfePedidoCancelamento(); // MdfePedidoCancelamento | Dados do cancelamento. (optional) 
 
             try
@@ -1117,7 +1117,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 | **body** | [**MdfePedidoCancelamento**](MdfePedidoCancelamento.md) | Dados do cancelamento. | [optional]  |
 
 ### Tipo de retorno
@@ -1163,7 +1163,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1175,7 +1175,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -1218,7 +1218,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1263,7 +1263,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1275,7 +1275,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -1318,7 +1318,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1363,7 +1363,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1375,7 +1375,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do evento gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do evento gerado pela API.
 
             try
             {
@@ -1418,7 +1418,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do evento gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do evento gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1447,7 +1447,7 @@ catch (ApiException e)
 
 Consultar lote de MDF-e
 
-Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
 
 ### Exemplo
 ```csharp
@@ -1465,7 +1465,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1477,7 +1477,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do lote gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do lote gerado pela API.
 
             try
             {
@@ -1520,7 +1520,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do lote gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do lote gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1549,7 +1549,7 @@ catch (ApiException e)
 
 Consultar manifesto
 
-Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
 
 ### Exemplo
 ```csharp
@@ -1567,7 +1567,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1579,7 +1579,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -1622,7 +1622,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 
@@ -1667,7 +1667,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1751,7 +1751,7 @@ catch (ApiException e)
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
 
 ### Exemplo
 ```csharp
@@ -1769,7 +1769,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1873,7 +1873,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1975,7 +1975,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2077,7 +2077,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2089,7 +2089,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
             var body = new MdfePedidoEncerramento(); // MdfePedidoEncerramento | 
 
             try
@@ -2133,7 +2133,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 | **body** | [**MdfePedidoEncerramento**](MdfePedidoEncerramento.md) |  |  |
 
 ### Tipo de retorno
@@ -2181,7 +2181,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2193,7 +2193,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
             var body = new MdfePedidoInclusaoCondutor(); // MdfePedidoInclusaoCondutor | 
 
             try
@@ -2237,7 +2237,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 | **body** | [**MdfePedidoInclusaoCondutor**](MdfePedidoInclusaoCondutor.md) |  |  |
 
 ### Tipo de retorno
@@ -2285,7 +2285,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2297,7 +2297,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
             var body = new MdfePedidoInclusaoDfe(); // MdfePedidoInclusaoDfe | 
 
             try
@@ -2341,7 +2341,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 | **body** | [**MdfePedidoInclusaoDfe**](MdfePedidoInclusaoDfe.md) |  |  |
 
 ### Tipo de retorno
@@ -2389,7 +2389,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2501,7 +2501,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2599,7 +2599,7 @@ catch (ApiException e)
 
 Sincroniza dados no MDF-e a partir da SEFAZ
 
-Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status `erro` na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status `autorizado`na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status `erro` na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status `autorizado`na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 ```csharp
@@ -2617,7 +2617,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.nuvemfiscal.com.br";
+            config.BasePath = "https://prod.acbr.api.br";
             // Configure API key authorization: jwt
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2629,7 +2629,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MdfeApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+            var id = "id_example";  // string | ID único do MDF-e gerado pela API.
 
             try
             {
@@ -2672,7 +2672,7 @@ catch (ApiException e)
 
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
-| **id** | **string** | ID único do MDF-e gerado pela Nuvem Fiscal. |  |
+| **id** | **string** | ID único do MDF-e gerado pela API. |  |
 
 ### Tipo de retorno
 

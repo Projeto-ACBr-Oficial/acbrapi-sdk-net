@@ -26,12 +26,13 @@ Nome | Tipo | Descrição | Comentários
 **cBarraTrib** | **string** | Código de barras da unidade tributável diferente do padrão GTIN. | [optional] 
 **uTrib** | **string** | Unidade Tributável. | 
 **qTrib** | **decimal?** | Quantidade Tributável - alterado para aceitar de 0 a 4 casas decimais e 11 inteiros. | 
-**vUnTrib** | **decimal?** | Valor unitário de tributação - - alterado para aceitar 0 a 10 casas decimais e 11 inteiros. | 
+**vUnTrib** | **decimal?** | Valor unitário de tributação - alterado para aceitar 0 a 10 casas decimais e 11 inteiros. | 
 **vFrete** | **decimal?** | Valor Total do Frete. | [optional] 
 **vSeg** | **decimal?** | Valor Total do Seguro. | [optional] 
 **vDesc** | **decimal?** | Valor do Desconto. | [optional] 
 **vOutro** | **decimal?** | Outras despesas acessórias. | [optional] 
 **indTot** | **int?** | Este campo deverá ser preenchido com:  * 0 - o valor do item (vProd) não compõe o valor total da NF-e (vProd)  * 1 - o valor do item (vProd) compõe o valor total da NF-e (vProd) | 
+**indBemMovelUsado** | **int?** | Indicador de fornecimento de bem móvel usado: 1-Bem Móvel Usado. | [optional] 
 **DI** | [**List&lt;NfeSefazDI&gt;**](NfeSefazDI.md) |  | [optional] 
 **detExport** | [**List&lt;NfeSefazDetExport&gt;**](NfeSefazDetExport.md) |  | [optional] 
 **xPed** | **string** | pedido de compra - Informação de interesse do emissor para controle do B2B. | [optional] 

@@ -15,6 +15,8 @@ Nome | Tipo | Descrição | Comentários
 **COFINS** | [**NfeSefazCOFINS**](NfeSefazCOFINS.md) |  | [optional] 
 **COFINSST** | [**NfeSefazCOFINSST**](NfeSefazCOFINSST.md) |  | [optional] 
 **ICMSUFDest** | [**NfeSefazICMSUFDest**](NfeSefazICMSUFDest.md) |  | [optional] 
+**IS** | [**NfeSefazIS**](NfeSefazIS.md) |  | [optional] 
+**IBSCBS** | [**NfeSefazTribNFe**](NfeSefazTribNFe.md) |  | [optional] 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 

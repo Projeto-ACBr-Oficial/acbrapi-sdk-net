@@ -42,7 +42,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="impostoDevol">impostoDevol.</param>
         /// <param name="infAdProd">Informações adicionais do produto (norma referenciada, informações complementares, etc)..</param>
         /// <param name="obsItem">obsItem.</param>
-        public NfeSefazDet(int? nItem = default(int?), NfeSefazProd prod = default(NfeSefazProd), NfeSefazImposto imposto = default(NfeSefazImposto), NfeSefazImpostoDevol impostoDevol = default(NfeSefazImpostoDevol), string infAdProd = default(string), NfeSefazObsItem obsItem = default(NfeSefazObsItem))
+        /// <param name="vItem">Valor total do Item, correspondente à sua participação no total da nota. A soma dos itens deverá corresponder ao total da nota..</param>
+        /// <param name="dFeReferenciado">dFeReferenciado.</param>
+        public NfeSefazDet(int? nItem = default(int?), NfeSefazProd prod = default(NfeSefazProd), NfeSefazImposto imposto = default(NfeSefazImposto), NfeSefazImpostoDevol impostoDevol = default(NfeSefazImpostoDevol), string infAdProd = default(string), NfeSefazObsItem obsItem = default(NfeSefazObsItem), decimal? vItem = default(decimal?), NfeSefazDFeReferenciado dFeReferenciado = default(NfeSefazDFeReferenciado))
         {
             // to ensure "nItem" is required (not null)
             if (nItem == null)
@@ -65,6 +67,8 @@ namespace ACBrAPI.Sdk.Model
             this.impostoDevol = impostoDevol;
             this.infAdProd = infAdProd;
             this.obsItem = obsItem;
+            this.vItem = vItem;
+            this.DFeReferenciado = dFeReferenciado;
         }
 
         /// <summary>
@@ -106,6 +110,19 @@ namespace ACBrAPI.Sdk.Model
         public NfeSefazObsItem obsItem { get; set; }
 
         /// <summary>
+        /// Valor total do Item, correspondente à sua participação no total da nota. A soma dos itens deverá corresponder ao total da nota.
+        /// </summary>
+        /// <value>Valor total do Item, correspondente à sua participação no total da nota. A soma dos itens deverá corresponder ao total da nota.</value>
+        [DataMember(Name = "vItem", EmitDefaultValue = true)]
+        public decimal? vItem { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DFeReferenciado
+        /// </summary>
+        [DataMember(Name = "DFeReferenciado", EmitDefaultValue = false)]
+        public NfeSefazDFeReferenciado DFeReferenciado { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -119,6 +136,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  impostoDevol: ").Append(impostoDevol).Append("\n");
             sb.Append("  infAdProd: ").Append(infAdProd).Append("\n");
             sb.Append("  obsItem: ").Append(obsItem).Append("\n");
+            sb.Append("  vItem: ").Append(vItem).Append("\n");
+            sb.Append("  DFeReferenciado: ").Append(DFeReferenciado).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,6 +202,16 @@ namespace ACBrAPI.Sdk.Model
                     this.obsItem == input.obsItem ||
                     (this.obsItem != null &&
                     this.obsItem.Equals(input.obsItem))
+                ) && 
+                (
+                    this.vItem == input.vItem ||
+                    (this.vItem != null &&
+                    this.vItem.Equals(input.vItem))
+                ) && 
+                (
+                    this.DFeReferenciado == input.DFeReferenciado ||
+                    (this.DFeReferenciado != null &&
+                    this.DFeReferenciado.Equals(input.DFeReferenciado))
                 );
         }
 
@@ -219,6 +248,14 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.obsItem.GetHashCode();
                 }
+                if (this.vItem != null)
+                {
+                    hashCode = (hashCode * 59) + this.vItem.GetHashCode();
+                }
+                if (this.DFeReferenciado != null)
+                {
+                    hashCode = (hashCode * 59) + this.DFeReferenciado.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -252,6 +289,12 @@ namespace ACBrAPI.Sdk.Model
             if (this.infAdProd != null && this.infAdProd.Length < 1)
             {
                 yield return new ValidationResult("Invalid value for infAdProd, length must be greater than 1.", new [] { "infAdProd" });
+            }
+
+            // vItem (decimal?) minimum
+            if (this.vItem < (decimal?)0)
+            {
+                yield return new ValidationResult("Invalid value for vItem, must be a value greater than or equal to 0.", new [] { "vItem" });
             }
 
             yield break;

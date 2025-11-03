@@ -87,7 +87,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DfeLote" /> class.
         /// </summary>
-        /// <param name="id">ID único gerado pela Nuvem Fiscal para este documento..</param>
+        /// <param name="id">ID único gerado pela API para este documento..</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="status">status.</param>
         /// <param name="ambiente">ambiente.</param>
@@ -108,9 +108,9 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// ID único gerado pela Nuvem Fiscal para este documento.
+        /// ID único gerado pela API para este documento.
         /// </summary>
-        /// <value>ID único gerado pela Nuvem Fiscal para este documento.</value>
+        /// <value>ID único gerado pela API para este documento.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string id { get; set; }
 

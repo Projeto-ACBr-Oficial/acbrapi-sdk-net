@@ -23,7 +23,7 @@ using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
 namespace ACBrAPI.Sdk.Model
 {
     /// <summary>
-    /// Informações do Pagamento do Frete.
+    /// Informações do Pagamento do Contrato.
     /// </summary>
     [DataContract(Name = "MdfeSefazInfPag")]
     public partial class MdfeSefazInfPag : IEquatable<MdfeSefazInfPag>, IValidatableObject

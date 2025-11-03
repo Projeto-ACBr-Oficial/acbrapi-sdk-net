@@ -50,7 +50,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="infEmbComb">infEmbComb.</param>
         /// <param name="infUnidCargaVazia">infUnidCargaVazia.</param>
         /// <param name="infUnidTranspVazia">infUnidTranspVazia.</param>
-        public MdfeSefazAquav(string irin = default(string), string tpEmb = default(string), string cEmbar = default(string), string xEmbar = default(string), string nViag = default(string), string cPrtEmb = default(string), string cPrtDest = default(string), string prtTrans = default(string), int? tpNav = default(int?), List<MdfeSefazInfTermCarreg> infTermCarreg = default(List<MdfeSefazInfTermCarreg>), List<MdfeSefazInfTermDescarreg> infTermDescarreg = default(List<MdfeSefazInfTermDescarreg>), List<MdfeSefazInfEmbComb> infEmbComb = default(List<MdfeSefazInfEmbComb>), List<MdfeSefazInfUnidCargaVazia> infUnidCargaVazia = default(List<MdfeSefazInfUnidCargaVazia>), List<MdfeSefazInfUnidTranspVazia> infUnidTranspVazia = default(List<MdfeSefazInfUnidTranspVazia>))
+        /// <param name="mMSI">Maritime Mobile Service Identify.  Preencher com o MMSI (Maritime Mobile Service Identify) fornecido pela ANATEL ou autoridade de telecomunicações de origem da embarcação..</param>
+        public MdfeSefazAquav(string irin = default(string), string tpEmb = default(string), string cEmbar = default(string), string xEmbar = default(string), string nViag = default(string), string cPrtEmb = default(string), string cPrtDest = default(string), string prtTrans = default(string), int? tpNav = default(int?), List<MdfeSefazInfTermCarreg> infTermCarreg = default(List<MdfeSefazInfTermCarreg>), List<MdfeSefazInfTermDescarreg> infTermDescarreg = default(List<MdfeSefazInfTermDescarreg>), List<MdfeSefazInfEmbComb> infEmbComb = default(List<MdfeSefazInfEmbComb>), List<MdfeSefazInfUnidCargaVazia> infUnidCargaVazia = default(List<MdfeSefazInfUnidCargaVazia>), List<MdfeSefazInfUnidTranspVazia> infUnidTranspVazia = default(List<MdfeSefazInfUnidTranspVazia>), string mMSI = default(string))
         {
             // to ensure "irin" is required (not null)
             if (irin == null)
@@ -101,6 +102,7 @@ namespace ACBrAPI.Sdk.Model
             this.infEmbComb = infEmbComb;
             this.infUnidCargaVazia = infUnidCargaVazia;
             this.infUnidTranspVazia = infUnidTranspVazia;
+            this.MMSI = mMSI;
         }
 
         /// <summary>
@@ -197,6 +199,13 @@ namespace ACBrAPI.Sdk.Model
         public List<MdfeSefazInfUnidTranspVazia> infUnidTranspVazia { get; set; }
 
         /// <summary>
+        /// Maritime Mobile Service Identify.  Preencher com o MMSI (Maritime Mobile Service Identify) fornecido pela ANATEL ou autoridade de telecomunicações de origem da embarcação.
+        /// </summary>
+        /// <value>Maritime Mobile Service Identify.  Preencher com o MMSI (Maritime Mobile Service Identify) fornecido pela ANATEL ou autoridade de telecomunicações de origem da embarcação.</value>
+        [DataMember(Name = "MMSI", EmitDefaultValue = true)]
+        public string MMSI { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -218,6 +227,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  infEmbComb: ").Append(infEmbComb).Append("\n");
             sb.Append("  infUnidCargaVazia: ").Append(infUnidCargaVazia).Append("\n");
             sb.Append("  infUnidTranspVazia: ").Append(infUnidTranspVazia).Append("\n");
+            sb.Append("  MMSI: ").Append(MMSI).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -327,6 +337,11 @@ namespace ACBrAPI.Sdk.Model
                     this.infUnidTranspVazia != null &&
                     input.infUnidTranspVazia != null &&
                     this.infUnidTranspVazia.SequenceEqual(input.infUnidTranspVazia)
+                ) && 
+                (
+                    this.MMSI == input.MMSI ||
+                    (this.MMSI != null &&
+                    this.MMSI.Equals(input.MMSI))
                 );
         }
 
@@ -394,6 +409,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.infUnidTranspVazia != null)
                 {
                     hashCode = (hashCode * 59) + this.infUnidTranspVazia.GetHashCode();
+                }
+                if (this.MMSI != null)
+                {
+                    hashCode = (hashCode * 59) + this.MMSI.GetHashCode();
                 }
                 return hashCode;
             }
@@ -476,6 +495,18 @@ namespace ACBrAPI.Sdk.Model
             if (this.prtTrans != null && this.prtTrans.Length < 1)
             {
                 yield return new ValidationResult("Invalid value for prtTrans, length must be greater than 1.", new [] { "prtTrans" });
+            }
+
+            // MMSI (string) maxLength
+            if (this.MMSI != null && this.MMSI.Length > 9)
+            {
+                yield return new ValidationResult("Invalid value for MMSI, length must be less than 9.", new [] { "MMSI" });
+            }
+
+            // MMSI (string) minLength
+            if (this.MMSI != null && this.MMSI.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for MMSI, length must be greater than 1.", new [] { "MMSI" });
             }
 
             yield break;

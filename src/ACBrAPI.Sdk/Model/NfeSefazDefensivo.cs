@@ -154,9 +154,9 @@ namespace ACBrAPI.Sdk.Model
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // nReceituario (string) maxLength
-            if (this.nReceituario != null && this.nReceituario.Length > 20)
+            if (this.nReceituario != null && this.nReceituario.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for nReceituario, length must be less than 20.", new [] { "nReceituario" });
+                yield return new ValidationResult("Invalid value for nReceituario, length must be less than 30.", new [] { "nReceituario" });
             }
 
             // nReceituario (string) minLength

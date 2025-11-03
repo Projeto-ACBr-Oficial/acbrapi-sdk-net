@@ -27,7 +27,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFSE
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)</param>
         /// <returns>FileParameter</returns>
@@ -40,7 +40,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
@@ -49,7 +49,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento de cancelamento
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlCancelamentoNfse(string id);
 
@@ -60,14 +60,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlCancelamentoNfseWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML da DPS
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlDps(string id);
 
@@ -78,14 +78,14 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlDpsWithHttpInfo(string id);
         /// <summary>
         /// Baixar XML da NFS-e processada
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         FileParameter BaixarXmlNfse(string id);
 
@@ -96,7 +96,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> BaixarXmlNfseWithHttpInfo(string id);
         /// <summary>
@@ -106,7 +106,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>NfseCancelamento</returns>
         NfseCancelamento CancelarNfse(string id, NfsePedidoCancelamento body = default(NfsePedidoCancelamento));
@@ -118,7 +118,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of NfseCancelamento</returns>
         ApiResponse<NfseCancelamento> CancelarNfseWithHttpInfo(string id, NfsePedidoCancelamento body = default(NfsePedidoCancelamento));
@@ -126,7 +126,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cidades atendidas
         /// </summary>
         /// <remarks>
-        /// Fornece uma relação completa de todos os municípios atendidos pela Nuvem Fiscal.
+        /// Fornece uma relação completa de todos os municípios atendidos pela API.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>NfseCidadesAtendidas</returns>
@@ -136,7 +136,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cidades atendidas
         /// </summary>
         /// <remarks>
-        /// Fornece uma relação completa de todos os municípios atendidos pela Nuvem Fiscal.
+        /// Fornece uma relação completa de todos os municípios atendidos pela API.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of NfseCidadesAtendidas</returns>
@@ -145,7 +145,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFS-e
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>NfseCancelamento</returns>
         NfseCancelamento ConsultarCancelamentoNfse(string id);
 
@@ -156,17 +156,17 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of NfseCancelamento</returns>
         ApiResponse<NfseCancelamento> ConsultarCancelamentoNfseWithHttpInfo(string id);
         /// <summary>
         /// Consultar lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>RpsLote</returns>
         RpsLote ConsultarLoteNfse(string id);
 
@@ -174,10 +174,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>ApiResponse of RpsLote</returns>
         ApiResponse<RpsLote> ConsultarLoteNfseWithHttpInfo(string id);
         /// <summary>
@@ -205,10 +205,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar NFS-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>Nfse</returns>
         Nfse ConsultarNfse(string id);
 
@@ -216,10 +216,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar NFS-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of Nfse</returns>
         ApiResponse<Nfse> ConsultarNfseWithHttpInfo(string id);
         /// <summary>
@@ -380,10 +380,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFS-e a partir da Prefeitura
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na Nuvem Fiscal, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>NfseSincronizacao</returns>
         NfseSincronizacao SincronizarNfse(string id, NfsePedidoSincronizacao body = default(NfsePedidoSincronizacao));
@@ -392,10 +392,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFS-e a partir da Prefeitura
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na Nuvem Fiscal, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of NfseSincronizacao</returns>
         ApiResponse<NfseSincronizacao> SincronizarNfseWithHttpInfo(string id, NfsePedidoSincronizacao body = default(NfsePedidoSincronizacao));
@@ -415,7 +415,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -429,7 +429,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -442,7 +442,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlCancelamentoNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -454,7 +454,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlCancelamentoNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -465,7 +465,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlDpsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -477,7 +477,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlDpsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -488,7 +488,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         System.Threading.Tasks.Task<FileParameter> BaixarXmlNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -500,7 +500,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarXmlNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -511,7 +511,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NfseCancelamento</returns>
@@ -524,7 +524,7 @@ namespace ACBrAPI.Sdk.Api
         /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NfseCancelamento)</returns>
@@ -533,7 +533,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cidades atendidas
         /// </summary>
         /// <remarks>
-        /// Fornece uma relação completa de todos os municípios atendidos pela Nuvem Fiscal.
+        /// Fornece uma relação completa de todos os municípios atendidos pela API.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -544,7 +544,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cidades atendidas
         /// </summary>
         /// <remarks>
-        /// Fornece uma relação completa de todos os municípios atendidos pela Nuvem Fiscal.
+        /// Fornece uma relação completa de todos os municípios atendidos pela API.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -557,7 +557,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NfseCancelamento</returns>
         System.Threading.Tasks.Task<NfseCancelamento> ConsultarCancelamentoNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -569,7 +569,7 @@ namespace ACBrAPI.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NfseCancelamento)</returns>
         System.Threading.Tasks.Task<ApiResponse<NfseCancelamento>> ConsultarCancelamentoNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -577,10 +577,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RpsLote</returns>
         System.Threading.Tasks.Task<RpsLote> ConsultarLoteNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -589,10 +589,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RpsLote)</returns>
         System.Threading.Tasks.Task<ApiResponse<RpsLote>> ConsultarLoteNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -623,10 +623,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar NFS-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Nfse</returns>
         System.Threading.Tasks.Task<Nfse> ConsultarNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -635,10 +635,10 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar NFS-e
         /// </summary>
         /// <remarks>
-        /// Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Nfse)</returns>
         System.Threading.Tasks.Task<ApiResponse<Nfse>> ConsultarNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -812,10 +812,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFS-e a partir da Prefeitura
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na Nuvem Fiscal, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NfseSincronizacao</returns>
@@ -825,10 +825,10 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFS-e a partir da Prefeitura
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na Nuvem Fiscal, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NfseSincronizacao)</returns>
@@ -1050,7 +1050,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFSE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)</param>
         /// <returns>FileParameter</returns>
@@ -1064,7 +1064,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFSE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
@@ -1128,7 +1128,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFSE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1143,7 +1143,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar PDF do DANFSE 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1211,7 +1211,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento de cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlCancelamentoNfse(string id)
         {
@@ -1223,7 +1223,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento de cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlCancelamentoNfseWithHttpInfo(string id)
         {
@@ -1277,7 +1277,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento de cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlCancelamentoNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1290,7 +1290,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento de cancelamento 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlCancelamentoNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1348,7 +1348,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da DPS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlDps(string id)
         {
@@ -1360,7 +1360,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da DPS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlDpsWithHttpInfo(string id)
         {
@@ -1414,7 +1414,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da DPS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlDpsAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1427,7 +1427,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da DPS 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlDpsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1485,7 +1485,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFS-e processada 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
         public FileParameter BaixarXmlNfse(string id)
         {
@@ -1497,7 +1497,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFS-e processada 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of FileParameter</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarXmlNfseWithHttpInfo(string id)
         {
@@ -1551,7 +1551,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFS-e processada 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> BaixarXmlNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1564,7 +1564,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFS-e processada 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarXmlNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1622,7 +1622,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>NfseCancelamento</returns>
         public NfseCancelamento CancelarNfse(string id, NfsePedidoCancelamento body = default(NfsePedidoCancelamento))
@@ -1635,7 +1635,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of NfseCancelamento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<NfseCancelamento> CancelarNfseWithHttpInfo(string id, NfsePedidoCancelamento body = default(NfsePedidoCancelamento))
@@ -1692,7 +1692,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NfseCancelamento</returns>
@@ -1706,7 +1706,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NfseCancelamento)</returns>
@@ -1764,7 +1764,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Cidades atendidas Fornece uma relação completa de todos os municípios atendidos pela Nuvem Fiscal.
+        /// Cidades atendidas Fornece uma relação completa de todos os municípios atendidos pela API.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>NfseCidadesAtendidas</returns>
@@ -1775,7 +1775,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Cidades atendidas Fornece uma relação completa de todos os municípios atendidos pela Nuvem Fiscal.
+        /// Cidades atendidas Fornece uma relação completa de todos os municípios atendidos pela API.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of NfseCidadesAtendidas</returns>
@@ -1823,7 +1823,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Cidades atendidas Fornece uma relação completa de todos os municípios atendidos pela Nuvem Fiscal.
+        /// Cidades atendidas Fornece uma relação completa de todos os municípios atendidos pela API.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1835,7 +1835,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Cidades atendidas Fornece uma relação completa de todos os municípios atendidos pela Nuvem Fiscal.
+        /// Cidades atendidas Fornece uma relação completa de todos os municípios atendidos pela API.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1890,7 +1890,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFS-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>NfseCancelamento</returns>
         public NfseCancelamento ConsultarCancelamentoNfse(string id)
         {
@@ -1902,7 +1902,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFS-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of NfseCancelamento</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<NfseCancelamento> ConsultarCancelamentoNfseWithHttpInfo(string id)
         {
@@ -1956,7 +1956,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFS-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NfseCancelamento</returns>
         public async System.Threading.Tasks.Task<NfseCancelamento> ConsultarCancelamentoNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1969,7 +1969,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar o cancelamento da NFS-e 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NfseCancelamento)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<NfseCancelamento>> ConsultarCancelamentoNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2024,10 +2024,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de NFS-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de NFS-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>RpsLote</returns>
         public RpsLote ConsultarLoteNfse(string id)
         {
@@ -2036,10 +2036,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de NFS-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de NFS-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <returns>ApiResponse of RpsLote</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<RpsLote> ConsultarLoteNfseWithHttpInfo(string id)
         {
@@ -2090,10 +2090,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de NFS-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de NFS-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RpsLote</returns>
         public async System.Threading.Tasks.Task<RpsLote> ConsultarLoteNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2103,10 +2103,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar lote de NFS-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+        /// Consultar lote de NFS-e Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único do lote gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único do lote gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RpsLote)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<RpsLote>> ConsultarLoteNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2298,10 +2298,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar NFS-e Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consultar NFS-e Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>Nfse</returns>
         public Nfse ConsultarNfse(string id)
         {
@@ -2310,10 +2310,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar NFS-e Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consultar NFS-e Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>ApiResponse of Nfse</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<Nfse> ConsultarNfseWithHttpInfo(string id)
         {
@@ -2364,10 +2364,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar NFS-e Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consultar NFS-e Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Nfse</returns>
         public async System.Threading.Tasks.Task<Nfse> ConsultarNfseAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2377,10 +2377,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar NFS-e Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+        /// Consultar NFS-e Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de uma requisição de criação ou de listagem de notas e a API irá retornar as informações da nota correspondente.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Nfse)</returns>
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<Nfse>> ConsultarNfseWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3421,10 +3421,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na Nuvem Fiscal, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>NfseSincronizacao</returns>
         public NfseSincronizacao SincronizarNfse(string id, NfsePedidoSincronizacao body = default(NfsePedidoSincronizacao))
@@ -3434,10 +3434,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na Nuvem Fiscal, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of NfseSincronizacao</returns>
         public ACBrAPI.Sdk.Client.ApiResponse<NfseSincronizacao> SincronizarNfseWithHttpInfo(string id, NfsePedidoSincronizacao body = default(NfsePedidoSincronizacao))
@@ -3491,10 +3491,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na Nuvem Fiscal, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NfseSincronizacao</returns>
@@ -3505,10 +3505,10 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na Nuvem Fiscal, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na Nuvem Fiscal, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ID único da NFS-e gerado pela Nuvem Fiscal.</param>
+        /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NfseSincronizacao)</returns>
