@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -37,7 +37,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="NfeSefazCompraGov" /> class.
         /// </summary>
         /// <param name="tpEnteGov">Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios (required).</param>
-        /// <param name="pRedutor">Percentual de redução de aliquota em compra goverrnamental. (required).</param>
+        /// <param name="pRedutor">Percentual de redução de aliquota em compra governamental. (required).</param>
         /// <param name="tpOperGov">Tipo da operação com ente governamental:  * 1 - Fornecimento  * 2 - Recebimento do Pagamento (required).</param>
         public NfeSefazCompraGov(int? tpEnteGov = default(int?), decimal? pRedutor = default(decimal?), int? tpOperGov = default(int?))
         {
@@ -69,9 +69,9 @@ namespace ACBrAPI.Sdk.Model
         public int? tpEnteGov { get; set; }
 
         /// <summary>
-        /// Percentual de redução de aliquota em compra goverrnamental.
+        /// Percentual de redução de aliquota em compra governamental.
         /// </summary>
-        /// <value>Percentual de redução de aliquota em compra goverrnamental.</value>
+        /// <value>Percentual de redução de aliquota em compra governamental.</value>
         [DataMember(Name = "pRedutor", IsRequired = true, EmitDefaultValue = true)]
         public decimal? pRedutor { get; set; }
 
@@ -175,12 +175,12 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pRedutor (decimal?) minimum
             if (this.pRedutor < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pRedutor, must be a value greater than or equal to 0.", new [] { "pRedutor" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pRedutor, must be a value greater than or equal to 0.", new [] { "pRedutor" });
             }
 
             yield break;

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -261,54 +261,60 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pesoBC (decimal?) minimum
             if (this.pesoBC < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pesoBC, must be a value greater than or equal to 0.", new [] { "pesoBC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pesoBC, must be a value greater than or equal to 0.", new [] { "pesoBC" });
             }
 
             // pesoR (decimal?) minimum
             if (this.pesoR < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pesoR, must be a value greater than or equal to 0.", new [] { "pesoR" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pesoR, must be a value greater than or equal to 0.", new [] { "pesoR" });
             }
 
             // tpVag (string) maxLength
             if (this.tpVag != null && this.tpVag.Length > 3)
             {
-                yield return new ValidationResult("Invalid value for tpVag, length must be less than 3.", new [] { "tpVag" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for tpVag, length must be less than 3.", new [] { "tpVag" });
             }
 
             // serie (string) maxLength
             if (this.serie != null && this.serie.Length > 3)
             {
-                yield return new ValidationResult("Invalid value for serie, length must be less than 3.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, length must be less than 3.", new [] { "serie" });
             }
 
             // nVag (int?) maximum
             if (this.nVag > (int?)99999999)
             {
-                yield return new ValidationResult("Invalid value for nVag, must be a value less than or equal to 99999999.", new [] { "nVag" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nVag, must be a value less than or equal to 99999999.", new [] { "nVag" });
             }
 
             // nVag (int?) minimum
             if (this.nVag < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nVag, must be a value greater than or equal to 1.", new [] { "nVag" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nVag, must be a value greater than or equal to 1.", new [] { "nVag" });
             }
 
             // nSeq (int?) maximum
             if (this.nSeq > (int?)999)
             {
-                yield return new ValidationResult("Invalid value for nSeq, must be a value less than or equal to 999.", new [] { "nSeq" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nSeq, must be a value less than or equal to 999.", new [] { "nSeq" });
             }
 
             // nSeq (int?) minimum
             if (this.nSeq < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nSeq, must be a value greater than or equal to 1.", new [] { "nSeq" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nSeq, must be a value greater than or equal to 1.", new [] { "nSeq" });
+            }
+
+            // TU (decimal?) minimum
+            if (this.TU < (decimal?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TU, must be a value greater than or equal to 0.", new [] { "TU" });
             }
 
             yield break;

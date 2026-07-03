@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -39,7 +39,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vBCIBSCBS">Total Base de Calculo. (required).</param>
         /// <param name="gIBS">gIBS (required).</param>
         /// <param name="gCBS">gCBS (required).</param>
-        public NfcomSefazIBSCBSTot(decimal? vBCIBSCBS = default(decimal?), NfcomSefazGIBS gIBS = default(NfcomSefazGIBS), NfcomSefazIBSCBSTotGCBS gCBS = default(NfcomSefazIBSCBSTotGCBS))
+        /// <param name="gEstornoCred">gEstornoCred.</param>
+        public NfcomSefazIBSCBSTot(decimal? vBCIBSCBS = default(decimal?), NfcomSefazGIBS gIBS = default(NfcomSefazGIBS), NfcomSefazIBSCBSTotGCBS gCBS = default(NfcomSefazIBSCBSTotGCBS), NfcomSefazGEstornoCred gEstornoCred = default(NfcomSefazGEstornoCred))
         {
             // to ensure "vBCIBSCBS" is required (not null)
             if (vBCIBSCBS == null)
@@ -59,6 +60,7 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("gCBS is a required property for NfcomSefazIBSCBSTot and cannot be null");
             }
             this.gCBS = gCBS;
+            this.gEstornoCred = gEstornoCred;
         }
 
         /// <summary>
@@ -81,6 +83,12 @@ namespace ACBrAPI.Sdk.Model
         public NfcomSefazIBSCBSTotGCBS gCBS { get; set; }
 
         /// <summary>
+        /// Gets or Sets gEstornoCred
+        /// </summary>
+        [DataMember(Name = "gEstornoCred", EmitDefaultValue = false)]
+        public NfcomSefazGEstornoCred gEstornoCred { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -91,6 +99,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vBCIBSCBS: ").Append(vBCIBSCBS).Append("\n");
             sb.Append("  gIBS: ").Append(gIBS).Append("\n");
             sb.Append("  gCBS: ").Append(gCBS).Append("\n");
+            sb.Append("  gEstornoCred: ").Append(gEstornoCred).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,6 +149,11 @@ namespace ACBrAPI.Sdk.Model
                     this.gCBS == input.gCBS ||
                     (this.gCBS != null &&
                     this.gCBS.Equals(input.gCBS))
+                ) && 
+                (
+                    this.gEstornoCred == input.gEstornoCred ||
+                    (this.gEstornoCred != null &&
+                    this.gEstornoCred.Equals(input.gEstornoCred))
                 );
         }
 
@@ -164,6 +178,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.gCBS.GetHashCode();
                 }
+                if (this.gEstornoCred != null)
+                {
+                    hashCode = (hashCode * 59) + this.gEstornoCred.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -173,12 +191,12 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vBCIBSCBS (decimal?) minimum
             if (this.vBCIBSCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBCIBSCBS, must be a value greater than or equal to 0.", new [] { "vBCIBSCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBCIBSCBS, must be a value greater than or equal to 0.", new [] { "vBCIBSCBS" });
             }
 
             yield break;

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -48,6 +48,9 @@ namespace ACBrAPI.Sdk.Api
         /// <summary>
         /// Baixar XML do evento de cancelamento
         /// </summary>
+        /// <remarks>
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+        /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
@@ -57,7 +60,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento de cancelamento
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -66,6 +69,9 @@ namespace ACBrAPI.Sdk.Api
         /// <summary>
         /// Baixar XML da DPS
         /// </summary>
+        /// <remarks>
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+        /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
@@ -75,7 +81,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da DPS
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -84,6 +90,9 @@ namespace ACBrAPI.Sdk.Api
         /// <summary>
         /// Baixar XML da NFS-e processada
         /// </summary>
+        /// <remarks>
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+        /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
         /// <returns>FileParameter</returns>
@@ -93,7 +102,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFS-e processada
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -103,7 +112,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFS-e autorizada
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -115,7 +124,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFS-e autorizada
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -226,7 +235,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -238,7 +247,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -249,7 +258,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -260,7 +269,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -270,7 +279,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -282,7 +291,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -293,7 +302,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -304,7 +313,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -380,7 +389,7 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFS-e a partir da Prefeitura
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -392,7 +401,7 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFS-e a partir da Prefeitura
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -439,7 +448,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento de cancelamento
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -451,7 +460,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML do evento de cancelamento
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -462,7 +471,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da DPS
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -474,7 +483,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da DPS
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -485,7 +494,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFS-e processada
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -497,7 +506,7 @@ namespace ACBrAPI.Sdk.Api
         /// Baixar XML da NFS-e processada
         /// </summary>
         /// <remarks>
-        /// 
+        /// **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -508,7 +517,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFS-e autorizada
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -521,7 +530,7 @@ namespace ACBrAPI.Sdk.Api
         /// Cancelar uma NFS-e autorizada
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -646,7 +655,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -659,7 +668,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -671,7 +680,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -683,7 +692,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir lote de NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -694,7 +703,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -707,7 +716,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -719,7 +728,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -731,7 +740,7 @@ namespace ACBrAPI.Sdk.Api
         /// Emitir NFS-e
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -812,7 +821,7 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFS-e a partir da Prefeitura
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -825,7 +834,7 @@ namespace ACBrAPI.Sdk.Api
         /// Sincroniza dados na NFS-e a partir da Prefeitura
         /// </summary>
         /// <remarks>
-        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1100,11 +1109,6 @@ namespace ACBrAPI.Sdk.Api
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "mensagem_rodape", mensagemRodape));
             }
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1182,11 +1186,6 @@ namespace ACBrAPI.Sdk.Api
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "mensagem_rodape", mensagemRodape));
             }
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1208,7 +1207,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML do evento de cancelamento 
+        /// Baixar XML do evento de cancelamento **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1220,7 +1219,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML do evento de cancelamento 
+        /// Baixar XML do evento de cancelamento **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1249,11 +1248,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("Id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1274,7 +1268,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML do evento de cancelamento 
+        /// Baixar XML do evento de cancelamento **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1287,7 +1281,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML do evento de cancelamento 
+        /// Baixar XML do evento de cancelamento **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1319,11 +1313,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("Id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1345,7 +1334,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML da DPS 
+        /// Baixar XML da DPS **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1357,7 +1346,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML da DPS 
+        /// Baixar XML da DPS **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1386,11 +1375,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1411,7 +1395,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML da DPS 
+        /// Baixar XML da DPS **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1424,7 +1408,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML da DPS 
+        /// Baixar XML da DPS **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1456,11 +1440,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1482,7 +1461,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML da NFS-e processada 
+        /// Baixar XML da NFS-e processada **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1494,7 +1473,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML da NFS-e processada 
+        /// Baixar XML da NFS-e processada **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1523,11 +1502,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1548,7 +1522,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML da NFS-e processada 
+        /// Baixar XML da NFS-e processada **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1561,7 +1535,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Baixar XML da NFS-e processada 
+        /// Baixar XML da NFS-e processada **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1593,11 +1567,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1619,7 +1588,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1632,7 +1601,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1664,11 +1633,6 @@ namespace ACBrAPI.Sdk.Api
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1689,7 +1653,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1703,7 +1667,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Cancelar uma NFS-e autorizada **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -1738,11 +1702,6 @@ namespace ACBrAPI.Sdk.Api
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1798,11 +1757,6 @@ namespace ACBrAPI.Sdk.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1861,11 +1815,6 @@ namespace ACBrAPI.Sdk.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1928,11 +1877,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -1998,11 +1942,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2065,11 +2004,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2135,11 +2069,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2202,11 +2131,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("codigo_ibge", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(codigoIbge)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2272,11 +2196,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("codigo_ibge", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(codigoIbge)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2339,11 +2258,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2409,11 +2323,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2435,7 +2344,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2448,7 +2357,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2479,11 +2388,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2504,7 +2408,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2518,7 +2422,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2552,11 +2456,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2578,7 +2477,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2590,7 +2489,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2620,11 +2519,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2645,7 +2539,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2658,7 +2552,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por NFS-e.
+        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2691,11 +2585,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2717,7 +2606,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2730,7 +2619,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2761,11 +2650,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2786,7 +2670,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2800,7 +2684,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2834,11 +2718,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2860,7 +2739,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2872,7 +2751,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2902,11 +2781,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -2927,7 +2801,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2940,7 +2814,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2973,11 +2847,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -3071,11 +2940,6 @@ namespace ACBrAPI.Sdk.Api
             }
             localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "ambiente", ambiente));
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -3172,11 +3036,6 @@ namespace ACBrAPI.Sdk.Api
             }
             localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "ambiente", ambiente));
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -3282,11 +3141,6 @@ namespace ACBrAPI.Sdk.Api
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "serie", serie));
             }
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -3395,11 +3249,6 @@ namespace ACBrAPI.Sdk.Api
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "serie", serie));
             }
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -3421,7 +3270,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -3434,7 +3283,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -3466,11 +3315,6 @@ namespace ACBrAPI.Sdk.Api
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -3491,7 +3335,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -3505,7 +3349,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#dfe-eventos\&quot;&gt;dfe-eventos&lt;/a&gt;  - Consumo: 1 unidade por evento sincronizado ou requisição.
+        /// Sincroniza dados na NFS-e a partir da Prefeitura Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status &#x60;processando&#x60; na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status &#x60;erro&#x60; na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status &#x60;autorizada&#x60;na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFS-e gerado pela API.</param>
@@ -3540,11 +3384,6 @@ namespace ACBrAPI.Sdk.Api
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = body;
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))

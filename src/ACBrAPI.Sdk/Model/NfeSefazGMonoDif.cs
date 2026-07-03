@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -199,30 +199,30 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pDifIBS (decimal?) minimum
             if (this.pDifIBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pDifIBS, must be a value greater than or equal to 0.", new [] { "pDifIBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pDifIBS, must be a value greater than or equal to 0.", new [] { "pDifIBS" });
             }
 
             // vIBSMonoDif (decimal?) minimum
             if (this.vIBSMonoDif < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIBSMonoDif, must be a value greater than or equal to 0.", new [] { "vIBSMonoDif" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIBSMonoDif, must be a value greater than or equal to 0.", new [] { "vIBSMonoDif" });
             }
 
             // pDifCBS (decimal?) minimum
             if (this.pDifCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pDifCBS, must be a value greater than or equal to 0.", new [] { "pDifCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pDifCBS, must be a value greater than or equal to 0.", new [] { "pDifCBS" });
             }
 
             // vCBSMonoDif (decimal?) minimum
             if (this.vCBSMonoDif < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCBSMonoDif, must be a value greater than or equal to 0.", new [] { "vCBSMonoDif" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBSMonoDif, must be a value greater than or equal to 0.", new [] { "vCBSMonoDif" });
             }
 
             yield break;

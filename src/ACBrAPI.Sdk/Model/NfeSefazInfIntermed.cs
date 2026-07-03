@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -151,24 +151,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // CNPJ (string) maxLength
             if (this.CNPJ != null && this.CNPJ.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for CNPJ, length must be less than 14.", new [] { "CNPJ" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CNPJ, length must be less than 14.", new [] { "CNPJ" });
             }
 
             // idCadIntTran (string) maxLength
             if (this.idCadIntTran != null && this.idCadIntTran.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for idCadIntTran, length must be less than 60.", new [] { "idCadIntTran" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for idCadIntTran, length must be less than 60.", new [] { "idCadIntTran" });
             }
 
             // idCadIntTran (string) minLength
             if (this.idCadIntTran != null && this.idCadIntTran.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for idCadIntTran, length must be greater than 2.", new [] { "idCadIntTran" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for idCadIntTran, length must be greater than 2.", new [] { "idCadIntTran" });
             }
 
             yield break;

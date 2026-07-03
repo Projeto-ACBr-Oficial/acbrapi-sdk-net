@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -32,7 +32,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="MdfeSefazEmit" /> class.
         /// </summary>
         /// <param name="cNPJ">CNPJ do emitente.  Informar zeros não significativos.    ***Obrigatório caso o emitente seja pessoa jurídica***..</param>
-        /// <param name="cPF">CPF do emitente.  Informar zeros não significativos.  Usar com série específica 920-969 para emitente pessoa física com inscrição estadual.  Poderá ser usado também para emissão do Regime Especial da Nota Fiscal Fácil.    ***Obrigatorio caso o emitente seja pessoa física***..</param>
+        /// <param name="cPF">CPF do emitente.  Informar zeros não significativos.  Usar com série específica 920-969 para emitente pessoa física com inscrição estadual.  Poderá ser usado também para emissão do Regime Especial da Nota Fiscal Fácil.    ***Obrigatório caso o emitente seja pessoa física***..</param>
         /// <param name="iE">Inscrição Estadual do emitemte.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
         /// <param name="xNome">Razão social ou Nome do emitente.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
         /// <param name="xFant">Nome fantasia do emitente.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
@@ -55,9 +55,9 @@ namespace ACBrAPI.Sdk.Model
         public string CNPJ { get; set; }
 
         /// <summary>
-        /// CPF do emitente.  Informar zeros não significativos.  Usar com série específica 920-969 para emitente pessoa física com inscrição estadual.  Poderá ser usado também para emissão do Regime Especial da Nota Fiscal Fácil.    ***Obrigatorio caso o emitente seja pessoa física***.
+        /// CPF do emitente.  Informar zeros não significativos.  Usar com série específica 920-969 para emitente pessoa física com inscrição estadual.  Poderá ser usado também para emissão do Regime Especial da Nota Fiscal Fácil.    ***Obrigatório caso o emitente seja pessoa física***.
         /// </summary>
-        /// <value>CPF do emitente.  Informar zeros não significativos.  Usar com série específica 920-969 para emitente pessoa física com inscrição estadual.  Poderá ser usado também para emissão do Regime Especial da Nota Fiscal Fácil.    ***Obrigatorio caso o emitente seja pessoa física***.</value>
+        /// <value>CPF do emitente.  Informar zeros não significativos.  Usar com série específica 920-969 para emitente pessoa física com inscrição estadual.  Poderá ser usado também para emissão do Regime Especial da Nota Fiscal Fácil.    ***Obrigatório caso o emitente seja pessoa física***.</value>
         [DataMember(Name = "CPF", EmitDefaultValue = true)]
         public string CPF { get; set; }
 
@@ -211,30 +211,30 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xNome (string) maxLength
             if (this.xNome != null && this.xNome.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
             }
 
             // xNome (string) minLength
             if (this.xNome != null && this.xNome.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
             }
 
             // xFant (string) maxLength
             if (this.xFant != null && this.xFant.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xFant, length must be less than 60.", new [] { "xFant" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xFant, length must be less than 60.", new [] { "xFant" });
             }
 
             // xFant (string) minLength
             if (this.xFant != null && this.xFant.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xFant, length must be greater than 1.", new [] { "xFant" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xFant, length must be greater than 1.", new [] { "xFant" });
             }
 
             yield break;

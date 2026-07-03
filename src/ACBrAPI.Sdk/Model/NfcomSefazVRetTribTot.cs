@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -199,30 +199,30 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vRetPIS (decimal?) minimum
             if (this.vRetPIS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vRetPIS, must be a value greater than or equal to 0.", new [] { "vRetPIS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vRetPIS, must be a value greater than or equal to 0.", new [] { "vRetPIS" });
             }
 
             // vRetCofins (decimal?) minimum
             if (this.vRetCofins < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vRetCofins, must be a value greater than or equal to 0.", new [] { "vRetCofins" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vRetCofins, must be a value greater than or equal to 0.", new [] { "vRetCofins" });
             }
 
             // vRetCSLL (decimal?) minimum
             if (this.vRetCSLL < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vRetCSLL, must be a value greater than or equal to 0.", new [] { "vRetCSLL" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vRetCSLL, must be a value greater than or equal to 0.", new [] { "vRetCSLL" });
             }
 
             // vIRRF (decimal?) minimum
             if (this.vIRRF < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIRRF, must be a value greater than or equal to 0.", new [] { "vIRRF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIRRF, must be a value greater than or equal to 0.", new [] { "vIRRF" });
             }
 
             yield break;

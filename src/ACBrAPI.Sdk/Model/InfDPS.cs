@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -40,13 +40,16 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="dhEmi">Data e hora da emissão do DPS. Data e hora no formato UTC (Universal Coordinated Time): AAAA-MM-DDThh:mm:ssTZD. (required).</param>
         /// <param name="verAplic">Versão do aplicativo que gerou o DPS..</param>
         /// <param name="dCompet">Data em que se iniciou a prestação do serviço: Dia, mês e ano (AAAAMMDD). (AAAA-MM-DDThh:mm:ssTZD).      *Geramos automaticamente quando nenhum valor é informado.*.</param>
+        /// <param name="cMotivoEmisTI">Motivo da Emissão da DPS pelo Tomador/Intermediário:  * 1 - Importação de Serviço  * 2 - Tomador/Intermediário obrigado a emitir NFS-e por legislação municipal  * 3 - Tomador/Intermediário emitindo NFS-e por recusa de emissão pelo prestador  * 4 - Tomador/Intermediário emitindo por rejeitar a NFS-e emitida pelo prestador.</param>
+        /// <param name="chNFSeRej">Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário..</param>
         /// <param name="subst">subst.</param>
         /// <param name="prest">prest (required).</param>
         /// <param name="toma">toma.</param>
         /// <param name="interm">interm.</param>
         /// <param name="serv">serv (required).</param>
         /// <param name="valores">valores (required).</param>
-        public InfDPS(int? tpAmb = default(int?), DateTime? dhEmi = default(DateTime?), string verAplic = default(string), DateTime? dCompet = default(DateTime?), Substituicao subst = default(Substituicao), InfoPrestador prest = default(InfoPrestador), InfoTomador toma = default(InfoTomador), InfoIntermediario interm = default(InfoIntermediario), Serv serv = default(Serv), InfoValores valores = default(InfoValores))
+        /// <param name="iBSCBS">iBSCBS.</param>
+        public InfDPS(int? tpAmb = default(int?), DateTime? dhEmi = default(DateTime?), string verAplic = default(string), DateTime? dCompet = default(DateTime?), int? cMotivoEmisTI = default(int?), string chNFSeRej = default(string), Substituicao subst = default(Substituicao), InfoPrestador prest = default(InfoPrestador), InfoTomador toma = default(InfoTomador), InfoIntermediario interm = default(InfoIntermediario), Serv serv = default(Serv), InfoValores valores = default(InfoValores), RTCInfoIBSCBS iBSCBS = default(RTCInfoIBSCBS))
         {
             // to ensure "dhEmi" is required (not null)
             if (dhEmi == null)
@@ -75,9 +78,12 @@ namespace ACBrAPI.Sdk.Model
             this.tpAmb = tpAmb;
             this.verAplic = verAplic;
             this.dCompet = dCompet;
+            this.cMotivoEmisTI = cMotivoEmisTI;
+            this.chNFSeRej = chNFSeRej;
             this.subst = subst;
             this.toma = toma;
             this.interm = interm;
+            this.IBSCBS = iBSCBS;
         }
 
         /// <summary>
@@ -108,6 +114,20 @@ namespace ACBrAPI.Sdk.Model
         [DataMember(Name = "dCompet", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
         public DateTime? dCompet { get; set; }
+
+        /// <summary>
+        /// Motivo da Emissão da DPS pelo Tomador/Intermediário:  * 1 - Importação de Serviço  * 2 - Tomador/Intermediário obrigado a emitir NFS-e por legislação municipal  * 3 - Tomador/Intermediário emitindo NFS-e por recusa de emissão pelo prestador  * 4 - Tomador/Intermediário emitindo por rejeitar a NFS-e emitida pelo prestador
+        /// </summary>
+        /// <value>Motivo da Emissão da DPS pelo Tomador/Intermediário:  * 1 - Importação de Serviço  * 2 - Tomador/Intermediário obrigado a emitir NFS-e por legislação municipal  * 3 - Tomador/Intermediário emitindo NFS-e por recusa de emissão pelo prestador  * 4 - Tomador/Intermediário emitindo por rejeitar a NFS-e emitida pelo prestador</value>
+        [DataMember(Name = "cMotivoEmisTI", EmitDefaultValue = true)]
+        public int? cMotivoEmisTI { get; set; }
+
+        /// <summary>
+        /// Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário.
+        /// </summary>
+        /// <value>Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário.</value>
+        [DataMember(Name = "chNFSeRej", EmitDefaultValue = true)]
+        public string chNFSeRej { get; set; }
 
         /// <summary>
         /// Gets or Sets subst
@@ -146,6 +166,12 @@ namespace ACBrAPI.Sdk.Model
         public InfoValores valores { get; set; }
 
         /// <summary>
+        /// Gets or Sets IBSCBS
+        /// </summary>
+        [DataMember(Name = "IBSCBS", EmitDefaultValue = false)]
+        public RTCInfoIBSCBS IBSCBS { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -157,12 +183,15 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  dhEmi: ").Append(dhEmi).Append("\n");
             sb.Append("  verAplic: ").Append(verAplic).Append("\n");
             sb.Append("  dCompet: ").Append(dCompet).Append("\n");
+            sb.Append("  cMotivoEmisTI: ").Append(cMotivoEmisTI).Append("\n");
+            sb.Append("  chNFSeRej: ").Append(chNFSeRej).Append("\n");
             sb.Append("  subst: ").Append(subst).Append("\n");
             sb.Append("  prest: ").Append(prest).Append("\n");
             sb.Append("  toma: ").Append(toma).Append("\n");
             sb.Append("  interm: ").Append(interm).Append("\n");
             sb.Append("  serv: ").Append(serv).Append("\n");
             sb.Append("  valores: ").Append(valores).Append("\n");
+            sb.Append("  IBSCBS: ").Append(IBSCBS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,6 +248,16 @@ namespace ACBrAPI.Sdk.Model
                     this.dCompet.Equals(input.dCompet))
                 ) && 
                 (
+                    this.cMotivoEmisTI == input.cMotivoEmisTI ||
+                    (this.cMotivoEmisTI != null &&
+                    this.cMotivoEmisTI.Equals(input.cMotivoEmisTI))
+                ) && 
+                (
+                    this.chNFSeRej == input.chNFSeRej ||
+                    (this.chNFSeRej != null &&
+                    this.chNFSeRej.Equals(input.chNFSeRej))
+                ) && 
+                (
                     this.subst == input.subst ||
                     (this.subst != null &&
                     this.subst.Equals(input.subst))
@@ -247,6 +286,11 @@ namespace ACBrAPI.Sdk.Model
                     this.valores == input.valores ||
                     (this.valores != null &&
                     this.valores.Equals(input.valores))
+                ) && 
+                (
+                    this.IBSCBS == input.IBSCBS ||
+                    (this.IBSCBS != null &&
+                    this.IBSCBS.Equals(input.IBSCBS))
                 );
         }
 
@@ -275,6 +319,14 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.dCompet.GetHashCode();
                 }
+                if (this.cMotivoEmisTI != null)
+                {
+                    hashCode = (hashCode * 59) + this.cMotivoEmisTI.GetHashCode();
+                }
+                if (this.chNFSeRej != null)
+                {
+                    hashCode = (hashCode * 59) + this.chNFSeRej.GetHashCode();
+                }
                 if (this.subst != null)
                 {
                     hashCode = (hashCode * 59) + this.subst.GetHashCode();
@@ -299,6 +351,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.valores.GetHashCode();
                 }
+                if (this.IBSCBS != null)
+                {
+                    hashCode = (hashCode * 59) + this.IBSCBS.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -308,18 +364,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // verAplic (string) maxLength
             if (this.verAplic != null && this.verAplic.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for verAplic, length must be less than 20.", new [] { "verAplic" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verAplic, length must be less than 20.", new [] { "verAplic" });
             }
 
             // verAplic (string) minLength
             if (this.verAplic != null && this.verAplic.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for verAplic, length must be greater than 1.", new [] { "verAplic" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verAplic, length must be greater than 1.", new [] { "verAplic" });
+            }
+
+            // chNFSeRej (string) maxLength
+            if (this.chNFSeRej != null && this.chNFSeRej.Length > 50)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for chNFSeRej, length must be less than 50.", new [] { "chNFSeRej" });
             }
 
             yield break;

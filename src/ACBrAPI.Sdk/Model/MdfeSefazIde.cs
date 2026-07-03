@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -48,7 +48,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="modal">Modalidade de transporte.  * 1 - Rodoviário  * 2 - Aéreo  * 3 - Aquaviário  * 4 - Ferroviário (required).</param>
         /// <param name="dhEmi">Data e hora de emissão do Manifesto.  Formato AAAA-MM-DDTHH:MM:DD TZD. (required).</param>
         /// <param name="tpEmis">Forma de emissão do Manifesto.  * 1 - Normal  * 2 - Contingência  * 3 - Regime Especial NFF (required).</param>
-        /// <param name="procEmi">Identificação do processo de emissão do Manifesto.  * 0 - emissão de MDF-e com aplicativo do contribuinte (required).</param>
+        /// <param name="procEmi">Identificação do processo de emissão do Manifesto.  * 0 - emissão de MDFe com aplicativo do contribuinte  * 4 - emissão de MDFe por Provedor de Assinatura e Autorização - PAA (required).</param>
         /// <param name="verProc">Versão do processo de emissão.  Informar a versão do aplicativo emissor de MDF-e. (required).</param>
         /// <param name="uFIni">Sigla da UF do Carregamento.  Utilizar a Tabela do IBGE de código de unidades da federação.  Informar &#39;EX&#39; para operações com o exterior. (required).</param>
         /// <param name="uFFim">Sigla da UF do Descarregamento.  Utilizar a Tabela do IBGE de código de unidades da federação.  Informar &#39;EX&#39; para operações com o exterior. (required).</param>
@@ -227,9 +227,9 @@ namespace ACBrAPI.Sdk.Model
         public int? tpEmis { get; set; }
 
         /// <summary>
-        /// Identificação do processo de emissão do Manifesto.  * 0 - emissão de MDF-e com aplicativo do contribuinte
+        /// Identificação do processo de emissão do Manifesto.  * 0 - emissão de MDFe com aplicativo do contribuinte  * 4 - emissão de MDFe por Provedor de Assinatura e Autorização - PAA
         /// </summary>
-        /// <value>Identificação do processo de emissão do Manifesto.  * 0 - emissão de MDF-e com aplicativo do contribuinte</value>
+        /// <value>Identificação do processo de emissão do Manifesto.  * 0 - emissão de MDFe com aplicativo do contribuinte  * 4 - emissão de MDFe por Provedor de Assinatura e Autorização - PAA</value>
         [DataMember(Name = "procEmi", IsRequired = true, EmitDefaultValue = true)]
         public string procEmi { get; set; }
 
@@ -562,54 +562,54 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // serie (int?) maximum
             if (this.serie > (int?)999)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
             }
 
             // serie (int?) minimum
             if (this.serie < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
             }
 
             // nMDF (int?) maximum
             if (this.nMDF > (int?)999999999)
             {
-                yield return new ValidationResult("Invalid value for nMDF, must be a value less than or equal to 999999999.", new [] { "nMDF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nMDF, must be a value less than or equal to 999999999.", new [] { "nMDF" });
             }
 
             // nMDF (int?) minimum
             if (this.nMDF < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nMDF, must be a value greater than or equal to 1.", new [] { "nMDF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nMDF, must be a value greater than or equal to 1.", new [] { "nMDF" });
             }
 
             // cDV (int?) maximum
             if (this.cDV > (int?)9)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
             }
 
             // cDV (int?) minimum
             if (this.cDV < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
             }
 
             // verProc (string) maxLength
             if (this.verProc != null && this.verProc.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
             }
 
             // verProc (string) minLength
             if (this.verProc != null && this.verProc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
             }
 
             yield break;

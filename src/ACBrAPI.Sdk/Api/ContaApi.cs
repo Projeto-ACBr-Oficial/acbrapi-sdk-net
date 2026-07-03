@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -42,21 +42,65 @@ namespace ACBrAPI.Sdk.Api
         /// <returns>ApiResponse of ContaCota</returns>
         ApiResponse<ContaCota> ConsultarCotaContaWithHttpInfo(string nome);
         /// <summary>
-        /// Consultar os limites de uso e consumo de todas as cotas existentes.
+        /// Consultar o resumo da cota de créditos pré-pagos.
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ContaCotaPrePago</returns>
+        ContaCotaPrePago ConsultarCotaPrePago();
+
+        /// <summary>
+        /// Consultar o resumo da cota de créditos pré-pagos.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ContaCotaPrePago</returns>
+        ApiResponse<ContaCotaPrePago> ConsultarCotaPrePagoWithHttpInfo();
+        /// <summary>
+        /// Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ContaCotaListagem</returns>
+        [Obsolete]
         ContaCotaListagem ListarCotasConta();
 
         /// <summary>
-        /// Consultar os limites de uso e consumo de todas as cotas existentes.
+        /// Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ContaCotaListagem</returns>
+        [Obsolete]
         ApiResponse<ContaCotaListagem> ListarCotasContaWithHttpInfo();
+        /// <summary>
+        /// Consultar o extrato de movimentação de créditos do tenant atual.
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dataInicial"> (optional)</param>
+        /// <param name="dataFinal"> (optional)</param>
+        /// <param name="top"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <returns>ContaExtratoCreditoListagem</returns>
+        ContaExtratoCreditoListagem ListarExtratoCreditosConta(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// Consultar o extrato de movimentação de créditos do tenant atual.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dataInicial"> (optional)</param>
+        /// <param name="dataFinal"> (optional)</param>
+        /// <param name="top"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <returns>ApiResponse of ContaExtratoCreditoListagem</returns>
+        ApiResponse<ContaExtratoCreditoListagem> ListarExtratoCreditosContaWithHttpInfo(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -90,7 +134,28 @@ namespace ACBrAPI.Sdk.Api
         /// <returns>Task of ApiResponse (ContaCota)</returns>
         System.Threading.Tasks.Task<ApiResponse<ContaCota>> ConsultarCotaContaWithHttpInfoAsync(string nome, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Consultar os limites de uso e consumo de todas as cotas existentes.
+        /// Consultar o resumo da cota de créditos pré-pagos.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ContaCotaPrePago</returns>
+        System.Threading.Tasks.Task<ContaCotaPrePago> ConsultarCotaPrePagoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Consultar o resumo da cota de créditos pré-pagos.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ContaCotaPrePago)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ContaCotaPrePago>> ConsultarCotaPrePagoWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos.
         /// </summary>
         /// <remarks>
         /// 
@@ -98,10 +163,11 @@ namespace ACBrAPI.Sdk.Api
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContaCotaListagem</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ContaCotaListagem> ListarCotasContaAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Consultar os limites de uso e consumo de todas as cotas existentes.
+        /// Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos.
         /// </summary>
         /// <remarks>
         /// 
@@ -109,7 +175,39 @@ namespace ACBrAPI.Sdk.Api
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContaCotaListagem)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ContaCotaListagem>> ListarCotasContaWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Consultar o extrato de movimentação de créditos do tenant atual.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dataInicial"> (optional)</param>
+        /// <param name="dataFinal"> (optional)</param>
+        /// <param name="top"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ContaExtratoCreditoListagem</returns>
+        System.Threading.Tasks.Task<ContaExtratoCreditoListagem> ListarExtratoCreditosContaAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Consultar o extrato de movimentação de créditos do tenant atual.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dataInicial"> (optional)</param>
+        /// <param name="dataFinal"> (optional)</param>
+        /// <param name="top"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ContaExtratoCreditoListagem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ContaExtratoCreditoListagem>> ListarExtratoCreditosContaWithHttpInfoAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -365,11 +463,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("nome", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(nome)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -435,11 +528,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("nome", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(nome)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -461,10 +549,124 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar os limites de uso e consumo de todas as cotas existentes. 
+        /// Consultar o resumo da cota de créditos pré-pagos. 
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ContaCotaPrePago</returns>
+        public ContaCotaPrePago ConsultarCotaPrePago()
+        {
+            ACBrAPI.Sdk.Client.ApiResponse<ContaCotaPrePago> localVarResponse = ConsultarCotaPrePagoWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Consultar o resumo da cota de créditos pré-pagos. 
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ContaCotaPrePago</returns>
+        public ACBrAPI.Sdk.Client.ApiResponse<ContaCotaPrePago> ConsultarCotaPrePagoWithHttpInfo()
+        {
+            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ContaCotaPrePago>("/conta/cotas/prepago", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ConsultarCotaPrePago", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Consultar o resumo da cota de créditos pré-pagos. 
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ContaCotaPrePago</returns>
+        public async System.Threading.Tasks.Task<ContaCotaPrePago> ConsultarCotaPrePagoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            ACBrAPI.Sdk.Client.ApiResponse<ContaCotaPrePago> localVarResponse = await ConsultarCotaPrePagoWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Consultar o resumo da cota de créditos pré-pagos. 
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ContaCotaPrePago)</returns>
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<ContaCotaPrePago>> ConsultarCotaPrePagoWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ContaCotaPrePago>("/conta/cotas/prepago", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ConsultarCotaPrePago", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos. 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ContaCotaListagem</returns>
+        [Obsolete]
         public ContaCotaListagem ListarCotasConta()
         {
             ACBrAPI.Sdk.Client.ApiResponse<ContaCotaListagem> localVarResponse = ListarCotasContaWithHttpInfo();
@@ -472,10 +674,11 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar os limites de uso e consumo de todas as cotas existentes. 
+        /// Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos. 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ContaCotaListagem</returns>
+        [Obsolete]
         public ACBrAPI.Sdk.Client.ApiResponse<ContaCotaListagem> ListarCotasContaWithHttpInfo()
         {
             ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
@@ -495,11 +698,6 @@ namespace ACBrAPI.Sdk.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -520,11 +718,12 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar os limites de uso e consumo de todas as cotas existentes. 
+        /// Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos. 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContaCotaListagem</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ContaCotaListagem> ListarCotasContaAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             ACBrAPI.Sdk.Client.ApiResponse<ContaCotaListagem> localVarResponse = await ListarCotasContaWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
@@ -532,11 +731,12 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar os limites de uso e consumo de todas as cotas existentes. 
+        /// Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos. 
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContaCotaListagem)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<ContaCotaListagem>> ListarCotasContaWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
@@ -558,11 +758,6 @@ namespace ACBrAPI.Sdk.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -577,6 +772,179 @@ namespace ACBrAPI.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListarCotasConta", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Consultar o extrato de movimentação de créditos do tenant atual. 
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dataInicial"> (optional)</param>
+        /// <param name="dataFinal"> (optional)</param>
+        /// <param name="top"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <returns>ContaExtratoCreditoListagem</returns>
+        public ContaExtratoCreditoListagem ListarExtratoCreditosConta(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?))
+        {
+            ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> localVarResponse = ListarExtratoCreditosContaWithHttpInfo(dataInicial, dataFinal, top, skip, limit);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Consultar o extrato de movimentação de créditos do tenant atual. 
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dataInicial"> (optional)</param>
+        /// <param name="dataFinal"> (optional)</param>
+        /// <param name="top"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <returns>ApiResponse of ContaExtratoCreditoListagem</returns>
+        public ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> ListarExtratoCreditosContaWithHttpInfo(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?))
+        {
+            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (dataInicial != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "data_inicial", dataInicial));
+            }
+            if (dataFinal != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "data_final", dataFinal));
+            }
+            if (top != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "top", top));
+            }
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "skip", skip));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ContaExtratoCreditoListagem>("/conta/extrato", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListarExtratoCreditosConta", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Consultar o extrato de movimentação de créditos do tenant atual. 
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dataInicial"> (optional)</param>
+        /// <param name="dataFinal"> (optional)</param>
+        /// <param name="top"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ContaExtratoCreditoListagem</returns>
+        public async System.Threading.Tasks.Task<ContaExtratoCreditoListagem> ListarExtratoCreditosContaAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> localVarResponse = await ListarExtratoCreditosContaWithHttpInfoAsync(dataInicial, dataFinal, top, skip, limit, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Consultar o extrato de movimentação de créditos do tenant atual. 
+        /// </summary>
+        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dataInicial"> (optional)</param>
+        /// <param name="dataFinal"> (optional)</param>
+        /// <param name="top"> (optional)</param>
+        /// <param name="skip"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ContaExtratoCreditoListagem)</returns>
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem>> ListarExtratoCreditosContaWithHttpInfoAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (dataInicial != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "data_inicial", dataInicial));
+            }
+            if (dataFinal != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "data_final", dataFinal));
+            }
+            if (top != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "top", top));
+            }
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "skip", skip));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ContaExtratoCreditoListagem>("/conta/extrato", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListarExtratoCreditosConta", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

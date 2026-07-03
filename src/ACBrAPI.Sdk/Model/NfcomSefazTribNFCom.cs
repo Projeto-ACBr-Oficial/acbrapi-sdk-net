@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -38,8 +38,10 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="cST">Código Situação Tributária do IBS/CBS. (required).</param>
         /// <param name="cClassTrib">cClassTrib.</param>
+        /// <param name="indDoacao">Indica se a operação é de doação..</param>
         /// <param name="gIBSCBS">gIBSCBS.</param>
-        public NfcomSefazTribNFCom(string cST = default(string), string cClassTrib = default(string), NfcomSefazCIBS gIBSCBS = default(NfcomSefazCIBS))
+        /// <param name="gEstornoCred">gEstornoCred.</param>
+        public NfcomSefazTribNFCom(string cST = default(string), string cClassTrib = default(string), int? indDoacao = default(int?), NfcomSefazCIBS gIBSCBS = default(NfcomSefazCIBS), NfcomSefazEstornoCred gEstornoCred = default(NfcomSefazEstornoCred))
         {
             // to ensure "cST" is required (not null)
             if (cST == null)
@@ -48,7 +50,9 @@ namespace ACBrAPI.Sdk.Model
             }
             this.CST = cST;
             this.cClassTrib = cClassTrib;
+            this.indDoacao = indDoacao;
             this.gIBSCBS = gIBSCBS;
+            this.gEstornoCred = gEstornoCred;
         }
 
         /// <summary>
@@ -65,10 +69,23 @@ namespace ACBrAPI.Sdk.Model
         public string cClassTrib { get; set; }
 
         /// <summary>
+        /// Indica se a operação é de doação.
+        /// </summary>
+        /// <value>Indica se a operação é de doação.</value>
+        [DataMember(Name = "indDoacao", EmitDefaultValue = true)]
+        public int? indDoacao { get; set; }
+
+        /// <summary>
         /// Gets or Sets gIBSCBS
         /// </summary>
         [DataMember(Name = "gIBSCBS", EmitDefaultValue = false)]
         public NfcomSefazCIBS gIBSCBS { get; set; }
+
+        /// <summary>
+        /// Gets or Sets gEstornoCred
+        /// </summary>
+        [DataMember(Name = "gEstornoCred", EmitDefaultValue = false)]
+        public NfcomSefazEstornoCred gEstornoCred { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -80,7 +97,9 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("class NfcomSefazTribNFCom {\n");
             sb.Append("  CST: ").Append(CST).Append("\n");
             sb.Append("  cClassTrib: ").Append(cClassTrib).Append("\n");
+            sb.Append("  indDoacao: ").Append(indDoacao).Append("\n");
             sb.Append("  gIBSCBS: ").Append(gIBSCBS).Append("\n");
+            sb.Append("  gEstornoCred: ").Append(gEstornoCred).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,9 +146,19 @@ namespace ACBrAPI.Sdk.Model
                     this.cClassTrib.Equals(input.cClassTrib))
                 ) && 
                 (
+                    this.indDoacao == input.indDoacao ||
+                    (this.indDoacao != null &&
+                    this.indDoacao.Equals(input.indDoacao))
+                ) && 
+                (
                     this.gIBSCBS == input.gIBSCBS ||
                     (this.gIBSCBS != null &&
                     this.gIBSCBS.Equals(input.gIBSCBS))
+                ) && 
+                (
+                    this.gEstornoCred == input.gEstornoCred ||
+                    (this.gEstornoCred != null &&
+                    this.gEstornoCred.Equals(input.gEstornoCred))
                 );
         }
 
@@ -150,9 +179,17 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.cClassTrib.GetHashCode();
                 }
+                if (this.indDoacao != null)
+                {
+                    hashCode = (hashCode * 59) + this.indDoacao.GetHashCode();
+                }
                 if (this.gIBSCBS != null)
                 {
                     hashCode = (hashCode * 59) + this.gIBSCBS.GetHashCode();
+                }
+                if (this.gEstornoCred != null)
+                {
+                    hashCode = (hashCode * 59) + this.gEstornoCred.GetHashCode();
                 }
                 return hashCode;
             }
@@ -163,7 +200,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

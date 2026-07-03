@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -23,7 +23,7 @@ using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
 namespace ACBrAPI.Sdk.Model
 {
     /// <summary>
-    /// Grupo de informações do endereço da obra do serviço prestado.
+    /// Grupo de informações relativas ao endereço da atividade, evento ou local do serviço prestado.
     /// </summary>
     [DataContract(Name = "EnderecoSimples")]
     public partial class EnderecoSimples : IEquatable<EnderecoSimples>, IValidatableObject
@@ -250,54 +250,54 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xLgr (string) maxLength
             if (this.xLgr != null && this.xLgr.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for xLgr, length must be less than 255.", new [] { "xLgr" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xLgr, length must be less than 255.", new [] { "xLgr" });
             }
 
             // xLgr (string) minLength
             if (this.xLgr != null && this.xLgr.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xLgr, length must be greater than 1.", new [] { "xLgr" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xLgr, length must be greater than 1.", new [] { "xLgr" });
             }
 
             // nro (string) maxLength
             if (this.nro != null && this.nro.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for nro, length must be less than 60.", new [] { "nro" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nro, length must be less than 60.", new [] { "nro" });
             }
 
             // nro (string) minLength
             if (this.nro != null && this.nro.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for nro, length must be greater than 1.", new [] { "nro" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nro, length must be greater than 1.", new [] { "nro" });
             }
 
             // xCpl (string) maxLength
             if (this.xCpl != null && this.xCpl.Length > 156)
             {
-                yield return new ValidationResult("Invalid value for xCpl, length must be less than 156.", new [] { "xCpl" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xCpl, length must be less than 156.", new [] { "xCpl" });
             }
 
             // xCpl (string) minLength
             if (this.xCpl != null && this.xCpl.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xCpl, length must be greater than 1.", new [] { "xCpl" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xCpl, length must be greater than 1.", new [] { "xCpl" });
             }
 
             // xBairro (string) maxLength
             if (this.xBairro != null && this.xBairro.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xBairro, length must be less than 60.", new [] { "xBairro" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xBairro, length must be less than 60.", new [] { "xBairro" });
             }
 
             // xBairro (string) minLength
             if (this.xBairro != null && this.xBairro.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xBairro, length must be greater than 1.", new [] { "xBairro" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xBairro, length must be greater than 1.", new [] { "xBairro" });
             }
 
             yield break;

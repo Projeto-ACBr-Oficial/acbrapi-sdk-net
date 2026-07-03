@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -23,7 +23,7 @@ using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
 namespace ACBrAPI.Sdk.Model
 {
     /// <summary>
-    /// Informar essa opção da Choice para Monofasia.
+    /// Informar essa opção da Choice para Monofasia (CST 620).
     /// </summary>
     [DataContract(Name = "NfeSefazMonofasia")]
     public partial class NfeSefazMonofasia : IEquatable<NfeSefazMonofasia>, IValidatableObject
@@ -223,18 +223,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vTotIBSMonoItem (decimal?) minimum
             if (this.vTotIBSMonoItem < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTotIBSMonoItem, must be a value greater than or equal to 0.", new [] { "vTotIBSMonoItem" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTotIBSMonoItem, must be a value greater than or equal to 0.", new [] { "vTotIBSMonoItem" });
             }
 
             // vTotCBSMonoItem (decimal?) minimum
             if (this.vTotCBSMonoItem < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTotCBSMonoItem, must be a value greater than or equal to 0.", new [] { "vTotCBSMonoItem" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTotCBSMonoItem, must be a value greater than or equal to 0.", new [] { "vTotCBSMonoItem" });
             }
 
             yield break;

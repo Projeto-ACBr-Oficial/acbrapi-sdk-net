@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -175,30 +175,30 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xNome (string) maxLength
             if (this.xNome != null && this.xNome.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
             }
 
             // xNome (string) minLength
             if (this.xNome != null && this.xNome.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
             }
 
             // Site (string) maxLength
             if (this.Site != null && this.Site.Length > 120)
             {
-                yield return new ValidationResult("Invalid value for Site, length must be less than 120.", new [] { "Site" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Site, length must be less than 120.", new [] { "Site" });
             }
 
             // Site (string) minLength
             if (this.Site != null && this.Site.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for Site, length must be greater than 2.", new [] { "Site" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Site, length must be greater than 2.", new [] { "Site" });
             }
 
             yield break;

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -39,9 +39,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vDif">Total do Diferimento. (required).</param>
         /// <param name="vDevTrib">Total de devoluções de tributos. (required).</param>
         /// <param name="vCBS">Valor total da CBS. (required).</param>
-        /// <param name="vCredPres">Total do Crédito Presumido. (required).</param>
-        /// <param name="vCredPresCondSus">Total do Crédito Presumido Condição Suspensiva. (required).</param>
-        public NfcomSefazIBSCBSTotGCBS(decimal? vDif = default(decimal?), decimal? vDevTrib = default(decimal?), decimal? vCBS = default(decimal?), decimal? vCredPres = default(decimal?), decimal? vCredPresCondSus = default(decimal?))
+        public NfcomSefazIBSCBSTotGCBS(decimal? vDif = default(decimal?), decimal? vDevTrib = default(decimal?), decimal? vCBS = default(decimal?))
         {
             // to ensure "vDif" is required (not null)
             if (vDif == null)
@@ -61,18 +59,6 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("vCBS is a required property for NfcomSefazIBSCBSTotGCBS and cannot be null");
             }
             this.vCBS = vCBS;
-            // to ensure "vCredPres" is required (not null)
-            if (vCredPres == null)
-            {
-                throw new ArgumentNullException("vCredPres is a required property for NfcomSefazIBSCBSTotGCBS and cannot be null");
-            }
-            this.vCredPres = vCredPres;
-            // to ensure "vCredPresCondSus" is required (not null)
-            if (vCredPresCondSus == null)
-            {
-                throw new ArgumentNullException("vCredPresCondSus is a required property for NfcomSefazIBSCBSTotGCBS and cannot be null");
-            }
-            this.vCredPresCondSus = vCredPresCondSus;
         }
 
         /// <summary>
@@ -97,20 +83,6 @@ namespace ACBrAPI.Sdk.Model
         public decimal? vCBS { get; set; }
 
         /// <summary>
-        /// Total do Crédito Presumido.
-        /// </summary>
-        /// <value>Total do Crédito Presumido.</value>
-        [DataMember(Name = "vCredPres", IsRequired = true, EmitDefaultValue = true)]
-        public decimal? vCredPres { get; set; }
-
-        /// <summary>
-        /// Total do Crédito Presumido Condição Suspensiva.
-        /// </summary>
-        /// <value>Total do Crédito Presumido Condição Suspensiva.</value>
-        [DataMember(Name = "vCredPresCondSus", IsRequired = true, EmitDefaultValue = true)]
-        public decimal? vCredPresCondSus { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -121,8 +93,6 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vDif: ").Append(vDif).Append("\n");
             sb.Append("  vDevTrib: ").Append(vDevTrib).Append("\n");
             sb.Append("  vCBS: ").Append(vCBS).Append("\n");
-            sb.Append("  vCredPres: ").Append(vCredPres).Append("\n");
-            sb.Append("  vCredPresCondSus: ").Append(vCredPresCondSus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -172,16 +142,6 @@ namespace ACBrAPI.Sdk.Model
                     this.vCBS == input.vCBS ||
                     (this.vCBS != null &&
                     this.vCBS.Equals(input.vCBS))
-                ) && 
-                (
-                    this.vCredPres == input.vCredPres ||
-                    (this.vCredPres != null &&
-                    this.vCredPres.Equals(input.vCredPres))
-                ) && 
-                (
-                    this.vCredPresCondSus == input.vCredPresCondSus ||
-                    (this.vCredPresCondSus != null &&
-                    this.vCredPresCondSus.Equals(input.vCredPresCondSus))
                 );
         }
 
@@ -206,14 +166,6 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.vCBS.GetHashCode();
                 }
-                if (this.vCredPres != null)
-                {
-                    hashCode = (hashCode * 59) + this.vCredPres.GetHashCode();
-                }
-                if (this.vCredPresCondSus != null)
-                {
-                    hashCode = (hashCode * 59) + this.vCredPresCondSus.GetHashCode();
-                }
                 return hashCode;
             }
         }
@@ -223,36 +175,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vDif (decimal?) minimum
             if (this.vDif < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDif, must be a value greater than or equal to 0.", new [] { "vDif" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDif, must be a value greater than or equal to 0.", new [] { "vDif" });
             }
 
             // vDevTrib (decimal?) minimum
             if (this.vDevTrib < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDevTrib, must be a value greater than or equal to 0.", new [] { "vDevTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDevTrib, must be a value greater than or equal to 0.", new [] { "vDevTrib" });
             }
 
             // vCBS (decimal?) minimum
             if (this.vCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCBS, must be a value greater than or equal to 0.", new [] { "vCBS" });
-            }
-
-            // vCredPres (decimal?) minimum
-            if (this.vCredPres < (decimal?)0)
-            {
-                yield return new ValidationResult("Invalid value for vCredPres, must be a value greater than or equal to 0.", new [] { "vCredPres" });
-            }
-
-            // vCredPresCondSus (decimal?) minimum
-            if (this.vCredPresCondSus < (decimal?)0)
-            {
-                yield return new ValidationResult("Invalid value for vCredPresCondSus, must be a value greater than or equal to 0.", new [] { "vCredPresCondSus" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBS, must be a value greater than or equal to 0.", new [] { "vCBS" });
             }
 
             yield break;

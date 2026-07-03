@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -136,30 +136,30 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // qrCode (string) maxLength
             if (this.qrCode != null && this.qrCode.Length > 1000)
             {
-                yield return new ValidationResult("Invalid value for qrCode, length must be less than 1000.", new [] { "qrCode" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qrCode, length must be less than 1000.", new [] { "qrCode" });
             }
 
             // qrCode (string) minLength
             if (this.qrCode != null && this.qrCode.Length < 60)
             {
-                yield return new ValidationResult("Invalid value for qrCode, length must be greater than 60.", new [] { "qrCode" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qrCode, length must be greater than 60.", new [] { "qrCode" });
             }
 
             // urlChave (string) maxLength
             if (this.urlChave != null && this.urlChave.Length > 85)
             {
-                yield return new ValidationResult("Invalid value for urlChave, length must be less than 85.", new [] { "urlChave" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for urlChave, length must be less than 85.", new [] { "urlChave" });
             }
 
             // urlChave (string) minLength
             if (this.urlChave != null && this.urlChave.Length < 21)
             {
-                yield return new ValidationResult("Invalid value for urlChave, length must be greater than 21.", new [] { "urlChave" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for urlChave, length must be greater than 21.", new [] { "urlChave" });
             }
 
             yield break;

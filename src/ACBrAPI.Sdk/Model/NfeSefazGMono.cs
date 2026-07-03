@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -247,42 +247,42 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vIBSMono (decimal?) minimum
             if (this.vIBSMono < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIBSMono, must be a value greater than or equal to 0.", new [] { "vIBSMono" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIBSMono, must be a value greater than or equal to 0.", new [] { "vIBSMono" });
             }
 
             // vCBSMono (decimal?) minimum
             if (this.vCBSMono < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCBSMono, must be a value greater than or equal to 0.", new [] { "vCBSMono" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBSMono, must be a value greater than or equal to 0.", new [] { "vCBSMono" });
             }
 
             // vIBSMonoReten (decimal?) minimum
             if (this.vIBSMonoReten < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIBSMonoReten, must be a value greater than or equal to 0.", new [] { "vIBSMonoReten" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIBSMonoReten, must be a value greater than or equal to 0.", new [] { "vIBSMonoReten" });
             }
 
             // vCBSMonoReten (decimal?) minimum
             if (this.vCBSMonoReten < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCBSMonoReten, must be a value greater than or equal to 0.", new [] { "vCBSMonoReten" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBSMonoReten, must be a value greater than or equal to 0.", new [] { "vCBSMonoReten" });
             }
 
             // vIBSMonoRet (decimal?) minimum
             if (this.vIBSMonoRet < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIBSMonoRet, must be a value greater than or equal to 0.", new [] { "vIBSMonoRet" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIBSMonoRet, must be a value greater than or equal to 0.", new [] { "vIBSMonoRet" });
             }
 
             // vCBSMonoRet (decimal?) minimum
             if (this.vCBSMonoRet < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCBSMonoRet, must be a value greater than or equal to 0.", new [] { "vCBSMonoRet" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBSMonoRet, must be a value greater than or equal to 0.", new [] { "vCBSMonoRet" });
             }
 
             yield break;

@@ -5,7 +5,7 @@ Grupo de informações do IBS na UF.
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**pIBSUF** | **decimal?** | Aliquota do IBS de competência das UF. | 
+**pIBSUF** | **decimal?** | Aliquota do IBS de competência das UF (em percentual). | 
 **gDif** | [**NfcomSefazDif**](NfcomSefazDif.md) |  | [optional] 
 **gDevTrib** | [**NfcomSefazDevTrib**](NfcomSefazDevTrib.md) |  | [optional] 
 **gRed** | [**NfcomSefazRed**](NfcomSefazRed.md) |  | [optional] 

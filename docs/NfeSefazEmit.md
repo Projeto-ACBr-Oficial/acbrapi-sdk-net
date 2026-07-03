@@ -6,7 +6,7 @@ Identificação do emitente.
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
 **CNPJ** | **string** | Número do CNPJ do emitente.    ***Obrigatório caso o emitente seja pessoa jurídica***. | [optional] 
-**CPF** | **string** | Número do CPF do emitente.    ***Obrigatorio caso o emitente seja pessoa física***. | [optional] 
+**CPF** | **string** | Número do CPF do emitente.    ***Obrigatório caso o emitente seja pessoa física***. | [optional] 
 **xNome** | **string** | Razão Social ou Nome do emitente.    *Caso não seja informado, será utilizado o do cadastro da empresa.* | [optional] 
 **xFant** | **string** | Nome fantasia.    *Caso não seja informado, será utilizado o do cadastro da empresa.* | [optional] 
 **enderEmit** | [**NfeSefazEnderEmi**](NfeSefazEnderEmi.md) |  | [optional] 

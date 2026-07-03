@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -47,6 +47,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cNPJFab">CNPJ do Fabricante da Mercadoria, obrigatório para produto em escala NÃO relevante..</param>
         /// <param name="cBenef">cBenef.</param>
         /// <param name="gCred">gCred.</param>
+        /// <param name="tpCredPresIBSZFM">Classificação para subapuração do IBS na ZFM..</param>
         /// <param name="eXTIPI">Código EX TIPI (3 posições)..</param>
         /// <param name="cFOP">Cfop. (required).</param>
         /// <param name="uCom">Unidade comercial. (required).</param>
@@ -77,7 +78,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="arma">arma.</param>
         /// <param name="comb">comb.</param>
         /// <param name="nRECOPI">Número do RECOPI..</param>
-        public NfeSefazProd(string cProd = default(string), string cEAN = default(string), string cBarra = default(string), string xProd = default(string), string nCM = default(string), List<string> nVE = default(List<string>), string cEST = default(string), string indEscala = default(string), string cNPJFab = default(string), string cBenef = default(string), List<NfeSefazGCred> gCred = default(List<NfeSefazGCred>), string eXTIPI = default(string), string cFOP = default(string), string uCom = default(string), decimal? qCom = default(decimal?), decimal? vUnCom = default(decimal?), decimal? vProd = default(decimal?), string cEANTrib = default(string), string cBarraTrib = default(string), string uTrib = default(string), decimal? qTrib = default(decimal?), decimal? vUnTrib = default(decimal?), decimal? vFrete = default(decimal?), decimal? vSeg = default(decimal?), decimal? vDesc = default(decimal?), decimal? vOutro = default(decimal?), int? indTot = default(int?), int? indBemMovelUsado = default(int?), List<NfeSefazDI> dI = default(List<NfeSefazDI>), List<NfeSefazDetExport> detExport = default(List<NfeSefazDetExport>), string xPed = default(string), int? nItemPed = default(int?), string nFCI = default(string), List<NfeSefazRastro> rastro = default(List<NfeSefazRastro>), NfeSefazInfProdNFF infProdNFF = default(NfeSefazInfProdNFF), NfeSefazInfProdEmb infProdEmb = default(NfeSefazInfProdEmb), NfeSefazVeicProd veicProd = default(NfeSefazVeicProd), NfeSefazMed med = default(NfeSefazMed), List<NfeSefazArma> arma = default(List<NfeSefazArma>), NfeSefazComb comb = default(NfeSefazComb), string nRECOPI = default(string))
+        public NfeSefazProd(string cProd = default(string), string cEAN = default(string), string cBarra = default(string), string xProd = default(string), string nCM = default(string), List<string> nVE = default(List<string>), string cEST = default(string), string indEscala = default(string), string cNPJFab = default(string), string cBenef = default(string), List<NfeSefazGCred> gCred = default(List<NfeSefazGCred>), int? tpCredPresIBSZFM = default(int?), string eXTIPI = default(string), string cFOP = default(string), string uCom = default(string), decimal? qCom = default(decimal?), decimal? vUnCom = default(decimal?), decimal? vProd = default(decimal?), string cEANTrib = default(string), string cBarraTrib = default(string), string uTrib = default(string), decimal? qTrib = default(decimal?), decimal? vUnTrib = default(decimal?), decimal? vFrete = default(decimal?), decimal? vSeg = default(decimal?), decimal? vDesc = default(decimal?), decimal? vOutro = default(decimal?), int? indTot = default(int?), int? indBemMovelUsado = default(int?), List<NfeSefazDI> dI = default(List<NfeSefazDI>), List<NfeSefazDetExport> detExport = default(List<NfeSefazDetExport>), string xPed = default(string), int? nItemPed = default(int?), string nFCI = default(string), List<NfeSefazRastro> rastro = default(List<NfeSefazRastro>), NfeSefazInfProdNFF infProdNFF = default(NfeSefazInfProdNFF), NfeSefazInfProdEmb infProdEmb = default(NfeSefazInfProdEmb), NfeSefazVeicProd veicProd = default(NfeSefazVeicProd), NfeSefazMed med = default(NfeSefazMed), List<NfeSefazArma> arma = default(List<NfeSefazArma>), NfeSefazComb comb = default(NfeSefazComb), string nRECOPI = default(string))
         {
             // to ensure "cProd" is required (not null)
             if (cProd == null)
@@ -170,6 +171,7 @@ namespace ACBrAPI.Sdk.Model
             this.CNPJFab = cNPJFab;
             this.cBenef = cBenef;
             this.gCred = gCred;
+            this.tpCredPresIBSZFM = tpCredPresIBSZFM;
             this.EXTIPI = eXTIPI;
             this.cBarraTrib = cBarraTrib;
             this.vFrete = vFrete;
@@ -265,6 +267,13 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         [DataMember(Name = "gCred", EmitDefaultValue = false)]
         public List<NfeSefazGCred> gCred { get; set; }
+
+        /// <summary>
+        /// Classificação para subapuração do IBS na ZFM.
+        /// </summary>
+        /// <value>Classificação para subapuração do IBS na ZFM.</value>
+        [DataMember(Name = "tpCredPresIBSZFM", EmitDefaultValue = true)]
+        public int? tpCredPresIBSZFM { get; set; }
 
         /// <summary>
         /// Código EX TIPI (3 posições).
@@ -486,6 +495,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  CNPJFab: ").Append(CNPJFab).Append("\n");
             sb.Append("  cBenef: ").Append(cBenef).Append("\n");
             sb.Append("  gCred: ").Append(gCred).Append("\n");
+            sb.Append("  tpCredPresIBSZFM: ").Append(tpCredPresIBSZFM).Append("\n");
             sb.Append("  EXTIPI: ").Append(EXTIPI).Append("\n");
             sb.Append("  CFOP: ").Append(CFOP).Append("\n");
             sb.Append("  uCom: ").Append(uCom).Append("\n");
@@ -607,6 +617,11 @@ namespace ACBrAPI.Sdk.Model
                     this.gCred != null &&
                     input.gCred != null &&
                     this.gCred.SequenceEqual(input.gCred)
+                ) && 
+                (
+                    this.tpCredPresIBSZFM == input.tpCredPresIBSZFM ||
+                    (this.tpCredPresIBSZFM != null &&
+                    this.tpCredPresIBSZFM.Equals(input.tpCredPresIBSZFM))
                 ) && 
                 (
                     this.EXTIPI == input.EXTIPI ||
@@ -817,6 +832,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.gCred.GetHashCode();
                 }
+                if (this.tpCredPresIBSZFM != null)
+                {
+                    hashCode = (hashCode * 59) + this.tpCredPresIBSZFM.GetHashCode();
+                }
                 if (this.EXTIPI != null)
                 {
                     hashCode = (hashCode * 59) + this.EXTIPI.GetHashCode();
@@ -946,168 +965,168 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // cProd (string) maxLength
             if (this.cProd != null && this.cProd.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for cProd, length must be less than 60.", new [] { "cProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cProd, length must be less than 60.", new [] { "cProd" });
             }
 
             // cProd (string) minLength
             if (this.cProd != null && this.cProd.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for cProd, length must be greater than 1.", new [] { "cProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cProd, length must be greater than 1.", new [] { "cProd" });
             }
 
             // cBarra (string) maxLength
             if (this.cBarra != null && this.cBarra.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for cBarra, length must be less than 30.", new [] { "cBarra" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cBarra, length must be less than 30.", new [] { "cBarra" });
             }
 
             // cBarra (string) minLength
             if (this.cBarra != null && this.cBarra.Length < 3)
             {
-                yield return new ValidationResult("Invalid value for cBarra, length must be greater than 3.", new [] { "cBarra" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cBarra, length must be greater than 3.", new [] { "cBarra" });
             }
 
             // xProd (string) maxLength
             if (this.xProd != null && this.xProd.Length > 120)
             {
-                yield return new ValidationResult("Invalid value for xProd, length must be less than 120.", new [] { "xProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xProd, length must be less than 120.", new [] { "xProd" });
             }
 
             // xProd (string) minLength
             if (this.xProd != null && this.xProd.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xProd, length must be greater than 1.", new [] { "xProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xProd, length must be greater than 1.", new [] { "xProd" });
             }
 
             // CNPJFab (string) maxLength
             if (this.CNPJFab != null && this.CNPJFab.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for CNPJFab, length must be less than 14.", new [] { "CNPJFab" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CNPJFab, length must be less than 14.", new [] { "CNPJFab" });
             }
 
             // uCom (string) maxLength
             if (this.uCom != null && this.uCom.Length > 6)
             {
-                yield return new ValidationResult("Invalid value for uCom, length must be less than 6.", new [] { "uCom" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for uCom, length must be less than 6.", new [] { "uCom" });
             }
 
             // uCom (string) minLength
             if (this.uCom != null && this.uCom.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for uCom, length must be greater than 1.", new [] { "uCom" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for uCom, length must be greater than 1.", new [] { "uCom" });
             }
 
             // qCom (decimal?) minimum
             if (this.qCom < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qCom, must be a value greater than or equal to 0.", new [] { "qCom" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qCom, must be a value greater than or equal to 0.", new [] { "qCom" });
             }
 
             // vUnCom (decimal?) minimum
             if (this.vUnCom < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vUnCom, must be a value greater than or equal to 0.", new [] { "vUnCom" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vUnCom, must be a value greater than or equal to 0.", new [] { "vUnCom" });
             }
 
             // vProd (decimal?) minimum
             if (this.vProd < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vProd, must be a value greater than or equal to 0.", new [] { "vProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vProd, must be a value greater than or equal to 0.", new [] { "vProd" });
             }
 
             // cBarraTrib (string) maxLength
             if (this.cBarraTrib != null && this.cBarraTrib.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for cBarraTrib, length must be less than 30.", new [] { "cBarraTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cBarraTrib, length must be less than 30.", new [] { "cBarraTrib" });
             }
 
             // cBarraTrib (string) minLength
             if (this.cBarraTrib != null && this.cBarraTrib.Length < 3)
             {
-                yield return new ValidationResult("Invalid value for cBarraTrib, length must be greater than 3.", new [] { "cBarraTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cBarraTrib, length must be greater than 3.", new [] { "cBarraTrib" });
             }
 
             // uTrib (string) maxLength
             if (this.uTrib != null && this.uTrib.Length > 6)
             {
-                yield return new ValidationResult("Invalid value for uTrib, length must be less than 6.", new [] { "uTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for uTrib, length must be less than 6.", new [] { "uTrib" });
             }
 
             // uTrib (string) minLength
             if (this.uTrib != null && this.uTrib.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for uTrib, length must be greater than 1.", new [] { "uTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for uTrib, length must be greater than 1.", new [] { "uTrib" });
             }
 
             // qTrib (decimal?) minimum
             if (this.qTrib < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qTrib, must be a value greater than or equal to 0.", new [] { "qTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qTrib, must be a value greater than or equal to 0.", new [] { "qTrib" });
             }
 
             // vUnTrib (decimal?) minimum
             if (this.vUnTrib < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vUnTrib, must be a value greater than or equal to 0.", new [] { "vUnTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vUnTrib, must be a value greater than or equal to 0.", new [] { "vUnTrib" });
             }
 
             // vFrete (decimal?) minimum
             if (this.vFrete < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vFrete, must be a value greater than or equal to 0.", new [] { "vFrete" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vFrete, must be a value greater than or equal to 0.", new [] { "vFrete" });
             }
 
             // vSeg (decimal?) minimum
             if (this.vSeg < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vSeg, must be a value greater than or equal to 0.", new [] { "vSeg" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vSeg, must be a value greater than or equal to 0.", new [] { "vSeg" });
             }
 
             // vDesc (decimal?) minimum
             if (this.vDesc < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDesc, must be a value greater than or equal to 0.", new [] { "vDesc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDesc, must be a value greater than or equal to 0.", new [] { "vDesc" });
             }
 
             // vOutro (decimal?) minimum
             if (this.vOutro < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vOutro, must be a value greater than or equal to 0.", new [] { "vOutro" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vOutro, must be a value greater than or equal to 0.", new [] { "vOutro" });
             }
 
             // xPed (string) maxLength
             if (this.xPed != null && this.xPed.Length > 15)
             {
-                yield return new ValidationResult("Invalid value for xPed, length must be less than 15.", new [] { "xPed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xPed, length must be less than 15.", new [] { "xPed" });
             }
 
             // xPed (string) minLength
             if (this.xPed != null && this.xPed.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xPed, length must be greater than 1.", new [] { "xPed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xPed, length must be greater than 1.", new [] { "xPed" });
             }
 
             // nItemPed (int?) maximum
             if (this.nItemPed > (int?)999999)
             {
-                yield return new ValidationResult("Invalid value for nItemPed, must be a value less than or equal to 999999.", new [] { "nItemPed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nItemPed, must be a value less than or equal to 999999.", new [] { "nItemPed" });
             }
 
             // nItemPed (int?) minimum
             if (this.nItemPed < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for nItemPed, must be a value greater than or equal to 0.", new [] { "nItemPed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nItemPed, must be a value greater than or equal to 0.", new [] { "nItemPed" });
             }
 
             // nRECOPI (string) maxLength
             if (this.nRECOPI != null && this.nRECOPI.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for nRECOPI, length must be less than 20.", new [] { "nRECOPI" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nRECOPI, length must be less than 20.", new [] { "nRECOPI" });
             }
 
             yield break;

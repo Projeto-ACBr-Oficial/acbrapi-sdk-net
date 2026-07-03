@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -134,12 +134,12 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // content_type (string) maxLength
             if (this.content_type != null && this.content_type.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for content_type, length must be less than 100.", new [] { "content_type" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for content_type, length must be less than 100.", new [] { "content_type" });
             }
 
             yield break;

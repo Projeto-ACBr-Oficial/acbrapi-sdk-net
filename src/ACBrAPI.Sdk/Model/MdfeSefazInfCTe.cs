@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -259,12 +259,12 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // chCTe (string) maxLength
             if (this.chCTe != null && this.chCTe.Length > 44)
             {
-                yield return new ValidationResult("Invalid value for chCTe, length must be less than 44.", new [] { "chCTe" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for chCTe, length must be less than 44.", new [] { "chCTe" });
             }
 
             yield break;

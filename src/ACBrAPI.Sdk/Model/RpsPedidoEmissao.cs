@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -300,12 +300,12 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // outras_informacoes (string) maxLength
             if (this.outras_informacoes != null && this.outras_informacoes.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for outras_informacoes, length must be less than 255.", new [] { "outras_informacoes" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for outras_informacoes, length must be less than 255.", new [] { "outras_informacoes" });
             }
 
             yield break;

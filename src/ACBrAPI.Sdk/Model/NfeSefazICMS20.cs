@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -47,7 +47,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="pFCP">Percentual de ICMS relativo ao Fundo de Combate à Pobreza (FCP)..</param>
         /// <param name="vFCP">Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP)..</param>
         /// <param name="vICMSDeson">Valor do ICMS de desoneração..</param>
-        /// <param name="motDesICMS">Motivo da desoneração do ICMS:3-Uso na agropecuária  * 9 - Outros  * 12 - Fomento agropecuário.</param>
+        /// <param name="motDesICMS">Motivo da desoneração do ICMS:3-Uso na agropecuária  * 9 - Outros  * 10 - Deficiente Condutor (Convênio ICMS 38/12)  * 11 - Deficiente Não Condutor (Convênio ICMS 38/12)  * 12 - Fomento agropecuário.</param>
         /// <param name="indDeduzDeson">Indica se o valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd):  * 0 - Valor do ICMS desonerado (vICMSDeson) não deduz do valor do item (vProd) / total da NF-e  * 1 - Valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd) / total da NF-e.</param>
         public NfeSefazICMS20(int? orig = default(int?), string cST = default(string), int? modBC = default(int?), decimal? pRedBC = default(decimal?), decimal? vBC = default(decimal?), decimal? pICMS = default(decimal?), decimal? vICMS = default(decimal?), decimal? vBCFCP = default(decimal?), decimal? pFCP = default(decimal?), decimal? vFCP = default(decimal?), decimal? vICMSDeson = default(decimal?), int? motDesICMS = default(int?), int? indDeduzDeson = default(int?))
         {
@@ -179,9 +179,9 @@ namespace ACBrAPI.Sdk.Model
         public decimal? vICMSDeson { get; set; }
 
         /// <summary>
-        /// Motivo da desoneração do ICMS:3-Uso na agropecuária  * 9 - Outros  * 12 - Fomento agropecuário
+        /// Motivo da desoneração do ICMS:3-Uso na agropecuária  * 9 - Outros  * 10 - Deficiente Condutor (Convênio ICMS 38/12)  * 11 - Deficiente Não Condutor (Convênio ICMS 38/12)  * 12 - Fomento agropecuário
         /// </summary>
-        /// <value>Motivo da desoneração do ICMS:3-Uso na agropecuária  * 9 - Outros  * 12 - Fomento agropecuário</value>
+        /// <value>Motivo da desoneração do ICMS:3-Uso na agropecuária  * 9 - Outros  * 10 - Deficiente Condutor (Convênio ICMS 38/12)  * 11 - Deficiente Não Condutor (Convênio ICMS 38/12)  * 12 - Fomento agropecuário</value>
         [DataMember(Name = "motDesICMS", EmitDefaultValue = true)]
         public int? motDesICMS { get; set; }
 
@@ -385,54 +385,54 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pRedBC (decimal?) minimum
             if (this.pRedBC < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pRedBC, must be a value greater than or equal to 0.", new [] { "pRedBC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pRedBC, must be a value greater than or equal to 0.", new [] { "pRedBC" });
             }
 
             // vBC (decimal?) minimum
             if (this.vBC < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBC, must be a value greater than or equal to 0.", new [] { "vBC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBC, must be a value greater than or equal to 0.", new [] { "vBC" });
             }
 
             // pICMS (decimal?) minimum
             if (this.pICMS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pICMS, must be a value greater than or equal to 0.", new [] { "pICMS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pICMS, must be a value greater than or equal to 0.", new [] { "pICMS" });
             }
 
             // vICMS (decimal?) minimum
             if (this.vICMS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vICMS, must be a value greater than or equal to 0.", new [] { "vICMS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vICMS, must be a value greater than or equal to 0.", new [] { "vICMS" });
             }
 
             // vBCFCP (decimal?) minimum
             if (this.vBCFCP < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBCFCP, must be a value greater than or equal to 0.", new [] { "vBCFCP" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBCFCP, must be a value greater than or equal to 0.", new [] { "vBCFCP" });
             }
 
             // pFCP (decimal?) minimum
             if (this.pFCP < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pFCP, must be a value greater than or equal to 0.", new [] { "pFCP" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pFCP, must be a value greater than or equal to 0.", new [] { "pFCP" });
             }
 
             // vFCP (decimal?) minimum
             if (this.vFCP < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vFCP, must be a value greater than or equal to 0.", new [] { "vFCP" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vFCP, must be a value greater than or equal to 0.", new [] { "vFCP" });
             }
 
             // vICMSDeson (decimal?) minimum
             if (this.vICMSDeson < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vICMSDeson, must be a value greater than or equal to 0.", new [] { "vICMSDeson" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vICMSDeson, must be a value greater than or equal to 0.", new [] { "vICMSDeson" });
             }
 
             yield break;

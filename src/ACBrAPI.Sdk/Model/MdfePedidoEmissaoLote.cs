@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -46,6 +46,7 @@ namespace ACBrAPI.Sdk.Model
             /// </summary>
             [EnumMember(Value = "producao")]
             Producao = 2
+
         }
 
 
@@ -199,12 +200,12 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // referencia (string) maxLength
             if (this.referencia != null && this.referencia.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for referencia, length must be less than 50.", new [] { "referencia" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for referencia, length must be less than 50.", new [] { "referencia" });
             }
 
             yield break;

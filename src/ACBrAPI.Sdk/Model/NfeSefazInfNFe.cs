@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -58,7 +58,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="infRespTec">infRespTec.</param>
         /// <param name="infSolicNFF">infSolicNFF.</param>
         /// <param name="agropecuario">agropecuario.</param>
-        public NfeSefazInfNFe(string versao = default(string), string id = default(string), NfeSefazIde ide = default(NfeSefazIde), NfeSefazEmit emit = default(NfeSefazEmit), NfeSefazAvulsa avulsa = default(NfeSefazAvulsa), NfeSefazDest dest = default(NfeSefazDest), NfeSefazLocal retirada = default(NfeSefazLocal), NfeSefazLocal entrega = default(NfeSefazLocal), List<NfeSefazAutXML> autXML = default(List<NfeSefazAutXML>), List<NfeSefazDet> det = default(List<NfeSefazDet>), NfeSefazTotal total = default(NfeSefazTotal), NfeSefazTransp transp = default(NfeSefazTransp), NfeSefazCobr cobr = default(NfeSefazCobr), NfeSefazPag pag = default(NfeSefazPag), NfeSefazInfIntermed infIntermed = default(NfeSefazInfIntermed), NfeSefazInfAdic infAdic = default(NfeSefazInfAdic), NfeSefazExporta exporta = default(NfeSefazExporta), NfeSefazCompra compra = default(NfeSefazCompra), NfeSefazCana cana = default(NfeSefazCana), NfeSefazInfRespTec infRespTec = default(NfeSefazInfRespTec), NfeSefazInfSolicNFF infSolicNFF = default(NfeSefazInfSolicNFF), NfeSefazAgropecuario agropecuario = default(NfeSefazAgropecuario))
+        /// <param name="infPAA">infPAA.</param>
+        public NfeSefazInfNFe(string versao = default(string), string id = default(string), NfeSefazIde ide = default(NfeSefazIde), NfeSefazEmit emit = default(NfeSefazEmit), NfeSefazAvulsa avulsa = default(NfeSefazAvulsa), NfeSefazDest dest = default(NfeSefazDest), NfeSefazLocal retirada = default(NfeSefazLocal), NfeSefazLocal entrega = default(NfeSefazLocal), List<NfeSefazAutXML> autXML = default(List<NfeSefazAutXML>), List<NfeSefazDet> det = default(List<NfeSefazDet>), NfeSefazTotal total = default(NfeSefazTotal), NfeSefazTransp transp = default(NfeSefazTransp), NfeSefazCobr cobr = default(NfeSefazCobr), NfeSefazPag pag = default(NfeSefazPag), NfeSefazInfIntermed infIntermed = default(NfeSefazInfIntermed), NfeSefazInfAdic infAdic = default(NfeSefazInfAdic), NfeSefazExporta exporta = default(NfeSefazExporta), NfeSefazCompra compra = default(NfeSefazCompra), NfeSefazCana cana = default(NfeSefazCana), NfeSefazInfRespTec infRespTec = default(NfeSefazInfRespTec), NfeSefazInfSolicNFF infSolicNFF = default(NfeSefazInfSolicNFF), NfeSefazAgropecuario agropecuario = default(NfeSefazAgropecuario), NfeSefazInfPAA infPAA = default(NfeSefazInfPAA))
         {
             // to ensure "versao" is required (not null)
             if (versao == null)
@@ -117,6 +118,7 @@ namespace ACBrAPI.Sdk.Model
             this.infRespTec = infRespTec;
             this.infSolicNFF = infSolicNFF;
             this.agropecuario = agropecuario;
+            this.infPAA = infPAA;
         }
 
         /// <summary>
@@ -254,6 +256,12 @@ namespace ACBrAPI.Sdk.Model
         public NfeSefazAgropecuario agropecuario { get; set; }
 
         /// <summary>
+        /// Gets or Sets infPAA
+        /// </summary>
+        [DataMember(Name = "infPAA", EmitDefaultValue = false)]
+        public NfeSefazInfPAA infPAA { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -283,6 +291,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  infRespTec: ").Append(infRespTec).Append("\n");
             sb.Append("  infSolicNFF: ").Append(infSolicNFF).Append("\n");
             sb.Append("  agropecuario: ").Append(agropecuario).Append("\n");
+            sb.Append("  infPAA: ").Append(infPAA).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -429,6 +438,11 @@ namespace ACBrAPI.Sdk.Model
                     this.agropecuario == input.agropecuario ||
                     (this.agropecuario != null &&
                     this.agropecuario.Equals(input.agropecuario))
+                ) && 
+                (
+                    this.infPAA == input.infPAA ||
+                    (this.infPAA != null &&
+                    this.infPAA.Equals(input.infPAA))
                 );
         }
 
@@ -529,6 +543,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.agropecuario.GetHashCode();
                 }
+                if (this.infPAA != null)
+                {
+                    hashCode = (hashCode * 59) + this.infPAA.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -538,7 +556,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

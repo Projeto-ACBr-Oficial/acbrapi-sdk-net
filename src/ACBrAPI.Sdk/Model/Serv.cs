@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -39,12 +39,10 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="locPrest">locPrest.</param>
         /// <param name="cServ">cServ (required).</param>
         /// <param name="comExt">comExt.</param>
-        /// <param name="lsadppu">lsadppu.</param>
         /// <param name="obra">obra.</param>
         /// <param name="atvEvento">atvEvento.</param>
-        /// <param name="explRod">explRod.</param>
         /// <param name="infoCompl">infoCompl.</param>
-        public Serv(LocPrest locPrest = default(LocPrest), CServ cServ = default(CServ), ComExterior comExt = default(ComExterior), LocacaoSublocacao lsadppu = default(LocacaoSublocacao), InfoObra obra = default(InfoObra), AtvEvento atvEvento = default(AtvEvento), ExploracaoRodoviaria explRod = default(ExploracaoRodoviaria), InfoCompl infoCompl = default(InfoCompl))
+        public Serv(LocPrest locPrest = default(LocPrest), CServ cServ = default(CServ), ComExterior comExt = default(ComExterior), InfoObra obra = default(InfoObra), AtvEvento atvEvento = default(AtvEvento), InfoCompl infoCompl = default(InfoCompl))
         {
             // to ensure "cServ" is required (not null)
             if (cServ == null)
@@ -54,10 +52,8 @@ namespace ACBrAPI.Sdk.Model
             this.cServ = cServ;
             this.locPrest = locPrest;
             this.comExt = comExt;
-            this.lsadppu = lsadppu;
             this.obra = obra;
             this.atvEvento = atvEvento;
-            this.explRod = explRod;
             this.infoCompl = infoCompl;
         }
 
@@ -80,12 +76,6 @@ namespace ACBrAPI.Sdk.Model
         public ComExterior comExt { get; set; }
 
         /// <summary>
-        /// Gets or Sets lsadppu
-        /// </summary>
-        [DataMember(Name = "lsadppu", EmitDefaultValue = false)]
-        public LocacaoSublocacao lsadppu { get; set; }
-
-        /// <summary>
         /// Gets or Sets obra
         /// </summary>
         [DataMember(Name = "obra", EmitDefaultValue = false)]
@@ -96,12 +86,6 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         [DataMember(Name = "atvEvento", EmitDefaultValue = false)]
         public AtvEvento atvEvento { get; set; }
-
-        /// <summary>
-        /// Gets or Sets explRod
-        /// </summary>
-        [DataMember(Name = "explRod", EmitDefaultValue = false)]
-        public ExploracaoRodoviaria explRod { get; set; }
 
         /// <summary>
         /// Gets or Sets infoCompl
@@ -120,10 +104,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  locPrest: ").Append(locPrest).Append("\n");
             sb.Append("  cServ: ").Append(cServ).Append("\n");
             sb.Append("  comExt: ").Append(comExt).Append("\n");
-            sb.Append("  lsadppu: ").Append(lsadppu).Append("\n");
             sb.Append("  obra: ").Append(obra).Append("\n");
             sb.Append("  atvEvento: ").Append(atvEvento).Append("\n");
-            sb.Append("  explRod: ").Append(explRod).Append("\n");
             sb.Append("  infoCompl: ").Append(infoCompl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -176,11 +158,6 @@ namespace ACBrAPI.Sdk.Model
                     this.comExt.Equals(input.comExt))
                 ) && 
                 (
-                    this.lsadppu == input.lsadppu ||
-                    (this.lsadppu != null &&
-                    this.lsadppu.Equals(input.lsadppu))
-                ) && 
-                (
                     this.obra == input.obra ||
                     (this.obra != null &&
                     this.obra.Equals(input.obra))
@@ -189,11 +166,6 @@ namespace ACBrAPI.Sdk.Model
                     this.atvEvento == input.atvEvento ||
                     (this.atvEvento != null &&
                     this.atvEvento.Equals(input.atvEvento))
-                ) && 
-                (
-                    this.explRod == input.explRod ||
-                    (this.explRod != null &&
-                    this.explRod.Equals(input.explRod))
                 ) && 
                 (
                     this.infoCompl == input.infoCompl ||
@@ -223,10 +195,6 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.comExt.GetHashCode();
                 }
-                if (this.lsadppu != null)
-                {
-                    hashCode = (hashCode * 59) + this.lsadppu.GetHashCode();
-                }
                 if (this.obra != null)
                 {
                     hashCode = (hashCode * 59) + this.obra.GetHashCode();
@@ -234,10 +202,6 @@ namespace ACBrAPI.Sdk.Model
                 if (this.atvEvento != null)
                 {
                     hashCode = (hashCode * 59) + this.atvEvento.GetHashCode();
-                }
-                if (this.explRod != null)
-                {
-                    hashCode = (hashCode * 59) + this.explRod.GetHashCode();
                 }
                 if (this.infoCompl != null)
                 {
@@ -252,7 +216,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

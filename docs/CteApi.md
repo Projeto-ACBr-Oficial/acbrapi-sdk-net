@@ -49,10 +49,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -111,7 +107,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -149,10 +145,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -211,7 +203,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -249,10 +241,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -313,7 +301,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -351,10 +339,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -413,7 +397,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -434,6 +418,8 @@ catch (ApiException e)
 
 Baixar XML do cancelamento
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 ```csharp
 using System.Collections.Generic;
@@ -451,10 +437,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -513,7 +495,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -534,6 +516,8 @@ catch (ApiException e)
 
 Baixar XML da carta de correção
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 ```csharp
 using System.Collections.Generic;
@@ -551,10 +535,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -613,7 +593,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -634,7 +614,7 @@ catch (ApiException e)
 
 Baixar XML do CT-e processado
 
-Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz `cteProc`).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint `GET /cte/{id}/xml/conhecimento`.
+Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz `cteProc`).    O XML só estará disponível nesse endpoint caso o conhecimento tenha sido autorizado pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint `GET /cte/{id}/xml/conhecimento`.    **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
 
 ### Exemplo
 ```csharp
@@ -653,10 +633,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -715,7 +691,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -736,7 +712,7 @@ catch (ApiException e)
 
 Baixar XML do CT-e
 
-Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.
+Utilize esse endpoint para obter o XML do conhecimento enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que o conhecimento tenha sido rejeitado.    **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
 
 ### Exemplo
 ```csharp
@@ -755,10 +731,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -817,7 +789,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -838,6 +810,8 @@ catch (ApiException e)
 
 Baixar XML do Protocolo da SEFAZ
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 ```csharp
 using System.Collections.Generic;
@@ -855,10 +829,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -917,7 +887,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -938,6 +908,8 @@ catch (ApiException e)
 
 Baixar XML do evento
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 ```csharp
 using System.Collections.Generic;
@@ -955,10 +927,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1017,7 +985,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1038,7 +1006,7 @@ catch (ApiException e)
 
 Cancelar um CT-e autorizado
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 ```csharp
@@ -1057,10 +1025,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1121,7 +1085,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1159,10 +1123,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1221,7 +1181,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1259,10 +1219,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1321,7 +1277,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1361,10 +1317,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1423,7 +1375,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1461,10 +1413,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1523,7 +1471,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1563,10 +1511,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1627,7 +1571,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1648,7 +1592,7 @@ catch (ApiException e)
 
 Solicitar correção do CT-e
 
-É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 ```csharp
@@ -1667,10 +1611,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1731,7 +1671,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1752,7 +1692,7 @@ catch (ApiException e)
 
 Emitir CT-e
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 ```csharp
@@ -1771,10 +1711,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1833,7 +1769,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1854,7 +1790,7 @@ catch (ApiException e)
 
 Emitir CT-e Simplificado
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 ```csharp
@@ -1873,10 +1809,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -1935,7 +1867,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -1975,10 +1907,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -2051,7 +1979,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -2072,7 +2000,7 @@ catch (ApiException e)
 
 Sincroniza dados no CT-e a partir da SEFAZ
 
-Realiza a sincronização dos dados a partir da consulta da situação atual da CT-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e que se encontra com o status `erro` na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e que se encontra com o status `autorizado`na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual da CT-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e que se encontra com o status `erro` na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e que se encontra com o status `autorizado`na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 ```csharp
@@ -2091,10 +2019,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -2153,7 +2077,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 

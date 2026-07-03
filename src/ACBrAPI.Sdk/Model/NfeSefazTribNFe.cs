@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -38,11 +38,15 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="cST">Código Situação Tributária do IBS/CBS. (required).</param>
         /// <param name="cClassTrib">cClassTrib.</param>
+        /// <param name="indDoacao">Indica se a operação é de doação..</param>
         /// <param name="gIBSCBS">gIBSCBS.</param>
         /// <param name="gIBSCBSMono">gIBSCBSMono.</param>
         /// <param name="gTransfCred">gTransfCred.</param>
+        /// <param name="gAjusteCompet">gAjusteCompet.</param>
+        /// <param name="gEstornoCred">gEstornoCred.</param>
+        /// <param name="gCredPresOper">gCredPresOper.</param>
         /// <param name="gCredPresIBSZFM">gCredPresIBSZFM.</param>
-        public NfeSefazTribNFe(string cST = default(string), string cClassTrib = default(string), NfeSefazCIBS gIBSCBS = default(NfeSefazCIBS), NfeSefazMonofasia gIBSCBSMono = default(NfeSefazMonofasia), NfeSefazTransfCred gTransfCred = default(NfeSefazTransfCred), NfeSefazCredPresIBSZFM gCredPresIBSZFM = default(NfeSefazCredPresIBSZFM))
+        public NfeSefazTribNFe(string cST = default(string), string cClassTrib = default(string), int? indDoacao = default(int?), NfeSefazCIBS gIBSCBS = default(NfeSefazCIBS), NfeSefazMonofasia gIBSCBSMono = default(NfeSefazMonofasia), NfeSefazTransfCred gTransfCred = default(NfeSefazTransfCred), NfeSefazAjusteCompet gAjusteCompet = default(NfeSefazAjusteCompet), NfeSefazEstornoCred gEstornoCred = default(NfeSefazEstornoCred), NfeSefazCredPresOper gCredPresOper = default(NfeSefazCredPresOper), NfeSefazCredPresIBSZFM gCredPresIBSZFM = default(NfeSefazCredPresIBSZFM))
         {
             // to ensure "cST" is required (not null)
             if (cST == null)
@@ -51,9 +55,13 @@ namespace ACBrAPI.Sdk.Model
             }
             this.CST = cST;
             this.cClassTrib = cClassTrib;
+            this.indDoacao = indDoacao;
             this.gIBSCBS = gIBSCBS;
             this.gIBSCBSMono = gIBSCBSMono;
             this.gTransfCred = gTransfCred;
+            this.gAjusteCompet = gAjusteCompet;
+            this.gEstornoCred = gEstornoCred;
+            this.gCredPresOper = gCredPresOper;
             this.gCredPresIBSZFM = gCredPresIBSZFM;
         }
 
@@ -69,6 +77,13 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         [DataMember(Name = "cClassTrib", EmitDefaultValue = true)]
         public string cClassTrib { get; set; }
+
+        /// <summary>
+        /// Indica se a operação é de doação.
+        /// </summary>
+        /// <value>Indica se a operação é de doação.</value>
+        [DataMember(Name = "indDoacao", EmitDefaultValue = true)]
+        public int? indDoacao { get; set; }
 
         /// <summary>
         /// Gets or Sets gIBSCBS
@@ -89,6 +104,24 @@ namespace ACBrAPI.Sdk.Model
         public NfeSefazTransfCred gTransfCred { get; set; }
 
         /// <summary>
+        /// Gets or Sets gAjusteCompet
+        /// </summary>
+        [DataMember(Name = "gAjusteCompet", EmitDefaultValue = false)]
+        public NfeSefazAjusteCompet gAjusteCompet { get; set; }
+
+        /// <summary>
+        /// Gets or Sets gEstornoCred
+        /// </summary>
+        [DataMember(Name = "gEstornoCred", EmitDefaultValue = false)]
+        public NfeSefazEstornoCred gEstornoCred { get; set; }
+
+        /// <summary>
+        /// Gets or Sets gCredPresOper
+        /// </summary>
+        [DataMember(Name = "gCredPresOper", EmitDefaultValue = false)]
+        public NfeSefazCredPresOper gCredPresOper { get; set; }
+
+        /// <summary>
         /// Gets or Sets gCredPresIBSZFM
         /// </summary>
         [DataMember(Name = "gCredPresIBSZFM", EmitDefaultValue = false)]
@@ -104,9 +137,13 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("class NfeSefazTribNFe {\n");
             sb.Append("  CST: ").Append(CST).Append("\n");
             sb.Append("  cClassTrib: ").Append(cClassTrib).Append("\n");
+            sb.Append("  indDoacao: ").Append(indDoacao).Append("\n");
             sb.Append("  gIBSCBS: ").Append(gIBSCBS).Append("\n");
             sb.Append("  gIBSCBSMono: ").Append(gIBSCBSMono).Append("\n");
             sb.Append("  gTransfCred: ").Append(gTransfCred).Append("\n");
+            sb.Append("  gAjusteCompet: ").Append(gAjusteCompet).Append("\n");
+            sb.Append("  gEstornoCred: ").Append(gEstornoCred).Append("\n");
+            sb.Append("  gCredPresOper: ").Append(gCredPresOper).Append("\n");
             sb.Append("  gCredPresIBSZFM: ").Append(gCredPresIBSZFM).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -154,6 +191,11 @@ namespace ACBrAPI.Sdk.Model
                     this.cClassTrib.Equals(input.cClassTrib))
                 ) && 
                 (
+                    this.indDoacao == input.indDoacao ||
+                    (this.indDoacao != null &&
+                    this.indDoacao.Equals(input.indDoacao))
+                ) && 
+                (
                     this.gIBSCBS == input.gIBSCBS ||
                     (this.gIBSCBS != null &&
                     this.gIBSCBS.Equals(input.gIBSCBS))
@@ -167,6 +209,21 @@ namespace ACBrAPI.Sdk.Model
                     this.gTransfCred == input.gTransfCred ||
                     (this.gTransfCred != null &&
                     this.gTransfCred.Equals(input.gTransfCred))
+                ) && 
+                (
+                    this.gAjusteCompet == input.gAjusteCompet ||
+                    (this.gAjusteCompet != null &&
+                    this.gAjusteCompet.Equals(input.gAjusteCompet))
+                ) && 
+                (
+                    this.gEstornoCred == input.gEstornoCred ||
+                    (this.gEstornoCred != null &&
+                    this.gEstornoCred.Equals(input.gEstornoCred))
+                ) && 
+                (
+                    this.gCredPresOper == input.gCredPresOper ||
+                    (this.gCredPresOper != null &&
+                    this.gCredPresOper.Equals(input.gCredPresOper))
                 ) && 
                 (
                     this.gCredPresIBSZFM == input.gCredPresIBSZFM ||
@@ -192,6 +249,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.cClassTrib.GetHashCode();
                 }
+                if (this.indDoacao != null)
+                {
+                    hashCode = (hashCode * 59) + this.indDoacao.GetHashCode();
+                }
                 if (this.gIBSCBS != null)
                 {
                     hashCode = (hashCode * 59) + this.gIBSCBS.GetHashCode();
@@ -203,6 +264,18 @@ namespace ACBrAPI.Sdk.Model
                 if (this.gTransfCred != null)
                 {
                     hashCode = (hashCode * 59) + this.gTransfCred.GetHashCode();
+                }
+                if (this.gAjusteCompet != null)
+                {
+                    hashCode = (hashCode * 59) + this.gAjusteCompet.GetHashCode();
+                }
+                if (this.gEstornoCred != null)
+                {
+                    hashCode = (hashCode * 59) + this.gEstornoCred.GetHashCode();
+                }
+                if (this.gCredPresOper != null)
+                {
+                    hashCode = (hashCode * 59) + this.gCredPresOper.GetHashCode();
                 }
                 if (this.gCredPresIBSZFM != null)
                 {
@@ -217,7 +290,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

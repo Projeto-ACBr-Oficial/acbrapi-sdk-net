@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -175,18 +175,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pCredPresumido (decimal?) minimum
             if (this.pCredPresumido < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pCredPresumido, must be a value greater than or equal to 0.", new [] { "pCredPresumido" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pCredPresumido, must be a value greater than or equal to 0.", new [] { "pCredPresumido" });
             }
 
             // vCredPresumido (decimal?) minimum
             if (this.vCredPresumido < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCredPresumido, must be a value greater than or equal to 0.", new [] { "vCredPresumido" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCredPresumido, must be a value greater than or equal to 0.", new [] { "vCredPresumido" });
             }
 
             yield break;

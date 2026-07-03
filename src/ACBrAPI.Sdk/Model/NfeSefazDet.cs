@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -265,36 +265,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // nItem (int?) maximum
             if (this.nItem > (int?)990)
             {
-                yield return new ValidationResult("Invalid value for nItem, must be a value less than or equal to 990.", new [] { "nItem" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nItem, must be a value less than or equal to 990.", new [] { "nItem" });
             }
 
             // nItem (int?) minimum
             if (this.nItem < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nItem, must be a value greater than or equal to 1.", new [] { "nItem" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nItem, must be a value greater than or equal to 1.", new [] { "nItem" });
             }
 
             // infAdProd (string) maxLength
             if (this.infAdProd != null && this.infAdProd.Length > 500)
             {
-                yield return new ValidationResult("Invalid value for infAdProd, length must be less than 500.", new [] { "infAdProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infAdProd, length must be less than 500.", new [] { "infAdProd" });
             }
 
             // infAdProd (string) minLength
             if (this.infAdProd != null && this.infAdProd.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for infAdProd, length must be greater than 1.", new [] { "infAdProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infAdProd, length must be greater than 1.", new [] { "infAdProd" });
             }
 
             // vItem (decimal?) minimum
             if (this.vItem < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vItem, must be a value greater than or equal to 0.", new [] { "vItem" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vItem, must be a value greater than or equal to 0.", new [] { "vItem" });
             }
 
             yield break;

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -37,7 +37,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="NfeSefazCana" /> class.
         /// </summary>
         /// <param name="safra">Identificação da safra. (required).</param>
-        /// <param name="varRef">Mês e Ano de Referência, formato: MM/AAAA. (required).</param>
+        /// <param name="_ref">Mês e Ano de Referência, formato: MM/AAAA. (required).</param>
         /// <param name="forDia">forDia (required).</param>
         /// <param name="qTotMes">Total do mês. (required).</param>
         /// <param name="qTotAnt">Total Anterior. (required).</param>
@@ -46,7 +46,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vFor">Valor  dos fornecimentos. (required).</param>
         /// <param name="vTotDed">Valor Total das Deduções. (required).</param>
         /// <param name="vLiqFor">Valor Líquido dos fornecimentos. (required).</param>
-        public NfeSefazCana(string safra = default(string), string varRef = default(string), List<NfeSefazForDia> forDia = default(List<NfeSefazForDia>), decimal? qTotMes = default(decimal?), decimal? qTotAnt = default(decimal?), decimal? qTotGer = default(decimal?), List<NfeSefazDeduc> deduc = default(List<NfeSefazDeduc>), decimal? vFor = default(decimal?), decimal? vTotDed = default(decimal?), decimal? vLiqFor = default(decimal?))
+        public NfeSefazCana(string safra = default(string), string _ref = default(string), List<NfeSefazForDia> forDia = default(List<NfeSefazForDia>), decimal? qTotMes = default(decimal?), decimal? qTotAnt = default(decimal?), decimal? qTotGer = default(decimal?), List<NfeSefazDeduc> deduc = default(List<NfeSefazDeduc>), decimal? vFor = default(decimal?), decimal? vTotDed = default(decimal?), decimal? vLiqFor = default(decimal?))
         {
             // to ensure "safra" is required (not null)
             if (safra == null)
@@ -54,12 +54,12 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("safra is a required property for NfeSefazCana and cannot be null");
             }
             this.safra = safra;
-            // to ensure "varRef" is required (not null)
-            if (varRef == null)
+            // to ensure "_ref" is required (not null)
+            if (_ref == null)
             {
-                throw new ArgumentNullException("varRef is a required property for NfeSefazCana and cannot be null");
+                throw new ArgumentNullException("_ref is a required property for NfeSefazCana and cannot be null");
             }
-            this.VarRef = varRef;
+            this._ref = _ref;
             // to ensure "forDia" is required (not null)
             if (forDia == null)
             {
@@ -117,7 +117,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <value>Mês e Ano de Referência, formato: MM/AAAA.</value>
         [DataMember(Name = "ref", IsRequired = true, EmitDefaultValue = true)]
-        public string VarRef { get; set; }
+        public string _ref { get; set; }
 
         /// <summary>
         /// Gets or Sets forDia
@@ -182,7 +182,7 @@ namespace ACBrAPI.Sdk.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class NfeSefazCana {\n");
             sb.Append("  safra: ").Append(safra).Append("\n");
-            sb.Append("  VarRef: ").Append(VarRef).Append("\n");
+            sb.Append("  _ref: ").Append(_ref).Append("\n");
             sb.Append("  forDia: ").Append(forDia).Append("\n");
             sb.Append("  qTotMes: ").Append(qTotMes).Append("\n");
             sb.Append("  qTotAnt: ").Append(qTotAnt).Append("\n");
@@ -232,9 +232,9 @@ namespace ACBrAPI.Sdk.Model
                     this.safra.Equals(input.safra))
                 ) && 
                 (
-                    this.VarRef == input.VarRef ||
-                    (this.VarRef != null &&
-                    this.VarRef.Equals(input.VarRef))
+                    this._ref == input._ref ||
+                    (this._ref != null &&
+                    this._ref.Equals(input._ref))
                 ) && 
                 (
                     this.forDia == input.forDia ||
@@ -293,9 +293,9 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.safra.GetHashCode();
                 }
-                if (this.VarRef != null)
+                if (this._ref != null)
                 {
-                    hashCode = (hashCode * 59) + this.VarRef.GetHashCode();
+                    hashCode = (hashCode * 59) + this._ref.GetHashCode();
                 }
                 if (this.forDia != null)
                 {
@@ -338,54 +338,54 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // safra (string) maxLength
             if (this.safra != null && this.safra.Length > 9)
             {
-                yield return new ValidationResult("Invalid value for safra, length must be less than 9.", new [] { "safra" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for safra, length must be less than 9.", new [] { "safra" });
             }
 
             // safra (string) minLength
             if (this.safra != null && this.safra.Length < 4)
             {
-                yield return new ValidationResult("Invalid value for safra, length must be greater than 4.", new [] { "safra" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for safra, length must be greater than 4.", new [] { "safra" });
             }
 
             // qTotMes (decimal?) minimum
             if (this.qTotMes < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qTotMes, must be a value greater than or equal to 0.", new [] { "qTotMes" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qTotMes, must be a value greater than or equal to 0.", new [] { "qTotMes" });
             }
 
             // qTotAnt (decimal?) minimum
             if (this.qTotAnt < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qTotAnt, must be a value greater than or equal to 0.", new [] { "qTotAnt" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qTotAnt, must be a value greater than or equal to 0.", new [] { "qTotAnt" });
             }
 
             // qTotGer (decimal?) minimum
             if (this.qTotGer < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qTotGer, must be a value greater than or equal to 0.", new [] { "qTotGer" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qTotGer, must be a value greater than or equal to 0.", new [] { "qTotGer" });
             }
 
             // vFor (decimal?) minimum
             if (this.vFor < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vFor, must be a value greater than or equal to 0.", new [] { "vFor" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vFor, must be a value greater than or equal to 0.", new [] { "vFor" });
             }
 
             // vTotDed (decimal?) minimum
             if (this.vTotDed < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTotDed, must be a value greater than or equal to 0.", new [] { "vTotDed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTotDed, must be a value greater than or equal to 0.", new [] { "vTotDed" });
             }
 
             // vLiqFor (decimal?) minimum
             if (this.vLiqFor < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vLiqFor, must be a value greater than or equal to 0.", new [] { "vLiqFor" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vLiqFor, must be a value greater than or equal to 0.", new [] { "vLiqFor" });
             }
 
             yield break;

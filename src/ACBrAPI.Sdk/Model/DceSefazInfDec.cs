@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -136,30 +136,30 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xObs1 (string) maxLength
             if (this.xObs1 != null && this.xObs1.Length > 2000)
             {
-                yield return new ValidationResult("Invalid value for xObs1, length must be less than 2000.", new [] { "xObs1" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xObs1, length must be less than 2000.", new [] { "xObs1" });
             }
 
             // xObs1 (string) minLength
             if (this.xObs1 != null && this.xObs1.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xObs1, length must be greater than 1.", new [] { "xObs1" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xObs1, length must be greater than 1.", new [] { "xObs1" });
             }
 
             // xObs2 (string) maxLength
             if (this.xObs2 != null && this.xObs2.Length > 5000)
             {
-                yield return new ValidationResult("Invalid value for xObs2, length must be less than 5000.", new [] { "xObs2" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xObs2, length must be less than 5000.", new [] { "xObs2" });
             }
 
             // xObs2 (string) minLength
             if (this.xObs2 != null && this.xObs2.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xObs2, length must be greater than 1.", new [] { "xObs2" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xObs2, length must be greater than 1.", new [] { "xObs2" });
             }
 
             yield break;

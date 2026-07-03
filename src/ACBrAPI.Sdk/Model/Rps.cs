@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -53,7 +53,7 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("servicos is a required property for Rps and cannot be null");
             }
             this.servicos = servicos;
-            this.rps = rps;
+            this._rps = rps;
             this.competencia = competencia;
             this.natureza_tributacao = naturezaTributacao;
             this.prestador = prestador;
@@ -64,10 +64,10 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or Sets rps
+        /// Gets or Sets _rps
         /// </summary>
         [DataMember(Name = "rps", EmitDefaultValue = false)]
-        public RpsDados rps { get; set; }
+        public RpsDados _rps { get; set; }
 
         /// <summary>
         /// Gets or Sets competencia
@@ -127,7 +127,7 @@ namespace ACBrAPI.Sdk.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Rps {\n");
-            sb.Append("  rps: ").Append(rps).Append("\n");
+            sb.Append("  _rps: ").Append(_rps).Append("\n");
             sb.Append("  competencia: ").Append(competencia).Append("\n");
             sb.Append("  natureza_tributacao: ").Append(natureza_tributacao).Append("\n");
             sb.Append("  prestador: ").Append(prestador).Append("\n");
@@ -172,9 +172,9 @@ namespace ACBrAPI.Sdk.Model
             }
             return 
                 (
-                    this.rps == input.rps ||
-                    (this.rps != null &&
-                    this.rps.Equals(input.rps))
+                    this._rps == input._rps ||
+                    (this._rps != null &&
+                    this._rps.Equals(input._rps))
                 ) && 
                 (
                     this.competencia == input.competencia ||
@@ -227,9 +227,9 @@ namespace ACBrAPI.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.rps != null)
+                if (this._rps != null)
                 {
-                    hashCode = (hashCode * 59) + this.rps.GetHashCode();
+                    hashCode = (hashCode * 59) + this._rps.GetHashCode();
                 }
                 if (this.competencia != null)
                 {
@@ -269,7 +269,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

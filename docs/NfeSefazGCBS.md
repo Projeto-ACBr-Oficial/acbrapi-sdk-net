@@ -5,7 +5,7 @@ Grupo de Tributação da CBS.
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**pCBS** | **decimal?** | Aliquota da CBS. | 
+**pCBS** | **decimal?** | Aliquota da CBS (em percentual). | 
 **gDif** | [**NfeSefazDif**](NfeSefazDif.md) |  | [optional] 
 **gDevTrib** | [**NfeSefazDevTrib**](NfeSefazDevTrib.md) |  | [optional] 
 **gRed** | [**NfeSefazRed**](NfeSefazRed.md) |  | [optional] 

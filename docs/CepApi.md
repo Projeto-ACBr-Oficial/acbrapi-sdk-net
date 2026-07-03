@@ -12,7 +12,7 @@ Todas as URIs relativas a *https://prod.acbr.api.br*
 
 Consultar endereço através do CEP
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#cep-consultas\">cep-consultas</a>  - Consumo: 1 unidade requisição.
+**Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    `18270000` Tatuí/SP    `01310300` São Paulo/SP    `22010000` Rio de Janeiro/RJ    `80020130` Curitiba/PR
 
 ### Exemplo
 ```csharp
@@ -31,10 +31,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -93,7 +89,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 

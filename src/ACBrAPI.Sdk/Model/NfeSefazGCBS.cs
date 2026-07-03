@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,7 +36,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NfeSefazGCBS" /> class.
         /// </summary>
-        /// <param name="pCBS">Aliquota da CBS. (required).</param>
+        /// <param name="pCBS">Aliquota da CBS (em percentual). (required).</param>
         /// <param name="gDif">gDif.</param>
         /// <param name="gDevTrib">gDevTrib.</param>
         /// <param name="gRed">gRed.</param>
@@ -61,9 +61,9 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// Aliquota da CBS.
+        /// Aliquota da CBS (em percentual).
         /// </summary>
-        /// <value>Aliquota da CBS.</value>
+        /// <value>Aliquota da CBS (em percentual).</value>
         [DataMember(Name = "pCBS", IsRequired = true, EmitDefaultValue = true)]
         public decimal? pCBS { get; set; }
 
@@ -205,18 +205,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pCBS (decimal?) minimum
             if (this.pCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pCBS, must be a value greater than or equal to 0.", new [] { "pCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pCBS, must be a value greater than or equal to 0.", new [] { "pCBS" });
             }
 
             // vCBS (decimal?) minimum
             if (this.vCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCBS, must be a value greater than or equal to 0.", new [] { "vCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBS, must be a value greater than or equal to 0.", new [] { "vCBS" });
             }
 
             yield break;

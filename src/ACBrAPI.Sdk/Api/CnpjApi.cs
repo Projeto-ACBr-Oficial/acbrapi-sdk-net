@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -27,7 +27,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar dados do CNPJ
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-consultas\&quot;&gt;cnpj-consultas&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    &#x60;18760540000139&#x60;    &#x60;00038166000105&#x60;    &#x60;00394460000141&#x60;    &#x60;29979036000140&#x60;
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnpj">CNPJ sem máscara.</param>
@@ -38,7 +38,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar dados do CNPJ
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-consultas\&quot;&gt;cnpj-consultas&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    &#x60;18760540000139&#x60;    &#x60;00038166000105&#x60;    &#x60;00394460000141&#x60;    &#x60;29979036000140&#x60;
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnpj">CNPJ sem máscara.</param>
@@ -48,7 +48,7 @@ namespace ACBrAPI.Sdk.Api
         /// Listar estabelecimentos ativos a partir da base de CNPJ
         /// </summary>
         /// <remarks>
-        /// Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-listagem\&quot;&gt;cnpj-listagem&lt;/a&gt;  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+        /// Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnaePrincipal">Filtro pelo código CNAE da atividade principal do estabelecimento.  Utilize o valor sem máscara.</param>
@@ -64,7 +64,7 @@ namespace ACBrAPI.Sdk.Api
         /// Listar estabelecimentos ativos a partir da base de CNPJ
         /// </summary>
         /// <remarks>
-        /// Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-listagem\&quot;&gt;cnpj-listagem&lt;/a&gt;  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+        /// Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnaePrincipal">Filtro pelo código CNAE da atividade principal do estabelecimento.  Utilize o valor sem máscara.</param>
@@ -88,7 +88,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar dados do CNPJ
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-consultas\&quot;&gt;cnpj-consultas&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    &#x60;18760540000139&#x60;    &#x60;00038166000105&#x60;    &#x60;00394460000141&#x60;    &#x60;29979036000140&#x60;
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnpj">CNPJ sem máscara.</param>
@@ -100,7 +100,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar dados do CNPJ
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-consultas\&quot;&gt;cnpj-consultas&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// **Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    &#x60;18760540000139&#x60;    &#x60;00038166000105&#x60;    &#x60;00394460000141&#x60;    &#x60;29979036000140&#x60;
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnpj">CNPJ sem máscara.</param>
@@ -111,7 +111,7 @@ namespace ACBrAPI.Sdk.Api
         /// Listar estabelecimentos ativos a partir da base de CNPJ
         /// </summary>
         /// <remarks>
-        /// Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-listagem\&quot;&gt;cnpj-listagem&lt;/a&gt;  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+        /// Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnaePrincipal">Filtro pelo código CNAE da atividade principal do estabelecimento.  Utilize o valor sem máscara.</param>
@@ -128,7 +128,7 @@ namespace ACBrAPI.Sdk.Api
         /// Listar estabelecimentos ativos a partir da base de CNPJ
         /// </summary>
         /// <remarks>
-        /// Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-listagem\&quot;&gt;cnpj-listagem&lt;/a&gt;  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+        /// Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnaePrincipal">Filtro pelo código CNAE da atividade principal do estabelecimento.  Utilize o valor sem máscara.</param>
@@ -354,7 +354,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar dados do CNPJ **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-consultas\&quot;&gt;cnpj-consultas&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Consultar dados do CNPJ **Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    &#x60;18760540000139&#x60;    &#x60;00038166000105&#x60;    &#x60;00394460000141&#x60;    &#x60;29979036000140&#x60;
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnpj">CNPJ sem máscara.</param>
@@ -366,7 +366,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar dados do CNPJ **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-consultas\&quot;&gt;cnpj-consultas&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Consultar dados do CNPJ **Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    &#x60;18760540000139&#x60;    &#x60;00038166000105&#x60;    &#x60;00394460000141&#x60;    &#x60;29979036000140&#x60;
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnpj">CNPJ sem máscara.</param>
@@ -395,11 +395,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("Cnpj", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(cnpj)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -420,7 +415,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar dados do CNPJ **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-consultas\&quot;&gt;cnpj-consultas&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Consultar dados do CNPJ **Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    &#x60;18760540000139&#x60;    &#x60;00038166000105&#x60;    &#x60;00394460000141&#x60;    &#x60;29979036000140&#x60;
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnpj">CNPJ sem máscara.</param>
@@ -433,7 +428,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar dados do CNPJ **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-consultas\&quot;&gt;cnpj-consultas&lt;/a&gt;  - Consumo: 1 unidade por requisição.
+        /// Consultar dados do CNPJ **Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    &#x60;18760540000139&#x60;    &#x60;00038166000105&#x60;    &#x60;00394460000141&#x60;    &#x60;29979036000140&#x60;
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnpj">CNPJ sem máscara.</param>
@@ -465,11 +460,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("Cnpj", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(cnpj)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -491,7 +481,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Listar estabelecimentos ativos a partir da base de CNPJ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-listagem\&quot;&gt;cnpj-listagem&lt;/a&gt;  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+        /// Listar estabelecimentos ativos a partir da base de CNPJ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnaePrincipal">Filtro pelo código CNAE da atividade principal do estabelecimento.  Utilize o valor sem máscara.</param>
@@ -508,7 +498,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Listar estabelecimentos ativos a partir da base de CNPJ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-listagem\&quot;&gt;cnpj-listagem&lt;/a&gt;  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+        /// Listar estabelecimentos ativos a partir da base de CNPJ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnaePrincipal">Filtro pelo código CNAE da atividade principal do estabelecimento.  Utilize o valor sem máscara.</param>
@@ -564,11 +554,6 @@ namespace ACBrAPI.Sdk.Api
             localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "municipio", municipio));
             localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "natureza_juridica", naturezaJuridica));
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -589,7 +574,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Listar estabelecimentos ativos a partir da base de CNPJ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-listagem\&quot;&gt;cnpj-listagem&lt;/a&gt;  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+        /// Listar estabelecimentos ativos a partir da base de CNPJ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnaePrincipal">Filtro pelo código CNAE da atividade principal do estabelecimento.  Utilize o valor sem máscara.</param>
@@ -607,7 +592,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Listar estabelecimentos ativos a partir da base de CNPJ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cnpj-listagem\&quot;&gt;cnpj-listagem&lt;/a&gt;  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+        /// Listar estabelecimentos ativos a partir da base de CNPJ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \&quot;Ativa\&quot;.    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cnaePrincipal">Filtro pelo código CNAE da atividade principal do estabelecimento.  Utilize o valor sem máscara.</param>
@@ -666,11 +651,6 @@ namespace ACBrAPI.Sdk.Api
             localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "municipio", municipio));
             localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "natureza_juridica", naturezaJuridica));
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))

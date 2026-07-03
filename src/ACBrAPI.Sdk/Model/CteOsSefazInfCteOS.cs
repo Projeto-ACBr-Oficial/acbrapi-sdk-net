@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -44,11 +44,14 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="toma">toma.</param>
         /// <param name="vPrest">vPrest (required).</param>
         /// <param name="imp">imp (required).</param>
+        /// <param name="pgtoVinc">pgtoVinc.</param>
         /// <param name="infCTeNorm">infCTeNorm.</param>
         /// <param name="infCteComp">infCteComp.</param>
         /// <param name="autXML">autXML.</param>
         /// <param name="infRespTec">infRespTec.</param>
-        public CteOsSefazInfCteOS(string versao = default(string), string id = default(string), CteOsSefazIdeOS ide = default(CteOsSefazIdeOS), CteOsSefazComplOS compl = default(CteOsSefazComplOS), CteOsSefazEmitOS emit = default(CteOsSefazEmitOS), CteOsSefazTomaOS toma = default(CteOsSefazTomaOS), CteOsSefazVPrestOS vPrest = default(CteOsSefazVPrestOS), CteOsSefazInfCteImpOS imp = default(CteOsSefazInfCteImpOS), CteOsSefazInfCTeNormOS infCTeNorm = default(CteOsSefazInfCTeNormOS), List<CteOsSefazInfCteCompOS> infCteComp = default(List<CteOsSefazInfCteCompOS>), List<CteOsSefazAutXMLOS> autXML = default(List<CteOsSefazAutXMLOS>), CteOsSefazRespTecOS infRespTec = default(CteOsSefazRespTecOS))
+        /// <param name="tpPagAnt">Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher..</param>
+        /// <param name="gPagAntecipado">gPagAntecipado.</param>
+        public CteOsSefazInfCteOS(string versao = default(string), string id = default(string), CteOsSefazIdeOS ide = default(CteOsSefazIdeOS), CteOsSefazComplOS compl = default(CteOsSefazComplOS), CteOsSefazEmitOS emit = default(CteOsSefazEmitOS), CteOsSefazTomaOS toma = default(CteOsSefazTomaOS), CteOsSefazVPrestOS vPrest = default(CteOsSefazVPrestOS), CteOsSefazInfCteImpOS imp = default(CteOsSefazInfCteImpOS), CteOsSefazPgtoVincOS pgtoVinc = default(CteOsSefazPgtoVincOS), CteOsSefazInfCTeNormOS infCTeNorm = default(CteOsSefazInfCTeNormOS), List<CteOsSefazInfCteCompOS> infCteComp = default(List<CteOsSefazInfCteCompOS>), List<CteOsSefazAutXMLOS> autXML = default(List<CteOsSefazAutXMLOS>), CteOsSefazRespTecOS infRespTec = default(CteOsSefazRespTecOS), int? tpPagAnt = default(int?), CteOsSefazGPagAntecipadoOS gPagAntecipado = default(CteOsSefazGPagAntecipadoOS))
         {
             // to ensure "versao" is required (not null)
             if (versao == null)
@@ -83,10 +86,13 @@ namespace ACBrAPI.Sdk.Model
             this.Id = id;
             this.compl = compl;
             this.toma = toma;
+            this.pgtoVinc = pgtoVinc;
             this.infCTeNorm = infCTeNorm;
             this.infCteComp = infCteComp;
             this.autXML = autXML;
             this.infRespTec = infRespTec;
+            this.tpPagAnt = tpPagAnt;
+            this.gPagAntecipado = gPagAntecipado;
         }
 
         /// <summary>
@@ -140,6 +146,12 @@ namespace ACBrAPI.Sdk.Model
         public CteOsSefazInfCteImpOS imp { get; set; }
 
         /// <summary>
+        /// Gets or Sets pgtoVinc
+        /// </summary>
+        [DataMember(Name = "pgtoVinc", EmitDefaultValue = false)]
+        public CteOsSefazPgtoVincOS pgtoVinc { get; set; }
+
+        /// <summary>
         /// Gets or Sets infCTeNorm
         /// </summary>
         [DataMember(Name = "infCTeNorm", EmitDefaultValue = false)]
@@ -164,6 +176,19 @@ namespace ACBrAPI.Sdk.Model
         public CteOsSefazRespTecOS infRespTec { get; set; }
 
         /// <summary>
+        /// Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher.
+        /// </summary>
+        /// <value>Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher.</value>
+        [DataMember(Name = "tpPagAnt", EmitDefaultValue = true)]
+        public int? tpPagAnt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets gPagAntecipado
+        /// </summary>
+        [DataMember(Name = "gPagAntecipado", EmitDefaultValue = false)]
+        public CteOsSefazGPagAntecipadoOS gPagAntecipado { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -179,10 +204,13 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  toma: ").Append(toma).Append("\n");
             sb.Append("  vPrest: ").Append(vPrest).Append("\n");
             sb.Append("  imp: ").Append(imp).Append("\n");
+            sb.Append("  pgtoVinc: ").Append(pgtoVinc).Append("\n");
             sb.Append("  infCTeNorm: ").Append(infCTeNorm).Append("\n");
             sb.Append("  infCteComp: ").Append(infCteComp).Append("\n");
             sb.Append("  autXML: ").Append(autXML).Append("\n");
             sb.Append("  infRespTec: ").Append(infRespTec).Append("\n");
+            sb.Append("  tpPagAnt: ").Append(tpPagAnt).Append("\n");
+            sb.Append("  gPagAntecipado: ").Append(gPagAntecipado).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -259,6 +287,11 @@ namespace ACBrAPI.Sdk.Model
                     this.imp.Equals(input.imp))
                 ) && 
                 (
+                    this.pgtoVinc == input.pgtoVinc ||
+                    (this.pgtoVinc != null &&
+                    this.pgtoVinc.Equals(input.pgtoVinc))
+                ) && 
+                (
                     this.infCTeNorm == input.infCTeNorm ||
                     (this.infCTeNorm != null &&
                     this.infCTeNorm.Equals(input.infCTeNorm))
@@ -279,6 +312,16 @@ namespace ACBrAPI.Sdk.Model
                     this.infRespTec == input.infRespTec ||
                     (this.infRespTec != null &&
                     this.infRespTec.Equals(input.infRespTec))
+                ) && 
+                (
+                    this.tpPagAnt == input.tpPagAnt ||
+                    (this.tpPagAnt != null &&
+                    this.tpPagAnt.Equals(input.tpPagAnt))
+                ) && 
+                (
+                    this.gPagAntecipado == input.gPagAntecipado ||
+                    (this.gPagAntecipado != null &&
+                    this.gPagAntecipado.Equals(input.gPagAntecipado))
                 );
         }
 
@@ -323,6 +366,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.imp.GetHashCode();
                 }
+                if (this.pgtoVinc != null)
+                {
+                    hashCode = (hashCode * 59) + this.pgtoVinc.GetHashCode();
+                }
                 if (this.infCTeNorm != null)
                 {
                     hashCode = (hashCode * 59) + this.infCTeNorm.GetHashCode();
@@ -339,6 +386,14 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.infRespTec.GetHashCode();
                 }
+                if (this.tpPagAnt != null)
+                {
+                    hashCode = (hashCode * 59) + this.tpPagAnt.GetHashCode();
+                }
+                if (this.gPagAntecipado != null)
+                {
+                    hashCode = (hashCode * 59) + this.gPagAntecipado.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -348,7 +403,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

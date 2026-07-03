@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -38,7 +38,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="chNFCom">Chave de acesso da NFCom original..</param>
         /// <param name="gNF">gNF.</param>
-        /// <param name="motSub">Motivo da substituição.  * 01 - Erro de Preço  * 02 - Erro Cadastral  * 03 - Decisão Judicial  * 04 - Erro de Tributação  * 05 - Descontinuidade do Serviço (required).</param>
+        /// <param name="motSub">Motivo da substituição.  * 01 - Erro de Preço  * 02 - Erro Cadastral  * 03 - Decisão Judicial  * 04 - Erro de Tributação  * 05 - Descontinuidade do Serviço  * 06 - Regime Especial (required).</param>
         public NfcomSefazGSub(string chNFCom = default(string), NfcomSefazGNF gNF = default(NfcomSefazGNF), string motSub = default(string))
         {
             // to ensure "motSub" is required (not null)
@@ -65,9 +65,9 @@ namespace ACBrAPI.Sdk.Model
         public NfcomSefazGNF gNF { get; set; }
 
         /// <summary>
-        /// Motivo da substituição.  * 01 - Erro de Preço  * 02 - Erro Cadastral  * 03 - Decisão Judicial  * 04 - Erro de Tributação  * 05 - Descontinuidade do Serviço
+        /// Motivo da substituição.  * 01 - Erro de Preço  * 02 - Erro Cadastral  * 03 - Decisão Judicial  * 04 - Erro de Tributação  * 05 - Descontinuidade do Serviço  * 06 - Regime Especial
         /// </summary>
-        /// <value>Motivo da substituição.  * 01 - Erro de Preço  * 02 - Erro Cadastral  * 03 - Decisão Judicial  * 04 - Erro de Tributação  * 05 - Descontinuidade do Serviço</value>
+        /// <value>Motivo da substituição.  * 01 - Erro de Preço  * 02 - Erro Cadastral  * 03 - Decisão Judicial  * 04 - Erro de Tributação  * 05 - Descontinuidade do Serviço  * 06 - Regime Especial</value>
         [DataMember(Name = "motSub", IsRequired = true, EmitDefaultValue = true)]
         public string motSub { get; set; }
 
@@ -164,24 +164,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // chNFCom (string) maxLength
             if (this.chNFCom != null && this.chNFCom.Length > 44)
             {
-                yield return new ValidationResult("Invalid value for chNFCom, length must be less than 44.", new [] { "chNFCom" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for chNFCom, length must be less than 44.", new [] { "chNFCom" });
             }
 
             // motSub (string) maxLength
             if (this.motSub != null && this.motSub.Length > 2)
             {
-                yield return new ValidationResult("Invalid value for motSub, length must be less than 2.", new [] { "motSub" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for motSub, length must be less than 2.", new [] { "motSub" });
             }
 
             // motSub (string) minLength
             if (this.motSub != null && this.motSub.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for motSub, length must be greater than 2.", new [] { "motSub" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for motSub, length must be greater than 2.", new [] { "motSub" });
             }
 
             yield break;

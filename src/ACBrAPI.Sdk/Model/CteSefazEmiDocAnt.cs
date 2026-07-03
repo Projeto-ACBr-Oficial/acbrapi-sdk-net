@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -227,24 +227,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // IE (string) maxLength
             if (this.IE != null && this.IE.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for IE, length must be less than 14.", new [] { "IE" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IE, length must be less than 14.", new [] { "IE" });
             }
 
             // xNome (string) maxLength
             if (this.xNome != null && this.xNome.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
             }
 
             // xNome (string) minLength
             if (this.xNome != null && this.xNome.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be greater than 1.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be greater than 1.", new [] { "xNome" });
             }
 
             yield break;

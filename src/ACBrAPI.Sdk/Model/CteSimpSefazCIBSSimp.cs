@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -39,13 +39,11 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vBC">Valor do BC. (required).</param>
         /// <param name="gIBSUF">gIBSUF (required).</param>
         /// <param name="gIBSMun">gIBSMun (required).</param>
-        /// <param name="vIBS">Valor do IBS (soma de vIBSUF e vIBSMun). (required).</param>
+        /// <param name="vIBS">Valor do IBS. (required).</param>
         /// <param name="gCBS">gCBS (required).</param>
         /// <param name="gTribRegular">gTribRegular.</param>
-        /// <param name="gIBSCredPres">gIBSCredPres.</param>
-        /// <param name="gCBSCredPres">gCBSCredPres.</param>
         /// <param name="gTribCompraGov">gTribCompraGov.</param>
-        public CteSimpSefazCIBSSimp(decimal? vBC = default(decimal?), CteSimpSefazGIBSUFSimp gIBSUF = default(CteSimpSefazGIBSUFSimp), CteSimpSefazGIBSMunSimp gIBSMun = default(CteSimpSefazGIBSMunSimp), decimal? vIBS = default(decimal?), CteSimpSefazGCBSSimp gCBS = default(CteSimpSefazGCBSSimp), CteSimpSefazTribRegularSimp gTribRegular = default(CteSimpSefazTribRegularSimp), CteSimpSefazCredPresSimp gIBSCredPres = default(CteSimpSefazCredPresSimp), CteSimpSefazCredPresSimp gCBSCredPres = default(CteSimpSefazCredPresSimp), CteSimpSefazTribCompraGovSimp gTribCompraGov = default(CteSimpSefazTribCompraGovSimp))
+        public CteSimpSefazCIBSSimp(decimal? vBC = default(decimal?), CteSimpSefazGIBSUFSimp gIBSUF = default(CteSimpSefazGIBSUFSimp), CteSimpSefazGIBSMunSimp gIBSMun = default(CteSimpSefazGIBSMunSimp), decimal? vIBS = default(decimal?), CteSimpSefazGCBSSimp gCBS = default(CteSimpSefazGCBSSimp), CteSimpSefazTribRegularSimp gTribRegular = default(CteSimpSefazTribRegularSimp), CteSimpSefazTribCompraGovSimp gTribCompraGov = default(CteSimpSefazTribCompraGovSimp))
         {
             // to ensure "vBC" is required (not null)
             if (vBC == null)
@@ -78,8 +76,6 @@ namespace ACBrAPI.Sdk.Model
             }
             this.gCBS = gCBS;
             this.gTribRegular = gTribRegular;
-            this.gIBSCredPres = gIBSCredPres;
-            this.gCBSCredPres = gCBSCredPres;
             this.gTribCompraGov = gTribCompraGov;
         }
 
@@ -103,9 +99,9 @@ namespace ACBrAPI.Sdk.Model
         public CteSimpSefazGIBSMunSimp gIBSMun { get; set; }
 
         /// <summary>
-        /// Valor do IBS (soma de vIBSUF e vIBSMun).
+        /// Valor do IBS.
         /// </summary>
-        /// <value>Valor do IBS (soma de vIBSUF e vIBSMun).</value>
+        /// <value>Valor do IBS.</value>
         [DataMember(Name = "vIBS", IsRequired = true, EmitDefaultValue = true)]
         public decimal? vIBS { get; set; }
 
@@ -120,18 +116,6 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         [DataMember(Name = "gTribRegular", EmitDefaultValue = false)]
         public CteSimpSefazTribRegularSimp gTribRegular { get; set; }
-
-        /// <summary>
-        /// Gets or Sets gIBSCredPres
-        /// </summary>
-        [DataMember(Name = "gIBSCredPres", EmitDefaultValue = false)]
-        public CteSimpSefazCredPresSimp gIBSCredPres { get; set; }
-
-        /// <summary>
-        /// Gets or Sets gCBSCredPres
-        /// </summary>
-        [DataMember(Name = "gCBSCredPres", EmitDefaultValue = false)]
-        public CteSimpSefazCredPresSimp gCBSCredPres { get; set; }
 
         /// <summary>
         /// Gets or Sets gTribCompraGov
@@ -153,8 +137,6 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vIBS: ").Append(vIBS).Append("\n");
             sb.Append("  gCBS: ").Append(gCBS).Append("\n");
             sb.Append("  gTribRegular: ").Append(gTribRegular).Append("\n");
-            sb.Append("  gIBSCredPres: ").Append(gIBSCredPres).Append("\n");
-            sb.Append("  gCBSCredPres: ").Append(gCBSCredPres).Append("\n");
             sb.Append("  gTribCompraGov: ").Append(gTribCompraGov).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -222,16 +204,6 @@ namespace ACBrAPI.Sdk.Model
                     this.gTribRegular.Equals(input.gTribRegular))
                 ) && 
                 (
-                    this.gIBSCredPres == input.gIBSCredPres ||
-                    (this.gIBSCredPres != null &&
-                    this.gIBSCredPres.Equals(input.gIBSCredPres))
-                ) && 
-                (
-                    this.gCBSCredPres == input.gCBSCredPres ||
-                    (this.gCBSCredPres != null &&
-                    this.gCBSCredPres.Equals(input.gCBSCredPres))
-                ) && 
-                (
                     this.gTribCompraGov == input.gTribCompraGov ||
                     (this.gTribCompraGov != null &&
                     this.gTribCompraGov.Equals(input.gTribCompraGov))
@@ -271,14 +243,6 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.gTribRegular.GetHashCode();
                 }
-                if (this.gIBSCredPres != null)
-                {
-                    hashCode = (hashCode * 59) + this.gIBSCredPres.GetHashCode();
-                }
-                if (this.gCBSCredPres != null)
-                {
-                    hashCode = (hashCode * 59) + this.gCBSCredPres.GetHashCode();
-                }
                 if (this.gTribCompraGov != null)
                 {
                     hashCode = (hashCode * 59) + this.gTribCompraGov.GetHashCode();
@@ -292,18 +256,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vBC (decimal?) minimum
             if (this.vBC < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBC, must be a value greater than or equal to 0.", new [] { "vBC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBC, must be a value greater than or equal to 0.", new [] { "vBC" });
             }
 
             // vIBS (decimal?) minimum
             if (this.vIBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIBS, must be a value greater than or equal to 0.", new [] { "vIBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIBS, must be a value greater than or equal to 0.", new [] { "vIBS" });
             }
 
             yield break;

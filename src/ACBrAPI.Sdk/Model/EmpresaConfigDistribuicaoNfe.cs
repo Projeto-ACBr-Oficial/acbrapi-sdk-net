@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -46,6 +46,7 @@ namespace ACBrAPI.Sdk.Model
             /// </summary>
             [EnumMember(Value = "producao")]
             Producao = 2
+
         }
 
 
@@ -197,18 +198,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // distribuicao_intervalo_horas (int?) maximum
             if (this.distribuicao_intervalo_horas > (int?)24)
             {
-                yield return new ValidationResult("Invalid value for distribuicao_intervalo_horas, must be a value less than or equal to 24.", new [] { "distribuicao_intervalo_horas" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for distribuicao_intervalo_horas, must be a value less than or equal to 24.", new [] { "distribuicao_intervalo_horas" });
             }
 
             // distribuicao_intervalo_horas (int?) minimum
             if (this.distribuicao_intervalo_horas < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for distribuicao_intervalo_horas, must be a value greater than or equal to 1.", new [] { "distribuicao_intervalo_horas" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for distribuicao_intervalo_horas, must be a value greater than or equal to 1.", new [] { "distribuicao_intervalo_horas" });
             }
 
             yield break;

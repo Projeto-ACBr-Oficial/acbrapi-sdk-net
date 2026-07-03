@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -204,24 +204,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // chave (string) maxLength
             if (this.chave != null && this.chave.Length > 44)
             {
-                yield return new ValidationResult("Invalid value for chave, length must be less than 44.", new [] { "chave" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for chave, length must be less than 44.", new [] { "chave" });
             }
 
             // PIN (string) maxLength
             if (this.PIN != null && this.PIN.Length > 9)
             {
-                yield return new ValidationResult("Invalid value for PIN, length must be less than 9.", new [] { "PIN" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PIN, length must be less than 9.", new [] { "PIN" });
             }
 
             // PIN (string) minLength
             if (this.PIN != null && this.PIN.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for PIN, length must be greater than 2.", new [] { "PIN" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PIN, length must be greater than 2.", new [] { "PIN" });
             }
 
             yield break;

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -170,24 +170,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vTPrest (decimal?) minimum
             if (this.vTPrest < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTPrest, must be a value greater than or equal to 0.", new [] { "vTPrest" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTPrest, must be a value greater than or equal to 0.", new [] { "vTPrest" });
             }
 
             // vTRec (decimal?) minimum
             if (this.vTRec < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTRec, must be a value greater than or equal to 0.", new [] { "vTRec" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTRec, must be a value greater than or equal to 0.", new [] { "vTRec" });
             }
 
             // vTotDFe (decimal?) minimum
             if (this.vTotDFe < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTotDFe, must be a value greater than or equal to 0.", new [] { "vTotDFe" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTotDFe, must be a value greater than or equal to 0.", new [] { "vTotDFe" });
             }
 
             yield break;

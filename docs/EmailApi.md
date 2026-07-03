@@ -32,10 +32,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -94,7 +90,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -134,10 +130,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -206,7 +198,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 

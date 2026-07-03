@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -267,48 +267,48 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vTar (decimal?) minimum
             if (this.vTar < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTar, must be a value greater than or equal to 0.", new [] { "vTar" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTar, must be a value greater than or equal to 0.", new [] { "vTar" });
             }
 
             // codPontoEntrada (string) maxLength
             if (this.codPontoEntrada != null && this.codPontoEntrada.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for codPontoEntrada, length must be less than 20.", new [] { "codPontoEntrada" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for codPontoEntrada, length must be less than 20.", new [] { "codPontoEntrada" });
             }
 
             // codPontoEntrada (string) minLength
             if (this.codPontoEntrada != null && this.codPontoEntrada.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for codPontoEntrada, length must be greater than 2.", new [] { "codPontoEntrada" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for codPontoEntrada, length must be greater than 2.", new [] { "codPontoEntrada" });
             }
 
             // codPontoSaida (string) maxLength
             if (this.codPontoSaida != null && this.codPontoSaida.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for codPontoSaida, length must be less than 20.", new [] { "codPontoSaida" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for codPontoSaida, length must be less than 20.", new [] { "codPontoSaida" });
             }
 
             // codPontoSaida (string) minLength
             if (this.codPontoSaida != null && this.codPontoSaida.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for codPontoSaida, length must be greater than 2.", new [] { "codPontoSaida" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for codPontoSaida, length must be greater than 2.", new [] { "codPontoSaida" });
             }
 
             // nContrato (string) maxLength
             if (this.nContrato != null && this.nContrato.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for nContrato, length must be less than 20.", new [] { "nContrato" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nContrato, length must be less than 20.", new [] { "nContrato" });
             }
 
             // nContrato (string) minLength
             if (this.nContrato != null && this.nContrato.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for nContrato, length must be greater than 2.", new [] { "nContrato" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nContrato, length must be greater than 2.", new [] { "nContrato" });
             }
 
             yield break;

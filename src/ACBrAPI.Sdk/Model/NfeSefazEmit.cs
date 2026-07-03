@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -32,7 +32,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="NfeSefazEmit" /> class.
         /// </summary>
         /// <param name="cNPJ">Número do CNPJ do emitente.    ***Obrigatório caso o emitente seja pessoa jurídica***..</param>
-        /// <param name="cPF">Número do CPF do emitente.    ***Obrigatorio caso o emitente seja pessoa física***..</param>
+        /// <param name="cPF">Número do CPF do emitente.    ***Obrigatório caso o emitente seja pessoa física***..</param>
         /// <param name="xNome">Razão Social ou Nome do emitente.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
         /// <param name="xFant">Nome fantasia.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
         /// <param name="enderEmit">enderEmit.</param>
@@ -63,9 +63,9 @@ namespace ACBrAPI.Sdk.Model
         public string CNPJ { get; set; }
 
         /// <summary>
-        /// Número do CPF do emitente.    ***Obrigatorio caso o emitente seja pessoa física***.
+        /// Número do CPF do emitente.    ***Obrigatório caso o emitente seja pessoa física***.
         /// </summary>
-        /// <value>Número do CPF do emitente.    ***Obrigatorio caso o emitente seja pessoa física***.</value>
+        /// <value>Número do CPF do emitente.    ***Obrigatório caso o emitente seja pessoa física***.</value>
         [DataMember(Name = "CPF", EmitDefaultValue = true)]
         public string CPF { get; set; }
 
@@ -287,66 +287,66 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // CNPJ (string) maxLength
             if (this.CNPJ != null && this.CNPJ.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for CNPJ, length must be less than 14.", new [] { "CNPJ" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CNPJ, length must be less than 14.", new [] { "CNPJ" });
             }
 
             // CPF (string) maxLength
             if (this.CPF != null && this.CPF.Length > 11)
             {
-                yield return new ValidationResult("Invalid value for CPF, length must be less than 11.", new [] { "CPF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CPF, length must be less than 11.", new [] { "CPF" });
             }
 
             // xNome (string) maxLength
             if (this.xNome != null && this.xNome.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
             }
 
             // xNome (string) minLength
             if (this.xNome != null && this.xNome.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
             }
 
             // xFant (string) maxLength
             if (this.xFant != null && this.xFant.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xFant, length must be less than 60.", new [] { "xFant" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xFant, length must be less than 60.", new [] { "xFant" });
             }
 
             // xFant (string) minLength
             if (this.xFant != null && this.xFant.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xFant, length must be greater than 1.", new [] { "xFant" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xFant, length must be greater than 1.", new [] { "xFant" });
             }
 
             // IE (string) maxLength
             if (this.IE != null && this.IE.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for IE, length must be less than 14.", new [] { "IE" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IE, length must be less than 14.", new [] { "IE" });
             }
 
             // IEST (string) maxLength
             if (this.IEST != null && this.IEST.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for IEST, length must be less than 14.", new [] { "IEST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IEST, length must be less than 14.", new [] { "IEST" });
             }
 
             // IM (string) maxLength
             if (this.IM != null && this.IM.Length > 15)
             {
-                yield return new ValidationResult("Invalid value for IM, length must be less than 15.", new [] { "IM" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IM, length must be less than 15.", new [] { "IM" });
             }
 
             // IM (string) minLength
             if (this.IM != null && this.IM.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for IM, length must be greater than 1.", new [] { "IM" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IM, length must be greater than 1.", new [] { "IM" });
             }
 
             yield break;

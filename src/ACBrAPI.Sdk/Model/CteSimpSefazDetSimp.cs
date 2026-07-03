@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -328,54 +328,54 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // nItem (int?) maximum
             if (this.nItem > (int?)990)
             {
-                yield return new ValidationResult("Invalid value for nItem, must be a value less than or equal to 990.", new [] { "nItem" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nItem, must be a value less than or equal to 990.", new [] { "nItem" });
             }
 
             // nItem (int?) minimum
             if (this.nItem < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nItem, must be a value greater than or equal to 1.", new [] { "nItem" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nItem, must be a value greater than or equal to 1.", new [] { "nItem" });
             }
 
             // xMunIni (string) maxLength
             if (this.xMunIni != null && this.xMunIni.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xMunIni, length must be less than 60.", new [] { "xMunIni" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunIni, length must be less than 60.", new [] { "xMunIni" });
             }
 
             // xMunIni (string) minLength
             if (this.xMunIni != null && this.xMunIni.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xMunIni, length must be greater than 2.", new [] { "xMunIni" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunIni, length must be greater than 2.", new [] { "xMunIni" });
             }
 
             // xMunFim (string) maxLength
             if (this.xMunFim != null && this.xMunFim.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xMunFim, length must be less than 60.", new [] { "xMunFim" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunFim, length must be less than 60.", new [] { "xMunFim" });
             }
 
             // xMunFim (string) minLength
             if (this.xMunFim != null && this.xMunFim.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xMunFim, length must be greater than 2.", new [] { "xMunFim" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunFim, length must be greater than 2.", new [] { "xMunFim" });
             }
 
             // vPrest (decimal?) minimum
             if (this.vPrest < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vPrest, must be a value greater than or equal to 0.", new [] { "vPrest" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vPrest, must be a value greater than or equal to 0.", new [] { "vPrest" });
             }
 
             // vRec (decimal?) minimum
             if (this.vRec < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vRec, must be a value greater than or equal to 0.", new [] { "vRec" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vRec, must be a value greater than or equal to 0.", new [] { "vRec" });
             }
 
             yield break;

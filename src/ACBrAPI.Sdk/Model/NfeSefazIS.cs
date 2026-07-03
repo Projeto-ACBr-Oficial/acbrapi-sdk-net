@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -259,48 +259,48 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vBCIS (decimal?) minimum
             if (this.vBCIS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBCIS, must be a value greater than or equal to 0.", new [] { "vBCIS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBCIS, must be a value greater than or equal to 0.", new [] { "vBCIS" });
             }
 
             // pIS (decimal?) minimum
             if (this.pIS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pIS, must be a value greater than or equal to 0.", new [] { "pIS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pIS, must be a value greater than or equal to 0.", new [] { "pIS" });
             }
 
             // pISEspec (decimal?) minimum
             if (this.pISEspec < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pISEspec, must be a value greater than or equal to 0.", new [] { "pISEspec" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pISEspec, must be a value greater than or equal to 0.", new [] { "pISEspec" });
             }
 
             // uTrib (string) maxLength
             if (this.uTrib != null && this.uTrib.Length > 6)
             {
-                yield return new ValidationResult("Invalid value for uTrib, length must be less than 6.", new [] { "uTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for uTrib, length must be less than 6.", new [] { "uTrib" });
             }
 
             // uTrib (string) minLength
             if (this.uTrib != null && this.uTrib.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for uTrib, length must be greater than 1.", new [] { "uTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for uTrib, length must be greater than 1.", new [] { "uTrib" });
             }
 
             // qTrib (decimal?) minimum
             if (this.qTrib < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qTrib, must be a value greater than or equal to 0.", new [] { "qTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qTrib, must be a value greater than or equal to 0.", new [] { "qTrib" });
             }
 
             // vIS (decimal?) minimum
             if (this.vIS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIS, must be a value greater than or equal to 0.", new [] { "vIS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIS, must be a value greater than or equal to 0.", new [] { "vIS" });
             }
 
             yield break;

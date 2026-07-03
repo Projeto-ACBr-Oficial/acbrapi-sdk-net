@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -175,18 +175,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xOrgao (string) maxLength
             if (this.xOrgao != null && this.xOrgao.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xOrgao, length must be less than 60.", new [] { "xOrgao" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xOrgao, length must be less than 60.", new [] { "xOrgao" });
             }
 
             // xOrgao (string) minLength
             if (this.xOrgao != null && this.xOrgao.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xOrgao, length must be greater than 2.", new [] { "xOrgao" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xOrgao, length must be greater than 2.", new [] { "xOrgao" });
             }
 
             yield break;

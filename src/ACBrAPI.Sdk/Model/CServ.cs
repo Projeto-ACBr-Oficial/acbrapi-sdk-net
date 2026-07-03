@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -40,7 +40,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cTribMun">Código de tributação municipal do ISSQN..</param>
         /// <param name="cNAE">Código CNAE (Classificação Nacional de Atividades Econômicas)..</param>
         /// <param name="xDescServ">Descrição completa do serviço prestado.    Os caracteres acentuados poderão ser alterados para caracteres sem acentuação. (required).</param>
-        /// <param name="cNBS">Código NBS (Nomenclatura Brasileira de Serviços, Intangíveis e outras Operações que produzam Variações no Patrimônio) correspondente ao serviço prestado..</param>
+        /// <param name="cNBS">Código NBS correspondente ao serviço prestado, seguindo a versão 2.0, conforme Anexo B..</param>
         /// <param name="cNatOp">Código de natureza da operação.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado..</param>
         /// <param name="cSitTrib">Código de situação tributária.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado..</param>
         public CServ(string cTribNac = default(string), string cTribMun = default(string), string cNAE = default(string), string xDescServ = default(string), string cNBS = default(string), string cNatOp = default(string), string cSitTrib = default(string))
@@ -93,9 +93,9 @@ namespace ACBrAPI.Sdk.Model
         public string xDescServ { get; set; }
 
         /// <summary>
-        /// Código NBS (Nomenclatura Brasileira de Serviços, Intangíveis e outras Operações que produzam Variações no Patrimônio) correspondente ao serviço prestado.
+        /// Código NBS correspondente ao serviço prestado, seguindo a versão 2.0, conforme Anexo B.
         /// </summary>
-        /// <value>Código NBS (Nomenclatura Brasileira de Serviços, Intangíveis e outras Operações que produzam Variações no Patrimônio) correspondente ao serviço prestado.</value>
+        /// <value>Código NBS correspondente ao serviço prestado, seguindo a versão 2.0, conforme Anexo B.</value>
         [DataMember(Name = "cNBS", EmitDefaultValue = true)]
         public string cNBS { get; set; }
 
@@ -246,18 +246,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xDescServ (string) maxLength
             if (this.xDescServ != null && this.xDescServ.Length > 2000)
             {
-                yield return new ValidationResult("Invalid value for xDescServ, length must be less than 2000.", new [] { "xDescServ" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDescServ, length must be less than 2000.", new [] { "xDescServ" });
             }
 
             // xDescServ (string) minLength
             if (this.xDescServ != null && this.xDescServ.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xDescServ, length must be greater than 1.", new [] { "xDescServ" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDescServ, length must be greater than 1.", new [] { "xDescServ" });
             }
 
             yield break;

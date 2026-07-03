@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,7 +36,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CteOsSefazGIBSMunOS" /> class.
         /// </summary>
-        /// <param name="pIBSMun">Aliquota do IBS Municipal. (required).</param>
+        /// <param name="pIBSMun">Aliquota do IBS Municipal (em percentual). (required).</param>
         /// <param name="gDif">gDif.</param>
         /// <param name="gDevTrib">gDevTrib.</param>
         /// <param name="gRed">gRed.</param>
@@ -61,9 +61,9 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// Aliquota do IBS Municipal.
+        /// Aliquota do IBS Municipal (em percentual).
         /// </summary>
-        /// <value>Aliquota do IBS Municipal.</value>
+        /// <value>Aliquota do IBS Municipal (em percentual).</value>
         [DataMember(Name = "pIBSMun", IsRequired = true, EmitDefaultValue = true)]
         public decimal? pIBSMun { get; set; }
 
@@ -205,18 +205,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pIBSMun (decimal?) minimum
             if (this.pIBSMun < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pIBSMun, must be a value greater than or equal to 0.", new [] { "pIBSMun" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pIBSMun, must be a value greater than or equal to 0.", new [] { "pIBSMun" });
             }
 
             // vIBSMun (decimal?) minimum
             if (this.vIBSMun < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIBSMun, must be a value greater than or equal to 0.", new [] { "vIBSMun" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIBSMun, must be a value greater than or equal to 0.", new [] { "vIBSMun" });
             }
 
             yield break;

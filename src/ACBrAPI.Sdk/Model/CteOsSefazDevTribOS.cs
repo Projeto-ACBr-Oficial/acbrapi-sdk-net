@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,8 +36,9 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CteOsSefazDevTribOS" /> class.
         /// </summary>
-        /// <param name="vDevTrib">Valor do tributo devolvido. No fornecimento de energia elétrica, água, esgoto e  gás natural e em outras hipóteses definidas no regulamento. (required).</param>
-        public CteOsSefazDevTribOS(decimal? vDevTrib = default(decimal?))
+        /// <param name="pDevTrib">Percentual de devolução do tributo, conforme LC 214/25 art. 118..</param>
+        /// <param name="vDevTrib">Valor do tributo devolvido. (“cashback” de desconto na própria Nota Fiscal / Fatura). (required).</param>
+        public CteOsSefazDevTribOS(decimal? pDevTrib = default(decimal?), decimal? vDevTrib = default(decimal?))
         {
             // to ensure "vDevTrib" is required (not null)
             if (vDevTrib == null)
@@ -45,12 +46,20 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("vDevTrib is a required property for CteOsSefazDevTribOS and cannot be null");
             }
             this.vDevTrib = vDevTrib;
+            this.pDevTrib = pDevTrib;
         }
 
         /// <summary>
-        /// Valor do tributo devolvido. No fornecimento de energia elétrica, água, esgoto e  gás natural e em outras hipóteses definidas no regulamento.
+        /// Percentual de devolução do tributo, conforme LC 214/25 art. 118.
         /// </summary>
-        /// <value>Valor do tributo devolvido. No fornecimento de energia elétrica, água, esgoto e  gás natural e em outras hipóteses definidas no regulamento.</value>
+        /// <value>Percentual de devolução do tributo, conforme LC 214/25 art. 118.</value>
+        [DataMember(Name = "pDevTrib", EmitDefaultValue = true)]
+        public decimal? pDevTrib { get; set; }
+
+        /// <summary>
+        /// Valor do tributo devolvido. (“cashback” de desconto na própria Nota Fiscal / Fatura).
+        /// </summary>
+        /// <value>Valor do tributo devolvido. (“cashback” de desconto na própria Nota Fiscal / Fatura).</value>
         [DataMember(Name = "vDevTrib", IsRequired = true, EmitDefaultValue = true)]
         public decimal? vDevTrib { get; set; }
 
@@ -62,6 +71,7 @@ namespace ACBrAPI.Sdk.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CteOsSefazDevTribOS {\n");
+            sb.Append("  pDevTrib: ").Append(pDevTrib).Append("\n");
             sb.Append("  vDevTrib: ").Append(vDevTrib).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -99,6 +109,11 @@ namespace ACBrAPI.Sdk.Model
             }
             return 
                 (
+                    this.pDevTrib == input.pDevTrib ||
+                    (this.pDevTrib != null &&
+                    this.pDevTrib.Equals(input.pDevTrib))
+                ) && 
+                (
                     this.vDevTrib == input.vDevTrib ||
                     (this.vDevTrib != null &&
                     this.vDevTrib.Equals(input.vDevTrib))
@@ -114,6 +129,10 @@ namespace ACBrAPI.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.pDevTrib != null)
+                {
+                    hashCode = (hashCode * 59) + this.pDevTrib.GetHashCode();
+                }
                 if (this.vDevTrib != null)
                 {
                     hashCode = (hashCode * 59) + this.vDevTrib.GetHashCode();
@@ -127,12 +146,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
+            // pDevTrib (decimal?) minimum
+            if (this.pDevTrib < (decimal?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pDevTrib, must be a value greater than or equal to 0.", new [] { "pDevTrib" });
+            }
+
             // vDevTrib (decimal?) minimum
             if (this.vDevTrib < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDevTrib, must be a value greater than or equal to 0.", new [] { "vDevTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDevTrib, must be a value greater than or equal to 0.", new [] { "vDevTrib" });
             }
 
             yield break;

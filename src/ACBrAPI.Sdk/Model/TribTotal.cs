@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -172,12 +172,12 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pTotTribSN (decimal?) minimum
             if (this.pTotTribSN < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pTotTribSN, must be a value greater than or equal to 0.", new [] { "pTotTribSN" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pTotTribSN, must be a value greater than or equal to 0.", new [] { "pTotTribSN" });
             }
 
             yield break;

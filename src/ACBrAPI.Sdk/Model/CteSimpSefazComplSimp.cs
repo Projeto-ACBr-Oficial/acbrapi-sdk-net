@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -211,42 +211,42 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xCaracAd (string) maxLength
             if (this.xCaracAd != null && this.xCaracAd.Length > 15)
             {
-                yield return new ValidationResult("Invalid value for xCaracAd, length must be less than 15.", new [] { "xCaracAd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xCaracAd, length must be less than 15.", new [] { "xCaracAd" });
             }
 
             // xCaracAd (string) minLength
             if (this.xCaracAd != null && this.xCaracAd.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xCaracAd, length must be greater than 1.", new [] { "xCaracAd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xCaracAd, length must be greater than 1.", new [] { "xCaracAd" });
             }
 
             // xCaracSer (string) maxLength
             if (this.xCaracSer != null && this.xCaracSer.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for xCaracSer, length must be less than 30.", new [] { "xCaracSer" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xCaracSer, length must be less than 30.", new [] { "xCaracSer" });
             }
 
             // xCaracSer (string) minLength
             if (this.xCaracSer != null && this.xCaracSer.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xCaracSer, length must be greater than 1.", new [] { "xCaracSer" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xCaracSer, length must be greater than 1.", new [] { "xCaracSer" });
             }
 
             // xObs (string) maxLength
             if (this.xObs != null && this.xObs.Length > 2000)
             {
-                yield return new ValidationResult("Invalid value for xObs, length must be less than 2000.", new [] { "xObs" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xObs, length must be less than 2000.", new [] { "xObs" });
             }
 
             // xObs (string) minLength
             if (this.xObs != null && this.xObs.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xObs, length must be greater than 1.", new [] { "xObs" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xObs, length must be greater than 1.", new [] { "xObs" });
             }
 
             yield break;

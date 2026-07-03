@@ -5,7 +5,8 @@ Grupo de Informações da devolução de tributos.
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**vDevTrib** | **decimal?** | Valor do tributo devolvido. No fornecimento de energia elétrica, água, esgoto e  gás natural e em outras hipóteses definidas no regulamento. | 
+**pDevTrib** | **decimal?** | Percentual de devolução do tributo, conforme LC 214/25 art. 118. | [optional] 
+**vDevTrib** | **decimal?** | Valor do tributo devolvido. (“cashback” de desconto na própria Nota Fiscal / Fatura). | 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 

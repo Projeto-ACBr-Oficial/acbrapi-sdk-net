@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -223,36 +223,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vDif (decimal?) minimum
             if (this.vDif < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDif, must be a value greater than or equal to 0.", new [] { "vDif" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDif, must be a value greater than or equal to 0.", new [] { "vDif" });
             }
 
             // vDevTrib (decimal?) minimum
             if (this.vDevTrib < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDevTrib, must be a value greater than or equal to 0.", new [] { "vDevTrib" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDevTrib, must be a value greater than or equal to 0.", new [] { "vDevTrib" });
             }
 
             // vCBS (decimal?) minimum
             if (this.vCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCBS, must be a value greater than or equal to 0.", new [] { "vCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBS, must be a value greater than or equal to 0.", new [] { "vCBS" });
             }
 
             // vCredPres (decimal?) minimum
             if (this.vCredPres < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCredPres, must be a value greater than or equal to 0.", new [] { "vCredPres" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCredPres, must be a value greater than or equal to 0.", new [] { "vCredPres" });
             }
 
             // vCredPresCondSus (decimal?) minimum
             if (this.vCredPresCondSus < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCredPresCondSus, must be a value greater than or equal to 0.", new [] { "vCredPresCondSus" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCredPresCondSus, must be a value greater than or equal to 0.", new [] { "vCredPresCondSus" });
             }
 
             yield break;

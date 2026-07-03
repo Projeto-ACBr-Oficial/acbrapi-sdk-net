@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -223,24 +223,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xProd (string) maxLength
             if (this.xProd != null && this.xProd.Length > 120)
             {
-                yield return new ValidationResult("Invalid value for xProd, length must be less than 120.", new [] { "xProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xProd, length must be less than 120.", new [] { "xProd" });
             }
 
             // xProd (string) minLength
             if (this.xProd != null && this.xProd.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xProd, length must be greater than 1.", new [] { "xProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xProd, length must be greater than 1.", new [] { "xProd" });
             }
 
             // qCom (decimal?) minimum
             if (this.qCom < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qCom, must be a value greater than or equal to 0.", new [] { "qCom" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qCom, must be a value greater than or equal to 0.", new [] { "qCom" });
+            }
+
+            // vUnCom (decimal?) minimum
+            if (this.vUnCom < (decimal?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vUnCom, must be a value greater than or equal to 0.", new [] { "vUnCom" });
+            }
+
+            // vProd (decimal?) minimum
+            if (this.vProd < (decimal?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vProd, must be a value greater than or equal to 0.", new [] { "vProd" });
             }
 
             yield break;

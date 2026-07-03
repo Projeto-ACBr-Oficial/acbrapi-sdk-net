@@ -5,10 +5,11 @@ Grupo de Tributação da CBS.
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**pCBS** | **decimal?** | Aliquota da CBS. | 
+**pCBS** | **decimal?** | Aliquota da CBS (em percentual). | 
 **gDif** | [**NfcomSefazDif**](NfcomSefazDif.md) |  | [optional] 
 **gDevTrib** | [**NfcomSefazDevTrib**](NfcomSefazDevTrib.md) |  | [optional] 
 **gRed** | [**NfcomSefazRed**](NfcomSefazRed.md) |  | [optional] 
+**gALCZFMCBS** | [**NfcomSefazALCZFMCBS**](NfcomSefazALCZFMCBS.md) |  | [optional] 
 **vCBS** | **decimal?** | Valor da CBS. | 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)

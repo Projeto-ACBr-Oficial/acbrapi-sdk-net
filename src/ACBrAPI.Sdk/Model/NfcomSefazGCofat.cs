@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -135,12 +135,12 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // chNFComLocal (string) maxLength
             if (this.chNFComLocal != null && this.chNFComLocal.Length > 44)
             {
-                yield return new ValidationResult("Invalid value for chNFComLocal, length must be less than 44.", new [] { "chNFComLocal" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for chNFComLocal, length must be less than 44.", new [] { "chNFComLocal" });
             }
 
             yield break;

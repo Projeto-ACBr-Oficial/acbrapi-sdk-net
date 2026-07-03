@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -219,36 +219,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // nLote (string) maxLength
             if (this.nLote != null && this.nLote.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for nLote, length must be less than 20.", new [] { "nLote" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nLote, length must be less than 20.", new [] { "nLote" });
             }
 
             // nLote (string) minLength
             if (this.nLote != null && this.nLote.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for nLote, length must be greater than 1.", new [] { "nLote" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nLote, length must be greater than 1.", new [] { "nLote" });
             }
 
             // qLote (decimal?) minimum
             if (this.qLote < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qLote, must be a value greater than or equal to 0.", new [] { "qLote" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qLote, must be a value greater than or equal to 0.", new [] { "qLote" });
             }
 
             // cAgreg (string) maxLength
             if (this.cAgreg != null && this.cAgreg.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for cAgreg, length must be less than 20.", new [] { "cAgreg" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cAgreg, length must be less than 20.", new [] { "cAgreg" });
             }
 
             // cAgreg (string) minLength
             if (this.cAgreg != null && this.cAgreg.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for cAgreg, length must be greater than 1.", new [] { "cAgreg" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cAgreg, length must be greater than 1.", new [] { "cAgreg" });
             }
 
             yield break;

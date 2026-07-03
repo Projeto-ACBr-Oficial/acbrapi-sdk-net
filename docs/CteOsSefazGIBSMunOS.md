@@ -5,7 +5,7 @@ Grupo de Informações do IBS no Município.
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**pIBSMun** | **decimal?** | Aliquota do IBS Municipal. | 
+**pIBSMun** | **decimal?** | Aliquota do IBS Municipal (em percentual). | 
 **gDif** | [**CteOsSefazDifOS**](CteOsSefazDifOS.md) |  | [optional] 
 **gDevTrib** | [**CteOsSefazDevTribOS**](CteOsSefazDevTribOS.md) |  | [optional] 
 **gRed** | [**CteOsSefazRedOS**](CteOsSefazRedOS.md) |  | [optional] 

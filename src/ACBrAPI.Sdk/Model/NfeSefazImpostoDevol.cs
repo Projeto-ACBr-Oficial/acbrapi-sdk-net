@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -150,18 +150,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pDevol (decimal?) maximum
             if (this.pDevol > (decimal?)1E+2)
             {
-                yield return new ValidationResult("Invalid value for pDevol, must be a value less than or equal to 1E+2.", new [] { "pDevol" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pDevol, must be a value less than or equal to 1E+2.", new [] { "pDevol" });
             }
 
             // pDevol (decimal?) minimum
             if (this.pDevol < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pDevol, must be a value greater than or equal to 0.", new [] { "pDevol" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pDevol, must be a value greater than or equal to 0.", new [] { "pDevol" });
             }
 
             yield break;

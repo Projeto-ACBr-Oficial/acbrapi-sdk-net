@@ -5,7 +5,6 @@ Grupo de Informações do Crédito Presumido referente ao IBS, quando aproveitad
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**cCredPres** | **string** | Código de Classificação do Crédito Presumido do IBS e da CBS. | 
 **pCredPres** | **decimal?** | Percentual do Crédito Presumido. | 
 **vCredPres** | **decimal?** | Valor do Crédito Presumido. | [optional] 
 **vCredPresCondSus** | **decimal?** | Valor do Crédito Presumido Condição Suspensiva, preencher apenas para cCredPres que possui indicação de Condição Suspensiva. | [optional] 

@@ -9,6 +9,7 @@ Nome | Tipo | Descrição | Comentários
 **gIBS** | [**NfeSefazGIBS**](NfeSefazGIBS.md) |  | [optional] 
 **gCBS** | [**NfeSefazIBSCBSMonoTotGCBS**](NfeSefazIBSCBSMonoTotGCBS.md) |  | [optional] 
 **gMono** | [**NfeSefazGMono**](NfeSefazGMono.md) |  | [optional] 
+**gEstornoCred** | [**NfeSefazGEstornoCred**](NfeSefazGEstornoCred.md) |  | [optional] 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -49,7 +49,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vProd">Valor total do item. (required).</param>
         /// <param name="dExpiracao">Data de expiração de crédito.  Formato AAAA-MM-DD..</param>
         /// <param name="indDevolucao">Indicador de devolução do valor do item.  * 1 - Devolução do valor do item.</param>
-        public NfcomSefazProd(string cProd = default(string), string xProd = default(string), string cClass = default(string), string cFOP = default(string), string cNPJLD = default(string), int? uMed = default(int?), decimal? qFaturada = default(decimal?), decimal? vItem = default(decimal?), decimal? vDesc = default(decimal?), decimal? vOutro = default(decimal?), decimal? vProd = default(decimal?), DateTime? dExpiracao = default(DateTime?), int? indDevolucao = default(int?))
+        /// <param name="cNPJCobrTerc">CNPJ de cobrança de terceiro.  Informar quando cClass do grupo 110 - Cobrança de terceiros..</param>
+        /// <param name="gPagAntecipado">gPagAntecipado.</param>
+        public NfcomSefazProd(string cProd = default(string), string xProd = default(string), string cClass = default(string), string cFOP = default(string), string cNPJLD = default(string), int? uMed = default(int?), decimal? qFaturada = default(decimal?), decimal? vItem = default(decimal?), decimal? vDesc = default(decimal?), decimal? vOutro = default(decimal?), decimal? vProd = default(decimal?), DateTime? dExpiracao = default(DateTime?), int? indDevolucao = default(int?), string cNPJCobrTerc = default(string), NfcomSefazGPagAntecipado gPagAntecipado = default(NfcomSefazGPagAntecipado))
         {
             // to ensure "cProd" is required (not null)
             if (cProd == null)
@@ -99,6 +101,8 @@ namespace ACBrAPI.Sdk.Model
             this.vOutro = vOutro;
             this.dExpiracao = dExpiracao;
             this.indDevolucao = indDevolucao;
+            this.CNPJCobrTerc = cNPJCobrTerc;
+            this.gPagAntecipado = gPagAntecipado;
         }
 
         /// <summary>
@@ -194,6 +198,19 @@ namespace ACBrAPI.Sdk.Model
         public int? indDevolucao { get; set; }
 
         /// <summary>
+        /// CNPJ de cobrança de terceiro.  Informar quando cClass do grupo 110 - Cobrança de terceiros.
+        /// </summary>
+        /// <value>CNPJ de cobrança de terceiro.  Informar quando cClass do grupo 110 - Cobrança de terceiros.</value>
+        [DataMember(Name = "CNPJCobrTerc", EmitDefaultValue = true)]
+        public string CNPJCobrTerc { get; set; }
+
+        /// <summary>
+        /// Gets or Sets gPagAntecipado
+        /// </summary>
+        [DataMember(Name = "gPagAntecipado", EmitDefaultValue = false)]
+        public NfcomSefazGPagAntecipado gPagAntecipado { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -214,6 +231,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vProd: ").Append(vProd).Append("\n");
             sb.Append("  dExpiracao: ").Append(dExpiracao).Append("\n");
             sb.Append("  indDevolucao: ").Append(indDevolucao).Append("\n");
+            sb.Append("  CNPJCobrTerc: ").Append(CNPJCobrTerc).Append("\n");
+            sb.Append("  gPagAntecipado: ").Append(gPagAntecipado).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -313,6 +332,16 @@ namespace ACBrAPI.Sdk.Model
                     this.indDevolucao == input.indDevolucao ||
                     (this.indDevolucao != null &&
                     this.indDevolucao.Equals(input.indDevolucao))
+                ) && 
+                (
+                    this.CNPJCobrTerc == input.CNPJCobrTerc ||
+                    (this.CNPJCobrTerc != null &&
+                    this.CNPJCobrTerc.Equals(input.CNPJCobrTerc))
+                ) && 
+                (
+                    this.gPagAntecipado == input.gPagAntecipado ||
+                    (this.gPagAntecipado != null &&
+                    this.gPagAntecipado.Equals(input.gPagAntecipado))
                 );
         }
 
@@ -377,6 +406,14 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.indDevolucao.GetHashCode();
                 }
+                if (this.CNPJCobrTerc != null)
+                {
+                    hashCode = (hashCode * 59) + this.CNPJCobrTerc.GetHashCode();
+                }
+                if (this.gPagAntecipado != null)
+                {
+                    hashCode = (hashCode * 59) + this.gPagAntecipado.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -386,72 +423,72 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // cProd (string) maxLength
             if (this.cProd != null && this.cProd.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for cProd, length must be less than 60.", new [] { "cProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cProd, length must be less than 60.", new [] { "cProd" });
             }
 
             // cProd (string) minLength
             if (this.cProd != null && this.cProd.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for cProd, length must be greater than 1.", new [] { "cProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cProd, length must be greater than 1.", new [] { "cProd" });
             }
 
             // xProd (string) maxLength
             if (this.xProd != null && this.xProd.Length > 120)
             {
-                yield return new ValidationResult("Invalid value for xProd, length must be less than 120.", new [] { "xProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xProd, length must be less than 120.", new [] { "xProd" });
             }
 
             // xProd (string) minLength
             if (this.xProd != null && this.xProd.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xProd, length must be greater than 1.", new [] { "xProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xProd, length must be greater than 1.", new [] { "xProd" });
             }
 
             // cClass (string) maxLength
             if (this.cClass != null && this.cClass.Length > 7)
             {
-                yield return new ValidationResult("Invalid value for cClass, length must be less than 7.", new [] { "cClass" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cClass, length must be less than 7.", new [] { "cClass" });
             }
 
             // cClass (string) minLength
             if (this.cClass != null && this.cClass.Length < 7)
             {
-                yield return new ValidationResult("Invalid value for cClass, length must be greater than 7.", new [] { "cClass" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cClass, length must be greater than 7.", new [] { "cClass" });
             }
 
             // qFaturada (decimal?) minimum
             if (this.qFaturada < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qFaturada, must be a value greater than or equal to 0.", new [] { "qFaturada" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qFaturada, must be a value greater than or equal to 0.", new [] { "qFaturada" });
             }
 
             // vItem (decimal?) minimum
             if (this.vItem < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vItem, must be a value greater than or equal to 0.", new [] { "vItem" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vItem, must be a value greater than or equal to 0.", new [] { "vItem" });
             }
 
             // vDesc (decimal?) minimum
             if (this.vDesc < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDesc, must be a value greater than or equal to 0.", new [] { "vDesc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDesc, must be a value greater than or equal to 0.", new [] { "vDesc" });
             }
 
             // vOutro (decimal?) minimum
             if (this.vOutro < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vOutro, must be a value greater than or equal to 0.", new [] { "vOutro" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vOutro, must be a value greater than or equal to 0.", new [] { "vOutro" });
             }
 
             // vProd (decimal?) minimum
             if (this.vProd < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vProd, must be a value greater than or equal to 0.", new [] { "vProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vProd, must be a value greater than or equal to 0.", new [] { "vProd" });
             }
 
             yield break;

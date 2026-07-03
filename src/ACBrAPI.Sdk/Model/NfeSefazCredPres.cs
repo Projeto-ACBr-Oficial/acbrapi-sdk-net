@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,18 +36,11 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NfeSefazCredPres" /> class.
         /// </summary>
-        /// <param name="cCredPres">Código de Classificação do Crédito Presumido do IBS e da CBS. (required).</param>
         /// <param name="pCredPres">Percentual do Crédito Presumido. (required).</param>
         /// <param name="vCredPres">Valor do Crédito Presumido..</param>
         /// <param name="vCredPresCondSus">Valor do Crédito Presumido Condição Suspensiva, preencher apenas para cCredPres que possui indicação de Condição Suspensiva..</param>
-        public NfeSefazCredPres(string cCredPres = default(string), decimal? pCredPres = default(decimal?), decimal? vCredPres = default(decimal?), decimal? vCredPresCondSus = default(decimal?))
+        public NfeSefazCredPres(decimal? pCredPres = default(decimal?), decimal? vCredPres = default(decimal?), decimal? vCredPresCondSus = default(decimal?))
         {
-            // to ensure "cCredPres" is required (not null)
-            if (cCredPres == null)
-            {
-                throw new ArgumentNullException("cCredPres is a required property for NfeSefazCredPres and cannot be null");
-            }
-            this.cCredPres = cCredPres;
             // to ensure "pCredPres" is required (not null)
             if (pCredPres == null)
             {
@@ -57,13 +50,6 @@ namespace ACBrAPI.Sdk.Model
             this.vCredPres = vCredPres;
             this.vCredPresCondSus = vCredPresCondSus;
         }
-
-        /// <summary>
-        /// Código de Classificação do Crédito Presumido do IBS e da CBS.
-        /// </summary>
-        /// <value>Código de Classificação do Crédito Presumido do IBS e da CBS.</value>
-        [DataMember(Name = "cCredPres", IsRequired = true, EmitDefaultValue = true)]
-        public string cCredPres { get; set; }
 
         /// <summary>
         /// Percentual do Crédito Presumido.
@@ -94,7 +80,6 @@ namespace ACBrAPI.Sdk.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class NfeSefazCredPres {\n");
-            sb.Append("  cCredPres: ").Append(cCredPres).Append("\n");
             sb.Append("  pCredPres: ").Append(pCredPres).Append("\n");
             sb.Append("  vCredPres: ").Append(vCredPres).Append("\n");
             sb.Append("  vCredPresCondSus: ").Append(vCredPresCondSus).Append("\n");
@@ -134,11 +119,6 @@ namespace ACBrAPI.Sdk.Model
             }
             return 
                 (
-                    this.cCredPres == input.cCredPres ||
-                    (this.cCredPres != null &&
-                    this.cCredPres.Equals(input.cCredPres))
-                ) && 
-                (
                     this.pCredPres == input.pCredPres ||
                     (this.pCredPres != null &&
                     this.pCredPres.Equals(input.pCredPres))
@@ -164,10 +144,6 @@ namespace ACBrAPI.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.cCredPres != null)
-                {
-                    hashCode = (hashCode * 59) + this.cCredPres.GetHashCode();
-                }
                 if (this.pCredPres != null)
                 {
                     hashCode = (hashCode * 59) + this.pCredPres.GetHashCode();
@@ -189,24 +165,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pCredPres (decimal?) minimum
             if (this.pCredPres < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pCredPres, must be a value greater than or equal to 0.", new [] { "pCredPres" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pCredPres, must be a value greater than or equal to 0.", new [] { "pCredPres" });
             }
 
             // vCredPres (decimal?) minimum
             if (this.vCredPres < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCredPres, must be a value greater than or equal to 0.", new [] { "vCredPres" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCredPres, must be a value greater than or equal to 0.", new [] { "vCredPres" });
             }
 
             // vCredPresCondSus (decimal?) minimum
             if (this.vCredPresCondSus < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCredPresCondSus, must be a value greater than or equal to 0.", new [] { "vCredPresCondSus" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCredPresCondSus, must be a value greater than or equal to 0.", new [] { "vCredPresCondSus" });
             }
 
             yield break;

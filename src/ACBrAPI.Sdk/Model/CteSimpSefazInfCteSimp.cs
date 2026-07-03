@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -48,11 +48,12 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cobr">cobr.</param>
         /// <param name="infCteSub">infCteSub.</param>
         /// <param name="imp">imp (required).</param>
+        /// <param name="pgtoVinc">pgtoVinc.</param>
         /// <param name="total">total (required).</param>
         /// <param name="autXML">autXML.</param>
         /// <param name="infRespTec">infRespTec.</param>
         /// <param name="infSolicNFF">infSolicNFF.</param>
-        public CteSimpSefazInfCteSimp(string versao = default(string), string id = default(string), CteSimpSefazIdeSimp ide = default(CteSimpSefazIdeSimp), CteSimpSefazComplSimp compl = default(CteSimpSefazComplSimp), CteSimpSefazEmitSimp emit = default(CteSimpSefazEmitSimp), CteSimpSefazTomaSimp toma = default(CteSimpSefazTomaSimp), CteSimpSefazInfCargaSimp infCarga = default(CteSimpSefazInfCargaSimp), List<CteSimpSefazDetSimp> det = default(List<CteSimpSefazDetSimp>), CteSimpSefazInfModalSimp infModal = default(CteSimpSefazInfModalSimp), CteSimpSefazCobrSimp cobr = default(CteSimpSefazCobrSimp), CteSimpSefazInfCteSubSimp infCteSub = default(CteSimpSefazInfCteSubSimp), CteSimpSefazInfCteImpSimp imp = default(CteSimpSefazInfCteImpSimp), CteSimpSefazTotalSimp total = default(CteSimpSefazTotalSimp), List<CteSimpSefazAutXMLSimp> autXML = default(List<CteSimpSefazAutXMLSimp>), CteSimpSefazRespTecSimp infRespTec = default(CteSimpSefazRespTecSimp), CteSimpSefazInfSolicNFFSimp infSolicNFF = default(CteSimpSefazInfSolicNFFSimp))
+        public CteSimpSefazInfCteSimp(string versao = default(string), string id = default(string), CteSimpSefazIdeSimp ide = default(CteSimpSefazIdeSimp), CteSimpSefazComplSimp compl = default(CteSimpSefazComplSimp), CteSimpSefazEmitSimp emit = default(CteSimpSefazEmitSimp), CteSimpSefazTomaSimp toma = default(CteSimpSefazTomaSimp), CteSimpSefazInfCargaSimp infCarga = default(CteSimpSefazInfCargaSimp), List<CteSimpSefazDetSimp> det = default(List<CteSimpSefazDetSimp>), CteSimpSefazInfModalSimp infModal = default(CteSimpSefazInfModalSimp), CteSimpSefazCobrSimp cobr = default(CteSimpSefazCobrSimp), CteSimpSefazInfCteSubSimp infCteSub = default(CteSimpSefazInfCteSubSimp), CteSimpSefazInfCteImpSimp imp = default(CteSimpSefazInfCteImpSimp), CteSimpSefazPgtoVincSimp pgtoVinc = default(CteSimpSefazPgtoVincSimp), CteSimpSefazTotalSimp total = default(CteSimpSefazTotalSimp), List<CteSimpSefazAutXMLSimp> autXML = default(List<CteSimpSefazAutXMLSimp>), CteSimpSefazRespTecSimp infRespTec = default(CteSimpSefazRespTecSimp), CteSimpSefazInfSolicNFFSimp infSolicNFF = default(CteSimpSefazInfSolicNFFSimp))
         {
             // to ensure "versao" is required (not null)
             if (versao == null)
@@ -112,6 +113,7 @@ namespace ACBrAPI.Sdk.Model
             this.compl = compl;
             this.cobr = cobr;
             this.infCteSub = infCteSub;
+            this.pgtoVinc = pgtoVinc;
             this.autXML = autXML;
             this.infRespTec = infRespTec;
             this.infSolicNFF = infSolicNFF;
@@ -192,6 +194,12 @@ namespace ACBrAPI.Sdk.Model
         public CteSimpSefazInfCteImpSimp imp { get; set; }
 
         /// <summary>
+        /// Gets or Sets pgtoVinc
+        /// </summary>
+        [DataMember(Name = "pgtoVinc", EmitDefaultValue = false)]
+        public CteSimpSefazPgtoVincSimp pgtoVinc { get; set; }
+
+        /// <summary>
         /// Gets or Sets total
         /// </summary>
         [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = true)]
@@ -235,6 +243,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  cobr: ").Append(cobr).Append("\n");
             sb.Append("  infCteSub: ").Append(infCteSub).Append("\n");
             sb.Append("  imp: ").Append(imp).Append("\n");
+            sb.Append("  pgtoVinc: ").Append(pgtoVinc).Append("\n");
             sb.Append("  total: ").Append(total).Append("\n");
             sb.Append("  autXML: ").Append(autXML).Append("\n");
             sb.Append("  infRespTec: ").Append(infRespTec).Append("\n");
@@ -336,6 +345,11 @@ namespace ACBrAPI.Sdk.Model
                     this.imp.Equals(input.imp))
                 ) && 
                 (
+                    this.pgtoVinc == input.pgtoVinc ||
+                    (this.pgtoVinc != null &&
+                    this.pgtoVinc.Equals(input.pgtoVinc))
+                ) && 
+                (
                     this.total == input.total ||
                     (this.total != null &&
                     this.total.Equals(input.total))
@@ -415,6 +429,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.imp.GetHashCode();
                 }
+                if (this.pgtoVinc != null)
+                {
+                    hashCode = (hashCode * 59) + this.pgtoVinc.GetHashCode();
+                }
                 if (this.total != null)
                 {
                     hashCode = (hashCode * 59) + this.total.GetHashCode();
@@ -440,7 +458,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

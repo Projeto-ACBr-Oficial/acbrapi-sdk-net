@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -31,22 +31,17 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InfoObra" /> class.
         /// </summary>
-        /// <param name="cObra">Número de identificação da obra.  Cadastro Nacional de Obras (CNO) ou Cadastro Específico do INSS (CEI)..</param>
         /// <param name="inscImobFisc">Inscrição imobiliária fiscal (código fornecido pela Prefeitura Municipal para a identificação da obra ou para fins de recolhimento do IPTU)..</param>
+        /// <param name="cObra">Número de identificação da obra.  Cadastro Nacional de Obras (CNO) ou Cadastro Específico do INSS (CEI)..</param>
+        /// <param name="cCIB">Código do Cadastro Imobiliário Brasileiro - CIB..</param>
         /// <param name="end">end.</param>
-        public InfoObra(string cObra = default(string), string inscImobFisc = default(string), EnderecoSimples end = default(EnderecoSimples))
+        public InfoObra(string inscImobFisc = default(string), string cObra = default(string), string cCIB = default(string), EnderObraEvento end = default(EnderObraEvento))
         {
-            this.cObra = cObra;
             this.inscImobFisc = inscImobFisc;
+            this.cObra = cObra;
+            this.cCIB = cCIB;
             this.end = end;
         }
-
-        /// <summary>
-        /// Número de identificação da obra.  Cadastro Nacional de Obras (CNO) ou Cadastro Específico do INSS (CEI).
-        /// </summary>
-        /// <value>Número de identificação da obra.  Cadastro Nacional de Obras (CNO) ou Cadastro Específico do INSS (CEI).</value>
-        [DataMember(Name = "cObra", EmitDefaultValue = true)]
-        public string cObra { get; set; }
 
         /// <summary>
         /// Inscrição imobiliária fiscal (código fornecido pela Prefeitura Municipal para a identificação da obra ou para fins de recolhimento do IPTU).
@@ -56,10 +51,24 @@ namespace ACBrAPI.Sdk.Model
         public string inscImobFisc { get; set; }
 
         /// <summary>
+        /// Número de identificação da obra.  Cadastro Nacional de Obras (CNO) ou Cadastro Específico do INSS (CEI).
+        /// </summary>
+        /// <value>Número de identificação da obra.  Cadastro Nacional de Obras (CNO) ou Cadastro Específico do INSS (CEI).</value>
+        [DataMember(Name = "cObra", EmitDefaultValue = true)]
+        public string cObra { get; set; }
+
+        /// <summary>
+        /// Código do Cadastro Imobiliário Brasileiro - CIB.
+        /// </summary>
+        /// <value>Código do Cadastro Imobiliário Brasileiro - CIB.</value>
+        [DataMember(Name = "cCIB", EmitDefaultValue = true)]
+        public string cCIB { get; set; }
+
+        /// <summary>
         /// Gets or Sets end
         /// </summary>
         [DataMember(Name = "end", EmitDefaultValue = false)]
-        public EnderecoSimples end { get; set; }
+        public EnderObraEvento end { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,8 +78,9 @@ namespace ACBrAPI.Sdk.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class InfoObra {\n");
-            sb.Append("  cObra: ").Append(cObra).Append("\n");
             sb.Append("  inscImobFisc: ").Append(inscImobFisc).Append("\n");
+            sb.Append("  cObra: ").Append(cObra).Append("\n");
+            sb.Append("  cCIB: ").Append(cCIB).Append("\n");
             sb.Append("  end: ").Append(end).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -108,14 +118,19 @@ namespace ACBrAPI.Sdk.Model
             }
             return 
                 (
+                    this.inscImobFisc == input.inscImobFisc ||
+                    (this.inscImobFisc != null &&
+                    this.inscImobFisc.Equals(input.inscImobFisc))
+                ) && 
+                (
                     this.cObra == input.cObra ||
                     (this.cObra != null &&
                     this.cObra.Equals(input.cObra))
                 ) && 
                 (
-                    this.inscImobFisc == input.inscImobFisc ||
-                    (this.inscImobFisc != null &&
-                    this.inscImobFisc.Equals(input.inscImobFisc))
+                    this.cCIB == input.cCIB ||
+                    (this.cCIB != null &&
+                    this.cCIB.Equals(input.cCIB))
                 ) && 
                 (
                     this.end == input.end ||
@@ -133,13 +148,17 @@ namespace ACBrAPI.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.inscImobFisc != null)
+                {
+                    hashCode = (hashCode * 59) + this.inscImobFisc.GetHashCode();
+                }
                 if (this.cObra != null)
                 {
                     hashCode = (hashCode * 59) + this.cObra.GetHashCode();
                 }
-                if (this.inscImobFisc != null)
+                if (this.cCIB != null)
                 {
-                    hashCode = (hashCode * 59) + this.inscImobFisc.GetHashCode();
+                    hashCode = (hashCode * 59) + this.cCIB.GetHashCode();
                 }
                 if (this.end != null)
                 {
@@ -154,30 +173,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
-            // cObra (string) maxLength
-            if (this.cObra != null && this.cObra.Length > 30)
-            {
-                yield return new ValidationResult("Invalid value for cObra, length must be less than 30.", new [] { "cObra" });
-            }
-
-            // cObra (string) minLength
-            if (this.cObra != null && this.cObra.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for cObra, length must be greater than 1.", new [] { "cObra" });
-            }
-
             // inscImobFisc (string) maxLength
             if (this.inscImobFisc != null && this.inscImobFisc.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for inscImobFisc, length must be less than 30.", new [] { "inscImobFisc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for inscImobFisc, length must be less than 30.", new [] { "inscImobFisc" });
             }
 
             // inscImobFisc (string) minLength
             if (this.inscImobFisc != null && this.inscImobFisc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for inscImobFisc, length must be greater than 1.", new [] { "inscImobFisc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for inscImobFisc, length must be greater than 1.", new [] { "inscImobFisc" });
+            }
+
+            // cObra (string) maxLength
+            if (this.cObra != null && this.cObra.Length > 30)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cObra, length must be less than 30.", new [] { "cObra" });
+            }
+
+            // cObra (string) minLength
+            if (this.cObra != null && this.cObra.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cObra, length must be greater than 1.", new [] { "cObra" });
+            }
+
+            // cCIB (string) maxLength
+            if (this.cCIB != null && this.cCIB.Length > 8)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cCIB, length must be less than 8.", new [] { "cCIB" });
             }
 
             yield break;

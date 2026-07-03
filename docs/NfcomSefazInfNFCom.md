@@ -14,6 +14,7 @@ Nome | Tipo | Descrição | Comentários
 **gSub** | [**NfcomSefazGSub**](NfcomSefazGSub.md) |  | [optional] 
 **gCofat** | [**NfcomSefazGCofat**](NfcomSefazGCofat.md) |  | [optional] 
 **det** | [**List&lt;NfcomSefazDet&gt;**](NfcomSefazDet.md) |  | 
+**pgtoVinc** | [**NfcomSefazPgtoVinc**](NfcomSefazPgtoVinc.md) |  | [optional] 
 **total** | [**NfcomSefazTotal**](NfcomSefazTotal.md) |  | 
 **gFidelidade** | [**NfcomSefazGFidelidade**](NfcomSefazGFidelidade.md) |  | [optional] 
 **gFat** | [**NfcomSefazGFat**](NfcomSefazGFat.md) |  | [optional] 

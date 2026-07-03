@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -45,6 +45,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="gSub">gSub.</param>
         /// <param name="gCofat">gCofat.</param>
         /// <param name="det">det (required).</param>
+        /// <param name="pgtoVinc">pgtoVinc.</param>
         /// <param name="total">total (required).</param>
         /// <param name="gFidelidade">gFidelidade.</param>
         /// <param name="gFat">gFat.</param>
@@ -52,7 +53,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="autXML">autXML.</param>
         /// <param name="infAdic">infAdic.</param>
         /// <param name="gRespTec">gRespTec.</param>
-        public NfcomSefazInfNFCom(string versao = default(string), string id = default(string), NfcomSefazIde ide = default(NfcomSefazIde), NfcomSefazEmit emit = default(NfcomSefazEmit), NfcomSefazDest dest = default(NfcomSefazDest), NfcomSefazAssinante assinante = default(NfcomSefazAssinante), NfcomSefazGSub gSub = default(NfcomSefazGSub), NfcomSefazGCofat gCofat = default(NfcomSefazGCofat), List<NfcomSefazDet> det = default(List<NfcomSefazDet>), NfcomSefazTotal total = default(NfcomSefazTotal), NfcomSefazGFidelidade gFidelidade = default(NfcomSefazGFidelidade), NfcomSefazGFat gFat = default(NfcomSefazGFat), NfcomSefazGFatCentral gFatCentral = default(NfcomSefazGFatCentral), List<NfcomSefazAutXML> autXML = default(List<NfcomSefazAutXML>), NfcomSefazInfAdic infAdic = default(NfcomSefazInfAdic), NfcomSefazRespTec gRespTec = default(NfcomSefazRespTec))
+        public NfcomSefazInfNFCom(string versao = default(string), string id = default(string), NfcomSefazIde ide = default(NfcomSefazIde), NfcomSefazEmit emit = default(NfcomSefazEmit), NfcomSefazDest dest = default(NfcomSefazDest), NfcomSefazAssinante assinante = default(NfcomSefazAssinante), NfcomSefazGSub gSub = default(NfcomSefazGSub), NfcomSefazGCofat gCofat = default(NfcomSefazGCofat), List<NfcomSefazDet> det = default(List<NfcomSefazDet>), NfcomSefazPgtoVinc pgtoVinc = default(NfcomSefazPgtoVinc), NfcomSefazTotal total = default(NfcomSefazTotal), NfcomSefazGFidelidade gFidelidade = default(NfcomSefazGFidelidade), NfcomSefazGFat gFat = default(NfcomSefazGFat), NfcomSefazGFatCentral gFatCentral = default(NfcomSefazGFatCentral), List<NfcomSefazAutXML> autXML = default(List<NfcomSefazAutXML>), NfcomSefazInfAdic infAdic = default(NfcomSefazInfAdic), NfcomSefazRespTec gRespTec = default(NfcomSefazRespTec))
         {
             // to ensure "versao" is required (not null)
             if (versao == null)
@@ -99,6 +100,7 @@ namespace ACBrAPI.Sdk.Model
             this.Id = id;
             this.gSub = gSub;
             this.gCofat = gCofat;
+            this.pgtoVinc = pgtoVinc;
             this.gFidelidade = gFidelidade;
             this.gFat = gFat;
             this.gFatCentral = gFatCentral;
@@ -164,6 +166,12 @@ namespace ACBrAPI.Sdk.Model
         public List<NfcomSefazDet> det { get; set; }
 
         /// <summary>
+        /// Gets or Sets pgtoVinc
+        /// </summary>
+        [DataMember(Name = "pgtoVinc", EmitDefaultValue = false)]
+        public NfcomSefazPgtoVinc pgtoVinc { get; set; }
+
+        /// <summary>
         /// Gets or Sets total
         /// </summary>
         [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = true)]
@@ -222,6 +230,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  gSub: ").Append(gSub).Append("\n");
             sb.Append("  gCofat: ").Append(gCofat).Append("\n");
             sb.Append("  det: ").Append(det).Append("\n");
+            sb.Append("  pgtoVinc: ").Append(pgtoVinc).Append("\n");
             sb.Append("  total: ").Append(total).Append("\n");
             sb.Append("  gFidelidade: ").Append(gFidelidade).Append("\n");
             sb.Append("  gFat: ").Append(gFat).Append("\n");
@@ -311,6 +320,11 @@ namespace ACBrAPI.Sdk.Model
                     this.det.SequenceEqual(input.det)
                 ) && 
                 (
+                    this.pgtoVinc == input.pgtoVinc ||
+                    (this.pgtoVinc != null &&
+                    this.pgtoVinc.Equals(input.pgtoVinc))
+                ) && 
+                (
                     this.total == input.total ||
                     (this.total != null &&
                     this.total.Equals(input.total))
@@ -393,6 +407,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.det.GetHashCode();
                 }
+                if (this.pgtoVinc != null)
+                {
+                    hashCode = (hashCode * 59) + this.pgtoVinc.GetHashCode();
+                }
                 if (this.total != null)
                 {
                     hashCode = (hashCode * 59) + this.total.GetHashCode();
@@ -430,7 +448,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

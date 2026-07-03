@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,7 +36,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AtvEvento" /> class.
         /// </summary>
-        /// <param name="xNome">Nome do evento Artístico, Cultural, Esportivo, etc..</param>
+        /// <param name="xNome">Descrição do evento Artístico, Cultural, Esportivo, etc..</param>
         /// <param name="desc">&#x60;Deprecated&#x60;    **Propriedade depreciada**.    *Utilize &#x60;xNome&#x60;*..</param>
         /// <param name="dtIni">Data de início da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD). (required).</param>
         /// <param name="dtFim">Data de fim da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD). (required).</param>
@@ -65,9 +65,9 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// Nome do evento Artístico, Cultural, Esportivo, etc.
+        /// Descrição do evento Artístico, Cultural, Esportivo, etc.
         /// </summary>
-        /// <value>Nome do evento Artístico, Cultural, Esportivo, etc.</value>
+        /// <value>Descrição do evento Artístico, Cultural, Esportivo, etc.</value>
         [DataMember(Name = "xNome", EmitDefaultValue = true)]
         public string xNome { get; set; }
 
@@ -247,54 +247,54 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xNome (string) maxLength
             if (this.xNome != null && this.xNome.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be less than 255.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be less than 255.", new [] { "xNome" });
             }
 
             // xNome (string) minLength
             if (this.xNome != null && this.xNome.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be greater than 1.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be greater than 1.", new [] { "xNome" });
             }
 
             // desc (string) maxLength
             if (this.desc != null && this.desc.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for desc, length must be less than 255.", new [] { "desc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for desc, length must be less than 255.", new [] { "desc" });
             }
 
             // desc (string) minLength
             if (this.desc != null && this.desc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for desc, length must be greater than 1.", new [] { "desc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for desc, length must be greater than 1.", new [] { "desc" });
             }
 
             // idAtvEvt (string) maxLength
             if (this.idAtvEvt != null && this.idAtvEvt.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for idAtvEvt, length must be less than 30.", new [] { "idAtvEvt" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for idAtvEvt, length must be less than 30.", new [] { "idAtvEvt" });
             }
 
             // idAtvEvt (string) minLength
             if (this.idAtvEvt != null && this.idAtvEvt.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for idAtvEvt, length must be greater than 1.", new [] { "idAtvEvt" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for idAtvEvt, length must be greater than 1.", new [] { "idAtvEvt" });
             }
 
             // id (string) maxLength
             if (this.id != null && this.id.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for id, length must be less than 30.", new [] { "id" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for id, length must be less than 30.", new [] { "id" });
             }
 
             // id (string) minLength
             if (this.id != null && this.id.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for id, length must be greater than 1.", new [] { "id" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for id, length must be greater than 1.", new [] { "id" });
             }
 
             yield break;

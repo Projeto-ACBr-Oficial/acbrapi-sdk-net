@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,12 +36,13 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CteSefazGCBS" /> class.
         /// </summary>
-        /// <param name="pCBS">Aliquota da CBS. (required).</param>
+        /// <param name="pCBS">Aliquota da CBS (em percentual). (required).</param>
         /// <param name="gDif">gDif.</param>
         /// <param name="gDevTrib">gDevTrib.</param>
         /// <param name="gRed">gRed.</param>
+        /// <param name="gALCZFMCBS">gALCZFMCBS.</param>
         /// <param name="vCBS">Valor da CBS. (required).</param>
-        public CteSefazGCBS(decimal? pCBS = default(decimal?), CteSefazDif gDif = default(CteSefazDif), CteSefazDevTrib gDevTrib = default(CteSefazDevTrib), CteSefazRed gRed = default(CteSefazRed), decimal? vCBS = default(decimal?))
+        public CteSefazGCBS(decimal? pCBS = default(decimal?), CteSefazDif gDif = default(CteSefazDif), CteSefazDevTrib gDevTrib = default(CteSefazDevTrib), CteSefazRed gRed = default(CteSefazRed), CteSefazALCZFMCBS gALCZFMCBS = default(CteSefazALCZFMCBS), decimal? vCBS = default(decimal?))
         {
             // to ensure "pCBS" is required (not null)
             if (pCBS == null)
@@ -58,12 +59,13 @@ namespace ACBrAPI.Sdk.Model
             this.gDif = gDif;
             this.gDevTrib = gDevTrib;
             this.gRed = gRed;
+            this.gALCZFMCBS = gALCZFMCBS;
         }
 
         /// <summary>
-        /// Aliquota da CBS.
+        /// Aliquota da CBS (em percentual).
         /// </summary>
-        /// <value>Aliquota da CBS.</value>
+        /// <value>Aliquota da CBS (em percentual).</value>
         [DataMember(Name = "pCBS", IsRequired = true, EmitDefaultValue = true)]
         public decimal? pCBS { get; set; }
 
@@ -86,6 +88,12 @@ namespace ACBrAPI.Sdk.Model
         public CteSefazRed gRed { get; set; }
 
         /// <summary>
+        /// Gets or Sets gALCZFMCBS
+        /// </summary>
+        [DataMember(Name = "gALCZFMCBS", EmitDefaultValue = false)]
+        public CteSefazALCZFMCBS gALCZFMCBS { get; set; }
+
+        /// <summary>
         /// Valor da CBS.
         /// </summary>
         /// <value>Valor da CBS.</value>
@@ -104,6 +112,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  gDif: ").Append(gDif).Append("\n");
             sb.Append("  gDevTrib: ").Append(gDevTrib).Append("\n");
             sb.Append("  gRed: ").Append(gRed).Append("\n");
+            sb.Append("  gALCZFMCBS: ").Append(gALCZFMCBS).Append("\n");
             sb.Append("  vCBS: ").Append(vCBS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -161,6 +170,11 @@ namespace ACBrAPI.Sdk.Model
                     this.gRed.Equals(input.gRed))
                 ) && 
                 (
+                    this.gALCZFMCBS == input.gALCZFMCBS ||
+                    (this.gALCZFMCBS != null &&
+                    this.gALCZFMCBS.Equals(input.gALCZFMCBS))
+                ) && 
+                (
                     this.vCBS == input.vCBS ||
                     (this.vCBS != null &&
                     this.vCBS.Equals(input.vCBS))
@@ -192,6 +206,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.gRed.GetHashCode();
                 }
+                if (this.gALCZFMCBS != null)
+                {
+                    hashCode = (hashCode * 59) + this.gALCZFMCBS.GetHashCode();
+                }
                 if (this.vCBS != null)
                 {
                     hashCode = (hashCode * 59) + this.vCBS.GetHashCode();
@@ -205,18 +223,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pCBS (decimal?) minimum
             if (this.pCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pCBS, must be a value greater than or equal to 0.", new [] { "pCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pCBS, must be a value greater than or equal to 0.", new [] { "pCBS" });
             }
 
             // vCBS (decimal?) minimum
             if (this.vCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCBS, must be a value greater than or equal to 0.", new [] { "vCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBS, must be a value greater than or equal to 0.", new [] { "vCBS" });
             }
 
             yield break;

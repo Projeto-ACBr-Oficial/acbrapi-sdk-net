@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,7 +36,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NfcomSefazGIBSUF" /> class.
         /// </summary>
-        /// <param name="pIBSUF">Aliquota do IBS de competência das UF. (required).</param>
+        /// <param name="pIBSUF">Aliquota do IBS de competência das UF (em percentual). (required).</param>
         /// <param name="gDif">gDif.</param>
         /// <param name="gDevTrib">gDevTrib.</param>
         /// <param name="gRed">gRed.</param>
@@ -61,9 +61,9 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// Aliquota do IBS de competência das UF.
+        /// Aliquota do IBS de competência das UF (em percentual).
         /// </summary>
-        /// <value>Aliquota do IBS de competência das UF.</value>
+        /// <value>Aliquota do IBS de competência das UF (em percentual).</value>
         [DataMember(Name = "pIBSUF", IsRequired = true, EmitDefaultValue = true)]
         public decimal? pIBSUF { get; set; }
 
@@ -205,18 +205,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pIBSUF (decimal?) minimum
             if (this.pIBSUF < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pIBSUF, must be a value greater than or equal to 0.", new [] { "pIBSUF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pIBSUF, must be a value greater than or equal to 0.", new [] { "pIBSUF" });
             }
 
             // vIBSUF (decimal?) minimum
             if (this.vIBSUF < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIBSUF, must be a value greater than or equal to 0.", new [] { "vIBSUF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIBSUF, must be a value greater than or equal to 0.", new [] { "vIBSUF" });
             }
 
             yield break;

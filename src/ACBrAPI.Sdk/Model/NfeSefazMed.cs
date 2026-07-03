@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -170,24 +170,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xMotivoIsencao (string) maxLength
             if (this.xMotivoIsencao != null && this.xMotivoIsencao.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for xMotivoIsencao, length must be less than 255.", new [] { "xMotivoIsencao" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMotivoIsencao, length must be less than 255.", new [] { "xMotivoIsencao" });
             }
 
             // xMotivoIsencao (string) minLength
             if (this.xMotivoIsencao != null && this.xMotivoIsencao.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xMotivoIsencao, length must be greater than 1.", new [] { "xMotivoIsencao" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMotivoIsencao, length must be greater than 1.", new [] { "xMotivoIsencao" });
             }
 
             // vPMC (decimal?) minimum
             if (this.vPMC < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vPMC, must be a value greater than or equal to 0.", new [] { "vPMC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vPMC, must be a value greater than or equal to 0.", new [] { "vPMC" });
             }
 
             yield break;

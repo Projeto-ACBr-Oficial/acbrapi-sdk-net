@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -295,42 +295,42 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pAliqEfetRegIBSUF (decimal?) minimum
             if (this.pAliqEfetRegIBSUF < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pAliqEfetRegIBSUF, must be a value greater than or equal to 0.", new [] { "pAliqEfetRegIBSUF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pAliqEfetRegIBSUF, must be a value greater than or equal to 0.", new [] { "pAliqEfetRegIBSUF" });
             }
 
             // vTribRegIBSUF (decimal?) minimum
             if (this.vTribRegIBSUF < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTribRegIBSUF, must be a value greater than or equal to 0.", new [] { "vTribRegIBSUF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTribRegIBSUF, must be a value greater than or equal to 0.", new [] { "vTribRegIBSUF" });
             }
 
             // pAliqEfetRegIBSMun (decimal?) minimum
             if (this.pAliqEfetRegIBSMun < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pAliqEfetRegIBSMun, must be a value greater than or equal to 0.", new [] { "pAliqEfetRegIBSMun" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pAliqEfetRegIBSMun, must be a value greater than or equal to 0.", new [] { "pAliqEfetRegIBSMun" });
             }
 
             // vTribRegIBSMun (decimal?) minimum
             if (this.vTribRegIBSMun < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTribRegIBSMun, must be a value greater than or equal to 0.", new [] { "vTribRegIBSMun" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTribRegIBSMun, must be a value greater than or equal to 0.", new [] { "vTribRegIBSMun" });
             }
 
             // pAliqEfetRegCBS (decimal?) minimum
             if (this.pAliqEfetRegCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pAliqEfetRegCBS, must be a value greater than or equal to 0.", new [] { "pAliqEfetRegCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pAliqEfetRegCBS, must be a value greater than or equal to 0.", new [] { "pAliqEfetRegCBS" });
             }
 
             // vTribRegCBS (decimal?) minimum
             if (this.vTribRegCBS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vTribRegCBS, must be a value greater than or equal to 0.", new [] { "vTribRegCBS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vTribRegCBS, must be a value greater than or equal to 0.", new [] { "vTribRegCBS" });
             }
 
             yield break;

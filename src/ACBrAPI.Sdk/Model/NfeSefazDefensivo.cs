@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -151,24 +151,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // nReceituario (string) maxLength
             if (this.nReceituario != null && this.nReceituario.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for nReceituario, length must be less than 30.", new [] { "nReceituario" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nReceituario, length must be less than 30.", new [] { "nReceituario" });
             }
 
             // nReceituario (string) minLength
             if (this.nReceituario != null && this.nReceituario.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for nReceituario, length must be greater than 1.", new [] { "nReceituario" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nReceituario, length must be greater than 1.", new [] { "nReceituario" });
             }
 
             // CPFRespTec (string) maxLength
             if (this.CPFRespTec != null && this.CPFRespTec.Length > 11)
             {
-                yield return new ValidationResult("Invalid value for CPFRespTec, length must be less than 11.", new [] { "CPFRespTec" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CPFRespTec, length must be less than 11.", new [] { "CPFRespTec" });
             }
 
             yield break;

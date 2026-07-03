@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -151,24 +151,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xDed (string) maxLength
             if (this.xDed != null && this.xDed.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xDed, length must be less than 60.", new [] { "xDed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDed, length must be less than 60.", new [] { "xDed" });
             }
 
             // xDed (string) minLength
             if (this.xDed != null && this.xDed.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xDed, length must be greater than 1.", new [] { "xDed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDed, length must be greater than 1.", new [] { "xDed" });
             }
 
             // vDed (decimal?) minimum
             if (this.vDed < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDed, must be a value greater than or equal to 0.", new [] { "vDed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDed, must be a value greater than or equal to 0.", new [] { "vDed" });
             }
 
             yield break;

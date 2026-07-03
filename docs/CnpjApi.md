@@ -13,7 +13,7 @@ Todas as URIs relativas a *https://prod.acbr.api.br*
 
 Consultar dados do CNPJ
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#cnpj-consultas\">cnpj-consultas</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    `18760540000139`    `00038166000105`    `00394460000141`    `29979036000140`
 
 ### Exemplo
 ```csharp
@@ -32,10 +32,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -94,7 +90,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 
@@ -115,7 +111,7 @@ catch (ApiException e)
 
 Listar estabelecimentos ativos a partir da base de CNPJ
 
-Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \"Ativa\".    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#cnpj-listagem\">cnpj-listagem</a>  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \"Ativa\".    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
 
 ### Exemplo
 ```csharp
@@ -134,10 +130,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://prod.acbr.api.br";
-            // Configure API key authorization: jwt
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -206,7 +198,7 @@ catch (ApiException e)
 
 ### Autorização
 
-[jwt](../README.md#jwt), [oauth2](../README.md#oauth2)
+[oauth2](../README.md#oauth2)
 
 ### Headers da requisição HTTP
 

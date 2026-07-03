@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,39 +36,34 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BeneficioMunicipal" /> class.
         /// </summary>
-        /// <param name="tpBM">Tipo do Benefício Municipal:  * 1 - Alíquota Diferenciada  * 2 - Redução da BC  * 3 - Isenção (required).</param>
-        /// <param name="nBM">Identificador do benefício municipal parametrizado pelo município. (required).</param>
+        /// <param name="tpBM">Tipo do Benefício Municipal:  * 1 - Alíquota Diferenciada  * 2 - Redução da BC  * 3 - Isenção    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado..</param>
+        /// <param name="nBM">Identificador do benefício parametrizado pelo município.  Trata-se de um identificador único que foi gerado pelo Sistema Nacional no momento em que o município de incidência do ISSQN incluiu o benefício no sistema.  Critério de formação do número de identificação de parâmetros municipais:  7 dígitos - posição 1 a 7: número identificador do Município, conforme código IBGE  2 dígitos - posições 8 e 9 : número identificador do tipo de parametrização (01-legislação, 02-regimes especiais, 03-retenções, 04-outros benefícios)  5 dígitos - posição 10 a 14 : número sequencial definido pelo sistema quando do registro específico do parâmetro dentro do tipo de parametrização no sistema. (required).</param>
         /// <param name="vRedBCBM">Valor monetário informado pelo emitente para redução da base de cálculo (BC) do ISSQN devido a um Benefício Municipal (BM)..</param>
         /// <param name="pRedBCBM">Valor percentual informado pelo emitente para redução da base de cálculo (BC) do ISSQN devido a um Benefício Municipal (BM)..</param>
         public BeneficioMunicipal(int? tpBM = default(int?), string nBM = default(string), decimal? vRedBCBM = default(decimal?), decimal? pRedBCBM = default(decimal?))
         {
-            // to ensure "tpBM" is required (not null)
-            if (tpBM == null)
-            {
-                throw new ArgumentNullException("tpBM is a required property for BeneficioMunicipal and cannot be null");
-            }
-            this.tpBM = tpBM;
             // to ensure "nBM" is required (not null)
             if (nBM == null)
             {
                 throw new ArgumentNullException("nBM is a required property for BeneficioMunicipal and cannot be null");
             }
             this.nBM = nBM;
+            this.tpBM = tpBM;
             this.vRedBCBM = vRedBCBM;
             this.pRedBCBM = pRedBCBM;
         }
 
         /// <summary>
-        /// Tipo do Benefício Municipal:  * 1 - Alíquota Diferenciada  * 2 - Redução da BC  * 3 - Isenção
+        /// Tipo do Benefício Municipal:  * 1 - Alíquota Diferenciada  * 2 - Redução da BC  * 3 - Isenção    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado.
         /// </summary>
-        /// <value>Tipo do Benefício Municipal:  * 1 - Alíquota Diferenciada  * 2 - Redução da BC  * 3 - Isenção</value>
-        [DataMember(Name = "tpBM", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Tipo do Benefício Municipal:  * 1 - Alíquota Diferenciada  * 2 - Redução da BC  * 3 - Isenção    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado.</value>
+        [DataMember(Name = "tpBM", EmitDefaultValue = true)]
         public int? tpBM { get; set; }
 
         /// <summary>
-        /// Identificador do benefício municipal parametrizado pelo município.
+        /// Identificador do benefício parametrizado pelo município.  Trata-se de um identificador único que foi gerado pelo Sistema Nacional no momento em que o município de incidência do ISSQN incluiu o benefício no sistema.  Critério de formação do número de identificação de parâmetros municipais:  7 dígitos - posição 1 a 7: número identificador do Município, conforme código IBGE  2 dígitos - posições 8 e 9 : número identificador do tipo de parametrização (01-legislação, 02-regimes especiais, 03-retenções, 04-outros benefícios)  5 dígitos - posição 10 a 14 : número sequencial definido pelo sistema quando do registro específico do parâmetro dentro do tipo de parametrização no sistema.
         /// </summary>
-        /// <value>Identificador do benefício municipal parametrizado pelo município.</value>
+        /// <value>Identificador do benefício parametrizado pelo município.  Trata-se de um identificador único que foi gerado pelo Sistema Nacional no momento em que o município de incidência do ISSQN incluiu o benefício no sistema.  Critério de formação do número de identificação de parâmetros municipais:  7 dígitos - posição 1 a 7: número identificador do Município, conforme código IBGE  2 dígitos - posições 8 e 9 : número identificador do tipo de parametrização (01-legislação, 02-regimes especiais, 03-retenções, 04-outros benefícios)  5 dígitos - posição 10 a 14 : número sequencial definido pelo sistema quando do registro específico do parâmetro dentro do tipo de parametrização no sistema.</value>
         [DataMember(Name = "nBM", IsRequired = true, EmitDefaultValue = true)]
         public string nBM { get; set; }
 
@@ -189,18 +184,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vRedBCBM (decimal?) minimum
             if (this.vRedBCBM < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vRedBCBM, must be a value greater than or equal to 0.", new [] { "vRedBCBM" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vRedBCBM, must be a value greater than or equal to 0.", new [] { "vRedBCBM" });
             }
 
             // pRedBCBM (decimal?) minimum
             if (this.pRedBCBM < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pRedBCBM, must be a value greater than or equal to 0.", new [] { "pRedBCBM" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pRedBCBM, must be a value greater than or equal to 0.", new [] { "pRedBCBM" });
             }
 
             yield break;

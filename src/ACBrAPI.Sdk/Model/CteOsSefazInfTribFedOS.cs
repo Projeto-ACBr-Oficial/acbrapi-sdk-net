@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -193,36 +193,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vPIS (decimal?) minimum
             if (this.vPIS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vPIS, must be a value greater than or equal to 0.", new [] { "vPIS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vPIS, must be a value greater than or equal to 0.", new [] { "vPIS" });
             }
 
             // vCOFINS (decimal?) minimum
             if (this.vCOFINS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCOFINS, must be a value greater than or equal to 0.", new [] { "vCOFINS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCOFINS, must be a value greater than or equal to 0.", new [] { "vCOFINS" });
             }
 
             // vIR (decimal?) minimum
             if (this.vIR < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vIR, must be a value greater than or equal to 0.", new [] { "vIR" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIR, must be a value greater than or equal to 0.", new [] { "vIR" });
             }
 
             // vINSS (decimal?) minimum
             if (this.vINSS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vINSS, must be a value greater than or equal to 0.", new [] { "vINSS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vINSS, must be a value greater than or equal to 0.", new [] { "vINSS" });
             }
 
             // vCSLL (decimal?) minimum
             if (this.vCSLL < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCSLL, must be a value greater than or equal to 0.", new [] { "vCSLL" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCSLL, must be a value greater than or equal to 0.", new [] { "vCSLL" });
             }
 
             yield break;

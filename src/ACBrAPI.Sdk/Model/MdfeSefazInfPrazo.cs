@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -176,24 +176,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // nParcela (int?) maximum
             if (this.nParcela > (int?)999)
             {
-                yield return new ValidationResult("Invalid value for nParcela, must be a value less than or equal to 999.", new [] { "nParcela" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nParcela, must be a value less than or equal to 999.", new [] { "nParcela" });
             }
 
             // nParcela (int?) minimum
             if (this.nParcela < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for nParcela, must be a value greater than or equal to 0.", new [] { "nParcela" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nParcela, must be a value greater than or equal to 0.", new [] { "nParcela" });
             }
 
             // vParcela (decimal?) minimum
             if (this.vParcela < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vParcela, must be a value greater than or equal to 0.", new [] { "vParcela" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vParcela, must be a value greater than or equal to 0.", new [] { "vParcela" });
             }
 
             yield break;

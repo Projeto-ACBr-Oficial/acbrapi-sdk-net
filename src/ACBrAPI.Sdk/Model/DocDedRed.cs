@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -42,7 +42,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="nFNFS">nFNFS.</param>
         /// <param name="nDocFisc">Número de documento fiscal..</param>
         /// <param name="nDoc">Número de documento não fiscal..</param>
-        /// <param name="tpDedRed">Identificação da Dedução/Redução:  * 1 - Alimentação e bebidas/frigobar  * 2 - Materiais  * 3 - Produção externa  * 4 - Reembolso de despesas  * 5 - Repasse consorciado  * 6 - Repasse plano de saúde  * 7 - Serviços  * 8 - Subempreitada de mão de obra  * 99 - Outras deduções (required).</param>
+        /// <param name="tpDedRed">Identificação da Dedução/Redução:  * 1 - Alimentação e bebidas/frigobar  * 2 - Materiais  * 3 - Produção Externa  * 4 - Reembolso de despesas  * 5 - Repasse consorciado  * 6 - Repasse plano de saúde  * 7 - Serviços  * 8 - Subempreitada de mão de obra  * 9 - Profissional parceiro  * 99 - Outras deduções (required).</param>
         /// <param name="xDescOutDed">Descrição da Dedução/Redução quando a opção é \&quot;99 - Outras Deduções\&quot;..</param>
         /// <param name="dtEmiDoc">Data da emissão do documento dedutível. Ano, mês e dia (AAAA-MM-DD). (required).</param>
         /// <param name="vDedutivelRedutivel">Valor monetário total dedutível/redutível no documento informado (R$).  Este é o valor total no documento informado que é passível de dedução/redução. (required).</param>
@@ -125,9 +125,9 @@ namespace ACBrAPI.Sdk.Model
         public string nDoc { get; set; }
 
         /// <summary>
-        /// Identificação da Dedução/Redução:  * 1 - Alimentação e bebidas/frigobar  * 2 - Materiais  * 3 - Produção externa  * 4 - Reembolso de despesas  * 5 - Repasse consorciado  * 6 - Repasse plano de saúde  * 7 - Serviços  * 8 - Subempreitada de mão de obra  * 99 - Outras deduções
+        /// Identificação da Dedução/Redução:  * 1 - Alimentação e bebidas/frigobar  * 2 - Materiais  * 3 - Produção Externa  * 4 - Reembolso de despesas  * 5 - Repasse consorciado  * 6 - Repasse plano de saúde  * 7 - Serviços  * 8 - Subempreitada de mão de obra  * 9 - Profissional parceiro  * 99 - Outras deduções
         /// </summary>
-        /// <value>Identificação da Dedução/Redução:  * 1 - Alimentação e bebidas/frigobar  * 2 - Materiais  * 3 - Produção externa  * 4 - Reembolso de despesas  * 5 - Repasse consorciado  * 6 - Repasse plano de saúde  * 7 - Serviços  * 8 - Subempreitada de mão de obra  * 99 - Outras deduções</value>
+        /// <value>Identificação da Dedução/Redução:  * 1 - Alimentação e bebidas/frigobar  * 2 - Materiais  * 3 - Produção Externa  * 4 - Reembolso de despesas  * 5 - Repasse consorciado  * 6 - Repasse plano de saúde  * 7 - Serviços  * 8 - Subempreitada de mão de obra  * 9 - Profissional parceiro  * 99 - Outras deduções</value>
         [DataMember(Name = "tpDedRed", IsRequired = true, EmitDefaultValue = true)]
         public int? tpDedRed { get; set; }
 
@@ -349,66 +349,66 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // chNFSe (string) maxLength
             if (this.chNFSe != null && this.chNFSe.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for chNFSe, length must be less than 50.", new [] { "chNFSe" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for chNFSe, length must be less than 50.", new [] { "chNFSe" });
             }
 
             // chNFe (string) maxLength
             if (this.chNFe != null && this.chNFe.Length > 44)
             {
-                yield return new ValidationResult("Invalid value for chNFe, length must be less than 44.", new [] { "chNFe" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for chNFe, length must be less than 44.", new [] { "chNFe" });
             }
 
             // nDocFisc (string) maxLength
             if (this.nDocFisc != null && this.nDocFisc.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for nDocFisc, length must be less than 255.", new [] { "nDocFisc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDocFisc, length must be less than 255.", new [] { "nDocFisc" });
             }
 
             // nDocFisc (string) minLength
             if (this.nDocFisc != null && this.nDocFisc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for nDocFisc, length must be greater than 1.", new [] { "nDocFisc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDocFisc, length must be greater than 1.", new [] { "nDocFisc" });
             }
 
             // nDoc (string) maxLength
             if (this.nDoc != null && this.nDoc.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for nDoc, length must be less than 255.", new [] { "nDoc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDoc, length must be less than 255.", new [] { "nDoc" });
             }
 
             // nDoc (string) minLength
             if (this.nDoc != null && this.nDoc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for nDoc, length must be greater than 1.", new [] { "nDoc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDoc, length must be greater than 1.", new [] { "nDoc" });
             }
 
             // xDescOutDed (string) maxLength
             if (this.xDescOutDed != null && this.xDescOutDed.Length > 150)
             {
-                yield return new ValidationResult("Invalid value for xDescOutDed, length must be less than 150.", new [] { "xDescOutDed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDescOutDed, length must be less than 150.", new [] { "xDescOutDed" });
             }
 
             // xDescOutDed (string) minLength
             if (this.xDescOutDed != null && this.xDescOutDed.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xDescOutDed, length must be greater than 1.", new [] { "xDescOutDed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDescOutDed, length must be greater than 1.", new [] { "xDescOutDed" });
             }
 
             // vDedutivelRedutivel (decimal?) minimum
             if (this.vDedutivelRedutivel < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDedutivelRedutivel, must be a value greater than or equal to 0.", new [] { "vDedutivelRedutivel" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDedutivelRedutivel, must be a value greater than or equal to 0.", new [] { "vDedutivelRedutivel" });
             }
 
             // vDeducaoReducao (decimal?) minimum
             if (this.vDeducaoReducao < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDeducaoReducao, must be a value greater than or equal to 0.", new [] { "vDeducaoReducao" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDeducaoReducao, must be a value greater than or equal to 0.", new [] { "vDeducaoReducao" });
             }
 
             yield break;

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -170,36 +170,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // serie (string) maxLength
             if (this.serie != null && this.serie.Length > 3)
             {
-                yield return new ValidationResult("Invalid value for serie, length must be less than 3.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, length must be less than 3.", new [] { "serie" });
             }
 
             // serie (string) minLength
             if (this.serie != null && this.serie.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for serie, length must be greater than 1.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, length must be greater than 1.", new [] { "serie" });
             }
 
             // nDoc (string) maxLength
             if (this.nDoc != null && this.nDoc.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for nDoc, length must be less than 20.", new [] { "nDoc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDoc, length must be less than 20.", new [] { "nDoc" });
             }
 
             // nDoc (string) minLength
             if (this.nDoc != null && this.nDoc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for nDoc, length must be greater than 1.", new [] { "nDoc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDoc, length must be greater than 1.", new [] { "nDoc" });
             }
 
             // unidRat (decimal?) minimum
             if (this.unidRat < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for unidRat, must be a value greater than or equal to 0.", new [] { "unidRat" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for unidRat, must be a value greater than or equal to 0.", new [] { "unidRat" });
             }
 
             yield break;

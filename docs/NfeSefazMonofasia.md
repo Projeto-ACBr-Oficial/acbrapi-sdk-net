@@ -1,5 +1,5 @@
 # ACBrAPI.Sdk.Model.NfeSefazMonofasia
-Informar essa opção da Choice para Monofasia.
+Informar essa opção da Choice para Monofasia (CST 620).
 
 ## Propriedades
 

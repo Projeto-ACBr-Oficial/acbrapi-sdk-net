@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -183,18 +183,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // nApol (string) maxLength
             if (this.nApol != null && this.nApol.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for nApol, length must be less than 20.", new [] { "nApol" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nApol, length must be less than 20.", new [] { "nApol" });
             }
 
             // nApol (string) minLength
             if (this.nApol != null && this.nApol.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for nApol, length must be greater than 1.", new [] { "nApol" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nApol, length must be greater than 1.", new [] { "nApol" });
             }
 
             yield break;

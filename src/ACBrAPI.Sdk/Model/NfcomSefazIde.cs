@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -56,7 +56,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="dhCont">Data e Hora da entrada em contingência.  Informar a data e hora no formato AAAA-MM-DDTHH:MM:SS..</param>
         /// <param name="xJust">Justificativa da entrada em contingência..</param>
         /// <param name="gCompraGov">gCompraGov.</param>
-        public NfcomSefazIde(int? cUF = default(int?), int? tpAmb = default(int?), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), string cNF = default(string), int? cDV = default(int?), DateTime? dhEmi = default(DateTime?), int? tpEmis = default(int?), int? nSiteAutoriz = default(int?), string cMunFG = default(string), int? finNFCom = default(int?), int? tpFat = default(int?), string verProc = default(string), int? indPrePago = default(int?), int? indCessaoMeiosRede = default(int?), int? indNotaEntrada = default(int?), DateTime? dhCont = default(DateTime?), string xJust = default(string), NfcomSefazCompraGovReduzido gCompraGov = default(NfcomSefazCompraGovReduzido))
+        /// <param name="tpPagAnt">Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado de Serviços Não Continuados  * 2 - Pagamento de serviços continuados (antes da prestação)  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado em notas de pagamento que ocorre antes da prestação do serviço e na nota de fornecimento associada a esses pagamentos, Notas Normais que retratam a prestação de serviço continuado mensal da nota fatura (contendo ou não itens de serviço não continuado) em que o pagamento não foi antecipado NÃO DEVEM INFORMAR ESSE CAMPO.  A tabela cClass terá uma flag que sinaliza se o tipo de item é de prestação continuada ou não continuada..</param>
+        public NfcomSefazIde(int? cUF = default(int?), int? tpAmb = default(int?), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), string cNF = default(string), int? cDV = default(int?), DateTime? dhEmi = default(DateTime?), int? tpEmis = default(int?), int? nSiteAutoriz = default(int?), string cMunFG = default(string), int? finNFCom = default(int?), int? tpFat = default(int?), string verProc = default(string), int? indPrePago = default(int?), int? indCessaoMeiosRede = default(int?), int? indNotaEntrada = default(int?), DateTime? dhCont = default(DateTime?), string xJust = default(string), NfcomSefazCompraGovReduzido gCompraGov = default(NfcomSefazCompraGovReduzido), int? tpPagAnt = default(int?))
         {
             // to ensure "cUF" is required (not null)
             if (cUF == null)
@@ -128,6 +129,7 @@ namespace ACBrAPI.Sdk.Model
             this.dhCont = dhCont;
             this.xJust = xJust;
             this.gCompraGov = gCompraGov;
+            this.tpPagAnt = tpPagAnt;
         }
 
         /// <summary>
@@ -270,6 +272,13 @@ namespace ACBrAPI.Sdk.Model
         public NfcomSefazCompraGovReduzido gCompraGov { get; set; }
 
         /// <summary>
+        /// Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado de Serviços Não Continuados  * 2 - Pagamento de serviços continuados (antes da prestação)  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado em notas de pagamento que ocorre antes da prestação do serviço e na nota de fornecimento associada a esses pagamentos, Notas Normais que retratam a prestação de serviço continuado mensal da nota fatura (contendo ou não itens de serviço não continuado) em que o pagamento não foi antecipado NÃO DEVEM INFORMAR ESSE CAMPO.  A tabela cClass terá uma flag que sinaliza se o tipo de item é de prestação continuada ou não continuada.
+        /// </summary>
+        /// <value>Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado de Serviços Não Continuados  * 2 - Pagamento de serviços continuados (antes da prestação)  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado em notas de pagamento que ocorre antes da prestação do serviço e na nota de fornecimento associada a esses pagamentos, Notas Normais que retratam a prestação de serviço continuado mensal da nota fatura (contendo ou não itens de serviço não continuado) em que o pagamento não foi antecipado NÃO DEVEM INFORMAR ESSE CAMPO.  A tabela cClass terá uma flag que sinaliza se o tipo de item é de prestação continuada ou não continuada.</value>
+        [DataMember(Name = "tpPagAnt", EmitDefaultValue = true)]
+        public int? tpPagAnt { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -297,6 +306,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  dhCont: ").Append(dhCont).Append("\n");
             sb.Append("  xJust: ").Append(xJust).Append("\n");
             sb.Append("  gCompraGov: ").Append(gCompraGov).Append("\n");
+            sb.Append("  tpPagAnt: ").Append(tpPagAnt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -431,6 +441,11 @@ namespace ACBrAPI.Sdk.Model
                     this.gCompraGov == input.gCompraGov ||
                     (this.gCompraGov != null &&
                     this.gCompraGov.Equals(input.gCompraGov))
+                ) && 
+                (
+                    this.tpPagAnt == input.tpPagAnt ||
+                    (this.tpPagAnt != null &&
+                    this.tpPagAnt.Equals(input.tpPagAnt))
                 );
         }
 
@@ -523,6 +538,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.gCompraGov.GetHashCode();
                 }
+                if (this.tpPagAnt != null)
+                {
+                    hashCode = (hashCode * 59) + this.tpPagAnt.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -532,78 +551,78 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // serie (int?) maximum
             if (this.serie > (int?)999)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
             }
 
             // serie (int?) minimum
             if (this.serie < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
             }
 
             // nNF (int?) maximum
             if (this.nNF > (int?)999999999)
             {
-                yield return new ValidationResult("Invalid value for nNF, must be a value less than or equal to 999999999.", new [] { "nNF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nNF, must be a value less than or equal to 999999999.", new [] { "nNF" });
             }
 
             // nNF (int?) minimum
             if (this.nNF < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nNF, must be a value greater than or equal to 1.", new [] { "nNF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nNF, must be a value greater than or equal to 1.", new [] { "nNF" });
             }
 
             // cDV (int?) maximum
             if (this.cDV > (int?)9)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
             }
 
             // cDV (int?) minimum
             if (this.cDV < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
             }
 
             // nSiteAutoriz (int?) maximum
             if (this.nSiteAutoriz > (int?)9)
             {
-                yield return new ValidationResult("Invalid value for nSiteAutoriz, must be a value less than or equal to 9.", new [] { "nSiteAutoriz" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nSiteAutoriz, must be a value less than or equal to 9.", new [] { "nSiteAutoriz" });
             }
 
             // nSiteAutoriz (int?) minimum
             if (this.nSiteAutoriz < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for nSiteAutoriz, must be a value greater than or equal to 0.", new [] { "nSiteAutoriz" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nSiteAutoriz, must be a value greater than or equal to 0.", new [] { "nSiteAutoriz" });
             }
 
             // verProc (string) maxLength
             if (this.verProc != null && this.verProc.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
             }
 
             // verProc (string) minLength
             if (this.verProc != null && this.verProc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
             }
 
             // xJust (string) maxLength
             if (this.xJust != null && this.xJust.Length > 256)
             {
-                yield return new ValidationResult("Invalid value for xJust, length must be less than 256.", new [] { "xJust" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xJust, length must be less than 256.", new [] { "xJust" });
             }
 
             // xJust (string) minLength
             if (this.xJust != null && this.xJust.Length < 15)
             {
-                yield return new ValidationResult("Invalid value for xJust, length must be greater than 15.", new [] { "xJust" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xJust, length must be greater than 15.", new [] { "xJust" });
             }
 
             yield break;

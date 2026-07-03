@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -49,7 +49,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cDV">Digito Verificador da chave de acesso do CT-e.  Informar o dígito  de controle da chave de acesso do CT-e, que deve ser calculado com a aplicação do algoritmo módulo 11 (base 2,9) da chave de acesso.    *Geramos automaticamente quando nenhum valor é informado.*.</param>
         /// <param name="tpAmb">Tipo do Ambiente:  * 1 - Produção  * 2 - Homologação.</param>
         /// <param name="tpCTe">Tipo do CT-e.  Preencher com:  * 0 - CT-e Normal  * 1 - CT-e de Complemento de Valores  * 3 - CT-e de Substituição (required).</param>
-        /// <param name="procEmi">Identificador do processo de emissão do CT-e.  Preencher com:  * 0 - emissão de CT-e com aplicativo do contribuinte  * 3 - emissão CT-e pelo contribuinte com aplicativo fornecido pelo SEBRAE (required).</param>
+        /// <param name="procEmi">Identificador do processo de emissão do CTe.  Preencher com:  * 0 - emissão de CTe com aplicativo do contribuinte  * 3 - emissão CTe pelo contribuinte com aplicativo fornecido pelo SEBRAE  * 4 - emissão de CTe por Provedor de Assinatura e Autorização - PAA (required).</param>
         /// <param name="verProc">Versão do processo de emissão.  Iinformar a versão do aplicativo emissor de CT-e. (required).</param>
         /// <param name="indGlobalizado">Indicador de CT-e Globalizado.  Informar valor 1 quando for Globalizado e não informar a tag quando não tratar de CT-e Globalizado..</param>
         /// <param name="cMunEnv">Código do Município de envio do CT-e (de onde o documento foi transmitido).  Utilizar a tabela do IBGE. Informar 9999999 para as operações com o exterior. (required).</param>
@@ -71,7 +71,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="dhCont">Data e Hora da entrada em contingência.  Informar a data e hora no formato AAAA-MM-DDTHH:MM:SS..</param>
         /// <param name="xJust">Justificativa da entrada em contingência..</param>
         /// <param name="gCompraGov">gCompraGov.</param>
-        public CteSefazIde(int? cUF = default(int?), string cCT = default(string), string cFOP = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nCT = default(int?), DateTime? dhEmi = default(DateTime?), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? tpCTe = default(int?), int? procEmi = default(int?), string verProc = default(string), int? indGlobalizado = default(int?), string cMunEnv = default(string), string xMunEnv = default(string), string uFEnv = default(string), string modal = default(string), int? tpServ = default(int?), string cMunIni = default(string), string xMunIni = default(string), string uFIni = default(string), string cMunFim = default(string), string xMunFim = default(string), string uFFim = default(string), int? retira = default(int?), string xDetRetira = default(string), int? indIEToma = default(int?), CteSefazToma3 toma3 = default(CteSefazToma3), CteSefazToma4 toma4 = default(CteSefazToma4), DateTime? dhCont = default(DateTime?), string xJust = default(string), CteSefazCompraGovReduzido gCompraGov = default(CteSefazCompraGovReduzido))
+        /// <param name="tpPagAnt">Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher..</param>
+        /// <param name="gPagAntecipado">gPagAntecipado.</param>
+        public CteSefazIde(int? cUF = default(int?), string cCT = default(string), string cFOP = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nCT = default(int?), DateTime? dhEmi = default(DateTime?), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? tpCTe = default(int?), int? procEmi = default(int?), string verProc = default(string), int? indGlobalizado = default(int?), string cMunEnv = default(string), string xMunEnv = default(string), string uFEnv = default(string), string modal = default(string), int? tpServ = default(int?), string cMunIni = default(string), string xMunIni = default(string), string uFIni = default(string), string cMunFim = default(string), string xMunFim = default(string), string uFFim = default(string), int? retira = default(int?), string xDetRetira = default(string), int? indIEToma = default(int?), CteSefazToma3 toma3 = default(CteSefazToma3), CteSefazToma4 toma4 = default(CteSefazToma4), DateTime? dhCont = default(DateTime?), string xJust = default(string), CteSefazCompraGovReduzido gCompraGov = default(CteSefazCompraGovReduzido), int? tpPagAnt = default(int?), CteSefazGPagAntecipado gPagAntecipado = default(CteSefazGPagAntecipado))
         {
             // to ensure "cUF" is required (not null)
             if (cUF == null)
@@ -228,6 +230,8 @@ namespace ACBrAPI.Sdk.Model
             this.dhCont = dhCont;
             this.xJust = xJust;
             this.gCompraGov = gCompraGov;
+            this.tpPagAnt = tpPagAnt;
+            this.gPagAntecipado = gPagAntecipado;
         }
 
         /// <summary>
@@ -322,9 +326,9 @@ namespace ACBrAPI.Sdk.Model
         public int? tpCTe { get; set; }
 
         /// <summary>
-        /// Identificador do processo de emissão do CT-e.  Preencher com:  * 0 - emissão de CT-e com aplicativo do contribuinte  * 3 - emissão CT-e pelo contribuinte com aplicativo fornecido pelo SEBRAE
+        /// Identificador do processo de emissão do CTe.  Preencher com:  * 0 - emissão de CTe com aplicativo do contribuinte  * 3 - emissão CTe pelo contribuinte com aplicativo fornecido pelo SEBRAE  * 4 - emissão de CTe por Provedor de Assinatura e Autorização - PAA
         /// </summary>
-        /// <value>Identificador do processo de emissão do CT-e.  Preencher com:  * 0 - emissão de CT-e com aplicativo do contribuinte  * 3 - emissão CT-e pelo contribuinte com aplicativo fornecido pelo SEBRAE</value>
+        /// <value>Identificador do processo de emissão do CTe.  Preencher com:  * 0 - emissão de CTe com aplicativo do contribuinte  * 3 - emissão CTe pelo contribuinte com aplicativo fornecido pelo SEBRAE  * 4 - emissão de CTe por Provedor de Assinatura e Autorização - PAA</value>
         [DataMember(Name = "procEmi", IsRequired = true, EmitDefaultValue = true)]
         public int? procEmi { get; set; }
 
@@ -473,6 +477,19 @@ namespace ACBrAPI.Sdk.Model
         public CteSefazCompraGovReduzido gCompraGov { get; set; }
 
         /// <summary>
+        /// Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher.
+        /// </summary>
+        /// <value>Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher.</value>
+        [DataMember(Name = "tpPagAnt", EmitDefaultValue = true)]
+        public int? tpPagAnt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets gPagAntecipado
+        /// </summary>
+        [DataMember(Name = "gPagAntecipado", EmitDefaultValue = false)]
+        public CteSefazGPagAntecipado gPagAntecipado { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -515,6 +532,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  dhCont: ").Append(dhCont).Append("\n");
             sb.Append("  xJust: ").Append(xJust).Append("\n");
             sb.Append("  gCompraGov: ").Append(gCompraGov).Append("\n");
+            sb.Append("  tpPagAnt: ").Append(tpPagAnt).Append("\n");
+            sb.Append("  gPagAntecipado: ").Append(gPagAntecipado).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -724,6 +743,16 @@ namespace ACBrAPI.Sdk.Model
                     this.gCompraGov == input.gCompraGov ||
                     (this.gCompraGov != null &&
                     this.gCompraGov.Equals(input.gCompraGov))
+                ) && 
+                (
+                    this.tpPagAnt == input.tpPagAnt ||
+                    (this.tpPagAnt != null &&
+                    this.tpPagAnt.Equals(input.tpPagAnt))
+                ) && 
+                (
+                    this.gPagAntecipado == input.gPagAntecipado ||
+                    (this.gPagAntecipado != null &&
+                    this.gPagAntecipado.Equals(input.gPagAntecipado))
                 );
         }
 
@@ -876,6 +905,14 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.gCompraGov.GetHashCode();
                 }
+                if (this.tpPagAnt != null)
+                {
+                    hashCode = (hashCode * 59) + this.tpPagAnt.GetHashCode();
+                }
+                if (this.gPagAntecipado != null)
+                {
+                    hashCode = (hashCode * 59) + this.gPagAntecipado.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -885,126 +922,126 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // natOp (string) maxLength
             if (this.natOp != null && this.natOp.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for natOp, length must be less than 60.", new [] { "natOp" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for natOp, length must be less than 60.", new [] { "natOp" });
             }
 
             // natOp (string) minLength
             if (this.natOp != null && this.natOp.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for natOp, length must be greater than 1.", new [] { "natOp" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for natOp, length must be greater than 1.", new [] { "natOp" });
             }
 
             // serie (int?) maximum
             if (this.serie > (int?)999)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
             }
 
             // serie (int?) minimum
             if (this.serie < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
             }
 
             // nCT (int?) maximum
             if (this.nCT > (int?)999999999)
             {
-                yield return new ValidationResult("Invalid value for nCT, must be a value less than or equal to 999999999.", new [] { "nCT" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nCT, must be a value less than or equal to 999999999.", new [] { "nCT" });
             }
 
             // nCT (int?) minimum
             if (this.nCT < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nCT, must be a value greater than or equal to 1.", new [] { "nCT" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nCT, must be a value greater than or equal to 1.", new [] { "nCT" });
             }
 
             // cDV (int?) maximum
             if (this.cDV > (int?)9)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
             }
 
             // cDV (int?) minimum
             if (this.cDV < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
             }
 
             // verProc (string) maxLength
             if (this.verProc != null && this.verProc.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
             }
 
             // verProc (string) minLength
             if (this.verProc != null && this.verProc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
             }
 
             // xMunEnv (string) maxLength
             if (this.xMunEnv != null && this.xMunEnv.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xMunEnv, length must be less than 60.", new [] { "xMunEnv" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunEnv, length must be less than 60.", new [] { "xMunEnv" });
             }
 
             // xMunEnv (string) minLength
             if (this.xMunEnv != null && this.xMunEnv.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xMunEnv, length must be greater than 2.", new [] { "xMunEnv" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunEnv, length must be greater than 2.", new [] { "xMunEnv" });
             }
 
             // xMunIni (string) maxLength
             if (this.xMunIni != null && this.xMunIni.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xMunIni, length must be less than 60.", new [] { "xMunIni" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunIni, length must be less than 60.", new [] { "xMunIni" });
             }
 
             // xMunIni (string) minLength
             if (this.xMunIni != null && this.xMunIni.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xMunIni, length must be greater than 2.", new [] { "xMunIni" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunIni, length must be greater than 2.", new [] { "xMunIni" });
             }
 
             // xMunFim (string) maxLength
             if (this.xMunFim != null && this.xMunFim.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xMunFim, length must be less than 60.", new [] { "xMunFim" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunFim, length must be less than 60.", new [] { "xMunFim" });
             }
 
             // xMunFim (string) minLength
             if (this.xMunFim != null && this.xMunFim.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xMunFim, length must be greater than 2.", new [] { "xMunFim" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xMunFim, length must be greater than 2.", new [] { "xMunFim" });
             }
 
             // xDetRetira (string) maxLength
             if (this.xDetRetira != null && this.xDetRetira.Length > 160)
             {
-                yield return new ValidationResult("Invalid value for xDetRetira, length must be less than 160.", new [] { "xDetRetira" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDetRetira, length must be less than 160.", new [] { "xDetRetira" });
             }
 
             // xDetRetira (string) minLength
             if (this.xDetRetira != null && this.xDetRetira.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xDetRetira, length must be greater than 1.", new [] { "xDetRetira" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDetRetira, length must be greater than 1.", new [] { "xDetRetira" });
             }
 
             // xJust (string) maxLength
             if (this.xJust != null && this.xJust.Length > 256)
             {
-                yield return new ValidationResult("Invalid value for xJust, length must be less than 256.", new [] { "xJust" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xJust, length must be less than 256.", new [] { "xJust" });
             }
 
             // xJust (string) minLength
             if (this.xJust != null && this.xJust.Length < 15)
             {
-                yield return new ValidationResult("Invalid value for xJust, length must be greater than 15.", new [] { "xJust" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xJust, length must be greater than 15.", new [] { "xJust" });
             }
 
             yield break;

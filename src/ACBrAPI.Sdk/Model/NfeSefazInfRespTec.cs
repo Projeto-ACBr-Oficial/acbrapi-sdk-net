@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -256,54 +256,54 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // CNPJ (string) maxLength
             if (this.CNPJ != null && this.CNPJ.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for CNPJ, length must be less than 14.", new [] { "CNPJ" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CNPJ, length must be less than 14.", new [] { "CNPJ" });
             }
 
             // xContato (string) maxLength
             if (this.xContato != null && this.xContato.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xContato, length must be less than 60.", new [] { "xContato" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xContato, length must be less than 60.", new [] { "xContato" });
             }
 
             // xContato (string) minLength
             if (this.xContato != null && this.xContato.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xContato, length must be greater than 2.", new [] { "xContato" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xContato, length must be greater than 2.", new [] { "xContato" });
             }
 
             // email (string) maxLength
             if (this.email != null && this.email.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for email, length must be less than 60.", new [] { "email" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for email, length must be less than 60.", new [] { "email" });
             }
 
             // email (string) minLength
             if (this.email != null && this.email.Length < 6)
             {
-                yield return new ValidationResult("Invalid value for email, length must be greater than 6.", new [] { "email" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for email, length must be greater than 6.", new [] { "email" });
             }
 
             // idCSRT (int?) maximum
             if (this.idCSRT > (int?)99)
             {
-                yield return new ValidationResult("Invalid value for idCSRT, must be a value less than or equal to 99.", new [] { "idCSRT" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for idCSRT, must be a value less than or equal to 99.", new [] { "idCSRT" });
             }
 
             // idCSRT (int?) minimum
             if (this.idCSRT < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for idCSRT, must be a value greater than or equal to 0.", new [] { "idCSRT" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for idCSRT, must be a value greater than or equal to 0.", new [] { "idCSRT" });
             }
 
             // hashCSRT (string) maxLength
             if (this.hashCSRT != null && this.hashCSRT.Length > 28)
             {
-                yield return new ValidationResult("Invalid value for hashCSRT, length must be less than 28.", new [] { "hashCSRT" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for hashCSRT, length must be less than 28.", new [] { "hashCSRT" });
             }
 
             yield break;

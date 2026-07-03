@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -212,36 +212,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // cInt (string) maxLength
             if (this.cInt != null && this.cInt.Length > 10)
             {
-                yield return new ValidationResult("Invalid value for cInt, length must be less than 10.", new [] { "cInt" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cInt, length must be less than 10.", new [] { "cInt" });
             }
 
             // cInt (string) minLength
             if (this.cInt != null && this.cInt.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for cInt, length must be greater than 1.", new [] { "cInt" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cInt, length must be greater than 1.", new [] { "cInt" });
             }
 
             // IE (string) maxLength
             if (this.IE != null && this.IE.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for IE, length must be less than 14.", new [] { "IE" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IE, length must be less than 14.", new [] { "IE" });
             }
 
             // xNome (string) maxLength
             if (this.xNome != null && this.xNome.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
             }
 
             // xNome (string) minLength
             if (this.xNome != null && this.xNome.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
             }
 
             yield break;

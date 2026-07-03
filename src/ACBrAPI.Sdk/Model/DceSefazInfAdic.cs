@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -250,54 +250,54 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // infAdFisco (string) maxLength
             if (this.infAdFisco != null && this.infAdFisco.Length > 2000)
             {
-                yield return new ValidationResult("Invalid value for infAdFisco, length must be less than 2000.", new [] { "infAdFisco" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infAdFisco, length must be less than 2000.", new [] { "infAdFisco" });
             }
 
             // infAdFisco (string) minLength
             if (this.infAdFisco != null && this.infAdFisco.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for infAdFisco, length must be greater than 1.", new [] { "infAdFisco" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infAdFisco, length must be greater than 1.", new [] { "infAdFisco" });
             }
 
             // infCpl (string) maxLength
             if (this.infCpl != null && this.infCpl.Length > 5000)
             {
-                yield return new ValidationResult("Invalid value for infCpl, length must be less than 5000.", new [] { "infCpl" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infCpl, length must be less than 5000.", new [] { "infCpl" });
             }
 
             // infCpl (string) minLength
             if (this.infCpl != null && this.infCpl.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for infCpl, length must be greater than 1.", new [] { "infCpl" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infCpl, length must be greater than 1.", new [] { "infCpl" });
             }
 
             // infAdMarketplace (string) maxLength
             if (this.infAdMarketplace != null && this.infAdMarketplace.Length > 5000)
             {
-                yield return new ValidationResult("Invalid value for infAdMarketplace, length must be less than 5000.", new [] { "infAdMarketplace" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infAdMarketplace, length must be less than 5000.", new [] { "infAdMarketplace" });
             }
 
             // infAdMarketplace (string) minLength
             if (this.infAdMarketplace != null && this.infAdMarketplace.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for infAdMarketplace, length must be greater than 1.", new [] { "infAdMarketplace" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infAdMarketplace, length must be greater than 1.", new [] { "infAdMarketplace" });
             }
 
             // infAdECT (string) maxLength
             if (this.infAdECT != null && this.infAdECT.Length > 5000)
             {
-                yield return new ValidationResult("Invalid value for infAdECT, length must be less than 5000.", new [] { "infAdECT" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infAdECT, length must be less than 5000.", new [] { "infAdECT" });
             }
 
             // infAdECT (string) minLength
             if (this.infAdECT != null && this.infAdECT.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for infAdECT, length must be greater than 1.", new [] { "infAdECT" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for infAdECT, length must be greater than 1.", new [] { "infAdECT" });
             }
 
             yield break;

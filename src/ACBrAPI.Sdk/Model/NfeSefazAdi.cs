@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -208,60 +208,60 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // nAdicao (int?) maximum
             if (this.nAdicao > (int?)999)
             {
-                yield return new ValidationResult("Invalid value for nAdicao, must be a value less than or equal to 999.", new [] { "nAdicao" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nAdicao, must be a value less than or equal to 999.", new [] { "nAdicao" });
             }
 
             // nAdicao (int?) minimum
             if (this.nAdicao < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nAdicao, must be a value greater than or equal to 1.", new [] { "nAdicao" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nAdicao, must be a value greater than or equal to 1.", new [] { "nAdicao" });
             }
 
             // nSeqAdic (int?) maximum
             if (this.nSeqAdic > (int?)99999)
             {
-                yield return new ValidationResult("Invalid value for nSeqAdic, must be a value less than or equal to 99999.", new [] { "nSeqAdic" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nSeqAdic, must be a value less than or equal to 99999.", new [] { "nSeqAdic" });
             }
 
             // nSeqAdic (int?) minimum
             if (this.nSeqAdic < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nSeqAdic, must be a value greater than or equal to 1.", new [] { "nSeqAdic" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nSeqAdic, must be a value greater than or equal to 1.", new [] { "nSeqAdic" });
             }
 
             // cFabricante (string) maxLength
             if (this.cFabricante != null && this.cFabricante.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for cFabricante, length must be less than 60.", new [] { "cFabricante" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cFabricante, length must be less than 60.", new [] { "cFabricante" });
             }
 
             // cFabricante (string) minLength
             if (this.cFabricante != null && this.cFabricante.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for cFabricante, length must be greater than 1.", new [] { "cFabricante" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cFabricante, length must be greater than 1.", new [] { "cFabricante" });
             }
 
             // vDescDI (decimal?) minimum
             if (this.vDescDI < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vDescDI, must be a value greater than or equal to 0.", new [] { "vDescDI" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vDescDI, must be a value greater than or equal to 0.", new [] { "vDescDI" });
             }
 
             // nDraw (string) maxLength
             if (this.nDraw != null && this.nDraw.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for nDraw, length must be less than 20.", new [] { "nDraw" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDraw, length must be less than 20.", new [] { "nDraw" });
             }
 
             // nDraw (string) minLength
             if (this.nDraw != null && this.nDraw.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for nDraw, length must be greater than 1.", new [] { "nDraw" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDraw, length must be greater than 1.", new [] { "nDraw" });
             }
 
             yield break;

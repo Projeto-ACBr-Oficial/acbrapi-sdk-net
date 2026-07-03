@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -175,24 +175,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pTotTribFed (decimal?) minimum
             if (this.pTotTribFed < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pTotTribFed, must be a value greater than or equal to 0.", new [] { "pTotTribFed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pTotTribFed, must be a value greater than or equal to 0.", new [] { "pTotTribFed" });
             }
 
             // pTotTribEst (decimal?) minimum
             if (this.pTotTribEst < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pTotTribEst, must be a value greater than or equal to 0.", new [] { "pTotTribEst" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pTotTribEst, must be a value greater than or equal to 0.", new [] { "pTotTribEst" });
             }
 
             // pTotTribMun (decimal?) minimum
             if (this.pTotTribMun < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pTotTribMun, must be a value greater than or equal to 0.", new [] { "pTotTribMun" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pTotTribMun, must be a value greater than or equal to 0.", new [] { "pTotTribMun" });
             }
 
             yield break;

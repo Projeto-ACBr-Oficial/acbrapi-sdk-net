@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -37,7 +37,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="NfeSefazICMSPart" /> class.
         /// </summary>
         /// <param name="orig">Origem da mercadoria:  * 0 - Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8;  * 1 - Estrangeira - Importação direta, exceto a indicada no código 6;  * 2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7;  * 3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40%% e inferior ou igual a 70%%;  * 4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes;  * 5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%%;  * 6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX e gás natural;  * 7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante lista CAMEX e gás natural;  * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%%. (required).</param>
-        /// <param name="cST">Tributação pelo ICMS  * 10 - Tributada e com cobrança do ICMS por substituição tributária  * 90 - Outros (required).</param>
+        /// <param name="cST">Tributação pelo ICMS  * 10 - Tributada e com cobrança do ICMS por substituição tributária  * 20 - Redução de base de cálculo  * 90 - Outros (required).</param>
         /// <param name="modBC">Modalidade de determinação da BC do ICMS:  * 0 - Margem Valor Agregado (%%)  * 1 - Pauta (valor)  * 2 - Preço Tabelado Máximo (valor)  * 3 - Valor da Operação (required).</param>
         /// <param name="vBC">Valor da BC do ICMS. (required).</param>
         /// <param name="pRedBC">Percentual de redução da BC..</param>
@@ -54,7 +54,10 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="vFCPST">Valor do FCP retido por substituição tributária..</param>
         /// <param name="pBCOp">Percentual para determinação do valor  da Base de Cálculo da operação própria. (required).</param>
         /// <param name="uFST">Sigla da UF para qual é devido o ICMS ST da operação. (required).</param>
-        public NfeSefazICMSPart(int? orig = default(int?), string cST = default(string), int? modBC = default(int?), decimal? vBC = default(decimal?), decimal? pRedBC = default(decimal?), decimal? pICMS = default(decimal?), decimal? vICMS = default(decimal?), int? modBCST = default(int?), decimal? pMVAST = default(decimal?), decimal? pRedBCST = default(decimal?), decimal? vBCST = default(decimal?), decimal? pICMSST = default(decimal?), decimal? vICMSST = default(decimal?), decimal? vBCFCPST = default(decimal?), decimal? pFCPST = default(decimal?), decimal? vFCPST = default(decimal?), decimal? pBCOp = default(decimal?), string uFST = default(string))
+        /// <param name="vICMSDeson">Valor do ICMS de desoneração..</param>
+        /// <param name="motDesICMS">Motivo da desoneração do ICMS:9-Outros;10&#x3D;Deficiente Condutor (Convênio ICMS 38/12) 11&#x3D;Deficiente Não Condutor (Convênio ICMS 38/12)..</param>
+        /// <param name="indDeduzDeson">Indica se o valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd):  * 0 - Valor do ICMS desonerado (vICMSDeson) não deduz do valor do item (vProd) / total da NF-e  * 1 - Valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd) / total da NF-e.</param>
+        public NfeSefazICMSPart(int? orig = default(int?), string cST = default(string), int? modBC = default(int?), decimal? vBC = default(decimal?), decimal? pRedBC = default(decimal?), decimal? pICMS = default(decimal?), decimal? vICMS = default(decimal?), int? modBCST = default(int?), decimal? pMVAST = default(decimal?), decimal? pRedBCST = default(decimal?), decimal? vBCST = default(decimal?), decimal? pICMSST = default(decimal?), decimal? vICMSST = default(decimal?), decimal? vBCFCPST = default(decimal?), decimal? pFCPST = default(decimal?), decimal? vFCPST = default(decimal?), decimal? pBCOp = default(decimal?), string uFST = default(string), decimal? vICMSDeson = default(decimal?), int? motDesICMS = default(int?), int? indDeduzDeson = default(int?))
         {
             // to ensure "orig" is required (not null)
             if (orig == null)
@@ -134,6 +137,9 @@ namespace ACBrAPI.Sdk.Model
             this.vBCFCPST = vBCFCPST;
             this.pFCPST = pFCPST;
             this.vFCPST = vFCPST;
+            this.vICMSDeson = vICMSDeson;
+            this.motDesICMS = motDesICMS;
+            this.indDeduzDeson = indDeduzDeson;
         }
 
         /// <summary>
@@ -144,9 +150,9 @@ namespace ACBrAPI.Sdk.Model
         public int? orig { get; set; }
 
         /// <summary>
-        /// Tributação pelo ICMS  * 10 - Tributada e com cobrança do ICMS por substituição tributária  * 90 - Outros
+        /// Tributação pelo ICMS  * 10 - Tributada e com cobrança do ICMS por substituição tributária  * 20 - Redução de base de cálculo  * 90 - Outros
         /// </summary>
-        /// <value>Tributação pelo ICMS  * 10 - Tributada e com cobrança do ICMS por substituição tributária  * 90 - Outros</value>
+        /// <value>Tributação pelo ICMS  * 10 - Tributada e com cobrança do ICMS por substituição tributária  * 20 - Redução de base de cálculo  * 90 - Outros</value>
         [DataMember(Name = "CST", IsRequired = true, EmitDefaultValue = true)]
         public string CST { get; set; }
 
@@ -263,6 +269,27 @@ namespace ACBrAPI.Sdk.Model
         public string UFST { get; set; }
 
         /// <summary>
+        /// Valor do ICMS de desoneração.
+        /// </summary>
+        /// <value>Valor do ICMS de desoneração.</value>
+        [DataMember(Name = "vICMSDeson", EmitDefaultValue = true)]
+        public decimal? vICMSDeson { get; set; }
+
+        /// <summary>
+        /// Motivo da desoneração do ICMS:9-Outros;10&#x3D;Deficiente Condutor (Convênio ICMS 38/12) 11&#x3D;Deficiente Não Condutor (Convênio ICMS 38/12).
+        /// </summary>
+        /// <value>Motivo da desoneração do ICMS:9-Outros;10&#x3D;Deficiente Condutor (Convênio ICMS 38/12) 11&#x3D;Deficiente Não Condutor (Convênio ICMS 38/12).</value>
+        [DataMember(Name = "motDesICMS", EmitDefaultValue = true)]
+        public int? motDesICMS { get; set; }
+
+        /// <summary>
+        /// Indica se o valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd):  * 0 - Valor do ICMS desonerado (vICMSDeson) não deduz do valor do item (vProd) / total da NF-e  * 1 - Valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd) / total da NF-e
+        /// </summary>
+        /// <value>Indica se o valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd):  * 0 - Valor do ICMS desonerado (vICMSDeson) não deduz do valor do item (vProd) / total da NF-e  * 1 - Valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd) / total da NF-e</value>
+        [DataMember(Name = "indDeduzDeson", EmitDefaultValue = true)]
+        public int? indDeduzDeson { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -288,6 +315,9 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  vFCPST: ").Append(vFCPST).Append("\n");
             sb.Append("  pBCOp: ").Append(pBCOp).Append("\n");
             sb.Append("  UFST: ").Append(UFST).Append("\n");
+            sb.Append("  vICMSDeson: ").Append(vICMSDeson).Append("\n");
+            sb.Append("  motDesICMS: ").Append(motDesICMS).Append("\n");
+            sb.Append("  indDeduzDeson: ").Append(indDeduzDeson).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -412,6 +442,21 @@ namespace ACBrAPI.Sdk.Model
                     this.UFST == input.UFST ||
                     (this.UFST != null &&
                     this.UFST.Equals(input.UFST))
+                ) && 
+                (
+                    this.vICMSDeson == input.vICMSDeson ||
+                    (this.vICMSDeson != null &&
+                    this.vICMSDeson.Equals(input.vICMSDeson))
+                ) && 
+                (
+                    this.motDesICMS == input.motDesICMS ||
+                    (this.motDesICMS != null &&
+                    this.motDesICMS.Equals(input.motDesICMS))
+                ) && 
+                (
+                    this.indDeduzDeson == input.indDeduzDeson ||
+                    (this.indDeduzDeson != null &&
+                    this.indDeduzDeson.Equals(input.indDeduzDeson))
                 );
         }
 
@@ -496,6 +541,18 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.UFST.GetHashCode();
                 }
+                if (this.vICMSDeson != null)
+                {
+                    hashCode = (hashCode * 59) + this.vICMSDeson.GetHashCode();
+                }
+                if (this.motDesICMS != null)
+                {
+                    hashCode = (hashCode * 59) + this.motDesICMS.GetHashCode();
+                }
+                if (this.indDeduzDeson != null)
+                {
+                    hashCode = (hashCode * 59) + this.indDeduzDeson.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -505,84 +562,90 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vBC (decimal?) minimum
             if (this.vBC < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBC, must be a value greater than or equal to 0.", new [] { "vBC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBC, must be a value greater than or equal to 0.", new [] { "vBC" });
             }
 
             // pRedBC (decimal?) minimum
             if (this.pRedBC < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pRedBC, must be a value greater than or equal to 0.", new [] { "pRedBC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pRedBC, must be a value greater than or equal to 0.", new [] { "pRedBC" });
             }
 
             // pICMS (decimal?) minimum
             if (this.pICMS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pICMS, must be a value greater than or equal to 0.", new [] { "pICMS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pICMS, must be a value greater than or equal to 0.", new [] { "pICMS" });
             }
 
             // vICMS (decimal?) minimum
             if (this.vICMS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vICMS, must be a value greater than or equal to 0.", new [] { "vICMS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vICMS, must be a value greater than or equal to 0.", new [] { "vICMS" });
             }
 
             // pMVAST (decimal?) minimum
             if (this.pMVAST < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pMVAST, must be a value greater than or equal to 0.", new [] { "pMVAST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pMVAST, must be a value greater than or equal to 0.", new [] { "pMVAST" });
             }
 
             // pRedBCST (decimal?) minimum
             if (this.pRedBCST < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pRedBCST, must be a value greater than or equal to 0.", new [] { "pRedBCST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pRedBCST, must be a value greater than or equal to 0.", new [] { "pRedBCST" });
             }
 
             // vBCST (decimal?) minimum
             if (this.vBCST < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBCST, must be a value greater than or equal to 0.", new [] { "vBCST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBCST, must be a value greater than or equal to 0.", new [] { "vBCST" });
             }
 
             // pICMSST (decimal?) minimum
             if (this.pICMSST < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pICMSST, must be a value greater than or equal to 0.", new [] { "pICMSST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pICMSST, must be a value greater than or equal to 0.", new [] { "pICMSST" });
             }
 
             // vICMSST (decimal?) minimum
             if (this.vICMSST < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vICMSST, must be a value greater than or equal to 0.", new [] { "vICMSST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vICMSST, must be a value greater than or equal to 0.", new [] { "vICMSST" });
             }
 
             // vBCFCPST (decimal?) minimum
             if (this.vBCFCPST < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBCFCPST, must be a value greater than or equal to 0.", new [] { "vBCFCPST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBCFCPST, must be a value greater than or equal to 0.", new [] { "vBCFCPST" });
             }
 
             // pFCPST (decimal?) minimum
             if (this.pFCPST < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pFCPST, must be a value greater than or equal to 0.", new [] { "pFCPST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pFCPST, must be a value greater than or equal to 0.", new [] { "pFCPST" });
             }
 
             // vFCPST (decimal?) minimum
             if (this.vFCPST < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vFCPST, must be a value greater than or equal to 0.", new [] { "vFCPST" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vFCPST, must be a value greater than or equal to 0.", new [] { "vFCPST" });
             }
 
             // pBCOp (decimal?) minimum
             if (this.pBCOp < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pBCOp, must be a value greater than or equal to 0.", new [] { "pBCOp" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pBCOp, must be a value greater than or equal to 0.", new [] { "pBCOp" });
+            }
+
+            // vICMSDeson (decimal?) minimum
+            if (this.vICMSDeson < (decimal?)0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vICMSDeson, must be a value greater than or equal to 0.", new [] { "vICMSDeson" });
             }
 
             yield break;

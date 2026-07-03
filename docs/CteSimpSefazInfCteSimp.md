@@ -17,6 +17,7 @@ Nome | Tipo | Descrição | Comentários
 **cobr** | [**CteSimpSefazCobrSimp**](CteSimpSefazCobrSimp.md) |  | [optional] 
 **infCteSub** | [**CteSimpSefazInfCteSubSimp**](CteSimpSefazInfCteSubSimp.md) |  | [optional] 
 **imp** | [**CteSimpSefazInfCteImpSimp**](CteSimpSefazInfCteImpSimp.md) |  | 
+**pgtoVinc** | [**CteSimpSefazPgtoVincSimp**](CteSimpSefazPgtoVincSimp.md) |  | [optional] 
 **total** | [**CteSimpSefazTotalSimp**](CteSimpSefazTotalSimp.md) |  | 
 **autXML** | [**List&lt;CteSimpSefazAutXMLSimp&gt;**](CteSimpSefazAutXMLSimp.md) |  | [optional] 
 **infRespTec** | [**CteSimpSefazRespTecSimp**](CteSimpSefazRespTecSimp.md) |  | [optional] 

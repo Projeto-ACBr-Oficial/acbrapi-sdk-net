@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -43,7 +43,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="xNome">Razão social ou Nome do emitente.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
         /// <param name="xFant">Nome fantasia do emitente.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
         /// <param name="enderEmit">enderEmit.</param>
-        public NfcomSefazEmit(string cNPJ = default(string), string iE = default(string), string iEUFDest = default(string), int? cRT = default(int?), string xNome = default(string), string xFant = default(string), NfcomSefazEndeEmi enderEmit = default(NfcomSefazEndeEmi))
+        /// <param name="iSUFEmit">Inscrição do emitente da Suframa.  Informar o número do Cadastro do emitente na Suframa. Campo obrigatório nas operações que se beneficiam de incentivos fiscais existentes nas áreas sob controle da SUFRAMA com alíquota zero da CBS referente aos arts. 451 e 466 da LC 214/25..</param>
+        public NfcomSefazEmit(string cNPJ = default(string), string iE = default(string), string iEUFDest = default(string), int? cRT = default(int?), string xNome = default(string), string xFant = default(string), NfcomSefazEndeEmi enderEmit = default(NfcomSefazEndeEmi), string iSUFEmit = default(string))
         {
             // to ensure "cNPJ" is required (not null)
             if (cNPJ == null)
@@ -57,6 +58,7 @@ namespace ACBrAPI.Sdk.Model
             this.xNome = xNome;
             this.xFant = xFant;
             this.enderEmit = enderEmit;
+            this.ISUFEmit = iSUFEmit;
         }
 
         /// <summary>
@@ -108,6 +110,13 @@ namespace ACBrAPI.Sdk.Model
         public NfcomSefazEndeEmi enderEmit { get; set; }
 
         /// <summary>
+        /// Inscrição do emitente da Suframa.  Informar o número do Cadastro do emitente na Suframa. Campo obrigatório nas operações que se beneficiam de incentivos fiscais existentes nas áreas sob controle da SUFRAMA com alíquota zero da CBS referente aos arts. 451 e 466 da LC 214/25.
+        /// </summary>
+        /// <value>Inscrição do emitente da Suframa.  Informar o número do Cadastro do emitente na Suframa. Campo obrigatório nas operações que se beneficiam de incentivos fiscais existentes nas áreas sob controle da SUFRAMA com alíquota zero da CBS referente aos arts. 451 e 466 da LC 214/25.</value>
+        [DataMember(Name = "ISUFEmit", EmitDefaultValue = true)]
+        public string ISUFEmit { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -122,6 +131,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  xNome: ").Append(xNome).Append("\n");
             sb.Append("  xFant: ").Append(xFant).Append("\n");
             sb.Append("  enderEmit: ").Append(enderEmit).Append("\n");
+            sb.Append("  ISUFEmit: ").Append(ISUFEmit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,6 +201,11 @@ namespace ACBrAPI.Sdk.Model
                     this.enderEmit == input.enderEmit ||
                     (this.enderEmit != null &&
                     this.enderEmit.Equals(input.enderEmit))
+                ) && 
+                (
+                    this.ISUFEmit == input.ISUFEmit ||
+                    (this.ISUFEmit != null &&
+                    this.ISUFEmit.Equals(input.ISUFEmit))
                 );
         }
 
@@ -231,6 +246,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.enderEmit.GetHashCode();
                 }
+                if (this.ISUFEmit != null)
+                {
+                    hashCode = (hashCode * 59) + this.ISUFEmit.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -240,30 +259,42 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xNome (string) maxLength
             if (this.xNome != null && this.xNome.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be less than 60.", new [] { "xNome" });
             }
 
             // xNome (string) minLength
             if (this.xNome != null && this.xNome.Length < 2)
             {
-                yield return new ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xNome, length must be greater than 2.", new [] { "xNome" });
             }
 
             // xFant (string) maxLength
             if (this.xFant != null && this.xFant.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xFant, length must be less than 60.", new [] { "xFant" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xFant, length must be less than 60.", new [] { "xFant" });
             }
 
             // xFant (string) minLength
             if (this.xFant != null && this.xFant.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xFant, length must be greater than 1.", new [] { "xFant" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xFant, length must be greater than 1.", new [] { "xFant" });
+            }
+
+            // ISUFEmit (string) maxLength
+            if (this.ISUFEmit != null && this.ISUFEmit.Length > 9)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ISUFEmit, length must be less than 9.", new [] { "ISUFEmit" });
+            }
+
+            // ISUFEmit (string) minLength
+            if (this.ISUFEmit != null && this.ISUFEmit.Length < 8)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ISUFEmit, length must be greater than 8.", new [] { "ISUFEmit" });
             }
 
             yield break;

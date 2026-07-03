@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -27,7 +27,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar endereço através do CEP
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cep-consultas\&quot;&gt;cep-consultas&lt;/a&gt;  - Consumo: 1 unidade requisição.
+        /// **Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    &#x60;18270000&#x60; Tatuí/SP    &#x60;01310300&#x60; São Paulo/SP    &#x60;22010000&#x60; Rio de Janeiro/RJ    &#x60;80020130&#x60; Curitiba/PR
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cep">CEP sem máscara.</param>
@@ -38,7 +38,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar endereço através do CEP
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cep-consultas\&quot;&gt;cep-consultas&lt;/a&gt;  - Consumo: 1 unidade requisição.
+        /// **Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    &#x60;18270000&#x60; Tatuí/SP    &#x60;01310300&#x60; São Paulo/SP    &#x60;22010000&#x60; Rio de Janeiro/RJ    &#x60;80020130&#x60; Curitiba/PR
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cep">CEP sem máscara.</param>
@@ -57,7 +57,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar endereço através do CEP
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cep-consultas\&quot;&gt;cep-consultas&lt;/a&gt;  - Consumo: 1 unidade requisição.
+        /// **Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    &#x60;18270000&#x60; Tatuí/SP    &#x60;01310300&#x60; São Paulo/SP    &#x60;22010000&#x60; Rio de Janeiro/RJ    &#x60;80020130&#x60; Curitiba/PR
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cep">CEP sem máscara.</param>
@@ -69,7 +69,7 @@ namespace ACBrAPI.Sdk.Api
         /// Consultar endereço através do CEP
         /// </summary>
         /// <remarks>
-        /// **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cep-consultas\&quot;&gt;cep-consultas&lt;/a&gt;  - Consumo: 1 unidade requisição.
+        /// **Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    &#x60;18270000&#x60; Tatuí/SP    &#x60;01310300&#x60; São Paulo/SP    &#x60;22010000&#x60; Rio de Janeiro/RJ    &#x60;80020130&#x60; Curitiba/PR
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cep">CEP sem máscara.</param>
@@ -290,7 +290,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar endereço através do CEP **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cep-consultas\&quot;&gt;cep-consultas&lt;/a&gt;  - Consumo: 1 unidade requisição.
+        /// Consultar endereço através do CEP **Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    &#x60;18270000&#x60; Tatuí/SP    &#x60;01310300&#x60; São Paulo/SP    &#x60;22010000&#x60; Rio de Janeiro/RJ    &#x60;80020130&#x60; Curitiba/PR
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cep">CEP sem máscara.</param>
@@ -302,7 +302,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar endereço através do CEP **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cep-consultas\&quot;&gt;cep-consultas&lt;/a&gt;  - Consumo: 1 unidade requisição.
+        /// Consultar endereço através do CEP **Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    &#x60;18270000&#x60; Tatuí/SP    &#x60;01310300&#x60; São Paulo/SP    &#x60;22010000&#x60; Rio de Janeiro/RJ    &#x60;80020130&#x60; Curitiba/PR
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cep">CEP sem máscara.</param>
@@ -331,11 +331,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("Cep", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(cep)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
@@ -356,7 +351,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar endereço através do CEP **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cep-consultas\&quot;&gt;cep-consultas&lt;/a&gt;  - Consumo: 1 unidade requisição.
+        /// Consultar endereço através do CEP **Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    &#x60;18270000&#x60; Tatuí/SP    &#x60;01310300&#x60; São Paulo/SP    &#x60;22010000&#x60; Rio de Janeiro/RJ    &#x60;80020130&#x60; Curitiba/PR
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cep">CEP sem máscara.</param>
@@ -369,7 +364,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Consultar endereço através do CEP **Informações adicionais**:  - Cota: &lt;a href&#x3D;\&quot;/docs/limites#cep-consultas\&quot;&gt;cep-consultas&lt;/a&gt;  - Consumo: 1 unidade requisição.
+        /// Consultar endereço através do CEP **Informações adicionais**:  - Consumo: 0,1 unidade requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CEP:    &#x60;18270000&#x60; Tatuí/SP    &#x60;01310300&#x60; São Paulo/SP    &#x60;22010000&#x60; Rio de Janeiro/RJ    &#x60;80020130&#x60; Curitiba/PR
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cep">CEP sem máscara.</param>
@@ -401,11 +396,6 @@ namespace ACBrAPI.Sdk.Api
 
             localVarRequestOptions.PathParameters.Add("Cep", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(cep)); // path parameter
 
-            // authentication (jwt) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
             // authentication (oauth2) required
             // oauth required
             if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))

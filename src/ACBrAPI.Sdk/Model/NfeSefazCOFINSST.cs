@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -222,36 +222,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vBC (decimal?) minimum
             if (this.vBC < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBC, must be a value greater than or equal to 0.", new [] { "vBC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBC, must be a value greater than or equal to 0.", new [] { "vBC" });
             }
 
             // pCOFINS (decimal?) minimum
             if (this.pCOFINS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pCOFINS, must be a value greater than or equal to 0.", new [] { "pCOFINS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pCOFINS, must be a value greater than or equal to 0.", new [] { "pCOFINS" });
             }
 
             // qBCProd (decimal?) minimum
             if (this.qBCProd < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qBCProd, must be a value greater than or equal to 0.", new [] { "qBCProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qBCProd, must be a value greater than or equal to 0.", new [] { "qBCProd" });
             }
 
             // vAliqProd (decimal?) minimum
             if (this.vAliqProd < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vAliqProd, must be a value greater than or equal to 0.", new [] { "vAliqProd" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vAliqProd, must be a value greater than or equal to 0.", new [] { "vAliqProd" });
             }
 
             // vCOFINS (decimal?) minimum
             if (this.vCOFINS < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCOFINS, must be a value greater than or equal to 0.", new [] { "vCOFINS" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCOFINS, must be a value greater than or equal to 0.", new [] { "vCOFINS" });
             }
 
             yield break;

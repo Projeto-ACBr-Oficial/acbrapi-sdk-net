@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -170,24 +170,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vComp (decimal?) minimum
             if (this.vComp < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vComp, must be a value greater than or equal to 0.", new [] { "vComp" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vComp, must be a value greater than or equal to 0.", new [] { "vComp" });
             }
 
             // xComp (string) maxLength
             if (this.xComp != null && this.xComp.Length > 15)
             {
-                yield return new ValidationResult("Invalid value for xComp, length must be less than 15.", new [] { "xComp" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xComp, length must be less than 15.", new [] { "xComp" });
             }
 
             // xComp (string) minLength
             if (this.xComp != null && this.xComp.Length < 0)
             {
-                yield return new ValidationResult("Invalid value for xComp, length must be greater than 0.", new [] { "xComp" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xComp, length must be greater than 0.", new [] { "xComp" });
             }
 
             yield break;

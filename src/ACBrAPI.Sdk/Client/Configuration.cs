@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -14,7 +14,6 @@ using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Net.Http;
-using System.Net.Security;
 
 namespace ACBrAPI.Sdk.Client
 {
@@ -29,7 +28,7 @@ namespace ACBrAPI.Sdk.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "2.61.0";
+        public const string Version = "3.1.5";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -66,8 +65,6 @@ namespace ACBrAPI.Sdk.Client
         /// Example: http://localhost:3000/v1/
         /// </summary>
         private string _basePath;
-
-        private bool _useDefaultCredentials = false;
 
         /// <summary>
         /// Gets or sets the API key based on the authentication name.
@@ -174,19 +171,9 @@ namespace ACBrAPI.Sdk.Client
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
-        public virtual string BasePath 
-        {
+        public virtual string BasePath {
             get { return _basePath; }
             set { _basePath = value; }
-        }
-
-        /// <summary>
-        /// Determine whether or not the "default credentials" (e.g. the user account under which the current process is running) will be sent along to the server. The default is false.
-        /// </summary>
-        public virtual bool UseDefaultCredentials
-        {
-            get { return _useDefaultCredentials; }
-            set { _useDefaultCredentials = value; }
         }
 
         /// <summary>
@@ -453,7 +440,7 @@ namespace ACBrAPI.Sdk.Client
         /// <return>The operation server URL.</return>
         public string GetOperationServerUrl(string operation, int index, Dictionary<string, string> inputVariables)
         {
-            if (operation != null && OperationServers.TryGetValue(operation, out var operationServer))
+            if (OperationServers.TryGetValue(operation, out var operationServer))
             {
                 return GetServerUrl(operationServer, index, inputVariables);
             }
@@ -512,11 +499,6 @@ namespace ACBrAPI.Sdk.Client
 
             return url;
         }
-        
-        /// <summary>
-        /// Gets and Sets the RemoteCertificateValidationCallback
-        /// </summary>
-        public RemoteCertificateValidationCallback RemoteCertificateValidationCallback { get; set; }
 
         #endregion Properties
 
@@ -530,8 +512,8 @@ namespace ACBrAPI.Sdk.Client
             string report = "C# SDK (ACBrAPI.Sdk) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
-            report += "    Version of the API: 2.61.0\n";
-            report += "    SDK Package Version: 2.61.0\n";
+            report += "    Version of the API: 3.1.5\n";
+            report += "    SDK Package Version: 3.1.5\n";
 
             return report;
         }
@@ -593,8 +575,6 @@ namespace ACBrAPI.Sdk.Client
                 TempFolderPath = second.TempFolderPath ?? first.TempFolderPath,
                 DateTimeFormat = second.DateTimeFormat ?? first.DateTimeFormat,
                 ClientCertificates = second.ClientCertificates ?? first.ClientCertificates,
-                UseDefaultCredentials = second.UseDefaultCredentials,
-                RemoteCertificateValidationCallback = second.RemoteCertificateValidationCallback ?? first.RemoteCertificateValidationCallback,
             };
             return config;
         }

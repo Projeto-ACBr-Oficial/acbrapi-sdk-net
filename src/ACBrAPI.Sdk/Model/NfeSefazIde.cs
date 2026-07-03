@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -44,6 +44,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="nNF">Número do Documento Fiscal. (required).</param>
         /// <param name="dhEmi">Data e Hora de emissão do Documento Fiscal (AAAA-MM-DDThh:mm:ssTZD) ex.: 2012-09-01T13:00:00-03:00. (required).</param>
         /// <param name="dhSaiEnt">Data e Hora da saída ou de entrada da mercadoria / produto (AAAA-MM-DDTHH:mm:ssTZD)..</param>
+        /// <param name="dPrevEntrega">Data da previsão de entrega ou disponibilização do bem (AAAA-MM-DD)..</param>
         /// <param name="tpNF">Tipo do Documento Fiscal:  * 0 - Entrada  * 1 - Saída (required).</param>
         /// <param name="idDest">Identificador de Local de destino da operação:  * 1 - Interna  * 2 - Interestadual  * 3 - Exterior (required).</param>
         /// <param name="cMunFG">Código do Município de Ocorrência do Fato Gerador (utilizar a tabela do IBGE). (required).</param>
@@ -58,14 +59,14 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="indFinal">Indica operação com consumidor final:  * 0 - Não  * 1 - Consumidor Final (required).</param>
         /// <param name="indPres">Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - NFC-e entrega em domicílio  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros (required).</param>
         /// <param name="indIntermed">Indicador de intermediador/marketplace  * 0 - Operação sem intermediador (em site ou plataforma própria)  * 1 - Operação em site ou plataforma de terceiros (intermediadores/marketplace).</param>
-        /// <param name="procEmi">Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco (required).</param>
+        /// <param name="procEmi">Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco  * 4 - emissão de NF-e por Provedor de Assinatura e Autorização - PAA (required).</param>
         /// <param name="verProc">versão do aplicativo utilizado no processo de  emissão. (required).</param>
         /// <param name="dhCont">Informar a data e hora de entrada em contingência contingência no formato  (AAAA-MM-DDThh:mm:ssTZD) ex.: 2012-09-01T13:00:00-03:00..</param>
         /// <param name="xJust">Informar a Justificativa da entrada..</param>
         /// <param name="nFref">nFref.</param>
         /// <param name="gCompraGov">gCompraGov.</param>
         /// <param name="gPagAntecipado">gPagAntecipado.</param>
-        public NfeSefazIde(int? cUF = default(int?), string cNF = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), DateTime? dhEmi = default(DateTime?), DateTime? dhSaiEnt = default(DateTime?), int? tpNF = default(int?), int? idDest = default(int?), string cMunFG = default(string), string cMunFGIBS = default(string), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? finNFe = default(int?), string tpNFDebito = default(string), string tpNFCredito = default(string), int? indFinal = default(int?), int? indPres = default(int?), int? indIntermed = default(int?), int? procEmi = default(int?), string verProc = default(string), DateTime? dhCont = default(DateTime?), string xJust = default(string), List<NfeSefazNFref> nFref = default(List<NfeSefazNFref>), NfeSefazCompraGov gCompraGov = default(NfeSefazCompraGov), NfeSefazGPagAntecipado gPagAntecipado = default(NfeSefazGPagAntecipado))
+        public NfeSefazIde(int? cUF = default(int?), string cNF = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), DateTime? dhEmi = default(DateTime?), DateTime? dhSaiEnt = default(DateTime?), DateTime? dPrevEntrega = default(DateTime?), int? tpNF = default(int?), int? idDest = default(int?), string cMunFG = default(string), string cMunFGIBS = default(string), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? finNFe = default(int?), string tpNFDebito = default(string), string tpNFCredito = default(string), int? indFinal = default(int?), int? indPres = default(int?), int? indIntermed = default(int?), int? procEmi = default(int?), string verProc = default(string), DateTime? dhCont = default(DateTime?), string xJust = default(string), List<NfeSefazNFref> nFref = default(List<NfeSefazNFref>), NfeSefazCompraGov gCompraGov = default(NfeSefazCompraGov), NfeSefazGPagAntecipado gPagAntecipado = default(NfeSefazGPagAntecipado))
         {
             // to ensure "cUF" is required (not null)
             if (cUF == null)
@@ -160,6 +161,7 @@ namespace ACBrAPI.Sdk.Model
             this.cNF = cNF;
             this.mod = mod;
             this.dhSaiEnt = dhSaiEnt;
+            this.dPrevEntrega = dPrevEntrega;
             this.cMunFGIBS = cMunFGIBS;
             this.cDV = cDV;
             this.tpAmb = tpAmb;
@@ -228,6 +230,14 @@ namespace ACBrAPI.Sdk.Model
         /// <value>Data e Hora da saída ou de entrada da mercadoria / produto (AAAA-MM-DDTHH:mm:ssTZD).</value>
         [DataMember(Name = "dhSaiEnt", EmitDefaultValue = true)]
         public DateTime? dhSaiEnt { get; set; }
+
+        /// <summary>
+        /// Data da previsão de entrega ou disponibilização do bem (AAAA-MM-DD).
+        /// </summary>
+        /// <value>Data da previsão de entrega ou disponibilização do bem (AAAA-MM-DD).</value>
+        [DataMember(Name = "dPrevEntrega", EmitDefaultValue = true)]
+        [JsonConverter(typeof(OpenAPIDateConverter))]
+        public DateTime? dPrevEntrega { get; set; }
 
         /// <summary>
         /// Tipo do Documento Fiscal:  * 0 - Entrada  * 1 - Saída
@@ -328,9 +338,9 @@ namespace ACBrAPI.Sdk.Model
         public int? indIntermed { get; set; }
 
         /// <summary>
-        /// Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco
+        /// Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco  * 4 - emissão de NF-e por Provedor de Assinatura e Autorização - PAA
         /// </summary>
-        /// <value>Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco</value>
+        /// <value>Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco  * 4 - emissão de NF-e por Provedor de Assinatura e Autorização - PAA</value>
         [DataMember(Name = "procEmi", IsRequired = true, EmitDefaultValue = true)]
         public int? procEmi { get; set; }
 
@@ -389,6 +399,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  nNF: ").Append(nNF).Append("\n");
             sb.Append("  dhEmi: ").Append(dhEmi).Append("\n");
             sb.Append("  dhSaiEnt: ").Append(dhSaiEnt).Append("\n");
+            sb.Append("  dPrevEntrega: ").Append(dPrevEntrega).Append("\n");
             sb.Append("  tpNF: ").Append(tpNF).Append("\n");
             sb.Append("  idDest: ").Append(idDest).Append("\n");
             sb.Append("  cMunFG: ").Append(cMunFG).Append("\n");
@@ -484,6 +495,11 @@ namespace ACBrAPI.Sdk.Model
                     this.dhSaiEnt == input.dhSaiEnt ||
                     (this.dhSaiEnt != null &&
                     this.dhSaiEnt.Equals(input.dhSaiEnt))
+                ) && 
+                (
+                    this.dPrevEntrega == input.dPrevEntrega ||
+                    (this.dPrevEntrega != null &&
+                    this.dPrevEntrega.Equals(input.dPrevEntrega))
                 ) && 
                 (
                     this.tpNF == input.tpNF ||
@@ -634,6 +650,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.dhSaiEnt.GetHashCode();
                 }
+                if (this.dPrevEntrega != null)
+                {
+                    hashCode = (hashCode * 59) + this.dPrevEntrega.GetHashCode();
+                }
                 if (this.tpNF != null)
                 {
                     hashCode = (hashCode * 59) + this.tpNF.GetHashCode();
@@ -727,78 +747,78 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // natOp (string) maxLength
             if (this.natOp != null && this.natOp.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for natOp, length must be less than 60.", new [] { "natOp" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for natOp, length must be less than 60.", new [] { "natOp" });
             }
 
             // natOp (string) minLength
             if (this.natOp != null && this.natOp.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for natOp, length must be greater than 1.", new [] { "natOp" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for natOp, length must be greater than 1.", new [] { "natOp" });
             }
 
             // serie (int?) maximum
             if (this.serie > (int?)999)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
             }
 
             // serie (int?) minimum
             if (this.serie < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
             }
 
             // nNF (int?) maximum
             if (this.nNF > (int?)999999999)
             {
-                yield return new ValidationResult("Invalid value for nNF, must be a value less than or equal to 999999999.", new [] { "nNF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nNF, must be a value less than or equal to 999999999.", new [] { "nNF" });
             }
 
             // nNF (int?) minimum
             if (this.nNF < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nNF, must be a value greater than or equal to 1.", new [] { "nNF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nNF, must be a value greater than or equal to 1.", new [] { "nNF" });
             }
 
             // cDV (int?) maximum
             if (this.cDV > (int?)9)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
             }
 
             // cDV (int?) minimum
             if (this.cDV < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
             }
 
             // verProc (string) maxLength
             if (this.verProc != null && this.verProc.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
             }
 
             // verProc (string) minLength
             if (this.verProc != null && this.verProc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
             }
 
             // xJust (string) maxLength
             if (this.xJust != null && this.xJust.Length > 256)
             {
-                yield return new ValidationResult("Invalid value for xJust, length must be less than 256.", new [] { "xJust" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xJust, length must be less than 256.", new [] { "xJust" });
             }
 
             // xJust (string) minLength
             if (this.xJust != null && this.xJust.Length < 15)
             {
-                yield return new ValidationResult("Invalid value for xJust, length must be greater than 15.", new [] { "xJust" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xJust, length must be greater than 15.", new [] { "xJust" });
             }
 
             yield break;

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -174,42 +174,42 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // xOrig (string) maxLength
             if (this.xOrig != null && this.xOrig.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xOrig, length must be less than 60.", new [] { "xOrig" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xOrig, length must be less than 60.", new [] { "xOrig" });
             }
 
             // xOrig (string) minLength
             if (this.xOrig != null && this.xOrig.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xOrig, length must be greater than 1.", new [] { "xOrig" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xOrig, length must be greater than 1.", new [] { "xOrig" });
             }
 
             // xDest (string) maxLength
             if (this.xDest != null && this.xDest.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xDest, length must be less than 60.", new [] { "xDest" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDest, length must be less than 60.", new [] { "xDest" });
             }
 
             // xDest (string) minLength
             if (this.xDest != null && this.xDest.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xDest, length must be greater than 1.", new [] { "xDest" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDest, length must be greater than 1.", new [] { "xDest" });
             }
 
             // xRota (string) maxLength
             if (this.xRota != null && this.xRota.Length > 10)
             {
-                yield return new ValidationResult("Invalid value for xRota, length must be less than 10.", new [] { "xRota" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xRota, length must be less than 10.", new [] { "xRota" });
             }
 
             // xRota (string) minLength
             if (this.xRota != null && this.xRota.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xRota, length must be greater than 1.", new [] { "xRota" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xRota, length must be greater than 1.", new [] { "xRota" });
             }
 
             yield break;

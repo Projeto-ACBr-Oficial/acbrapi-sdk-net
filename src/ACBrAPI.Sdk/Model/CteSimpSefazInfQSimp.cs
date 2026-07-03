@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -175,24 +175,24 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // tpMed (string) maxLength
             if (this.tpMed != null && this.tpMed.Length > 2)
             {
-                yield return new ValidationResult("Invalid value for tpMed, length must be less than 2.", new [] { "tpMed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for tpMed, length must be less than 2.", new [] { "tpMed" });
             }
 
             // tpMed (string) minLength
             if (this.tpMed != null && this.tpMed.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for tpMed, length must be greater than 1.", new [] { "tpMed" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for tpMed, length must be greater than 1.", new [] { "tpMed" });
             }
 
             // qCarga (decimal?) minimum
             if (this.qCarga < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for qCarga, must be a value greater than or equal to 0.", new [] { "qCarga" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for qCarga, must be a value greater than or equal to 0.", new [] { "qCarga" });
             }
 
             yield break;

@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -371,78 +371,78 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // serie (int?) maximum
             if (this.serie > (int?)999)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value less than or equal to 999.", new [] { "serie" });
             }
 
             // serie (int?) minimum
             if (this.serie < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, must be a value greater than or equal to 0.", new [] { "serie" });
             }
 
             // nDC (int?) maximum
             if (this.nDC > (int?)999999999)
             {
-                yield return new ValidationResult("Invalid value for nDC, must be a value less than or equal to 999999999.", new [] { "nDC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDC, must be a value less than or equal to 999999999.", new [] { "nDC" });
             }
 
             // nDC (int?) minimum
             if (this.nDC < (int?)1)
             {
-                yield return new ValidationResult("Invalid value for nDC, must be a value greater than or equal to 1.", new [] { "nDC" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDC, must be a value greater than or equal to 1.", new [] { "nDC" });
             }
 
             // tpEmit (int?) maximum
             if (this.tpEmit > (int?)4)
             {
-                yield return new ValidationResult("Invalid value for tpEmit, must be a value less than or equal to 4.", new [] { "tpEmit" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for tpEmit, must be a value less than or equal to 4.", new [] { "tpEmit" });
             }
 
             // tpEmit (int?) minimum
             if (this.tpEmit < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for tpEmit, must be a value greater than or equal to 0.", new [] { "tpEmit" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for tpEmit, must be a value greater than or equal to 0.", new [] { "tpEmit" });
             }
 
             // nSiteAutoriz (int?) maximum
             if (this.nSiteAutoriz > (int?)9)
             {
-                yield return new ValidationResult("Invalid value for nSiteAutoriz, must be a value less than or equal to 9.", new [] { "nSiteAutoriz" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nSiteAutoriz, must be a value less than or equal to 9.", new [] { "nSiteAutoriz" });
             }
 
             // nSiteAutoriz (int?) minimum
             if (this.nSiteAutoriz < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for nSiteAutoriz, must be a value greater than or equal to 0.", new [] { "nSiteAutoriz" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nSiteAutoriz, must be a value greater than or equal to 0.", new [] { "nSiteAutoriz" });
             }
 
             // cDV (int?) maximum
             if (this.cDV > (int?)9)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value less than or equal to 9.", new [] { "cDV" });
             }
 
             // cDV (int?) minimum
             if (this.cDV < (int?)0)
             {
-                yield return new ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cDV, must be a value greater than or equal to 0.", new [] { "cDV" });
             }
 
             // verProc (string) maxLength
             if (this.verProc != null && this.verProc.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be less than 20.", new [] { "verProc" });
             }
 
             // verProc (string) minLength
             if (this.verProc != null && this.verProc.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verProc, length must be greater than 1.", new [] { "verProc" });
             }
 
             yield break;

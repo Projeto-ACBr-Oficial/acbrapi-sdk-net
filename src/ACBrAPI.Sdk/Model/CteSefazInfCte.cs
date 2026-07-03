@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -47,12 +47,13 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="dest">dest.</param>
         /// <param name="vPrest">vPrest (required).</param>
         /// <param name="imp">imp (required).</param>
+        /// <param name="pgtoVinc">pgtoVinc.</param>
         /// <param name="infCTeNorm">infCTeNorm.</param>
         /// <param name="infCteComp">infCteComp.</param>
         /// <param name="autXML">autXML.</param>
         /// <param name="infRespTec">infRespTec.</param>
         /// <param name="infSolicNFF">infSolicNFF.</param>
-        public CteSefazInfCte(string versao = default(string), string id = default(string), CteSefazIde ide = default(CteSefazIde), CteSefazCompl compl = default(CteSefazCompl), CteSefazEmit emit = default(CteSefazEmit), CteSefazRem rem = default(CteSefazRem), CteSefazExped exped = default(CteSefazExped), CteSefazReceb receb = default(CteSefazReceb), CteSefazDest dest = default(CteSefazDest), CteSefazVPrest vPrest = default(CteSefazVPrest), CteSefazInfCteImp imp = default(CteSefazInfCteImp), CteSefazInfCTeNorm infCTeNorm = default(CteSefazInfCTeNorm), List<CteSefazInfCteComp> infCteComp = default(List<CteSefazInfCteComp>), List<CteSefazAutXML> autXML = default(List<CteSefazAutXML>), CteSefazRespTec infRespTec = default(CteSefazRespTec), CteSefazInfSolicNFF infSolicNFF = default(CteSefazInfSolicNFF))
+        public CteSefazInfCte(string versao = default(string), string id = default(string), CteSefazIde ide = default(CteSefazIde), CteSefazCompl compl = default(CteSefazCompl), CteSefazEmit emit = default(CteSefazEmit), CteSefazRem rem = default(CteSefazRem), CteSefazExped exped = default(CteSefazExped), CteSefazReceb receb = default(CteSefazReceb), CteSefazDest dest = default(CteSefazDest), CteSefazVPrest vPrest = default(CteSefazVPrest), CteSefazInfCteImp imp = default(CteSefazInfCteImp), CteSefazPgtoVinc pgtoVinc = default(CteSefazPgtoVinc), CteSefazInfCTeNorm infCTeNorm = default(CteSefazInfCTeNorm), List<CteSefazInfCteComp> infCteComp = default(List<CteSefazInfCteComp>), List<CteSefazAutXML> autXML = default(List<CteSefazAutXML>), CteSefazRespTec infRespTec = default(CteSefazRespTec), CteSefazInfSolicNFF infSolicNFF = default(CteSefazInfSolicNFF))
         {
             // to ensure "versao" is required (not null)
             if (versao == null)
@@ -90,6 +91,7 @@ namespace ACBrAPI.Sdk.Model
             this.exped = exped;
             this.receb = receb;
             this.dest = dest;
+            this.pgtoVinc = pgtoVinc;
             this.infCTeNorm = infCTeNorm;
             this.infCteComp = infCteComp;
             this.autXML = autXML;
@@ -166,6 +168,12 @@ namespace ACBrAPI.Sdk.Model
         public CteSefazInfCteImp imp { get; set; }
 
         /// <summary>
+        /// Gets or Sets pgtoVinc
+        /// </summary>
+        [DataMember(Name = "pgtoVinc", EmitDefaultValue = false)]
+        public CteSefazPgtoVinc pgtoVinc { get; set; }
+
+        /// <summary>
         /// Gets or Sets infCTeNorm
         /// </summary>
         [DataMember(Name = "infCTeNorm", EmitDefaultValue = false)]
@@ -214,6 +222,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  dest: ").Append(dest).Append("\n");
             sb.Append("  vPrest: ").Append(vPrest).Append("\n");
             sb.Append("  imp: ").Append(imp).Append("\n");
+            sb.Append("  pgtoVinc: ").Append(pgtoVinc).Append("\n");
             sb.Append("  infCTeNorm: ").Append(infCTeNorm).Append("\n");
             sb.Append("  infCteComp: ").Append(infCteComp).Append("\n");
             sb.Append("  autXML: ").Append(autXML).Append("\n");
@@ -310,6 +319,11 @@ namespace ACBrAPI.Sdk.Model
                     this.imp.Equals(input.imp))
                 ) && 
                 (
+                    this.pgtoVinc == input.pgtoVinc ||
+                    (this.pgtoVinc != null &&
+                    this.pgtoVinc.Equals(input.pgtoVinc))
+                ) && 
+                (
                     this.infCTeNorm == input.infCTeNorm ||
                     (this.infCTeNorm != null &&
                     this.infCTeNorm.Equals(input.infCTeNorm))
@@ -391,6 +405,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.imp.GetHashCode();
                 }
+                if (this.pgtoVinc != null)
+                {
+                    hashCode = (hashCode * 59) + this.pgtoVinc.GetHashCode();
+                }
                 if (this.infCTeNorm != null)
                 {
                     hashCode = (hashCode * 59) + this.infCTeNorm.GetHashCode();
@@ -420,7 +438,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

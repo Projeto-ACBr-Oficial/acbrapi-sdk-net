@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -46,6 +46,7 @@ namespace ACBrAPI.Sdk.Model
             /// </summary>
             [EnumMember(Value = "producao")]
             Producao = 2
+
         }
 
 
@@ -229,18 +230,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // justificativa (string) maxLength
             if (this.justificativa != null && this.justificativa.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for justificativa, length must be less than 255.", new [] { "justificativa" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for justificativa, length must be less than 255.", new [] { "justificativa" });
             }
 
             // justificativa (string) minLength
             if (this.justificativa != null && this.justificativa.Length < 15)
             {
-                yield return new ValidationResult("Invalid value for justificativa, length must be greater than 15.", new [] { "justificativa" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for justificativa, length must be greater than 15.", new [] { "justificativa" });
             }
 
             yield break;

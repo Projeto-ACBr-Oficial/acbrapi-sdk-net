@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -34,11 +34,15 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="nome">nome.</param>
         /// <param name="consumo">consumo.</param>
         /// <param name="limite">limite.</param>
-        public ContaCota(string nome = default(string), int consumo = default(int), int limite = default(int))
+        /// <param name="disponivel">disponivel.</param>
+        /// <param name="ultimaAtualizacao">ultimaAtualizacao.</param>
+        public ContaCota(string nome = default(string), decimal consumo = default(decimal), decimal? limite = default(decimal?), decimal disponivel = default(decimal), string ultimaAtualizacao = default(string))
         {
             this.nome = nome;
             this.consumo = consumo;
             this.limite = limite;
+            this.disponivel = disponivel;
+            this.ultima_atualizacao = ultimaAtualizacao;
         }
 
         /// <summary>
@@ -51,13 +55,25 @@ namespace ACBrAPI.Sdk.Model
         /// Gets or Sets consumo
         /// </summary>
         [DataMember(Name = "consumo", EmitDefaultValue = false)]
-        public int consumo { get; set; }
+        public decimal consumo { get; set; }
 
         /// <summary>
         /// Gets or Sets limite
         /// </summary>
-        [DataMember(Name = "limite", EmitDefaultValue = false)]
-        public int limite { get; set; }
+        [DataMember(Name = "limite", EmitDefaultValue = true)]
+        public decimal? limite { get; set; }
+
+        /// <summary>
+        /// Gets or Sets disponivel
+        /// </summary>
+        [DataMember(Name = "disponivel", EmitDefaultValue = false)]
+        public decimal disponivel { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ultima_atualizacao
+        /// </summary>
+        [DataMember(Name = "ultima_atualizacao", EmitDefaultValue = false)]
+        public string ultima_atualizacao { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,6 +86,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  nome: ").Append(nome).Append("\n");
             sb.Append("  consumo: ").Append(consumo).Append("\n");
             sb.Append("  limite: ").Append(limite).Append("\n");
+            sb.Append("  disponivel: ").Append(disponivel).Append("\n");
+            sb.Append("  ultima_atualizacao: ").Append(ultima_atualizacao).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -116,7 +134,17 @@ namespace ACBrAPI.Sdk.Model
                 ) && 
                 (
                     this.limite == input.limite ||
-                    this.limite.Equals(input.limite)
+                    (this.limite != null &&
+                    this.limite.Equals(input.limite))
+                ) && 
+                (
+                    this.disponivel == input.disponivel ||
+                    this.disponivel.Equals(input.disponivel)
+                ) && 
+                (
+                    this.ultima_atualizacao == input.ultima_atualizacao ||
+                    (this.ultima_atualizacao != null &&
+                    this.ultima_atualizacao.Equals(input.ultima_atualizacao))
                 );
         }
 
@@ -134,7 +162,15 @@ namespace ACBrAPI.Sdk.Model
                     hashCode = (hashCode * 59) + this.nome.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.consumo.GetHashCode();
-                hashCode = (hashCode * 59) + this.limite.GetHashCode();
+                if (this.limite != null)
+                {
+                    hashCode = (hashCode * 59) + this.limite.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.disponivel.GetHashCode();
+                if (this.ultima_atualizacao != null)
+                {
+                    hashCode = (hashCode * 59) + this.ultima_atualizacao.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -144,7 +180,7 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

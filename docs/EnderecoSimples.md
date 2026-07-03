@@ -1,5 +1,5 @@
 # ACBrAPI.Sdk.Model.EnderecoSimples
-Grupo de informações do endereço da obra do serviço prestado.
+Grupo de informações relativas ao endereço da atividade, evento ou local do serviço prestado.
 
 ## Propriedades
 

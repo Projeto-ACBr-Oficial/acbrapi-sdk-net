@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -169,18 +169,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // COTM (string) maxLength
             if (this.COTM != null && this.COTM.Length > 20)
             {
-                yield return new ValidationResult("Invalid value for COTM, length must be less than 20.", new [] { "COTM" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for COTM, length must be less than 20.", new [] { "COTM" });
             }
 
             // COTM (string) minLength
             if (this.COTM != null && this.COTM.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for COTM, length must be greater than 1.", new [] { "COTM" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for COTM, length must be greater than 1.", new [] { "COTM" });
             }
 
             yield break;

@@ -5,7 +5,7 @@ Grupo de informações do DPS relativas à Evento.
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**xNome** | **string** | Nome do evento Artístico, Cultural, Esportivo, etc. | [optional] 
+**xNome** | **string** | Descrição do evento Artístico, Cultural, Esportivo, etc. | [optional] 
 **desc** | **string** | &#x60;Deprecated&#x60;    **Propriedade depreciada**.    *Utilize &#x60;xNome&#x60;*. | [optional] 
 **dtIni** | **DateTime?** | Data de início da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD). | 
 **dtFim** | **DateTime?** | Data de fim da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD). | 

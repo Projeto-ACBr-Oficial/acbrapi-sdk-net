@@ -16,6 +16,7 @@ Nome | Tipo | Descrição | Comentários
 **dest** | [**CteSefazDest**](CteSefazDest.md) |  | [optional] 
 **vPrest** | [**CteSefazVPrest**](CteSefazVPrest.md) |  | 
 **imp** | [**CteSefazInfCteImp**](CteSefazInfCteImp.md) |  | 
+**pgtoVinc** | [**CteSefazPgtoVinc**](CteSefazPgtoVinc.md) |  | [optional] 
 **infCTeNorm** | [**CteSefazInfCTeNorm**](CteSefazInfCTeNorm.md) |  | [optional] 
 **infCteComp** | [**List&lt;CteSefazInfCteComp&gt;**](CteSefazInfCteComp.md) |  | [optional] 
 **autXML** | [**List&lt;CteSefazAutXML&gt;**](CteSefazAutXML.md) |  | [optional] 

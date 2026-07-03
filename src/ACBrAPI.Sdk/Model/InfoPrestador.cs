@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -32,7 +32,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="InfoPrestador" /> class.
         /// </summary>
         /// <param name="cNPJ">Número do CNPJ.  Obrigatório caso o emitente seja pessoa jurídica..</param>
-        /// <param name="cPF">Número do CPF.  Obrigatorio caso o emitente seja pessoa física..</param>
+        /// <param name="cPF">Número do CPF.  Obrigatório caso o emitente seja pessoa física..</param>
         /// <param name="regTrib">regTrib.</param>
         public InfoPrestador(string cNPJ = default(string), string cPF = default(string), RegTrib regTrib = default(RegTrib))
         {
@@ -49,9 +49,9 @@ namespace ACBrAPI.Sdk.Model
         public string CNPJ { get; set; }
 
         /// <summary>
-        /// Número do CPF.  Obrigatorio caso o emitente seja pessoa física.
+        /// Número do CPF.  Obrigatório caso o emitente seja pessoa física.
         /// </summary>
-        /// <value>Número do CPF.  Obrigatorio caso o emitente seja pessoa física.</value>
+        /// <value>Número do CPF.  Obrigatório caso o emitente seja pessoa física.</value>
         [DataMember(Name = "CPF", EmitDefaultValue = true)]
         public string CPF { get; set; }
 
@@ -154,18 +154,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // CNPJ (string) maxLength
             if (this.CNPJ != null && this.CNPJ.Length > 14)
             {
-                yield return new ValidationResult("Invalid value for CNPJ, length must be less than 14.", new [] { "CNPJ" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CNPJ, length must be less than 14.", new [] { "CNPJ" });
             }
 
             // CPF (string) maxLength
             if (this.CPF != null && this.CPF.Length > 11)
             {
-                yield return new ValidationResult("Invalid value for CPF, length must be less than 11.", new [] { "CPF" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CPF, length must be less than 11.", new [] { "CPF" });
             }
 
             yield break;

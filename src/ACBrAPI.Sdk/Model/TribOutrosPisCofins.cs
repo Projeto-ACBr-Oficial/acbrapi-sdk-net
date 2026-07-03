@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -36,13 +36,13 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TribOutrosPisCofins" /> class.
         /// </summary>
-        /// <param name="cST">Código de Situação Tributária do PIS/COFINS (CST):  * 00 - Nenhum  * 01 - Operação Tributável com Alíquota Básica  * 02 - Operação Tributável com Alíquota Diferenciada  * 03 - Operação Tributável com Alíquota por Unidade de Medida de Produto  * 04 - Operação Tributável monofásica - Revenda a Alíquota Zero  * 05 - Operação Tributável por Substituição Tributária  * 06 - Operação Tributável a Alíquota Zero  * 07 - Operação Tributável da Contribuição  * 08 - Operação sem Incidência da Contribuição  * 09 - Operação com Suspensão da Contribuição (required).</param>
-        /// <param name="vBCPisCofins">Valor da Base de Cálculo do PIS/COFINS (R$)..</param>
-        /// <param name="pAliqPis">Valor da Alíquota do PIS (%%)..</param>
-        /// <param name="pAliqCofins">Valor da Alíquota da COFINS (%%)..</param>
-        /// <param name="vPis">Valor monetário do PIS (R$)..</param>
-        /// <param name="vCofins">Valor monetário do COFINS (R$)..</param>
-        /// <param name="tpRetPisCofins">Tipo de retencao do Pis/Cofins:  * 1 - Retido  * 2 - Não Retido.</param>
+        /// <param name="cST">Código de Situação Tributária do PIS/COFINS (CST):  * 00 - Nenhum  * 01 - Operação Tributável com Alíquota Básica  * 02 - Operação Tributável com Alíquota Diferenciada  * 03 - Operação Tributável com Alíquota por Unidade de Medida de Produto  * 04 - Operação Tributável monofásica - Revenda a Alíquota Zero  * 05 - Operação Tributável por Substituição Tributária  * 06 - Operação Tributável a Alíquota Zero  * 07 - Operação Isenta da Contribuição  * 08 - Operação sem Incidência da Contribuição  * 09 - Operação com Suspensão da Contribuição  * 49 - Outras Operações de Saída  * 50 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno  * 51 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno  * 52 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação  * 53 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno  * 54 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação  * 55 - Operação com Direito a Crédito - Vinculada a Receitas Não Tributadas no Mercado Interno e de Exportação  * 56 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação  * 60 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno  * 61 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno  * 62 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação  * 63 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno  * 64 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação  * 65 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação  * 66 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação  * 67 - Crédito Presumido - Outras Operações  * 70 - Operação de Aquisição sem Direito a Crédito  * 71 - Operação de Aquisição com Isenção  * 72 - Operação de Aquisição com Suspensão  * 73 - Operação de Aquisição a Alíquota Zero  * 74 - Operação de Aquisição sem Incidência da Contribuição  * 75 - Operação de Aquisição por Substituição Tributária  * 98 - Outras Operações de Entrada  * 99 - Outras Operações (required).</param>
+        /// <param name="vBCPisCofins">Valor da Base de Cálculo do PIS/COFINS, relativo à apuração própria (R$)..</param>
+        /// <param name="pAliqPis">Alíquota do PIS, relativa à apuração própria (%%)..</param>
+        /// <param name="pAliqCofins">Alíquota da COFINS, relativa à apuração própria (%%)..</param>
+        /// <param name="vPis">Valor do débito de PIS apuração própria (R$)..</param>
+        /// <param name="vCofins">Valor do débito de COFINS apuração própria (R$)..</param>
+        /// <param name="tpRetPisCofins">Tipo de retenção do PIS/COFINS:  * 0 - PIS/COFINS/CSLL Não Retidos  * 1 - PIS/COFINS Retidos  * 2 - PIS/COFINS Não Retidos  * 3 - PIS/COFINS/CSLL Retidos  * 4 - PIS/COFINS Retidos, CSLL Não Retido  * 5 - PIS Retido, COFINS/CSLL Não Retido  * 6 - COFINS Retido, PIS/CSLL Não Retido  * 7 - PIS Não Retido, COFINS/CSLL Retidos  * 8 - PIS/COFINS Não Retidos, CSLL Retido  * 9 - COFINS Não Retido, PIS/CSLL Retidos.</param>
         public TribOutrosPisCofins(string cST = default(string), decimal? vBCPisCofins = default(decimal?), decimal? pAliqPis = default(decimal?), decimal? pAliqCofins = default(decimal?), decimal? vPis = default(decimal?), decimal? vCofins = default(decimal?), int? tpRetPisCofins = default(int?))
         {
             // to ensure "cST" is required (not null)
@@ -60,51 +60,51 @@ namespace ACBrAPI.Sdk.Model
         }
 
         /// <summary>
-        /// Código de Situação Tributária do PIS/COFINS (CST):  * 00 - Nenhum  * 01 - Operação Tributável com Alíquota Básica  * 02 - Operação Tributável com Alíquota Diferenciada  * 03 - Operação Tributável com Alíquota por Unidade de Medida de Produto  * 04 - Operação Tributável monofásica - Revenda a Alíquota Zero  * 05 - Operação Tributável por Substituição Tributária  * 06 - Operação Tributável a Alíquota Zero  * 07 - Operação Tributável da Contribuição  * 08 - Operação sem Incidência da Contribuição  * 09 - Operação com Suspensão da Contribuição
+        /// Código de Situação Tributária do PIS/COFINS (CST):  * 00 - Nenhum  * 01 - Operação Tributável com Alíquota Básica  * 02 - Operação Tributável com Alíquota Diferenciada  * 03 - Operação Tributável com Alíquota por Unidade de Medida de Produto  * 04 - Operação Tributável monofásica - Revenda a Alíquota Zero  * 05 - Operação Tributável por Substituição Tributária  * 06 - Operação Tributável a Alíquota Zero  * 07 - Operação Isenta da Contribuição  * 08 - Operação sem Incidência da Contribuição  * 09 - Operação com Suspensão da Contribuição  * 49 - Outras Operações de Saída  * 50 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno  * 51 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno  * 52 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação  * 53 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno  * 54 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação  * 55 - Operação com Direito a Crédito - Vinculada a Receitas Não Tributadas no Mercado Interno e de Exportação  * 56 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação  * 60 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno  * 61 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno  * 62 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação  * 63 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno  * 64 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação  * 65 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação  * 66 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação  * 67 - Crédito Presumido - Outras Operações  * 70 - Operação de Aquisição sem Direito a Crédito  * 71 - Operação de Aquisição com Isenção  * 72 - Operação de Aquisição com Suspensão  * 73 - Operação de Aquisição a Alíquota Zero  * 74 - Operação de Aquisição sem Incidência da Contribuição  * 75 - Operação de Aquisição por Substituição Tributária  * 98 - Outras Operações de Entrada  * 99 - Outras Operações
         /// </summary>
-        /// <value>Código de Situação Tributária do PIS/COFINS (CST):  * 00 - Nenhum  * 01 - Operação Tributável com Alíquota Básica  * 02 - Operação Tributável com Alíquota Diferenciada  * 03 - Operação Tributável com Alíquota por Unidade de Medida de Produto  * 04 - Operação Tributável monofásica - Revenda a Alíquota Zero  * 05 - Operação Tributável por Substituição Tributária  * 06 - Operação Tributável a Alíquota Zero  * 07 - Operação Tributável da Contribuição  * 08 - Operação sem Incidência da Contribuição  * 09 - Operação com Suspensão da Contribuição</value>
+        /// <value>Código de Situação Tributária do PIS/COFINS (CST):  * 00 - Nenhum  * 01 - Operação Tributável com Alíquota Básica  * 02 - Operação Tributável com Alíquota Diferenciada  * 03 - Operação Tributável com Alíquota por Unidade de Medida de Produto  * 04 - Operação Tributável monofásica - Revenda a Alíquota Zero  * 05 - Operação Tributável por Substituição Tributária  * 06 - Operação Tributável a Alíquota Zero  * 07 - Operação Isenta da Contribuição  * 08 - Operação sem Incidência da Contribuição  * 09 - Operação com Suspensão da Contribuição  * 49 - Outras Operações de Saída  * 50 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno  * 51 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno  * 52 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação  * 53 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno  * 54 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação  * 55 - Operação com Direito a Crédito - Vinculada a Receitas Não Tributadas no Mercado Interno e de Exportação  * 56 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação  * 60 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno  * 61 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno  * 62 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação  * 63 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno  * 64 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação  * 65 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação  * 66 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação  * 67 - Crédito Presumido - Outras Operações  * 70 - Operação de Aquisição sem Direito a Crédito  * 71 - Operação de Aquisição com Isenção  * 72 - Operação de Aquisição com Suspensão  * 73 - Operação de Aquisição a Alíquota Zero  * 74 - Operação de Aquisição sem Incidência da Contribuição  * 75 - Operação de Aquisição por Substituição Tributária  * 98 - Outras Operações de Entrada  * 99 - Outras Operações</value>
         [DataMember(Name = "CST", IsRequired = true, EmitDefaultValue = true)]
         public string CST { get; set; }
 
         /// <summary>
-        /// Valor da Base de Cálculo do PIS/COFINS (R$).
+        /// Valor da Base de Cálculo do PIS/COFINS, relativo à apuração própria (R$).
         /// </summary>
-        /// <value>Valor da Base de Cálculo do PIS/COFINS (R$).</value>
+        /// <value>Valor da Base de Cálculo do PIS/COFINS, relativo à apuração própria (R$).</value>
         [DataMember(Name = "vBCPisCofins", EmitDefaultValue = true)]
         public decimal? vBCPisCofins { get; set; }
 
         /// <summary>
-        /// Valor da Alíquota do PIS (%%).
+        /// Alíquota do PIS, relativa à apuração própria (%%).
         /// </summary>
-        /// <value>Valor da Alíquota do PIS (%%).</value>
+        /// <value>Alíquota do PIS, relativa à apuração própria (%%).</value>
         [DataMember(Name = "pAliqPis", EmitDefaultValue = true)]
         public decimal? pAliqPis { get; set; }
 
         /// <summary>
-        /// Valor da Alíquota da COFINS (%%).
+        /// Alíquota da COFINS, relativa à apuração própria (%%).
         /// </summary>
-        /// <value>Valor da Alíquota da COFINS (%%).</value>
+        /// <value>Alíquota da COFINS, relativa à apuração própria (%%).</value>
         [DataMember(Name = "pAliqCofins", EmitDefaultValue = true)]
         public decimal? pAliqCofins { get; set; }
 
         /// <summary>
-        /// Valor monetário do PIS (R$).
+        /// Valor do débito de PIS apuração própria (R$).
         /// </summary>
-        /// <value>Valor monetário do PIS (R$).</value>
+        /// <value>Valor do débito de PIS apuração própria (R$).</value>
         [DataMember(Name = "vPis", EmitDefaultValue = true)]
         public decimal? vPis { get; set; }
 
         /// <summary>
-        /// Valor monetário do COFINS (R$).
+        /// Valor do débito de COFINS apuração própria (R$).
         /// </summary>
-        /// <value>Valor monetário do COFINS (R$).</value>
+        /// <value>Valor do débito de COFINS apuração própria (R$).</value>
         [DataMember(Name = "vCofins", EmitDefaultValue = true)]
         public decimal? vCofins { get; set; }
 
         /// <summary>
-        /// Tipo de retencao do Pis/Cofins:  * 1 - Retido  * 2 - Não Retido
+        /// Tipo de retenção do PIS/COFINS:  * 0 - PIS/COFINS/CSLL Não Retidos  * 1 - PIS/COFINS Retidos  * 2 - PIS/COFINS Não Retidos  * 3 - PIS/COFINS/CSLL Retidos  * 4 - PIS/COFINS Retidos, CSLL Não Retido  * 5 - PIS Retido, COFINS/CSLL Não Retido  * 6 - COFINS Retido, PIS/CSLL Não Retido  * 7 - PIS Não Retido, COFINS/CSLL Retidos  * 8 - PIS/COFINS Não Retidos, CSLL Retido  * 9 - COFINS Não Retido, PIS/CSLL Retidos
         /// </summary>
-        /// <value>Tipo de retencao do Pis/Cofins:  * 1 - Retido  * 2 - Não Retido</value>
+        /// <value>Tipo de retenção do PIS/COFINS:  * 0 - PIS/COFINS/CSLL Não Retidos  * 1 - PIS/COFINS Retidos  * 2 - PIS/COFINS Não Retidos  * 3 - PIS/COFINS/CSLL Retidos  * 4 - PIS/COFINS Retidos, CSLL Não Retido  * 5 - PIS Retido, COFINS/CSLL Não Retido  * 6 - COFINS Retido, PIS/CSLL Não Retido  * 7 - PIS Não Retido, COFINS/CSLL Retidos  * 8 - PIS/COFINS Não Retidos, CSLL Retido  * 9 - COFINS Não Retido, PIS/CSLL Retidos</value>
         [DataMember(Name = "tpRetPisCofins", EmitDefaultValue = true)]
         public int? tpRetPisCofins { get; set; }
 
@@ -241,36 +241,36 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // vBCPisCofins (decimal?) minimum
             if (this.vBCPisCofins < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vBCPisCofins, must be a value greater than or equal to 0.", new [] { "vBCPisCofins" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vBCPisCofins, must be a value greater than or equal to 0.", new [] { "vBCPisCofins" });
             }
 
             // pAliqPis (decimal?) minimum
             if (this.pAliqPis < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pAliqPis, must be a value greater than or equal to 0.", new [] { "pAliqPis" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pAliqPis, must be a value greater than or equal to 0.", new [] { "pAliqPis" });
             }
 
             // pAliqCofins (decimal?) minimum
             if (this.pAliqCofins < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pAliqCofins, must be a value greater than or equal to 0.", new [] { "pAliqCofins" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pAliqCofins, must be a value greater than or equal to 0.", new [] { "pAliqCofins" });
             }
 
             // vPis (decimal?) minimum
             if (this.vPis < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vPis, must be a value greater than or equal to 0.", new [] { "vPis" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vPis, must be a value greater than or equal to 0.", new [] { "vPis" });
             }
 
             // vCofins (decimal?) minimum
             if (this.vCofins < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for vCofins, must be a value greater than or equal to 0.", new [] { "vCofins" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCofins, must be a value greater than or equal to 0.", new [] { "vCofins" });
             }
 
             yield break;

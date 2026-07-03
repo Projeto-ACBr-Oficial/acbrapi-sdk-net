@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -37,7 +37,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="CteOsSefazRedOS" /> class.
         /// </summary>
         /// <param name="pRedAliq">Percentual de redução de aliquota do cClassTrib. (required).</param>
-        /// <param name="pAliqEfet">Aliquota Efetiva que será aplicada a Base de Calculo. (required).</param>
+        /// <param name="pAliqEfet">Aliquota Efetiva que será aplicada a Base de Calculo (em percentual). (required).</param>
         public CteOsSefazRedOS(decimal? pRedAliq = default(decimal?), decimal? pAliqEfet = default(decimal?))
         {
             // to ensure "pRedAliq" is required (not null)
@@ -62,9 +62,9 @@ namespace ACBrAPI.Sdk.Model
         public decimal? pRedAliq { get; set; }
 
         /// <summary>
-        /// Aliquota Efetiva que será aplicada a Base de Calculo.
+        /// Aliquota Efetiva que será aplicada a Base de Calculo (em percentual).
         /// </summary>
-        /// <value>Aliquota Efetiva que será aplicada a Base de Calculo.</value>
+        /// <value>Aliquota Efetiva que será aplicada a Base de Calculo (em percentual).</value>
         [DataMember(Name = "pAliqEfet", IsRequired = true, EmitDefaultValue = true)]
         public decimal? pAliqEfet { get; set; }
 
@@ -151,18 +151,18 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // pRedAliq (decimal?) minimum
             if (this.pRedAliq < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pRedAliq, must be a value greater than or equal to 0.", new [] { "pRedAliq" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pRedAliq, must be a value greater than or equal to 0.", new [] { "pRedAliq" });
             }
 
             // pAliqEfet (decimal?) minimum
             if (this.pAliqEfet < (decimal?)0)
             {
-                yield return new ValidationResult("Invalid value for pAliqEfet, must be a value greater than or equal to 0.", new [] { "pAliqEfet" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pAliqEfet, must be a value greater than or equal to 0.", new [] { "pAliqEfet" });
             }
 
             yield break;

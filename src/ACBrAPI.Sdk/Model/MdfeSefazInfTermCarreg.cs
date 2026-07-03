@@ -1,6 +1,6 @@
 /*
  * ACBr API - SDK para .NET
- * https://www.acbrapi.com.br
+ * https://www.acbr.api.br
  */
 
 
@@ -151,30 +151,30 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             // cTermCarreg (string) maxLength
             if (this.cTermCarreg != null && this.cTermCarreg.Length > 8)
             {
-                yield return new ValidationResult("Invalid value for cTermCarreg, length must be less than 8.", new [] { "cTermCarreg" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cTermCarreg, length must be less than 8.", new [] { "cTermCarreg" });
             }
 
             // cTermCarreg (string) minLength
             if (this.cTermCarreg != null && this.cTermCarreg.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for cTermCarreg, length must be greater than 1.", new [] { "cTermCarreg" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cTermCarreg, length must be greater than 1.", new [] { "cTermCarreg" });
             }
 
             // xTermCarreg (string) maxLength
             if (this.xTermCarreg != null && this.xTermCarreg.Length > 60)
             {
-                yield return new ValidationResult("Invalid value for xTermCarreg, length must be less than 60.", new [] { "xTermCarreg" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xTermCarreg, length must be less than 60.", new [] { "xTermCarreg" });
             }
 
             // xTermCarreg (string) minLength
             if (this.xTermCarreg != null && this.xTermCarreg.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for xTermCarreg, length must be greater than 1.", new [] { "xTermCarreg" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xTermCarreg, length must be greater than 1.", new [] { "xTermCarreg" });
             }
 
             yield break;
