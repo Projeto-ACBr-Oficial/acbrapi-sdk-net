@@ -2215,7 +2215,7 @@ catch (ApiException e)
 
 <a name="enviaremailnfce"></a>
 # **EnviarEmailNfce**
-> EmailStatusResponse EnviarEmailNfce (string id, DfePedidoEnvioEmail body = null)
+> EmailStatusResponse EnviarEmailNfce (string id, bool? logotipo = null, bool? nomeFantasia = null, string mensagemRodape = null, bool? resumido = null, bool? qrcodeLateral = null, int? largura = null, string margem = null, DfePedidoEnvioEmail body = null)
 
 Enviar e-mail
 
@@ -2246,12 +2246,19 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfceApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | ID único da NFC-e gerado pela API.
+            var logotipo = false;  // bool? | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional)  (default to false)
+            var nomeFantasia = false;  // bool? | Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional)  (default to false)
+            var mensagemRodape = "mensagemRodape_example";  // string | Imprime mensagem no rodapé do documento.    O caractere `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * `\"esquerda\"`  * `\"esquerda|centro\"`  * `\"esquerda|centro|direita\"`  * `\"|centro\"`, `\"|centro|\"`  * `\"|centro|direita\"`  * `\"||direita\"`  * `\"esquerda||direita\"` (optional) 
+            var resumido = false;  // bool? | Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional)  (default to false)
+            var qrcodeLateral = false;  // bool? | Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional)  (default to false)
+            var largura = 80;  // int? | Largura do DANFE NFC-e (em milímetros). (optional)  (default to 80)
+            var margem = "\"2\"";  // string | Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre `0` e `9`.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * `margem=1`    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * `margem=1,2`    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * `margem=1,2,3`    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * `margem=1,2,3,4`    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional)  (default to "2")
             var body = new DfePedidoEnvioEmail(); // DfePedidoEnvioEmail |  (optional) 
 
             try
             {
                 // Enviar e-mail
-                EmailStatusResponse result = apiInstance.EnviarEmailNfce(id, body);
+                EmailStatusResponse result = apiInstance.EnviarEmailNfce(id, logotipo, nomeFantasia, mensagemRodape, resumido, qrcodeLateral, largura, margem, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2272,7 +2279,7 @@ Esses métodos retornam um objeto ApiResponse que contêm os dados da resposta, 
 try
 {
     // Enviar e-mail
-    ApiResponse<EmailStatusResponse> response = apiInstance.EnviarEmailNfceWithHttpInfo(id, body);
+    ApiResponse<EmailStatusResponse> response = apiInstance.EnviarEmailNfceWithHttpInfo(id, logotipo, nomeFantasia, mensagemRodape, resumido, qrcodeLateral, largura, margem, body);
     Debug.Write("Código de status: " + response.StatusCode);
     Debug.Write("Headers da resposta: " + response.Headers);
     Debug.Write("Conteúdo da resposta: " + response.Data);
@@ -2290,6 +2297,13 @@ catch (ApiException e)
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
 | **id** | **string** | ID único da NFC-e gerado pela API. |  |
+| **logotipo** | **bool?** | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
+| **nomeFantasia** | **bool?** | Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. | [optional] [default to false] |
+| **mensagemRodape** | **string** | Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; | [optional]  |
+| **resumido** | **bool?** | Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. | [optional] [default to false] |
+| **qrcodeLateral** | **bool?** | Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. | [optional] [default to false] |
+| **largura** | **int?** | Largura do DANFE NFC-e (em milímetros). | [optional] [default to 80] |
+| **margem** | **string** | Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm | [optional] [default to &quot;2&quot;] |
 | **body** | [**DfePedidoEnvioEmail**](DfePedidoEnvioEmail.md) |  | [optional]  |
 
 ### Tipo de retorno

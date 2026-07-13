@@ -43,7 +43,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cNBS">Código NBS correspondente ao serviço prestado, seguindo a versão 2.0, conforme Anexo B..</param>
         /// <param name="cNatOp">Código de natureza da operação.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado..</param>
         /// <param name="cSitTrib">Código de situação tributária.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado..</param>
-        public CServ(string cTribNac = default(string), string cTribMun = default(string), string cNAE = default(string), string xDescServ = default(string), string cNBS = default(string), string cNatOp = default(string), string cSitTrib = default(string))
+        /// <param name="cIntContrib">Código interno do contribuinte..</param>
+        public CServ(string cTribNac = default(string), string cTribMun = default(string), string cNAE = default(string), string xDescServ = default(string), string cNBS = default(string), string cNatOp = default(string), string cSitTrib = default(string), string cIntContrib = default(string))
         {
             // to ensure "cTribNac" is required (not null)
             if (cTribNac == null)
@@ -62,6 +63,7 @@ namespace ACBrAPI.Sdk.Model
             this.cNBS = cNBS;
             this.cNatOp = cNatOp;
             this.cSitTrib = cSitTrib;
+            this.cIntContrib = cIntContrib;
         }
 
         /// <summary>
@@ -114,6 +116,13 @@ namespace ACBrAPI.Sdk.Model
         public string cSitTrib { get; set; }
 
         /// <summary>
+        /// Código interno do contribuinte.
+        /// </summary>
+        /// <value>Código interno do contribuinte.</value>
+        [DataMember(Name = "cIntContrib", EmitDefaultValue = true)]
+        public string cIntContrib { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -128,6 +137,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  cNBS: ").Append(cNBS).Append("\n");
             sb.Append("  cNatOp: ").Append(cNatOp).Append("\n");
             sb.Append("  cSitTrib: ").Append(cSitTrib).Append("\n");
+            sb.Append("  cIntContrib: ").Append(cIntContrib).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -197,6 +207,11 @@ namespace ACBrAPI.Sdk.Model
                     this.cSitTrib == input.cSitTrib ||
                     (this.cSitTrib != null &&
                     this.cSitTrib.Equals(input.cSitTrib))
+                ) && 
+                (
+                    this.cIntContrib == input.cIntContrib ||
+                    (this.cIntContrib != null &&
+                    this.cIntContrib.Equals(input.cIntContrib))
                 );
         }
 
@@ -237,6 +252,10 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.cSitTrib.GetHashCode();
                 }
+                if (this.cIntContrib != null)
+                {
+                    hashCode = (hashCode * 59) + this.cIntContrib.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -258,6 +277,18 @@ namespace ACBrAPI.Sdk.Model
             if (this.xDescServ != null && this.xDescServ.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for xDescServ, length must be greater than 1.", new [] { "xDescServ" });
+            }
+
+            // cIntContrib (string) maxLength
+            if (this.cIntContrib != null && this.cIntContrib.Length > 20)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cIntContrib, length must be less than 20.", new [] { "cIntContrib" });
+            }
+
+            // cIntContrib (string) minLength
+            if (this.cIntContrib != null && this.cIntContrib.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for cIntContrib, length must be greater than 1.", new [] { "cIntContrib" });
             }
 
             yield break;

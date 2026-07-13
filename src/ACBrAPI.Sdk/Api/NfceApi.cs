@@ -510,9 +510,16 @@ namespace ACBrAPI.Sdk.Api
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="resumido">Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)</param>
+        /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE NFC-e (em milímetros). (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>EmailStatusResponse</returns>
-        EmailStatusResponse EnviarEmailNfce(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
+        EmailStatusResponse EnviarEmailNfce(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string mensagemRodape = default(string), bool? resumido = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
 
         /// <summary>
         /// Enviar e-mail
@@ -522,9 +529,16 @@ namespace ACBrAPI.Sdk.Api
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="resumido">Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)</param>
+        /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE NFC-e (em milímetros). (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of EmailStatusResponse</returns>
-        ApiResponse<EmailStatusResponse> EnviarEmailNfceWithHttpInfo(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
+        ApiResponse<EmailStatusResponse> EnviarEmailNfceWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string mensagemRodape = default(string), bool? resumido = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
         /// <summary>
         /// Inutilizar uma sequência de numeração de NFC-e
         /// </summary>
@@ -1221,10 +1235,17 @@ namespace ACBrAPI.Sdk.Api
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="resumido">Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)</param>
+        /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE NFC-e (em milímetros). (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmailStatusResponse</returns>
-        System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfceAsync(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfceAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string mensagemRodape = default(string), bool? resumido = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Enviar e-mail
@@ -1234,10 +1255,17 @@ namespace ACBrAPI.Sdk.Api
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="resumido">Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)</param>
+        /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE NFC-e (em milímetros). (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmailStatusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmailStatusResponse>> EnviarEmailNfceWithHttpInfoAsync(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<EmailStatusResponse>> EnviarEmailNfceWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string mensagemRodape = default(string), bool? resumido = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Inutilizar uma sequência de numeração de NFC-e
         /// </summary>
@@ -4627,11 +4655,18 @@ namespace ACBrAPI.Sdk.Api
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="resumido">Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)</param>
+        /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE NFC-e (em milímetros). (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>EmailStatusResponse</returns>
-        public EmailStatusResponse EnviarEmailNfce(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
+        public EmailStatusResponse EnviarEmailNfce(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string mensagemRodape = default(string), bool? resumido = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = EnviarEmailNfceWithHttpInfo(id, body);
+            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = EnviarEmailNfceWithHttpInfo(id, logotipo, nomeFantasia, mensagemRodape, resumido, qrcodeLateral, largura, margem, body);
             return localVarResponse.Data;
         }
 
@@ -4640,9 +4675,16 @@ namespace ACBrAPI.Sdk.Api
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="resumido">Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)</param>
+        /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE NFC-e (em milímetros). (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of EmailStatusResponse</returns>
-        public ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> EnviarEmailNfceWithHttpInfo(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
+        public ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> EnviarEmailNfceWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string mensagemRodape = default(string), bool? resumido = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4666,6 +4708,34 @@ namespace ACBrAPI.Sdk.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (logotipo != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "logotipo", logotipo));
+            }
+            if (nomeFantasia != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "nome_fantasia", nomeFantasia));
+            }
+            if (mensagemRodape != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "mensagem_rodape", mensagemRodape));
+            }
+            if (resumido != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "resumido", resumido));
+            }
+            if (qrcodeLateral != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "qrcode_lateral", qrcodeLateral));
+            }
+            if (largura != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "largura", largura));
+            }
+            if (margem != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "margem", margem));
+            }
             localVarRequestOptions.Data = body;
 
             // authentication (oauth2) required
@@ -4692,12 +4762,19 @@ namespace ACBrAPI.Sdk.Api
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="resumido">Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)</param>
+        /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE NFC-e (em milímetros). (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmailStatusResponse</returns>
-        public async System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfceAsync(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfceAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string mensagemRodape = default(string), bool? resumido = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = await EnviarEmailNfceWithHttpInfoAsync(id, body, cancellationToken).ConfigureAwait(false);
+            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = await EnviarEmailNfceWithHttpInfoAsync(id, logotipo, nomeFantasia, mensagemRodape, resumido, qrcodeLateral, largura, margem, body, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4706,10 +4783,17 @@ namespace ACBrAPI.Sdk.Api
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="resumido">Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)</param>
+        /// <param name="qrcodeLateral">Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE NFC-e (em milímetros). (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmailStatusResponse)</returns>
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse>> EnviarEmailNfceWithHttpInfoAsync(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse>> EnviarEmailNfceWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string mensagemRodape = default(string), bool? resumido = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4735,6 +4819,34 @@ namespace ACBrAPI.Sdk.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (logotipo != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "logotipo", logotipo));
+            }
+            if (nomeFantasia != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "nome_fantasia", nomeFantasia));
+            }
+            if (mensagemRodape != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "mensagem_rodape", mensagemRodape));
+            }
+            if (resumido != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "resumido", resumido));
+            }
+            if (qrcodeLateral != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "qrcode_lateral", qrcodeLateral));
+            }
+            if (largura != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "largura", largura));
+            }
+            if (margem != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "margem", margem));
+            }
             localVarRequestOptions.Data = body;
 
             // authentication (oauth2) required

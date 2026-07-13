@@ -582,9 +582,14 @@ namespace ACBrAPI.Sdk.Api
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>EmailStatusResponse</returns>
-        EmailStatusResponse EnviarEmailNfe(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
+        EmailStatusResponse EnviarEmailNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
 
         /// <summary>
         /// Enviar e-mail
@@ -594,9 +599,14 @@ namespace ACBrAPI.Sdk.Api
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of EmailStatusResponse</returns>
-        ApiResponse<EmailStatusResponse> EnviarEmailNfeWithHttpInfo(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
+        ApiResponse<EmailStatusResponse> EnviarEmailNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
         /// <summary>
         /// Inutilizar uma sequência de numeração de NF-e
         /// </summary>
@@ -1379,10 +1389,15 @@ namespace ACBrAPI.Sdk.Api
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmailStatusResponse</returns>
-        System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfeAsync(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Enviar e-mail
@@ -1392,10 +1407,15 @@ namespace ACBrAPI.Sdk.Api
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmailStatusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmailStatusResponse>> EnviarEmailNfeWithHttpInfoAsync(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<EmailStatusResponse>> EnviarEmailNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Inutilizar uma sequência de numeração de NF-e
         /// </summary>
@@ -5265,11 +5285,16 @@ namespace ACBrAPI.Sdk.Api
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>EmailStatusResponse</returns>
-        public EmailStatusResponse EnviarEmailNfe(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
+        public EmailStatusResponse EnviarEmailNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = EnviarEmailNfeWithHttpInfo(id, body);
+            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = EnviarEmailNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, body);
             return localVarResponse.Data;
         }
 
@@ -5278,9 +5303,14 @@ namespace ACBrAPI.Sdk.Api
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of EmailStatusResponse</returns>
-        public ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> EnviarEmailNfeWithHttpInfo(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
+        public ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> EnviarEmailNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5304,6 +5334,26 @@ namespace ACBrAPI.Sdk.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (logotipo != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "logotipo", logotipo));
+            }
+            if (nomeFantasia != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "nome_fantasia", nomeFantasia));
+            }
+            if (formato != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "formato", formato));
+            }
+            if (mensagemRodape != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "mensagem_rodape", mensagemRodape));
+            }
+            if (canhoto != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "canhoto", canhoto));
+            }
             localVarRequestOptions.Data = body;
 
             // authentication (oauth2) required
@@ -5330,12 +5380,17 @@ namespace ACBrAPI.Sdk.Api
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmailStatusResponse</returns>
-        public async System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfeAsync(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = await EnviarEmailNfeWithHttpInfoAsync(id, body, cancellationToken).ConfigureAwait(false);
+            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = await EnviarEmailNfeWithHttpInfoAsync(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, body, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5344,10 +5399,15 @@ namespace ACBrAPI.Sdk.Api
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
+        /// <param name="logotipo">Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)</param>
+        /// <param name="nomeFantasia">Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)</param>
+        /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
+        /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
+        /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmailStatusResponse)</returns>
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse>> EnviarEmailNfeWithHttpInfoAsync(string id, DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse>> EnviarEmailNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5373,6 +5433,26 @@ namespace ACBrAPI.Sdk.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (logotipo != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "logotipo", logotipo));
+            }
+            if (nomeFantasia != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "nome_fantasia", nomeFantasia));
+            }
+            if (formato != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "formato", formato));
+            }
+            if (mensagemRodape != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "mensagem_rodape", mensagemRodape));
+            }
+            if (canhoto != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "canhoto", canhoto));
+            }
             localVarRequestOptions.Data = body;
 
             // authentication (oauth2) required

@@ -11,7 +11,7 @@ info:
     \ de corpo**\r\n- `grant_type=client_credentials&client_id=SEU_CLIENT_ID&client_secret=SEU_CLIENT_SECRET&scope=empresa%20nfe`\r\
     \n\r\n**Uso do token nas requisições**\r\n- `Authorization: Bearer SEU_ACCESS_TOKEN`"
   title: ACBr API
-  version: 3.1.5
+  version: 3.1.7
 servers:
 - url: https://prod.acbr.api.br/
 security:
@@ -4439,6 +4439,78 @@ paths:
         required: true
         schema:
           type: string
+      - description: "Imprime o documento com logotipo, desde que esteja cadastrado\
+          \ na empresa."
+        in: query
+        name: logotipo
+        schema:
+          default: false
+          type: boolean
+      - description: "Exibe o nome fantasia do emitente, desde que esteja presente\
+          \ no XML da nota."
+        in: query
+        name: nome_fantasia
+        schema:
+          default: false
+          type: boolean
+      - description: "Imprime mensagem no rodapé do documento.\r\n\r\nO caractere\
+          \ `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento\
+          \ das mensagens.\r\n\r\n**Exemplos de Uso:**\r\n* `\"esquerda\"`\r\n* `\"\
+          esquerda|centro\"`\r\n* `\"esquerda|centro|direita\"`\r\n* `\"|centro\"\
+          `, `\"|centro|\"`\r\n* `\"|centro|direita\"`\r\n* `\"||direita\"`\r\n* `\"\
+          esquerda||direita\"`"
+        in: query
+        name: mensagem_rodape
+        schema:
+          maxLength: 120
+          type: string
+      - description: "Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico,\
+          \ sem o detalhamento dos itens da venda, desde que a Unidade Federada permita\
+          \ esta opção em sua legislação e o consumidor assim o solicite."
+        in: query
+        name: resumido
+        schema:
+          default: false
+          type: boolean
+      - description: "Imprime o QRCode na lateral do DANFE NFC-e.\r\n\r\n*Disponí\
+          vel apenas para DANFE com 80 milímetros de largura*."
+        in: query
+        name: qrcode_lateral
+        schema:
+          default: false
+          type: boolean
+      - description: Largura do DANFE NFC-e (em milímetros).
+        in: query
+        name: largura
+        schema:
+          default: 80
+          maximum: 80
+          minimum: 40
+          type: integer
+      - description: "Define as margens do DANFE NFC-e (em milímetros).\r\n\r\nEssa\
+          \ propriedade pode ser especificada usando um, dois, três ou quatro valores\
+          \ (separados por vírgulas). Cada valor deve ser um número entre `0` e `9`.\r\
+          \n* Quando **um** valor é especificado, a mesma margem é aplicada para **todos\
+          \ os quatro lados**.\r\n* Quando **dois** valores são especificados, a primeira\
+          \ margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados\
+          \ superior e inferior**.\r\n* Quando **três** valores são especificados,\
+          \ a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados\
+          \ superior e inferior**, e a terceira ao **lado direito**.\r\n* Quando **quatro**\
+          \ valores são especificados, as margens são aplicadas aos lados **esquerdo**,\
+          \ **superior**, **direito** e **inferior**, nesta ordem (sentido horário).\r\
+          \n\r\n**Exemplos de uso**:\r\n* `margem=1`\r\n  - Margem esquerda: 1mm\r\
+          \n  - Margem superior: 1mm\r\n  - Margem direita: 1mm\r\n  - Margem inferior:\
+          \ 1mm\r\n* `margem=1,2`\r\n  - Margem esquerda: 1mm\r\n  - Margem superior:\
+          \ 2mm\r\n  - Margem direita: 1mm\r\n  - Margem inferior: 2mm\r\n* `margem=1,2,3`\r\
+          \n  - Margem esquerda: 1mm\r\n  - Margem superior: 2mm\r\n  - Margem direita:\
+          \ 3mm\r\n  - Margem inferior: 2mm\r\n* `margem=1,2,3,4`\r\n  - Margem esquerda:\
+          \ 1mm\r\n  - Margem superior: 2mm\r\n  - Margem direita: 3mm\r\n  - Margem\
+          \ inferior: 4mm"
+        in: query
+        name: margem
+        schema:
+          default: "2"
+          type: string
       requestBody:
         content:
           application/json:
@@ -5818,6 +5890,49 @@ paths:
         required: true
         schema:
           type: string
+      - description: "Imprime o documento com logotipo, desde que esteja cadastrado\
+          \ na empresa."
+        in: query
+        name: logotipo
+        schema:
+          default: false
+          type: boolean
+      - description: "Exibe o nome fantasia do emitente, desde que esteja presente\
+          \ no XML da nota."
+        in: query
+        name: nome_fantasia
+        schema:
+          default: false
+          type: boolean
+      - description: "Formato de impressão do DANFE.\r\n\r\nValores disponíveis:\r\
+          \n- `padrao`: será utilizado o formato definido no XML da NF-e (tag \"tpImp\"\
+          );\r\n- `retrato`: tamanho A4 em modo retrato;\r\n- `paisagem`: tamanho\
+          \ A4 em modo paisagem;\r\n- `simplificado`: formato simplificado utilizado\
+          \ nas operações realizadas fora do estabelecimento (Anexo II do MOC, item\
+          \ 3.11);\r\n- `etiqueta`: formato simplificado utilizado nas operações em\
+          \ comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004)."
+        in: query
+        name: formato
+        schema:
+          default: padrao
+          type: string
+      - description: "Imprime mensagem no rodapé do documento.\r\n\r\nO caractere\
+          \ `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento\
+          \ das mensagens.\r\n\r\n**Exemplos de Uso:**\r\n* `\"esquerda\"`\r\n* `\"\
+          esquerda|centro\"`\r\n* `\"esquerda|centro|direita\"`\r\n* `\"|centro\"\
+          `, `\"|centro|\"`\r\n* `\"|centro|direita\"`\r\n* `\"||direita\"`\r\n* `\"\
+          esquerda||direita\"`"
+        in: query
+        name: mensagem_rodape
+        schema:
+          maxLength: 120
+          type: string
+      - description: Imprime o documento com o bloco de canhoto.
+        in: query
+        name: canhoto
+        schema:
+          default: true
+          type: boolean
       requestBody:
         content:
           application/json:
@@ -13015,6 +13130,7 @@ components:
                 cNatOp: cNatOp
                 cTribNac: cTribNac
                 xDescServ: xDescServ
+                cIntContrib: cIntContrib
               infoCompl:
                 xPed: xPed
                 gItemPed:
@@ -13592,6 +13708,7 @@ components:
                 cNatOp: cNatOp
                 cTribNac: cTribNac
                 xDescServ: xDescServ
+                cIntContrib: cIntContrib
               infoCompl:
                 xPed: xPed
                 gItemPed:
@@ -14169,6 +14286,7 @@ components:
                 cNatOp: cNatOp
                 cTribNac: cTribNac
                 xDescServ: xDescServ
+                cIntContrib: cIntContrib
               infoCompl:
                 xPed: xPed
                 gItemPed:
@@ -14746,6 +14864,7 @@ components:
                 cNatOp: cNatOp
                 cTribNac: cTribNac
                 xDescServ: xDescServ
+                cIntContrib: cIntContrib
               infoCompl:
                 xPed: xPed
                 gItemPed:
@@ -15323,6 +15442,7 @@ components:
                 cNatOp: cNatOp
                 cTribNac: cTribNac
                 xDescServ: xDescServ
+                cIntContrib: cIntContrib
               infoCompl:
                 xPed: xPed
                 gItemPed:
@@ -15936,6 +16056,7 @@ components:
               cNatOp: cNatOp
               cTribNac: cTribNac
               xDescServ: xDescServ
+              cIntContrib: cIntContrib
             infoCompl:
               xPed: xPed
               gItemPed:
@@ -16541,6 +16662,7 @@ components:
             cNatOp: cNatOp
             cTribNac: cTribNac
             xDescServ: xDescServ
+            cIntContrib: cIntContrib
           infoCompl:
             xPed: xPed
             gItemPed:
@@ -17345,6 +17467,7 @@ components:
           cNatOp: cNatOp
           cTribNac: cTribNac
           xDescServ: xDescServ
+          cIntContrib: cIntContrib
         infoCompl:
           xPed: xPed
           gItemPed:
@@ -17433,6 +17556,7 @@ components:
         cNatOp: cNatOp
         cTribNac: cTribNac
         xDescServ: xDescServ
+        cIntContrib: cIntContrib
       properties:
         cTribNac:
           description: "Código de tributação nacional do ISSQN.\r\n**Ambiente Nacional**:\
@@ -17472,6 +17596,12 @@ components:
         cSitTrib:
           description: "Código de situação tributária.\r\n\r\n**Atenção**: Para emissõ\
             es pelo Sistema Nacional NFS-e, esse campo é ignorado."
+          nullable: true
+          type: string
+        cIntContrib:
+          description: Código interno do contribuinte.
+          maxLength: 20
+          minLength: 1
           nullable: true
           type: string
       required:

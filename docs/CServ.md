@@ -12,6 +12,7 @@ Nome | Tipo | Descrição | Comentários
 **cNBS** | **string** | Código NBS correspondente ao serviço prestado, seguindo a versão 2.0, conforme Anexo B. | [optional] 
 **cNatOp** | **string** | Código de natureza da operação.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado. | [optional] 
 **cSitTrib** | **string** | Código de situação tributária.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado. | [optional] 
+**cIntContrib** | **string** | Código interno do contribuinte. | [optional] 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)
 
