@@ -5805,7 +5805,7 @@ paths:
       tags:
       - Nfe
     post:
-      description: "É possível enviar até 20 correções diferentes, sendo que será\
+      description: "é possível enviar até 20 correções diferentes, sendo que será\
         \ válido sempre a última correção enviada.\r\n\r\n**Informações adicionais**:\r\
         \n- Consumo: 1 unidade por requisição."
       operationId: CriarCartaCorrecaoNfe

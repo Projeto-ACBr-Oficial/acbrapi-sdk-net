@@ -513,7 +513,7 @@ namespace ACBrAPI.Sdk.Api
         /// Solicitar correção da NF-e
         /// </summary>
         /// <remarks>
-        /// É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+        /// é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
@@ -525,7 +525,7 @@ namespace ACBrAPI.Sdk.Api
         /// Solicitar correção da NF-e
         /// </summary>
         /// <remarks>
-        /// É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+        /// é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
@@ -1314,7 +1314,7 @@ namespace ACBrAPI.Sdk.Api
         /// Solicitar correção da NF-e
         /// </summary>
         /// <remarks>
-        /// É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+        /// é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
@@ -1327,7 +1327,7 @@ namespace ACBrAPI.Sdk.Api
         /// Solicitar correção da NF-e
         /// </summary>
         /// <remarks>
-        /// É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+        /// é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </remarks>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
@@ -4880,7 +4880,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Solicitar correção da NF-e É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+        /// Solicitar correção da NF-e é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
@@ -4893,7 +4893,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Solicitar correção da NF-e É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+        /// Solicitar correção da NF-e é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
@@ -4949,7 +4949,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Solicitar correção da NF-e É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+        /// Solicitar correção da NF-e é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>
@@ -4963,7 +4963,7 @@ namespace ACBrAPI.Sdk.Api
         }
 
         /// <summary>
-        /// Solicitar correção da NF-e É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+        /// Solicitar correção da NF-e é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
         /// </summary>
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID único da NF-e gerado pela API.</param>

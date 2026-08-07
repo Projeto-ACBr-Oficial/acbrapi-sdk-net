@@ -2309,7 +2309,7 @@ catch (ApiException e)
 
 Solicitar correção da NF-e
 
-É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+é possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 ```csharp
