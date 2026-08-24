@@ -9,6 +9,7 @@ Nome | Tipo | Descrição | Comentários
 **gDif** | [**NfeSefazDif**](NfeSefazDif.md) |  | [optional] 
 **gDevTrib** | [**NfeSefazDevTrib**](NfeSefazDevTrib.md) |  | [optional] 
 **gRed** | [**NfeSefazRed**](NfeSefazRed.md) |  | [optional] 
+**gALCZFMCBS** | [**NfeSefazALCZFMCBSNFe**](NfeSefazALCZFMCBSNFe.md) |  | [optional] 
 **vCBS** | **decimal?** | Valor da CBS. | 
 
 [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar à lista de API]](../README.md#documentation-for-api-endpoints) [[Voltar ao README]](../README.md)

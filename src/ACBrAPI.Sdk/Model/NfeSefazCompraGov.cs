@@ -36,10 +36,11 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NfeSefazCompraGov" /> class.
         /// </summary>
-        /// <param name="tpEnteGov">Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios (required).</param>
-        /// <param name="pRedutor">Percentual de redução de aliquota em compra governamental. (required).</param>
-        /// <param name="tpOperGov">Tipo da operação com ente governamental:  * 1 - Fornecimento  * 2 - Recebimento do Pagamento (required).</param>
-        public NfeSefazCompraGov(int? tpEnteGov = default(int?), decimal? pRedutor = default(decimal?), int? tpOperGov = default(int?))
+        /// <param name="tpEnteGov">Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios  * 5 - Consórcio Público  * 6 - Comitê Gestor do IBS (required).</param>
+        /// <param name="pRedutor">Percentual de redução de alíquota em compra governamental. (required).</param>
+        /// <param name="tpOperGov">Tipo da operação com ente governamental:  * 1 - Fornecimento com pagamento posterior  * 2 - Recebimento do pagamento com fornecimento já realizado  * 3 - Fornecimento com pagamento já realizado  * 4 - Recebimento do pagamento com fornecimento posterior (required).</param>
+        /// <param name="refDFeAnt">Chave de acesso do documento fiscal anterior.  Deverá ser informado para tpOperGov 2 e 3 e vedado para os tipos 1 e 4.  No caso do tpOperGov 2 aceitará apenas uma chave referenciada, no tipo 3 poderá aceitar múltiplas chaves  Obs: a chave de acesso deverá ser de um emitente com o mesmo CNPJ base..</param>
+        public NfeSefazCompraGov(int? tpEnteGov = default(int?), decimal? pRedutor = default(decimal?), int? tpOperGov = default(int?), List<string> refDFeAnt = default(List<string>))
         {
             // to ensure "tpEnteGov" is required (not null)
             if (tpEnteGov == null)
@@ -59,28 +60,36 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("tpOperGov is a required property for NfeSefazCompraGov and cannot be null");
             }
             this.tpOperGov = tpOperGov;
+            this.refDFeAnt = refDFeAnt;
         }
 
         /// <summary>
-        /// Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios
+        /// Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios  * 5 - Consórcio Público  * 6 - Comitê Gestor do IBS
         /// </summary>
-        /// <value>Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios</value>
+        /// <value>Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios  * 5 - Consórcio Público  * 6 - Comitê Gestor do IBS</value>
         [DataMember(Name = "tpEnteGov", IsRequired = true, EmitDefaultValue = true)]
         public int? tpEnteGov { get; set; }
 
         /// <summary>
-        /// Percentual de redução de aliquota em compra governamental.
+        /// Percentual de redução de alíquota em compra governamental.
         /// </summary>
-        /// <value>Percentual de redução de aliquota em compra governamental.</value>
+        /// <value>Percentual de redução de alíquota em compra governamental.</value>
         [DataMember(Name = "pRedutor", IsRequired = true, EmitDefaultValue = true)]
         public decimal? pRedutor { get; set; }
 
         /// <summary>
-        /// Tipo da operação com ente governamental:  * 1 - Fornecimento  * 2 - Recebimento do Pagamento
+        /// Tipo da operação com ente governamental:  * 1 - Fornecimento com pagamento posterior  * 2 - Recebimento do pagamento com fornecimento já realizado  * 3 - Fornecimento com pagamento já realizado  * 4 - Recebimento do pagamento com fornecimento posterior
         /// </summary>
-        /// <value>Tipo da operação com ente governamental:  * 1 - Fornecimento  * 2 - Recebimento do Pagamento</value>
+        /// <value>Tipo da operação com ente governamental:  * 1 - Fornecimento com pagamento posterior  * 2 - Recebimento do pagamento com fornecimento já realizado  * 3 - Fornecimento com pagamento já realizado  * 4 - Recebimento do pagamento com fornecimento posterior</value>
         [DataMember(Name = "tpOperGov", IsRequired = true, EmitDefaultValue = true)]
         public int? tpOperGov { get; set; }
+
+        /// <summary>
+        /// Chave de acesso do documento fiscal anterior.  Deverá ser informado para tpOperGov 2 e 3 e vedado para os tipos 1 e 4.  No caso do tpOperGov 2 aceitará apenas uma chave referenciada, no tipo 3 poderá aceitar múltiplas chaves  Obs: a chave de acesso deverá ser de um emitente com o mesmo CNPJ base.
+        /// </summary>
+        /// <value>Chave de acesso do documento fiscal anterior.  Deverá ser informado para tpOperGov 2 e 3 e vedado para os tipos 1 e 4.  No caso do tpOperGov 2 aceitará apenas uma chave referenciada, no tipo 3 poderá aceitar múltiplas chaves  Obs: a chave de acesso deverá ser de um emitente com o mesmo CNPJ base.</value>
+        [DataMember(Name = "refDFeAnt", EmitDefaultValue = false)]
+        public List<string> refDFeAnt { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -93,6 +102,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  tpEnteGov: ").Append(tpEnteGov).Append("\n");
             sb.Append("  pRedutor: ").Append(pRedutor).Append("\n");
             sb.Append("  tpOperGov: ").Append(tpOperGov).Append("\n");
+            sb.Append("  refDFeAnt: ").Append(refDFeAnt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -142,6 +152,12 @@ namespace ACBrAPI.Sdk.Model
                     this.tpOperGov == input.tpOperGov ||
                     (this.tpOperGov != null &&
                     this.tpOperGov.Equals(input.tpOperGov))
+                ) && 
+                (
+                    this.refDFeAnt == input.refDFeAnt ||
+                    this.refDFeAnt != null &&
+                    input.refDFeAnt != null &&
+                    this.refDFeAnt.SequenceEqual(input.refDFeAnt)
                 );
         }
 
@@ -165,6 +181,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.tpOperGov != null)
                 {
                     hashCode = (hashCode * 59) + this.tpOperGov.GetHashCode();
+                }
+                if (this.refDFeAnt != null)
+                {
+                    hashCode = (hashCode * 59) + this.refDFeAnt.GetHashCode();
                 }
                 return hashCode;
             }

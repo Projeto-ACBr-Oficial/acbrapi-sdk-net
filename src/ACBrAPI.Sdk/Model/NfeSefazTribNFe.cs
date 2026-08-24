@@ -46,7 +46,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="gEstornoCred">gEstornoCred.</param>
         /// <param name="gCredPresOper">gCredPresOper.</param>
         /// <param name="gCredPresIBSZFM">gCredPresIBSZFM.</param>
-        public NfeSefazTribNFe(string cST = default(string), string cClassTrib = default(string), int? indDoacao = default(int?), NfeSefazCIBS gIBSCBS = default(NfeSefazCIBS), NfeSefazMonofasia gIBSCBSMono = default(NfeSefazMonofasia), NfeSefazTransfCred gTransfCred = default(NfeSefazTransfCred), NfeSefazAjusteCompet gAjusteCompet = default(NfeSefazAjusteCompet), NfeSefazEstornoCred gEstornoCred = default(NfeSefazEstornoCred), NfeSefazCredPresOper gCredPresOper = default(NfeSefazCredPresOper), NfeSefazCredPresIBSZFM gCredPresIBSZFM = default(NfeSefazCredPresIBSZFM))
+        public NfeSefazTribNFe(string cST = default(string), string cClassTrib = default(string), int? indDoacao = default(int?), NfeSefazCIBSNFe gIBSCBS = default(NfeSefazCIBSNFe), NfeSefazMonofasia gIBSCBSMono = default(NfeSefazMonofasia), NfeSefazTransfCred gTransfCred = default(NfeSefazTransfCred), NfeSefazAjusteCompet gAjusteCompet = default(NfeSefazAjusteCompet), NfeSefazEstornoCred gEstornoCred = default(NfeSefazEstornoCred), NfeSefazCredPresOper gCredPresOper = default(NfeSefazCredPresOper), NfeSefazCredPresIBSZFM gCredPresIBSZFM = default(NfeSefazCredPresIBSZFM))
         {
             // to ensure "cST" is required (not null)
             if (cST == null)
@@ -89,7 +89,7 @@ namespace ACBrAPI.Sdk.Model
         /// Gets or Sets gIBSCBS
         /// </summary>
         [DataMember(Name = "gIBSCBS", EmitDefaultValue = false)]
-        public NfeSefazCIBS gIBSCBS { get; set; }
+        public NfeSefazCIBSNFe gIBSCBS { get; set; }
 
         /// <summary>
         /// Gets or Sets gIBSCBSMono

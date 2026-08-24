@@ -40,8 +40,9 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="gDif">gDif.</param>
         /// <param name="gDevTrib">gDevTrib.</param>
         /// <param name="gRed">gRed.</param>
+        /// <param name="gALCZFMCBS">gALCZFMCBS.</param>
         /// <param name="vCBS">Valor da CBS. (required).</param>
-        public NfeSefazGCBS(decimal? pCBS = default(decimal?), NfeSefazDif gDif = default(NfeSefazDif), NfeSefazDevTrib gDevTrib = default(NfeSefazDevTrib), NfeSefazRed gRed = default(NfeSefazRed), decimal? vCBS = default(decimal?))
+        public NfeSefazGCBS(decimal? pCBS = default(decimal?), NfeSefazDif gDif = default(NfeSefazDif), NfeSefazDevTrib gDevTrib = default(NfeSefazDevTrib), NfeSefazRed gRed = default(NfeSefazRed), NfeSefazALCZFMCBSNFe gALCZFMCBS = default(NfeSefazALCZFMCBSNFe), decimal? vCBS = default(decimal?))
         {
             // to ensure "pCBS" is required (not null)
             if (pCBS == null)
@@ -58,6 +59,7 @@ namespace ACBrAPI.Sdk.Model
             this.gDif = gDif;
             this.gDevTrib = gDevTrib;
             this.gRed = gRed;
+            this.gALCZFMCBS = gALCZFMCBS;
         }
 
         /// <summary>
@@ -86,6 +88,12 @@ namespace ACBrAPI.Sdk.Model
         public NfeSefazRed gRed { get; set; }
 
         /// <summary>
+        /// Gets or Sets gALCZFMCBS
+        /// </summary>
+        [DataMember(Name = "gALCZFMCBS", EmitDefaultValue = false)]
+        public NfeSefazALCZFMCBSNFe gALCZFMCBS { get; set; }
+
+        /// <summary>
         /// Valor da CBS.
         /// </summary>
         /// <value>Valor da CBS.</value>
@@ -104,6 +112,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  gDif: ").Append(gDif).Append("\n");
             sb.Append("  gDevTrib: ").Append(gDevTrib).Append("\n");
             sb.Append("  gRed: ").Append(gRed).Append("\n");
+            sb.Append("  gALCZFMCBS: ").Append(gALCZFMCBS).Append("\n");
             sb.Append("  vCBS: ").Append(vCBS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -161,6 +170,11 @@ namespace ACBrAPI.Sdk.Model
                     this.gRed.Equals(input.gRed))
                 ) && 
                 (
+                    this.gALCZFMCBS == input.gALCZFMCBS ||
+                    (this.gALCZFMCBS != null &&
+                    this.gALCZFMCBS.Equals(input.gALCZFMCBS))
+                ) && 
+                (
                     this.vCBS == input.vCBS ||
                     (this.vCBS != null &&
                     this.vCBS.Equals(input.vCBS))
@@ -191,6 +205,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.gRed != null)
                 {
                     hashCode = (hashCode * 59) + this.gRed.GetHashCode();
+                }
+                if (this.gALCZFMCBS != null)
+                {
+                    hashCode = (hashCode * 59) + this.gALCZFMCBS.GetHashCode();
                 }
                 if (this.vCBS != null)
                 {

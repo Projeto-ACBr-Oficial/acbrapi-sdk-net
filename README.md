@@ -3,8 +3,8 @@
 Biblioteca para uso da [ACBr API](https://www.acbr.api.br) com Microsoft .NET.
 Consultar também a [documentação oficial da ACBr API](https://dev.acbr.api.br/docs).
 
-- Versão da API: 3.1.7
-- Versão do SDK: 3.1.7
+- Versão da API: 3.1.8
+- Versão do SDK: 3.1.8
 
 <a name="frameworks-supported"></a>
 ## Frameworks suportadas
@@ -900,13 +900,14 @@ Classe | Método | Endpoint | Descrição
  - [Model.NfePedidoCartaCorrecao](docs/NfePedidoCartaCorrecao.md)
  - [Model.NfePedidoEmissao](docs/NfePedidoEmissao.md)
  - [Model.NfePedidoEmissaoLote](docs/NfePedidoEmissaoLote.md)
+ - [Model.NfeSefazALCZFMCBSNFe](docs/NfeSefazALCZFMCBSNFe.md)
  - [Model.NfeSefazAdi](docs/NfeSefazAdi.md)
  - [Model.NfeSefazAgropecuario](docs/NfeSefazAgropecuario.md)
  - [Model.NfeSefazAjusteCompet](docs/NfeSefazAjusteCompet.md)
  - [Model.NfeSefazArma](docs/NfeSefazArma.md)
  - [Model.NfeSefazAutXML](docs/NfeSefazAutXML.md)
  - [Model.NfeSefazAvulsa](docs/NfeSefazAvulsa.md)
- - [Model.NfeSefazCIBS](docs/NfeSefazCIBS.md)
+ - [Model.NfeSefazCIBSNFe](docs/NfeSefazCIBSNFe.md)
  - [Model.NfeSefazCIDE](docs/NfeSefazCIDE.md)
  - [Model.NfeSefazCOFINS](docs/NfeSefazCOFINS.md)
  - [Model.NfeSefazCOFINSAliq](docs/NfeSefazCOFINSAliq.md)

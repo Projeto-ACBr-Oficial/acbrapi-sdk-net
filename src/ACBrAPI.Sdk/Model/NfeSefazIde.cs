@@ -48,17 +48,18 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="tpNF">Tipo do Documento Fiscal:  * 0 - Entrada  * 1 - Saída (required).</param>
         /// <param name="idDest">Identificador de Local de destino da operação:  * 1 - Interna  * 2 - Interestadual  * 3 - Exterior (required).</param>
         /// <param name="cMunFG">Código do Município de Ocorrência do Fato Gerador (utilizar a tabela do IBGE). (required).</param>
-        /// <param name="cMunFGIBS">Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando “indPres &#x3D; 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01)..</param>
+        /// <param name="cMunFGIBS">Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando \&quot;indPres &#x3D; 5 (Operação presencial, fora do estabelecimento)\&quot;, e não estiver preenchido o endereço do destinatário (grupo: E05) nem o local de entrega (grupo: G01)..</param>
         /// <param name="tpImp">Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica (required).</param>
-        /// <param name="tpEmis">Forma de emissão da NF-e  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line NFC-e (required).</param>
+        /// <param name="tpEmis">Forma de emissão da NF-e:  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line da NFC-e e da NF-e com DANFE Simplificado Tipo 2 (required).</param>
         /// <param name="cDV">Digito Verificador da Chave de Acesso da NF-e.    *Geramos automaticamente quando nenhum valor é informado.*.</param>
         /// <param name="tpAmb">Identificação do Ambiente:  * 1 - Produção  * 2 - Homologação.</param>
         /// <param name="finNFe">Finalidade da emissão da NF-e:  * 1 - NFe normal  * 2 - NFe complementar  * 3 - NFe de ajuste  * 4 - Devolução/Retorno  * 5 - Nota de crédito  * 6 - Nota de débito (required).</param>
-        /// <param name="tpNFDebito">Tipo de Nota de Débito:  * 01 - Transferência de créditos para Cooperativas  * 02 - Anulação de Crédito por Saídas Imunes/Isentas  * 03 - Débitos de notas fiscais não processadas na apuração  * 04 - Multa e juros  * 05 - Transferência de crédito de sucessão.</param>
+        /// <param name="tpNFDebito">Tipo de Nota de Débito..</param>
         /// <param name="tpNFCredito">Tipo de Nota de Crédito..</param>
         /// <param name="indFinal">Indica operação com consumidor final:  * 0 - Não  * 1 - Consumidor Final (required).</param>
         /// <param name="indPres">Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - NFC-e entrega em domicílio  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros (required).</param>
         /// <param name="indIntermed">Indicador de intermediador/marketplace  * 0 - Operação sem intermediador (em site ou plataforma própria)  * 1 - Operação em site ou plataforma de terceiros (intermediadores/marketplace).</param>
+        /// <param name="cIndOp">Código indicador do local da operação de fornecimento..</param>
         /// <param name="procEmi">Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco  * 4 - emissão de NF-e por Provedor de Assinatura e Autorização - PAA (required).</param>
         /// <param name="verProc">versão do aplicativo utilizado no processo de  emissão. (required).</param>
         /// <param name="dhCont">Informar a data e hora de entrada em contingência contingência no formato  (AAAA-MM-DDThh:mm:ssTZD) ex.: 2012-09-01T13:00:00-03:00..</param>
@@ -66,7 +67,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="nFref">nFref.</param>
         /// <param name="gCompraGov">gCompraGov.</param>
         /// <param name="gPagAntecipado">gPagAntecipado.</param>
-        public NfeSefazIde(int? cUF = default(int?), string cNF = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), DateTime? dhEmi = default(DateTime?), DateTime? dhSaiEnt = default(DateTime?), DateTime? dPrevEntrega = default(DateTime?), int? tpNF = default(int?), int? idDest = default(int?), string cMunFG = default(string), string cMunFGIBS = default(string), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? finNFe = default(int?), string tpNFDebito = default(string), string tpNFCredito = default(string), int? indFinal = default(int?), int? indPres = default(int?), int? indIntermed = default(int?), int? procEmi = default(int?), string verProc = default(string), DateTime? dhCont = default(DateTime?), string xJust = default(string), List<NfeSefazNFref> nFref = default(List<NfeSefazNFref>), NfeSefazCompraGov gCompraGov = default(NfeSefazCompraGov), NfeSefazGPagAntecipado gPagAntecipado = default(NfeSefazGPagAntecipado))
+        public NfeSefazIde(int? cUF = default(int?), string cNF = default(string), string natOp = default(string), int? mod = default(int?), int? serie = default(int?), int? nNF = default(int?), DateTime? dhEmi = default(DateTime?), DateTime? dhSaiEnt = default(DateTime?), DateTime? dPrevEntrega = default(DateTime?), int? tpNF = default(int?), int? idDest = default(int?), string cMunFG = default(string), string cMunFGIBS = default(string), int? tpImp = default(int?), int? tpEmis = default(int?), int? cDV = default(int?), int? tpAmb = default(int?), int? finNFe = default(int?), string tpNFDebito = default(string), string tpNFCredito = default(string), int? indFinal = default(int?), int? indPres = default(int?), int? indIntermed = default(int?), string cIndOp = default(string), int? procEmi = default(int?), string verProc = default(string), DateTime? dhCont = default(DateTime?), string xJust = default(string), List<NfeSefazNFref> nFref = default(List<NfeSefazNFref>), NfeSefazCompraGov gCompraGov = default(NfeSefazCompraGov), NfeSefazGPagAntecipado gPagAntecipado = default(NfeSefazGPagAntecipado))
         {
             // to ensure "cUF" is required (not null)
             if (cUF == null)
@@ -168,6 +169,7 @@ namespace ACBrAPI.Sdk.Model
             this.tpNFDebito = tpNFDebito;
             this.tpNFCredito = tpNFCredito;
             this.indIntermed = indIntermed;
+            this.cIndOp = cIndOp;
             this.dhCont = dhCont;
             this.xJust = xJust;
             this.NFref = nFref;
@@ -261,9 +263,9 @@ namespace ACBrAPI.Sdk.Model
         public string cMunFG { get; set; }
 
         /// <summary>
-        /// Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando “indPres &#x3D; 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01).
+        /// Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando \&quot;indPres &#x3D; 5 (Operação presencial, fora do estabelecimento)\&quot;, e não estiver preenchido o endereço do destinatário (grupo: E05) nem o local de entrega (grupo: G01).
         /// </summary>
-        /// <value>Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando “indPres &#x3D; 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01).</value>
+        /// <value>Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando \&quot;indPres &#x3D; 5 (Operação presencial, fora do estabelecimento)\&quot;, e não estiver preenchido o endereço do destinatário (grupo: E05) nem o local de entrega (grupo: G01).</value>
         [DataMember(Name = "cMunFGIBS", EmitDefaultValue = true)]
         public string cMunFGIBS { get; set; }
 
@@ -275,9 +277,9 @@ namespace ACBrAPI.Sdk.Model
         public int? tpImp { get; set; }
 
         /// <summary>
-        /// Forma de emissão da NF-e  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line NFC-e
+        /// Forma de emissão da NF-e:  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line da NFC-e e da NF-e com DANFE Simplificado Tipo 2
         /// </summary>
-        /// <value>Forma de emissão da NF-e  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line NFC-e</value>
+        /// <value>Forma de emissão da NF-e:  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line da NFC-e e da NF-e com DANFE Simplificado Tipo 2</value>
         [DataMember(Name = "tpEmis", IsRequired = true, EmitDefaultValue = true)]
         public int? tpEmis { get; set; }
 
@@ -303,9 +305,9 @@ namespace ACBrAPI.Sdk.Model
         public int? finNFe { get; set; }
 
         /// <summary>
-        /// Tipo de Nota de Débito:  * 01 - Transferência de créditos para Cooperativas  * 02 - Anulação de Crédito por Saídas Imunes/Isentas  * 03 - Débitos de notas fiscais não processadas na apuração  * 04 - Multa e juros  * 05 - Transferência de crédito de sucessão
+        /// Tipo de Nota de Débito.
         /// </summary>
-        /// <value>Tipo de Nota de Débito:  * 01 - Transferência de créditos para Cooperativas  * 02 - Anulação de Crédito por Saídas Imunes/Isentas  * 03 - Débitos de notas fiscais não processadas na apuração  * 04 - Multa e juros  * 05 - Transferência de crédito de sucessão</value>
+        /// <value>Tipo de Nota de Débito.</value>
         [DataMember(Name = "tpNFDebito", EmitDefaultValue = true)]
         public string tpNFDebito { get; set; }
 
@@ -336,6 +338,13 @@ namespace ACBrAPI.Sdk.Model
         /// <value>Indicador de intermediador/marketplace  * 0 - Operação sem intermediador (em site ou plataforma própria)  * 1 - Operação em site ou plataforma de terceiros (intermediadores/marketplace)</value>
         [DataMember(Name = "indIntermed", EmitDefaultValue = true)]
         public int? indIntermed { get; set; }
+
+        /// <summary>
+        /// Código indicador do local da operação de fornecimento.
+        /// </summary>
+        /// <value>Código indicador do local da operação de fornecimento.</value>
+        [DataMember(Name = "cIndOp", EmitDefaultValue = true)]
+        public string cIndOp { get; set; }
 
         /// <summary>
         /// Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco  * 4 - emissão de NF-e por Provedor de Assinatura e Autorização - PAA
@@ -414,6 +423,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  indFinal: ").Append(indFinal).Append("\n");
             sb.Append("  indPres: ").Append(indPres).Append("\n");
             sb.Append("  indIntermed: ").Append(indIntermed).Append("\n");
+            sb.Append("  cIndOp: ").Append(cIndOp).Append("\n");
             sb.Append("  procEmi: ").Append(procEmi).Append("\n");
             sb.Append("  verProc: ").Append(verProc).Append("\n");
             sb.Append("  dhCont: ").Append(dhCont).Append("\n");
@@ -572,6 +582,11 @@ namespace ACBrAPI.Sdk.Model
                     this.indIntermed.Equals(input.indIntermed))
                 ) && 
                 (
+                    this.cIndOp == input.cIndOp ||
+                    (this.cIndOp != null &&
+                    this.cIndOp.Equals(input.cIndOp))
+                ) && 
+                (
                     this.procEmi == input.procEmi ||
                     (this.procEmi != null &&
                     this.procEmi.Equals(input.procEmi))
@@ -709,6 +724,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.indIntermed != null)
                 {
                     hashCode = (hashCode * 59) + this.indIntermed.GetHashCode();
+                }
+                if (this.cIndOp != null)
+                {
+                    hashCode = (hashCode * 59) + this.cIndOp.GetHashCode();
                 }
                 if (this.procEmi != null)
                 {

@@ -41,7 +41,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="iM">Inscrição Municipal.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
         /// <param name="cNAE">CNAE Fiscal.    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
         /// <param name="cRT">Código de Regime Tributário.  Este campo será obrigatoriamente preenchido com:  * 1 - Simples Nacional  * 2 - Simples Nacional - excesso de sublimite de receita bruta  * 3 - Regime Normal  * 4 - Simples Nacional - Microempreendedor individual - MEI    *Caso não seja informado, será utilizado o do cadastro da empresa.*.</param>
-        public NfeSefazEmit(string cNPJ = default(string), string cPF = default(string), string xNome = default(string), string xFant = default(string), NfeSefazEnderEmi enderEmit = default(NfeSefazEnderEmi), string iE = default(string), string iEST = default(string), string iM = default(string), string cNAE = default(string), int? cRT = default(int?))
+        /// <param name="iSUFEmit">Inscrição do emitente na Suframa..</param>
+        public NfeSefazEmit(string cNPJ = default(string), string cPF = default(string), string xNome = default(string), string xFant = default(string), NfeSefazEnderEmi enderEmit = default(NfeSefazEnderEmi), string iE = default(string), string iEST = default(string), string iM = default(string), string cNAE = default(string), int? cRT = default(int?), string iSUFEmit = default(string))
         {
             this.CNPJ = cNPJ;
             this.CPF = cPF;
@@ -53,6 +54,7 @@ namespace ACBrAPI.Sdk.Model
             this.IM = iM;
             this.CNAE = cNAE;
             this.CRT = cRT;
+            this.ISUFEmit = iSUFEmit;
         }
 
         /// <summary>
@@ -125,6 +127,13 @@ namespace ACBrAPI.Sdk.Model
         public int? CRT { get; set; }
 
         /// <summary>
+        /// Inscrição do emitente na Suframa.
+        /// </summary>
+        /// <value>Inscrição do emitente na Suframa.</value>
+        [DataMember(Name = "ISUFEmit", EmitDefaultValue = true)]
+        public string ISUFEmit { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -142,6 +151,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  IM: ").Append(IM).Append("\n");
             sb.Append("  CNAE: ").Append(CNAE).Append("\n");
             sb.Append("  CRT: ").Append(CRT).Append("\n");
+            sb.Append("  ISUFEmit: ").Append(ISUFEmit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -226,6 +236,11 @@ namespace ACBrAPI.Sdk.Model
                     this.CRT == input.CRT ||
                     (this.CRT != null &&
                     this.CRT.Equals(input.CRT))
+                ) && 
+                (
+                    this.ISUFEmit == input.ISUFEmit ||
+                    (this.ISUFEmit != null &&
+                    this.ISUFEmit.Equals(input.ISUFEmit))
                 );
         }
 
@@ -277,6 +292,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.CRT != null)
                 {
                     hashCode = (hashCode * 59) + this.CRT.GetHashCode();
+                }
+                if (this.ISUFEmit != null)
+                {
+                    hashCode = (hashCode * 59) + this.ISUFEmit.GetHashCode();
                 }
                 return hashCode;
             }

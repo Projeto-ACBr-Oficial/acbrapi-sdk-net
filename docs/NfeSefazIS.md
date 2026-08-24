@@ -9,7 +9,7 @@ Nome | Tipo | Descrição | Comentários
 **cClassTribIS** | **string** |  | [optional] 
 **vBCIS** | **decimal?** | Valor do BC. | [optional] 
 **pIS** | **decimal?** | Alíquota do Imposto Seletivo (percentual). | [optional] 
-**pISEspec** | **decimal?** | Alíquota do Imposto Seletivo (por valor). | [optional] 
+**adRemIS** | **decimal?** | Alíquota do Imposto Seletivo (por valor). | [optional] 
 **uTrib** | **string** | Unidade de medida apropriada especificada em Lei Ordinaria para fins de apuração do Imposto Seletivo. | [optional] 
 **qTrib** | **decimal?** | Quantidade com abse no campo uTrib informado. | [optional] 
 **vIS** | **decimal?** | Valor do Imposto Seletivo calculado. | [optional] 

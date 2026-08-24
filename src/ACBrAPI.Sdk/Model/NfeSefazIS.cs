@@ -40,11 +40,11 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="cClassTribIS">cClassTribIS.</param>
         /// <param name="vBCIS">Valor do BC..</param>
         /// <param name="pIS">Alíquota do Imposto Seletivo (percentual)..</param>
-        /// <param name="pISEspec">Alíquota do Imposto Seletivo (por valor)..</param>
+        /// <param name="adRemIS">Alíquota do Imposto Seletivo (por valor)..</param>
         /// <param name="uTrib">Unidade de medida apropriada especificada em Lei Ordinaria para fins de apuração do Imposto Seletivo..</param>
         /// <param name="qTrib">Quantidade com abse no campo uTrib informado..</param>
         /// <param name="vIS">Valor do Imposto Seletivo calculado..</param>
-        public NfeSefazIS(string cSTIS = default(string), string cClassTribIS = default(string), decimal? vBCIS = default(decimal?), decimal? pIS = default(decimal?), decimal? pISEspec = default(decimal?), string uTrib = default(string), decimal? qTrib = default(decimal?), decimal? vIS = default(decimal?))
+        public NfeSefazIS(string cSTIS = default(string), string cClassTribIS = default(string), decimal? vBCIS = default(decimal?), decimal? pIS = default(decimal?), decimal? adRemIS = default(decimal?), string uTrib = default(string), decimal? qTrib = default(decimal?), decimal? vIS = default(decimal?))
         {
             // to ensure "cSTIS" is required (not null)
             if (cSTIS == null)
@@ -55,7 +55,7 @@ namespace ACBrAPI.Sdk.Model
             this.cClassTribIS = cClassTribIS;
             this.vBCIS = vBCIS;
             this.pIS = pIS;
-            this.pISEspec = pISEspec;
+            this.adRemIS = adRemIS;
             this.uTrib = uTrib;
             this.qTrib = qTrib;
             this.vIS = vIS;
@@ -92,8 +92,8 @@ namespace ACBrAPI.Sdk.Model
         /// Alíquota do Imposto Seletivo (por valor).
         /// </summary>
         /// <value>Alíquota do Imposto Seletivo (por valor).</value>
-        [DataMember(Name = "pISEspec", EmitDefaultValue = true)]
-        public decimal? pISEspec { get; set; }
+        [DataMember(Name = "adRemIS", EmitDefaultValue = true)]
+        public decimal? adRemIS { get; set; }
 
         /// <summary>
         /// Unidade de medida apropriada especificada em Lei Ordinaria para fins de apuração do Imposto Seletivo.
@@ -128,7 +128,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  cClassTribIS: ").Append(cClassTribIS).Append("\n");
             sb.Append("  vBCIS: ").Append(vBCIS).Append("\n");
             sb.Append("  pIS: ").Append(pIS).Append("\n");
-            sb.Append("  pISEspec: ").Append(pISEspec).Append("\n");
+            sb.Append("  adRemIS: ").Append(adRemIS).Append("\n");
             sb.Append("  uTrib: ").Append(uTrib).Append("\n");
             sb.Append("  qTrib: ").Append(qTrib).Append("\n");
             sb.Append("  vIS: ").Append(vIS).Append("\n");
@@ -188,9 +188,9 @@ namespace ACBrAPI.Sdk.Model
                     this.pIS.Equals(input.pIS))
                 ) && 
                 (
-                    this.pISEspec == input.pISEspec ||
-                    (this.pISEspec != null &&
-                    this.pISEspec.Equals(input.pISEspec))
+                    this.adRemIS == input.adRemIS ||
+                    (this.adRemIS != null &&
+                    this.adRemIS.Equals(input.adRemIS))
                 ) && 
                 (
                     this.uTrib == input.uTrib ||
@@ -234,9 +234,9 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.pIS.GetHashCode();
                 }
-                if (this.pISEspec != null)
+                if (this.adRemIS != null)
                 {
-                    hashCode = (hashCode * 59) + this.pISEspec.GetHashCode();
+                    hashCode = (hashCode * 59) + this.adRemIS.GetHashCode();
                 }
                 if (this.uTrib != null)
                 {
@@ -273,10 +273,10 @@ namespace ACBrAPI.Sdk.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pIS, must be a value greater than or equal to 0.", new [] { "pIS" });
             }
 
-            // pISEspec (decimal?) minimum
-            if (this.pISEspec < (decimal?)0)
+            // adRemIS (decimal?) minimum
+            if (this.adRemIS < (decimal?)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for pISEspec, must be a value greater than or equal to 0.", new [] { "pISEspec" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for adRemIS, must be a value greater than or equal to 0.", new [] { "adRemIS" });
             }
 
             // uTrib (string) maxLength
