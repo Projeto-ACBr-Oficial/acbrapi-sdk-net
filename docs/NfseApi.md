@@ -14,9 +14,7 @@ Todas as URIs relativas a *https://prod.acbr.api.br*
 | [**ConsultarLoteNfse**](NfseApi.md#consultarlotenfse) | **GET** /nfse/lotes/{id} | Consultar lote de NFS-e |
 | [**ConsultarMetadados**](NfseApi.md#consultarmetadados) | **GET** /nfse/cidades/{codigo_ibge} | Consultar metadados |
 | [**ConsultarNfse**](NfseApi.md#consultarnfse) | **GET** /nfse/{id} | Consultar NFS-e |
-| [**EmitirLoteNfse**](NfseApi.md#emitirlotenfse) | **POST** /nfse/lotes | Emitir lote de NFS-e |
 | [**EmitirLoteNfseDps**](NfseApi.md#emitirlotenfsedps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e |
-| [**EmitirNfse**](NfseApi.md#emitirnfse) | **POST** /nfse | Emitir NFS-e |
 | [**EmitirNfseDps**](NfseApi.md#emitirnfsedps) | **POST** /nfse/dps | Emitir NFS-e |
 | [**ListarLotesNfse**](NfseApi.md#listarlotesnfse) | **GET** /nfse/lotes | Listar lotes de NFS-e |
 | [**ListarNfse**](NfseApi.md#listarnfse) | **GET** /nfse | Listar NFS-e |
@@ -999,104 +997,6 @@ catch (ApiException e)
 
 [[Voltar ao topo]](#) [[Voltar à listagem da API]](../README.md#documentation-for-api-endpoints) [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar ao README]](../README.md)
 
-<a name="emitirlotenfse"></a>
-# **EmitirLoteNfse**
-> RpsLote EmitirLoteNfse (RpsPedidoEmissaoLote body)
-
-Emitir lote de NFS-e
-
-**Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-
-### Exemplo
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using ACBrAPI.Sdk.Api;
-using ACBrAPI.Sdk.Client;
-using ACBrAPI.Sdk.Model;
-
-namespace Example
-{
-    public class EmitirLoteNfseExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://prod.acbr.api.br";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new NfseApi(httpClient, config, httpClientHandler);
-            var body = new RpsPedidoEmissaoLote(); // RpsPedidoEmissaoLote | 
-
-            try
-            {
-                // Emitir lote de NFS-e
-                RpsLote result = apiInstance.EmitirLoteNfse(body);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling NfseApi.EmitirLoteNfse: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Usando a variante EmitirLoteNfseWithHttpInfo
-Esses métodos retornam um objeto ApiResponse que contêm os dados da resposta, o código de status e os headers HTTP.
-
-```csharp
-try
-{
-    // Emitir lote de NFS-e
-    ApiResponse<RpsLote> response = apiInstance.EmitirLoteNfseWithHttpInfo(body);
-    Debug.Write("Código de status: " + response.StatusCode);
-    Debug.Write("Headers da resposta: " + response.Headers);
-    Debug.Write("Conteúdo da resposta: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exceção ao chamar NfseApi.EmitirLoteNfseWithHttpInfo: " + e.Message);
-    Debug.Print("Código de status: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parâmetros
-
-| Nome | Tipo | Descrição | Comentários |
-|------|------|-------------|-------|
-| **body** | [**RpsPedidoEmissaoLote**](RpsPedidoEmissaoLote.md) |  |  |
-
-### Tipo de retorno
-
-[**RpsLote**](RpsLote.md)
-
-### Autorização
-
-[oauth2](../README.md#oauth2)
-
-### Headers da requisição HTTP
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### Detalhes da resposta HTTP
-| Código status | Descrição | Headers da resposta |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-[[Voltar ao topo]](#) [[Voltar à listagem da API]](../README.md#documentation-for-api-endpoints) [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar ao README]](../README.md)
-
 <a name="emitirlotenfsedps"></a>
 # **EmitirLoteNfseDps**
 > RpsLote EmitirLoteNfseDps (NfseLoteDpsPedidoEmissao body)
@@ -1177,104 +1077,6 @@ catch (ApiException e)
 ### Tipo de retorno
 
 [**RpsLote**](RpsLote.md)
-
-### Autorização
-
-[oauth2](../README.md#oauth2)
-
-### Headers da requisição HTTP
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### Detalhes da resposta HTTP
-| Código status | Descrição | Headers da resposta |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-[[Voltar ao topo]](#) [[Voltar à listagem da API]](../README.md#documentation-for-api-endpoints) [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar ao README]](../README.md)
-
-<a name="emitirnfse"></a>
-# **EmitirNfse**
-> Nfse EmitirNfse (NfsePedidoEmissao body)
-
-Emitir NFS-e
-
-**Informações adicionais**:  - Consumo: 1 unidade por requisição.
-
-### Exemplo
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using ACBrAPI.Sdk.Api;
-using ACBrAPI.Sdk.Client;
-using ACBrAPI.Sdk.Model;
-
-namespace Example
-{
-    public class EmitirNfseExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://prod.acbr.api.br";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new NfseApi(httpClient, config, httpClientHandler);
-            var body = new NfsePedidoEmissao(); // NfsePedidoEmissao | 
-
-            try
-            {
-                // Emitir NFS-e
-                Nfse result = apiInstance.EmitirNfse(body);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling NfseApi.EmitirNfse: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Usando a variante EmitirNfseWithHttpInfo
-Esses métodos retornam um objeto ApiResponse que contêm os dados da resposta, o código de status e os headers HTTP.
-
-```csharp
-try
-{
-    // Emitir NFS-e
-    ApiResponse<Nfse> response = apiInstance.EmitirNfseWithHttpInfo(body);
-    Debug.Write("Código de status: " + response.StatusCode);
-    Debug.Write("Headers da resposta: " + response.Headers);
-    Debug.Write("Conteúdo da resposta: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exceção ao chamar NfseApi.EmitirNfseWithHttpInfo: " + e.Message);
-    Debug.Print("Código de status: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parâmetros
-
-| Nome | Tipo | Descrição | Comentários |
-|------|------|-------------|-------|
-| **body** | [**NfsePedidoEmissao**](NfsePedidoEmissao.md) |  |  |
-
-### Tipo de retorno
-
-[**Nfse**](Nfse.md)
 
 ### Autorização
 

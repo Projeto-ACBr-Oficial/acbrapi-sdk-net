@@ -3,8 +3,8 @@
 Biblioteca para uso da [ACBr API](https://www.acbr.api.br) com Microsoft .NET.
 Consultar também a [documentação oficial da ACBr API](https://dev.acbr.api.br/docs).
 
-- Versão da API: 3.1.8
-- Versão do SDK: 3.1.8
+- Versão da API: 3.1.9
+- Versão do SDK: 3.1.9
 
 <a name="frameworks-supported"></a>
 ## Frameworks suportadas
@@ -355,9 +355,7 @@ Classe | Método | Endpoint | Descrição
 *NfseApi* | [**ConsultarLoteNfse**](docs/NfseApi.md#consultarlotenfse) | **GET** /nfse/lotes/{id} | Consultar lote de NFS-e
 *NfseApi* | [**ConsultarMetadados**](docs/NfseApi.md#consultarmetadados) | **GET** /nfse/cidades/{codigo_ibge} | Consultar metadados
 *NfseApi* | [**ConsultarNfse**](docs/NfseApi.md#consultarnfse) | **GET** /nfse/{id} | Consultar NFS-e
-*NfseApi* | [**EmitirLoteNfse**](docs/NfseApi.md#emitirlotenfse) | **POST** /nfse/lotes | Emitir lote de NFS-e
 *NfseApi* | [**EmitirLoteNfseDps**](docs/NfseApi.md#emitirlotenfsedps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e
-*NfseApi* | [**EmitirNfse**](docs/NfseApi.md#emitirnfse) | **POST** /nfse | Emitir NFS-e
 *NfseApi* | [**EmitirNfseDps**](docs/NfseApi.md#emitirnfsedps) | **POST** /nfse/dps | Emitir NFS-e
 *NfseApi* | [**ListarLotesNfse**](docs/NfseApi.md#listarlotesnfse) | **GET** /nfse/lotes | Listar lotes de NFS-e
 *NfseApi* | [**ListarNfse**](docs/NfseApi.md#listarnfse) | **GET** /nfse | Listar NFS-e
@@ -1054,7 +1052,6 @@ Classe | Método | Endpoint | Descrição
  - [Model.NfseLoteDpsPedidoEmissao](docs/NfseLoteDpsPedidoEmissao.md)
  - [Model.NfseMensagemRetorno](docs/NfseMensagemRetorno.md)
  - [Model.NfsePedidoCancelamento](docs/NfsePedidoCancelamento.md)
- - [Model.NfsePedidoEmissao](docs/NfsePedidoEmissao.md)
  - [Model.NfsePedidoSincronizacao](docs/NfsePedidoSincronizacao.md)
  - [Model.NfseSincronizacao](docs/NfseSincronizacao.md)
  - [Model.RTCInfoDest](docs/RTCInfoDest.md)
@@ -1081,11 +1078,8 @@ Classe | Método | Endpoint | Descrição
  - [Model.RpsDadosTomador](docs/RpsDadosTomador.md)
  - [Model.RpsDadosTomadorEndereco](docs/RpsDadosTomadorEndereco.md)
  - [Model.RpsIdentificacao](docs/RpsIdentificacao.md)
- - [Model.RpsIdentificacaoPrestador](docs/RpsIdentificacaoPrestador.md)
  - [Model.RpsLote](docs/RpsLote.md)
  - [Model.RpsLoteListagem](docs/RpsLoteListagem.md)
- - [Model.RpsPedidoEmissao](docs/RpsPedidoEmissao.md)
- - [Model.RpsPedidoEmissaoLote](docs/RpsPedidoEmissaoLote.md)
  - [Model.RpsServicoValores](docs/RpsServicoValores.md)
  - [Model.Serv](docs/Serv.md)
  - [Model.Substituicao](docs/Substituicao.md)

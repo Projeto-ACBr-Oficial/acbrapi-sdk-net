@@ -11,7 +11,7 @@ info:
     \ de corpo**\r\n- `grant_type=client_credentials&client_id=SEU_CLIENT_ID&client_secret=SEU_CLIENT_SECRET&scope=empresa%20nfe`\r\
     \n\r\n**Uso do token nas requisições**\r\n- `Authorization: Bearer SEU_ACCESS_TOKEN`"
   title: ACBr API
-  version: 3.1.8
+  version: 3.1.9
 servers:
 - url: https://prod.acbr.api.br/
 security:
@@ -6188,28 +6188,6 @@ paths:
       summary: Listar NFS-e
       tags:
       - Nfse
-    post:
-      deprecated: true
-      description: "**Informações adicionais**:\r\n- Consumo: 1 unidade por requisiç\
-        ão."
-      operationId: EmitirNfse
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/NfsePedidoEmissao'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Nfse'
-          description: Successful response
-      summary: Emitir NFS-e
-      tags:
-      - Nfse
-      x-codegen-request-body-name: body
   /nfse/cidades:
     get:
       description: Fornece uma relação completa de todos os municípios atendidos pela
@@ -6347,27 +6325,6 @@ paths:
       summary: Listar lotes de NFS-e
       tags:
       - Nfse
-    post:
-      deprecated: true
-      description: "**Informações adicionais**:\r\n- Consumo: 1 unidade por NFS-e."
-      operationId: EmitirLoteNfse
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RpsPedidoEmissaoLote'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RpsLote'
-          description: Successful response
-      summary: Emitir lote de NFS-e
-      tags:
-      - Nfse
-      x-codegen-request-body-name: body
   /nfse/lotes/{id}:
     get:
       description: Consulta os detalhes de um lote já existente. Forneça o ID único
@@ -11270,1634 +11227,6 @@ components:
             - token
             type: string
           type: array
-      type: object
-    RpsPedidoEmissaoLote:
-      example:
-        lista_rps:
-        - servicos:
-          - codigo_cnae: codigo_cnae
-            tipo_tributacao: 2
-            discriminacao: discriminacao
-            item_lista_servico: item_lista_servico
-            unidade: unidade
-            iss_retido: false
-            exigibilidade_iss: 7
-            numero_processo: numero_processo
-            codigo_tributacao_municipio: codigo_tributacao_municipio
-            responsavel_retencao: 5
-            valores:
-              aliquota_cofins: 6.683562403749608
-              aliquota_ir: 9.018348186070783
-              valor_deducoes: 4.145608029883936
-              valor_pis: 7.386281948385884
-              valor_servicos: 2.027123023002322
-              valor_ir: 1.4894159098541704
-              valor_csll: 6.84685269835264
-              aliquota_pis: 9.369310271410669
-              desconto_condicionado: 6.965117697638846
-              valor_cofins: 1.2315135367772556
-              aliquota_csll: 6.438423552598547
-              valor_inss: 1.0246457001441578
-              valor_outras_retencoes: 7.457744773683766
-              valor_iss: 1.1730742509559433
-              valor_liquido: 5.025004791520295
-              aliquota_iss: 9.965781217890562
-              aliquota_inss: 8.762042012749001
-              desconto_incondicionado: 3.5571952270680973
-              valor_iss_retido: 4.965218492984954
-              valor_unitario: 3.616076749251911
-            codigo_pais: codigo_pais
-            codigo_municipio: codigo_municipio
-            quantidade: 0.9301444243932576
-            codigo_municipio_incidencia: codigo_municipio_incidencia
-          tomador:
-            fone: fone
-            endereco:
-              uf: uf
-              cidade: cidade
-              complemento: complemento
-              numero: numero
-              logradouro: logradouro
-              bairro: bairro
-              codigo_pais: "1058"
-              codigo_municipio: codigo_municipio
-              pais: pais
-              cep: cep
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            email: email
-            inscricao_municipal: inscricao_municipal
-          prestador:
-            cpf_cnpj: cpf_cnpj
-          intermediario:
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            inscricao_municipal: inscricao_municipal
-          construcao_civil:
-            codigo_obra: codigo_obra
-            art: art
-          outras_informacoes: outras_informacoes
-          natureza_tributacao: 0
-          referencia: referencia
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-          competencia: 2000-01-23T04:56:07.000+00:00
-        - servicos:
-          - codigo_cnae: codigo_cnae
-            tipo_tributacao: 2
-            discriminacao: discriminacao
-            item_lista_servico: item_lista_servico
-            unidade: unidade
-            iss_retido: false
-            exigibilidade_iss: 7
-            numero_processo: numero_processo
-            codigo_tributacao_municipio: codigo_tributacao_municipio
-            responsavel_retencao: 5
-            valores:
-              aliquota_cofins: 6.683562403749608
-              aliquota_ir: 9.018348186070783
-              valor_deducoes: 4.145608029883936
-              valor_pis: 7.386281948385884
-              valor_servicos: 2.027123023002322
-              valor_ir: 1.4894159098541704
-              valor_csll: 6.84685269835264
-              aliquota_pis: 9.369310271410669
-              desconto_condicionado: 6.965117697638846
-              valor_cofins: 1.2315135367772556
-              aliquota_csll: 6.438423552598547
-              valor_inss: 1.0246457001441578
-              valor_outras_retencoes: 7.457744773683766
-              valor_iss: 1.1730742509559433
-              valor_liquido: 5.025004791520295
-              aliquota_iss: 9.965781217890562
-              aliquota_inss: 8.762042012749001
-              desconto_incondicionado: 3.5571952270680973
-              valor_iss_retido: 4.965218492984954
-              valor_unitario: 3.616076749251911
-            codigo_pais: codigo_pais
-            codigo_municipio: codigo_municipio
-            quantidade: 0.9301444243932576
-            codigo_municipio_incidencia: codigo_municipio_incidencia
-          tomador:
-            fone: fone
-            endereco:
-              uf: uf
-              cidade: cidade
-              complemento: complemento
-              numero: numero
-              logradouro: logradouro
-              bairro: bairro
-              codigo_pais: "1058"
-              codigo_municipio: codigo_municipio
-              pais: pais
-              cep: cep
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            email: email
-            inscricao_municipal: inscricao_municipal
-          prestador:
-            cpf_cnpj: cpf_cnpj
-          intermediario:
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            inscricao_municipal: inscricao_municipal
-          construcao_civil:
-            codigo_obra: codigo_obra
-            art: art
-          outras_informacoes: outras_informacoes
-          natureza_tributacao: 0
-          referencia: referencia
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-          competencia: 2000-01-23T04:56:07.000+00:00
-        - servicos:
-          - codigo_cnae: codigo_cnae
-            tipo_tributacao: 2
-            discriminacao: discriminacao
-            item_lista_servico: item_lista_servico
-            unidade: unidade
-            iss_retido: false
-            exigibilidade_iss: 7
-            numero_processo: numero_processo
-            codigo_tributacao_municipio: codigo_tributacao_municipio
-            responsavel_retencao: 5
-            valores:
-              aliquota_cofins: 6.683562403749608
-              aliquota_ir: 9.018348186070783
-              valor_deducoes: 4.145608029883936
-              valor_pis: 7.386281948385884
-              valor_servicos: 2.027123023002322
-              valor_ir: 1.4894159098541704
-              valor_csll: 6.84685269835264
-              aliquota_pis: 9.369310271410669
-              desconto_condicionado: 6.965117697638846
-              valor_cofins: 1.2315135367772556
-              aliquota_csll: 6.438423552598547
-              valor_inss: 1.0246457001441578
-              valor_outras_retencoes: 7.457744773683766
-              valor_iss: 1.1730742509559433
-              valor_liquido: 5.025004791520295
-              aliquota_iss: 9.965781217890562
-              aliquota_inss: 8.762042012749001
-              desconto_incondicionado: 3.5571952270680973
-              valor_iss_retido: 4.965218492984954
-              valor_unitario: 3.616076749251911
-            codigo_pais: codigo_pais
-            codigo_municipio: codigo_municipio
-            quantidade: 0.9301444243932576
-            codigo_municipio_incidencia: codigo_municipio_incidencia
-          tomador:
-            fone: fone
-            endereco:
-              uf: uf
-              cidade: cidade
-              complemento: complemento
-              numero: numero
-              logradouro: logradouro
-              bairro: bairro
-              codigo_pais: "1058"
-              codigo_municipio: codigo_municipio
-              pais: pais
-              cep: cep
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            email: email
-            inscricao_municipal: inscricao_municipal
-          prestador:
-            cpf_cnpj: cpf_cnpj
-          intermediario:
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            inscricao_municipal: inscricao_municipal
-          construcao_civil:
-            codigo_obra: codigo_obra
-            art: art
-          outras_informacoes: outras_informacoes
-          natureza_tributacao: 0
-          referencia: referencia
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-          competencia: 2000-01-23T04:56:07.000+00:00
-        - servicos:
-          - codigo_cnae: codigo_cnae
-            tipo_tributacao: 2
-            discriminacao: discriminacao
-            item_lista_servico: item_lista_servico
-            unidade: unidade
-            iss_retido: false
-            exigibilidade_iss: 7
-            numero_processo: numero_processo
-            codigo_tributacao_municipio: codigo_tributacao_municipio
-            responsavel_retencao: 5
-            valores:
-              aliquota_cofins: 6.683562403749608
-              aliquota_ir: 9.018348186070783
-              valor_deducoes: 4.145608029883936
-              valor_pis: 7.386281948385884
-              valor_servicos: 2.027123023002322
-              valor_ir: 1.4894159098541704
-              valor_csll: 6.84685269835264
-              aliquota_pis: 9.369310271410669
-              desconto_condicionado: 6.965117697638846
-              valor_cofins: 1.2315135367772556
-              aliquota_csll: 6.438423552598547
-              valor_inss: 1.0246457001441578
-              valor_outras_retencoes: 7.457744773683766
-              valor_iss: 1.1730742509559433
-              valor_liquido: 5.025004791520295
-              aliquota_iss: 9.965781217890562
-              aliquota_inss: 8.762042012749001
-              desconto_incondicionado: 3.5571952270680973
-              valor_iss_retido: 4.965218492984954
-              valor_unitario: 3.616076749251911
-            codigo_pais: codigo_pais
-            codigo_municipio: codigo_municipio
-            quantidade: 0.9301444243932576
-            codigo_municipio_incidencia: codigo_municipio_incidencia
-          tomador:
-            fone: fone
-            endereco:
-              uf: uf
-              cidade: cidade
-              complemento: complemento
-              numero: numero
-              logradouro: logradouro
-              bairro: bairro
-              codigo_pais: "1058"
-              codigo_municipio: codigo_municipio
-              pais: pais
-              cep: cep
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            email: email
-            inscricao_municipal: inscricao_municipal
-          prestador:
-            cpf_cnpj: cpf_cnpj
-          intermediario:
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            inscricao_municipal: inscricao_municipal
-          construcao_civil:
-            codigo_obra: codigo_obra
-            art: art
-          outras_informacoes: outras_informacoes
-          natureza_tributacao: 0
-          referencia: referencia
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-          competencia: 2000-01-23T04:56:07.000+00:00
-        - servicos:
-          - codigo_cnae: codigo_cnae
-            tipo_tributacao: 2
-            discriminacao: discriminacao
-            item_lista_servico: item_lista_servico
-            unidade: unidade
-            iss_retido: false
-            exigibilidade_iss: 7
-            numero_processo: numero_processo
-            codigo_tributacao_municipio: codigo_tributacao_municipio
-            responsavel_retencao: 5
-            valores:
-              aliquota_cofins: 6.683562403749608
-              aliquota_ir: 9.018348186070783
-              valor_deducoes: 4.145608029883936
-              valor_pis: 7.386281948385884
-              valor_servicos: 2.027123023002322
-              valor_ir: 1.4894159098541704
-              valor_csll: 6.84685269835264
-              aliquota_pis: 9.369310271410669
-              desconto_condicionado: 6.965117697638846
-              valor_cofins: 1.2315135367772556
-              aliquota_csll: 6.438423552598547
-              valor_inss: 1.0246457001441578
-              valor_outras_retencoes: 7.457744773683766
-              valor_iss: 1.1730742509559433
-              valor_liquido: 5.025004791520295
-              aliquota_iss: 9.965781217890562
-              aliquota_inss: 8.762042012749001
-              desconto_incondicionado: 3.5571952270680973
-              valor_iss_retido: 4.965218492984954
-              valor_unitario: 3.616076749251911
-            codigo_pais: codigo_pais
-            codigo_municipio: codigo_municipio
-            quantidade: 0.9301444243932576
-            codigo_municipio_incidencia: codigo_municipio_incidencia
-          tomador:
-            fone: fone
-            endereco:
-              uf: uf
-              cidade: cidade
-              complemento: complemento
-              numero: numero
-              logradouro: logradouro
-              bairro: bairro
-              codigo_pais: "1058"
-              codigo_municipio: codigo_municipio
-              pais: pais
-              cep: cep
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            email: email
-            inscricao_municipal: inscricao_municipal
-          prestador:
-            cpf_cnpj: cpf_cnpj
-          intermediario:
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            inscricao_municipal: inscricao_municipal
-          construcao_civil:
-            codigo_obra: codigo_obra
-            art: art
-          outras_informacoes: outras_informacoes
-          natureza_tributacao: 0
-          referencia: referencia
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-          competencia: 2000-01-23T04:56:07.000+00:00
-        ambiente: homologacao
-        referencia: referencia
-      properties:
-        ambiente:
-          description: Identificação do Ambiente.
-          enum:
-          - homologacao
-          - producao
-          nullable: true
-          type: string
-        referencia:
-          description: "Seu identificador único para este documento. Opcional, ajuda\
-            \ a evitar o envio duplicado de um mesmo documento."
-          maxLength: 50
-          type: string
-        lista_rps:
-          items:
-            $ref: '#/components/schemas/RpsPedidoEmissao'
-          maxItems: 50
-          type: array
-      required:
-      - ambiente
-      type: object
-    RpsPedidoEmissao:
-      example:
-        servicos:
-        - codigo_cnae: codigo_cnae
-          tipo_tributacao: 2
-          discriminacao: discriminacao
-          item_lista_servico: item_lista_servico
-          unidade: unidade
-          iss_retido: false
-          exigibilidade_iss: 7
-          numero_processo: numero_processo
-          codigo_tributacao_municipio: codigo_tributacao_municipio
-          responsavel_retencao: 5
-          valores:
-            aliquota_cofins: 6.683562403749608
-            aliquota_ir: 9.018348186070783
-            valor_deducoes: 4.145608029883936
-            valor_pis: 7.386281948385884
-            valor_servicos: 2.027123023002322
-            valor_ir: 1.4894159098541704
-            valor_csll: 6.84685269835264
-            aliquota_pis: 9.369310271410669
-            desconto_condicionado: 6.965117697638846
-            valor_cofins: 1.2315135367772556
-            aliquota_csll: 6.438423552598547
-            valor_inss: 1.0246457001441578
-            valor_outras_retencoes: 7.457744773683766
-            valor_iss: 1.1730742509559433
-            valor_liquido: 5.025004791520295
-            aliquota_iss: 9.965781217890562
-            aliquota_inss: 8.762042012749001
-            desconto_incondicionado: 3.5571952270680973
-            valor_iss_retido: 4.965218492984954
-            valor_unitario: 3.616076749251911
-          codigo_pais: codigo_pais
-          codigo_municipio: codigo_municipio
-          quantidade: 0.9301444243932576
-          codigo_municipio_incidencia: codigo_municipio_incidencia
-        tomador:
-          fone: fone
-          endereco:
-            uf: uf
-            cidade: cidade
-            complemento: complemento
-            numero: numero
-            logradouro: logradouro
-            bairro: bairro
-            codigo_pais: "1058"
-            codigo_municipio: codigo_municipio
-            pais: pais
-            cep: cep
-          nome_razao_social: nome_razao_social
-          cpf_cnpj: cpf_cnpj
-          email: email
-          inscricao_municipal: inscricao_municipal
-        prestador:
-          cpf_cnpj: cpf_cnpj
-        intermediario:
-          nome_razao_social: nome_razao_social
-          cpf_cnpj: cpf_cnpj
-          inscricao_municipal: inscricao_municipal
-        construcao_civil:
-          codigo_obra: codigo_obra
-          art: art
-        outras_informacoes: outras_informacoes
-        natureza_tributacao: 0
-        referencia: referencia
-        data_emissao: 2000-01-23T04:56:07.000+00:00
-        competencia: 2000-01-23T04:56:07.000+00:00
-      properties:
-        referencia:
-          description: "Seu identificador único para este documento. Opcional, ajuda\
-            \ a evitar o envio duplicado de um mesmo documento."
-          type: string
-        data_emissao:
-          description: "Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.\r\
-            \nCaso não informado, será considerada a data/hora da requisição à API."
-          format: date-time
-          type: string
-        competencia:
-          description: "Competência do RPS, no formato AAAA-MM-DD.\r\nCaso não informado,\
-            \ será considerada a data da requisição à API."
-          format: date-time
-          type: string
-        natureza_tributacao:
-          description: "Natureza da tributação:\r\n* 1 - Simples Nacional;\r\n* 2\
-            \ - Fixo;\r\n* 3 - Depósito em juízo;\r\n* 4 - Exigibilidade suspensa\
-            \ por decisão judicial;\r\n* 5 - Exigibilidade suspensa por procedimento\
-            \ administrativo;\r\n* 6 - Isenção parcial."
-          type: integer
-        prestador:
-          $ref: '#/components/schemas/RpsIdentificacaoPrestador'
-        tomador:
-          $ref: '#/components/schemas/RpsDadosTomador'
-        intermediario:
-          $ref: '#/components/schemas/RpsDadosIntermediario'
-        construcao_civil:
-          $ref: '#/components/schemas/RpsDadosConstrucaoCivil'
-        servicos:
-          items:
-            $ref: '#/components/schemas/RpsDadosServico'
-          maxItems: 1
-          minItems: 1
-          type: array
-        outras_informacoes:
-          description: Informações adicionais ao documento.
-          maxLength: 255
-          type: string
-      required:
-      - prestador
-      - servicos
-      - tomador
-      type: object
-    RpsIdentificacaoPrestador:
-      example:
-        cpf_cnpj: cpf_cnpj
-      properties:
-        cpf_cnpj:
-          description: "CPF ou CNPJ do prestador.\r\nUtilize o valor sem máscara."
-          type: string
-      required:
-      - cpf_cnpj
-      type: object
-    RpsDadosTomador:
-      example:
-        fone: fone
-        endereco:
-          uf: uf
-          cidade: cidade
-          complemento: complemento
-          numero: numero
-          logradouro: logradouro
-          bairro: bairro
-          codigo_pais: "1058"
-          codigo_municipio: codigo_municipio
-          pais: pais
-          cep: cep
-        nome_razao_social: nome_razao_social
-        cpf_cnpj: cpf_cnpj
-        email: email
-        inscricao_municipal: inscricao_municipal
-      properties:
-        cpf_cnpj:
-          description: CPF ou CNPJ do tomador/destinatário.
-          type: string
-        inscricao_municipal:
-          description: Inscrição Municipal do tomador/destinatário.
-          type: string
-        nome_razao_social:
-          description: Nome ou Razão Social do tomador/destinatário.
-          type: string
-        fone:
-          description: Telefone do tomador/destinatário.
-          type: string
-        email:
-          description: Email do tomador/destinatário.
-          type: string
-        endereco:
-          $ref: '#/components/schemas/RpsDadosTomadorEndereco'
-      required:
-      - nome_razao_social
-      type: object
-    RpsDadosTomadorEndereco:
-      example:
-        uf: uf
-        cidade: cidade
-        complemento: complemento
-        numero: numero
-        logradouro: logradouro
-        bairro: bairro
-        codigo_pais: "1058"
-        codigo_municipio: codigo_municipio
-        pais: pais
-        cep: cep
-      properties:
-        logradouro:
-          description: Logradouro.
-          type: string
-        numero:
-          description: Número.
-          type: string
-        complemento:
-          description: Complemento.
-          maxLength: 500
-          type: string
-        bairro:
-          description: Bairro.
-          type: string
-        codigo_municipio:
-          description: Código IBGE do município.
-          type: string
-        cidade:
-          description: Cidade.
-          maxLength: 255
-          type: string
-        uf:
-          description: Sigla do estado.
-          type: string
-        codigo_pais:
-          default: "1058"
-          type: string
-        pais:
-          description: Nome do país.
-          maxLength: 255
-          type: string
-        cep:
-          description: "CEP.\r\nUtilize o valor sem máscara."
-          type: string
-      type: object
-    RpsDadosIntermediario:
-      example:
-        nome_razao_social: nome_razao_social
-        cpf_cnpj: cpf_cnpj
-        inscricao_municipal: inscricao_municipal
-      properties:
-        cpf_cnpj:
-          type: string
-        nome_razao_social:
-          type: string
-        inscricao_municipal:
-          type: string
-      type: object
-    RpsDadosConstrucaoCivil:
-      example:
-        codigo_obra: codigo_obra
-        art: art
-      properties:
-        codigo_obra:
-          type: string
-        art:
-          type: string
-      type: object
-    RpsDadosServico:
-      example:
-        codigo_cnae: codigo_cnae
-        tipo_tributacao: 2
-        discriminacao: discriminacao
-        item_lista_servico: item_lista_servico
-        unidade: unidade
-        iss_retido: false
-        exigibilidade_iss: 7
-        numero_processo: numero_processo
-        codigo_tributacao_municipio: codigo_tributacao_municipio
-        responsavel_retencao: 5
-        valores:
-          aliquota_cofins: 6.683562403749608
-          aliquota_ir: 9.018348186070783
-          valor_deducoes: 4.145608029883936
-          valor_pis: 7.386281948385884
-          valor_servicos: 2.027123023002322
-          valor_ir: 1.4894159098541704
-          valor_csll: 6.84685269835264
-          aliquota_pis: 9.369310271410669
-          desconto_condicionado: 6.965117697638846
-          valor_cofins: 1.2315135367772556
-          aliquota_csll: 6.438423552598547
-          valor_inss: 1.0246457001441578
-          valor_outras_retencoes: 7.457744773683766
-          valor_iss: 1.1730742509559433
-          valor_liquido: 5.025004791520295
-          aliquota_iss: 9.965781217890562
-          aliquota_inss: 8.762042012749001
-          desconto_incondicionado: 3.5571952270680973
-          valor_iss_retido: 4.965218492984954
-          valor_unitario: 3.616076749251911
-        codigo_pais: codigo_pais
-        codigo_municipio: codigo_municipio
-        quantidade: 0.9301444243932576
-        codigo_municipio_incidencia: codigo_municipio_incidencia
-      properties:
-        iss_retido:
-          default: false
-          description: Reter ISSQN.
-          type: boolean
-        responsavel_retencao:
-          description: "Responsável pela retenção:\r\n* 0 - Prestador;\r\n* 1 - Tomador;\r\
-            \n* 2 - Intermediário."
-          type: integer
-        item_lista_servico:
-          description: "Código do item da lista de serviço, geralmente segue a LC116,\
-            \ podendo variar de acordo com a prefeitura.\r\n\r\nVocê pode encontrar\
-            \ esse dado no portal da prefeitura, em uma nota emitida ou junto ao contador."
-          type: string
-        codigo_cnae:
-          description: Código CNAE (Classificação Nacional de Atividades Econômicas).
-          type: string
-        codigo_tributacao_municipio:
-          description: Código de tributação do município.
-          type: string
-        discriminacao:
-          description: Detalhamento do serviço prestado.
-          type: string
-        codigo_municipio:
-          description: "Código IBGE do município de prestação do serviço.\r\nCaso\
-            \ não informado, será considerado o município do prestador."
-          type: string
-        codigo_pais:
-          description: Código do país de prestação do serviço.
-          type: string
-        tipo_tributacao:
-          description: "Tipo de Tributação do Serviço:\r\n* 1 - Isento de ISS\r\n\
-            * 2 - Imune\r\n* 3 - Não Incidência no Município\r\n* 4 - Não Tributá\
-            vel\r\n* 5 - Retido\r\n* 6 - Tributável Dentro do Município\r\n* 7 - Tributá\
-            vel Fora do Município\r\n* 8 - Tributável Dentro do Município pelo tomador"
-          type: integer
-        exigibilidade_iss:
-          description: "Exigibilidade do ISS:\r\n* 1 - Exigível\r\n* 2 - Não Incidê\
-            ncia\r\n* 3 - Isenção\r\n* 4 - Exportação\r\n* 5 - Imunidade\r\n* 6 -\
-            \ Suspenso por Decisão Judicial\r\n* 7 - Suspenso por Processo Administrativo"
-          type: integer
-        codigo_municipio_incidencia:
-          description: Código IBGE do município de incidência do ISSQN.
-          type: string
-        numero_processo:
-          description: Número do Processo de Suspensão da Exigibilidade.
-          type: string
-        unidade:
-          description: Unidade do serviço prestado.
-          type: string
-        quantidade:
-          description: Quantidade dos serviços prestados.
-          exclusiveMinimum: true
-          minimum: 0
-          type: number
-        valores:
-          $ref: '#/components/schemas/RpsServicoValores'
-      required:
-      - discriminacao
-      - item_lista_servico
-      - valores
-      type: object
-    RpsServicoValores:
-      example:
-        aliquota_cofins: 6.683562403749608
-        aliquota_ir: 9.018348186070783
-        valor_deducoes: 4.145608029883936
-        valor_pis: 7.386281948385884
-        valor_servicos: 2.027123023002322
-        valor_ir: 1.4894159098541704
-        valor_csll: 6.84685269835264
-        aliquota_pis: 9.369310271410669
-        desconto_condicionado: 6.965117697638846
-        valor_cofins: 1.2315135367772556
-        aliquota_csll: 6.438423552598547
-        valor_inss: 1.0246457001441578
-        valor_outras_retencoes: 7.457744773683766
-        valor_iss: 1.1730742509559433
-        valor_liquido: 5.025004791520295
-        aliquota_iss: 9.965781217890562
-        aliquota_inss: 8.762042012749001
-        desconto_incondicionado: 3.5571952270680973
-        valor_iss_retido: 4.965218492984954
-        valor_unitario: 3.616076749251911
-      properties:
-        valor_unitario:
-          description: Valor unitário do serviço.
-          type: number
-        valor_servicos:
-          description: Valor total do serviço.
-          type: number
-        valor_deducoes:
-          type: number
-        valor_pis:
-          type: number
-        valor_cofins:
-          type: number
-        valor_inss:
-          type: number
-        valor_ir:
-          type: number
-        valor_csll:
-          type: number
-        valor_outras_retencoes:
-          type: number
-        valor_iss:
-          type: number
-        valor_iss_retido:
-          type: number
-        valor_liquido:
-          type: number
-        aliquota_iss:
-          type: number
-        aliquota_pis:
-          type: number
-        aliquota_cofins:
-          type: number
-        aliquota_inss:
-          type: number
-        aliquota_ir:
-          type: number
-        aliquota_csll:
-          type: number
-        desconto_incondicionado:
-          type: number
-        desconto_condicionado:
-          type: number
-      required:
-      - valor_unitario
-      type: object
-    RpsLote:
-      example:
-        numero: numero
-        ambiente: homologacao
-        notas:
-        - codigo_verificacao: codigo_verificacao
-          numero: numero
-          ambiente: homologacao
-          DPS:
-            serie: serie
-            nDPS: nDPS
-          cancelamento:
-            codigo: codigo
-            motivo: motivo
-            data_hora: 2000-01-23T04:56:07.000+00:00
-            id: id
-            mensagens:
-            - codigo: codigo
-              correcao: correcao
-              descricao: descricao
-            - codigo: codigo
-              correcao: correcao
-              descricao: descricao
-            status: pendente
-          created_at: 2000-01-23T04:56:07.000+00:00
-          mensagens:
-          - codigo: codigo
-            correcao: correcao
-            descricao: descricao
-          - codigo: codigo
-            correcao: correcao
-            descricao: descricao
-          declaracao_prestacao_servico:
-            servicos:
-            - codigo_cnae: codigo_cnae
-              tipo_tributacao: 2
-              discriminacao: discriminacao
-              item_lista_servico: item_lista_servico
-              unidade: unidade
-              iss_retido: false
-              exigibilidade_iss: 7
-              numero_processo: numero_processo
-              codigo_tributacao_municipio: codigo_tributacao_municipio
-              responsavel_retencao: 5
-              valores:
-                aliquota_cofins: 6.683562403749608
-                aliquota_ir: 9.018348186070783
-                valor_deducoes: 4.145608029883936
-                valor_pis: 7.386281948385884
-                valor_servicos: 2.027123023002322
-                valor_ir: 1.4894159098541704
-                valor_csll: 6.84685269835264
-                aliquota_pis: 9.369310271410669
-                desconto_condicionado: 6.965117697638846
-                valor_cofins: 1.2315135367772556
-                aliquota_csll: 6.438423552598547
-                valor_inss: 1.0246457001441578
-                valor_outras_retencoes: 7.457744773683766
-                valor_iss: 1.1730742509559433
-                valor_liquido: 5.025004791520295
-                aliquota_iss: 9.965781217890562
-                aliquota_inss: 8.762042012749001
-                desconto_incondicionado: 3.5571952270680973
-                valor_iss_retido: 4.965218492984954
-                valor_unitario: 3.616076749251911
-              codigo_pais: codigo_pais
-              codigo_municipio: codigo_municipio
-              quantidade: 0.9301444243932576
-              codigo_municipio_incidencia: codigo_municipio_incidencia
-            - codigo_cnae: codigo_cnae
-              tipo_tributacao: 2
-              discriminacao: discriminacao
-              item_lista_servico: item_lista_servico
-              unidade: unidade
-              iss_retido: false
-              exigibilidade_iss: 7
-              numero_processo: numero_processo
-              codigo_tributacao_municipio: codigo_tributacao_municipio
-              responsavel_retencao: 5
-              valores:
-                aliquota_cofins: 6.683562403749608
-                aliquota_ir: 9.018348186070783
-                valor_deducoes: 4.145608029883936
-                valor_pis: 7.386281948385884
-                valor_servicos: 2.027123023002322
-                valor_ir: 1.4894159098541704
-                valor_csll: 6.84685269835264
-                aliquota_pis: 9.369310271410669
-                desconto_condicionado: 6.965117697638846
-                valor_cofins: 1.2315135367772556
-                aliquota_csll: 6.438423552598547
-                valor_inss: 1.0246457001441578
-                valor_outras_retencoes: 7.457744773683766
-                valor_iss: 1.1730742509559433
-                valor_liquido: 5.025004791520295
-                aliquota_iss: 9.965781217890562
-                aliquota_inss: 8.762042012749001
-                desconto_incondicionado: 3.5571952270680973
-                valor_iss_retido: 4.965218492984954
-                valor_unitario: 3.616076749251911
-              codigo_pais: codigo_pais
-              codigo_municipio: codigo_municipio
-              quantidade: 0.9301444243932576
-              codigo_municipio_incidencia: codigo_municipio_incidencia
-            tomador:
-              fone: fone
-              endereco:
-                uf: uf
-                cidade: cidade
-                complemento: complemento
-                numero: numero
-                logradouro: logradouro
-                bairro: bairro
-                codigo_pais: "1058"
-                codigo_municipio: codigo_municipio
-                pais: pais
-                cep: cep
-              nome_razao_social: nome_razao_social
-              cpf_cnpj: cpf_cnpj
-              email: email
-              inscricao_municipal: inscricao_municipal
-            prestador:
-              fone: fone
-              endereco:
-                uf: uf
-                cidade: cidade
-                complemento: complemento
-                numero: numero
-                logradouro: logradouro
-                bairro: bairro
-                codigo_pais: "1058"
-                codigo_municipio: codigo_municipio
-                pais: Brasil
-                cep: cep
-              incentivador_cultural: true
-              incentivo_fiscal: true
-              optante_simples_nacional: true
-              nome_razao_social: nome_razao_social
-              nome_fantasia: nome_fantasia
-              regime_tributacao: 1
-              cpf_cnpj: cpf_cnpj
-              email: email
-              regime_especial_tributacao: 5
-              inscricao_municipal: inscricao_municipal
-            rps:
-              identificacao_rps:
-                tipo: tipo
-                numero: numero
-                serie: serie
-              data_emissao: 2000-01-23T04:56:07.000+00:00
-            intermediario:
-              nome_razao_social: nome_razao_social
-              cpf_cnpj: cpf_cnpj
-              inscricao_municipal: inscricao_municipal
-            construcao_civil:
-              codigo_obra: codigo_obra
-              art: art
-            outras_informacoes: outras_informacoes
-            natureza_tributacao: 6
-            competencia: 2000-01-23T04:56:07.000+00:00
-          link_url: link_url
-          id: id
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-          referencia: referencia
-          status: processando
-        - codigo_verificacao: codigo_verificacao
-          numero: numero
-          ambiente: homologacao
-          DPS:
-            serie: serie
-            nDPS: nDPS
-          cancelamento:
-            codigo: codigo
-            motivo: motivo
-            data_hora: 2000-01-23T04:56:07.000+00:00
-            id: id
-            mensagens:
-            - codigo: codigo
-              correcao: correcao
-              descricao: descricao
-            - codigo: codigo
-              correcao: correcao
-              descricao: descricao
-            status: pendente
-          created_at: 2000-01-23T04:56:07.000+00:00
-          mensagens:
-          - codigo: codigo
-            correcao: correcao
-            descricao: descricao
-          - codigo: codigo
-            correcao: correcao
-            descricao: descricao
-          declaracao_prestacao_servico:
-            servicos:
-            - codigo_cnae: codigo_cnae
-              tipo_tributacao: 2
-              discriminacao: discriminacao
-              item_lista_servico: item_lista_servico
-              unidade: unidade
-              iss_retido: false
-              exigibilidade_iss: 7
-              numero_processo: numero_processo
-              codigo_tributacao_municipio: codigo_tributacao_municipio
-              responsavel_retencao: 5
-              valores:
-                aliquota_cofins: 6.683562403749608
-                aliquota_ir: 9.018348186070783
-                valor_deducoes: 4.145608029883936
-                valor_pis: 7.386281948385884
-                valor_servicos: 2.027123023002322
-                valor_ir: 1.4894159098541704
-                valor_csll: 6.84685269835264
-                aliquota_pis: 9.369310271410669
-                desconto_condicionado: 6.965117697638846
-                valor_cofins: 1.2315135367772556
-                aliquota_csll: 6.438423552598547
-                valor_inss: 1.0246457001441578
-                valor_outras_retencoes: 7.457744773683766
-                valor_iss: 1.1730742509559433
-                valor_liquido: 5.025004791520295
-                aliquota_iss: 9.965781217890562
-                aliquota_inss: 8.762042012749001
-                desconto_incondicionado: 3.5571952270680973
-                valor_iss_retido: 4.965218492984954
-                valor_unitario: 3.616076749251911
-              codigo_pais: codigo_pais
-              codigo_municipio: codigo_municipio
-              quantidade: 0.9301444243932576
-              codigo_municipio_incidencia: codigo_municipio_incidencia
-            - codigo_cnae: codigo_cnae
-              tipo_tributacao: 2
-              discriminacao: discriminacao
-              item_lista_servico: item_lista_servico
-              unidade: unidade
-              iss_retido: false
-              exigibilidade_iss: 7
-              numero_processo: numero_processo
-              codigo_tributacao_municipio: codigo_tributacao_municipio
-              responsavel_retencao: 5
-              valores:
-                aliquota_cofins: 6.683562403749608
-                aliquota_ir: 9.018348186070783
-                valor_deducoes: 4.145608029883936
-                valor_pis: 7.386281948385884
-                valor_servicos: 2.027123023002322
-                valor_ir: 1.4894159098541704
-                valor_csll: 6.84685269835264
-                aliquota_pis: 9.369310271410669
-                desconto_condicionado: 6.965117697638846
-                valor_cofins: 1.2315135367772556
-                aliquota_csll: 6.438423552598547
-                valor_inss: 1.0246457001441578
-                valor_outras_retencoes: 7.457744773683766
-                valor_iss: 1.1730742509559433
-                valor_liquido: 5.025004791520295
-                aliquota_iss: 9.965781217890562
-                aliquota_inss: 8.762042012749001
-                desconto_incondicionado: 3.5571952270680973
-                valor_iss_retido: 4.965218492984954
-                valor_unitario: 3.616076749251911
-              codigo_pais: codigo_pais
-              codigo_municipio: codigo_municipio
-              quantidade: 0.9301444243932576
-              codigo_municipio_incidencia: codigo_municipio_incidencia
-            tomador:
-              fone: fone
-              endereco:
-                uf: uf
-                cidade: cidade
-                complemento: complemento
-                numero: numero
-                logradouro: logradouro
-                bairro: bairro
-                codigo_pais: "1058"
-                codigo_municipio: codigo_municipio
-                pais: pais
-                cep: cep
-              nome_razao_social: nome_razao_social
-              cpf_cnpj: cpf_cnpj
-              email: email
-              inscricao_municipal: inscricao_municipal
-            prestador:
-              fone: fone
-              endereco:
-                uf: uf
-                cidade: cidade
-                complemento: complemento
-                numero: numero
-                logradouro: logradouro
-                bairro: bairro
-                codigo_pais: "1058"
-                codigo_municipio: codigo_municipio
-                pais: Brasil
-                cep: cep
-              incentivador_cultural: true
-              incentivo_fiscal: true
-              optante_simples_nacional: true
-              nome_razao_social: nome_razao_social
-              nome_fantasia: nome_fantasia
-              regime_tributacao: 1
-              cpf_cnpj: cpf_cnpj
-              email: email
-              regime_especial_tributacao: 5
-              inscricao_municipal: inscricao_municipal
-            rps:
-              identificacao_rps:
-                tipo: tipo
-                numero: numero
-                serie: serie
-              data_emissao: 2000-01-23T04:56:07.000+00:00
-            intermediario:
-              nome_razao_social: nome_razao_social
-              cpf_cnpj: cpf_cnpj
-              inscricao_municipal: inscricao_municipal
-            construcao_civil:
-              codigo_obra: codigo_obra
-              art: art
-            outras_informacoes: outras_informacoes
-            natureza_tributacao: 6
-            competencia: 2000-01-23T04:56:07.000+00:00
-          link_url: link_url
-          id: id
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-          referencia: referencia
-          status: processando
-        created_at: 2000-01-23T04:56:07.000+00:00
-        id: id
-        referencia: referencia
-        status: novo
-      properties:
-        id:
-          description: ID único do lote gerado automaticamente pela API.
-          type: string
-        created_at:
-          format: date-time
-          type: string
-        status:
-          enum:
-          - novo
-          - fila_envio
-          - fila_consulta
-          - processado
-          - erro
-          type: string
-        numero:
-          type: string
-        ambiente:
-          enum:
-          - homologacao
-          - producao
-          type: string
-        referencia:
-          type: string
-        notas:
-          items:
-            $ref: '#/components/schemas/Nfse'
-          type: array
-      type: object
-    Nfse:
-      example:
-        codigo_verificacao: codigo_verificacao
-        numero: numero
-        ambiente: homologacao
-        DPS:
-          serie: serie
-          nDPS: nDPS
-        cancelamento:
-          codigo: codigo
-          motivo: motivo
-          data_hora: 2000-01-23T04:56:07.000+00:00
-          id: id
-          mensagens:
-          - codigo: codigo
-            correcao: correcao
-            descricao: descricao
-          - codigo: codigo
-            correcao: correcao
-            descricao: descricao
-          status: pendente
-        created_at: 2000-01-23T04:56:07.000+00:00
-        mensagens:
-        - codigo: codigo
-          correcao: correcao
-          descricao: descricao
-        - codigo: codigo
-          correcao: correcao
-          descricao: descricao
-        declaracao_prestacao_servico:
-          servicos:
-          - codigo_cnae: codigo_cnae
-            tipo_tributacao: 2
-            discriminacao: discriminacao
-            item_lista_servico: item_lista_servico
-            unidade: unidade
-            iss_retido: false
-            exigibilidade_iss: 7
-            numero_processo: numero_processo
-            codigo_tributacao_municipio: codigo_tributacao_municipio
-            responsavel_retencao: 5
-            valores:
-              aliquota_cofins: 6.683562403749608
-              aliquota_ir: 9.018348186070783
-              valor_deducoes: 4.145608029883936
-              valor_pis: 7.386281948385884
-              valor_servicos: 2.027123023002322
-              valor_ir: 1.4894159098541704
-              valor_csll: 6.84685269835264
-              aliquota_pis: 9.369310271410669
-              desconto_condicionado: 6.965117697638846
-              valor_cofins: 1.2315135367772556
-              aliquota_csll: 6.438423552598547
-              valor_inss: 1.0246457001441578
-              valor_outras_retencoes: 7.457744773683766
-              valor_iss: 1.1730742509559433
-              valor_liquido: 5.025004791520295
-              aliquota_iss: 9.965781217890562
-              aliquota_inss: 8.762042012749001
-              desconto_incondicionado: 3.5571952270680973
-              valor_iss_retido: 4.965218492984954
-              valor_unitario: 3.616076749251911
-            codigo_pais: codigo_pais
-            codigo_municipio: codigo_municipio
-            quantidade: 0.9301444243932576
-            codigo_municipio_incidencia: codigo_municipio_incidencia
-          - codigo_cnae: codigo_cnae
-            tipo_tributacao: 2
-            discriminacao: discriminacao
-            item_lista_servico: item_lista_servico
-            unidade: unidade
-            iss_retido: false
-            exigibilidade_iss: 7
-            numero_processo: numero_processo
-            codigo_tributacao_municipio: codigo_tributacao_municipio
-            responsavel_retencao: 5
-            valores:
-              aliquota_cofins: 6.683562403749608
-              aliquota_ir: 9.018348186070783
-              valor_deducoes: 4.145608029883936
-              valor_pis: 7.386281948385884
-              valor_servicos: 2.027123023002322
-              valor_ir: 1.4894159098541704
-              valor_csll: 6.84685269835264
-              aliquota_pis: 9.369310271410669
-              desconto_condicionado: 6.965117697638846
-              valor_cofins: 1.2315135367772556
-              aliquota_csll: 6.438423552598547
-              valor_inss: 1.0246457001441578
-              valor_outras_retencoes: 7.457744773683766
-              valor_iss: 1.1730742509559433
-              valor_liquido: 5.025004791520295
-              aliquota_iss: 9.965781217890562
-              aliquota_inss: 8.762042012749001
-              desconto_incondicionado: 3.5571952270680973
-              valor_iss_retido: 4.965218492984954
-              valor_unitario: 3.616076749251911
-            codigo_pais: codigo_pais
-            codigo_municipio: codigo_municipio
-            quantidade: 0.9301444243932576
-            codigo_municipio_incidencia: codigo_municipio_incidencia
-          tomador:
-            fone: fone
-            endereco:
-              uf: uf
-              cidade: cidade
-              complemento: complemento
-              numero: numero
-              logradouro: logradouro
-              bairro: bairro
-              codigo_pais: "1058"
-              codigo_municipio: codigo_municipio
-              pais: pais
-              cep: cep
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            email: email
-            inscricao_municipal: inscricao_municipal
-          prestador:
-            fone: fone
-            endereco:
-              uf: uf
-              cidade: cidade
-              complemento: complemento
-              numero: numero
-              logradouro: logradouro
-              bairro: bairro
-              codigo_pais: "1058"
-              codigo_municipio: codigo_municipio
-              pais: Brasil
-              cep: cep
-            incentivador_cultural: true
-            incentivo_fiscal: true
-            optante_simples_nacional: true
-            nome_razao_social: nome_razao_social
-            nome_fantasia: nome_fantasia
-            regime_tributacao: 1
-            cpf_cnpj: cpf_cnpj
-            email: email
-            regime_especial_tributacao: 5
-            inscricao_municipal: inscricao_municipal
-          rps:
-            identificacao_rps:
-              tipo: tipo
-              numero: numero
-              serie: serie
-            data_emissao: 2000-01-23T04:56:07.000+00:00
-          intermediario:
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            inscricao_municipal: inscricao_municipal
-          construcao_civil:
-            codigo_obra: codigo_obra
-            art: art
-          outras_informacoes: outras_informacoes
-          natureza_tributacao: 6
-          competencia: 2000-01-23T04:56:07.000+00:00
-        link_url: link_url
-        id: id
-        data_emissao: 2000-01-23T04:56:07.000+00:00
-        referencia: referencia
-        status: processando
-      properties:
-        id:
-          description: ID único da nota gerado automaticamente pela API.
-          type: string
-        created_at:
-          format: date-time
-          type: string
-        status:
-          enum:
-          - processando
-          - autorizada
-          - negada
-          - cancelada
-          - substituida
-          - erro
-          type: string
-        numero:
-          type: string
-        codigo_verificacao:
-          type: string
-        link_url:
-          type: string
-        data_emissao:
-          format: date-time
-          nullable: true
-          type: string
-        ambiente:
-          enum:
-          - homologacao
-          - producao
-          type: string
-        referencia:
-          type: string
-        DPS:
-          $ref: '#/components/schemas/DPS'
-        cancelamento:
-          $ref: '#/components/schemas/NfseCancelamento'
-        mensagens:
-          items:
-            $ref: '#/components/schemas/NfseMensagemRetorno'
-          type: array
-        declaracao_prestacao_servico:
-          $ref: '#/components/schemas/Rps'
-      type: object
-    DPS:
-      description: Grupo de informações da DPS relativas ao serviço prestado.
-      example:
-        serie: serie
-        nDPS: nDPS
-      properties:
-        serie:
-          description: Série do DPS.
-          nullable: true
-          type: string
-        nDPS:
-          description: Número do DPS.
-          nullable: true
-          type: string
-      type: object
-    NfseCancelamento:
-      example:
-        codigo: codigo
-        motivo: motivo
-        data_hora: 2000-01-23T04:56:07.000+00:00
-        id: id
-        mensagens:
-        - codigo: codigo
-          correcao: correcao
-          descricao: descricao
-        - codigo: codigo
-          correcao: correcao
-          descricao: descricao
-        status: pendente
-      properties:
-        id:
-          description: ID único do cancelamento gerado automaticamente pela API.
-          type: string
-        status:
-          enum:
-          - pendente
-          - concluido
-          - rejeitado
-          - erro
-          type: string
-        codigo:
-          type: string
-        motivo:
-          type: string
-        data_hora:
-          format: date-time
-          nullable: true
-          type: string
-        mensagens:
-          items:
-            $ref: '#/components/schemas/NfseMensagemRetorno'
-          type: array
-      type: object
-    NfseMensagemRetorno:
-      example:
-        codigo: codigo
-        correcao: correcao
-        descricao: descricao
-      properties:
-        codigo:
-          type: string
-        descricao:
-          type: string
-        correcao:
-          type: string
-      type: object
-    Rps:
-      description: '*Propriedade obsoleta. Não é mais retornada pela API.*'
-      example:
-        servicos:
-        - codigo_cnae: codigo_cnae
-          tipo_tributacao: 2
-          discriminacao: discriminacao
-          item_lista_servico: item_lista_servico
-          unidade: unidade
-          iss_retido: false
-          exigibilidade_iss: 7
-          numero_processo: numero_processo
-          codigo_tributacao_municipio: codigo_tributacao_municipio
-          responsavel_retencao: 5
-          valores:
-            aliquota_cofins: 6.683562403749608
-            aliquota_ir: 9.018348186070783
-            valor_deducoes: 4.145608029883936
-            valor_pis: 7.386281948385884
-            valor_servicos: 2.027123023002322
-            valor_ir: 1.4894159098541704
-            valor_csll: 6.84685269835264
-            aliquota_pis: 9.369310271410669
-            desconto_condicionado: 6.965117697638846
-            valor_cofins: 1.2315135367772556
-            aliquota_csll: 6.438423552598547
-            valor_inss: 1.0246457001441578
-            valor_outras_retencoes: 7.457744773683766
-            valor_iss: 1.1730742509559433
-            valor_liquido: 5.025004791520295
-            aliquota_iss: 9.965781217890562
-            aliquota_inss: 8.762042012749001
-            desconto_incondicionado: 3.5571952270680973
-            valor_iss_retido: 4.965218492984954
-            valor_unitario: 3.616076749251911
-          codigo_pais: codigo_pais
-          codigo_municipio: codigo_municipio
-          quantidade: 0.9301444243932576
-          codigo_municipio_incidencia: codigo_municipio_incidencia
-        - codigo_cnae: codigo_cnae
-          tipo_tributacao: 2
-          discriminacao: discriminacao
-          item_lista_servico: item_lista_servico
-          unidade: unidade
-          iss_retido: false
-          exigibilidade_iss: 7
-          numero_processo: numero_processo
-          codigo_tributacao_municipio: codigo_tributacao_municipio
-          responsavel_retencao: 5
-          valores:
-            aliquota_cofins: 6.683562403749608
-            aliquota_ir: 9.018348186070783
-            valor_deducoes: 4.145608029883936
-            valor_pis: 7.386281948385884
-            valor_servicos: 2.027123023002322
-            valor_ir: 1.4894159098541704
-            valor_csll: 6.84685269835264
-            aliquota_pis: 9.369310271410669
-            desconto_condicionado: 6.965117697638846
-            valor_cofins: 1.2315135367772556
-            aliquota_csll: 6.438423552598547
-            valor_inss: 1.0246457001441578
-            valor_outras_retencoes: 7.457744773683766
-            valor_iss: 1.1730742509559433
-            valor_liquido: 5.025004791520295
-            aliquota_iss: 9.965781217890562
-            aliquota_inss: 8.762042012749001
-            desconto_incondicionado: 3.5571952270680973
-            valor_iss_retido: 4.965218492984954
-            valor_unitario: 3.616076749251911
-          codigo_pais: codigo_pais
-          codigo_municipio: codigo_municipio
-          quantidade: 0.9301444243932576
-          codigo_municipio_incidencia: codigo_municipio_incidencia
-        tomador:
-          fone: fone
-          endereco:
-            uf: uf
-            cidade: cidade
-            complemento: complemento
-            numero: numero
-            logradouro: logradouro
-            bairro: bairro
-            codigo_pais: "1058"
-            codigo_municipio: codigo_municipio
-            pais: pais
-            cep: cep
-          nome_razao_social: nome_razao_social
-          cpf_cnpj: cpf_cnpj
-          email: email
-          inscricao_municipal: inscricao_municipal
-        prestador:
-          fone: fone
-          endereco:
-            uf: uf
-            cidade: cidade
-            complemento: complemento
-            numero: numero
-            logradouro: logradouro
-            bairro: bairro
-            codigo_pais: "1058"
-            codigo_municipio: codigo_municipio
-            pais: Brasil
-            cep: cep
-          incentivador_cultural: true
-          incentivo_fiscal: true
-          optante_simples_nacional: true
-          nome_razao_social: nome_razao_social
-          nome_fantasia: nome_fantasia
-          regime_tributacao: 1
-          cpf_cnpj: cpf_cnpj
-          email: email
-          regime_especial_tributacao: 5
-          inscricao_municipal: inscricao_municipal
-        rps:
-          identificacao_rps:
-            tipo: tipo
-            numero: numero
-            serie: serie
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-        intermediario:
-          nome_razao_social: nome_razao_social
-          cpf_cnpj: cpf_cnpj
-          inscricao_municipal: inscricao_municipal
-        construcao_civil:
-          codigo_obra: codigo_obra
-          art: art
-        outras_informacoes: outras_informacoes
-        natureza_tributacao: 6
-        competencia: 2000-01-23T04:56:07.000+00:00
-      properties:
-        rps:
-          $ref: '#/components/schemas/RpsDados'
-        competencia:
-          format: date-time
-          type: string
-        natureza_tributacao:
-          description: "Natureza da tributação\r\n1 - Simples Nacional;\r\n2 - Fixo;\r\
-            \n3 - Depósito em juízo;\r\n4 - Exigibilidade suspensa por decisão judicial;\r\
-            \n5 - Exigibilidade suspensa por procedimento administrativo;\r\n6 - Isenç\
-            ão parcial."
-          type: integer
-        prestador:
-          $ref: '#/components/schemas/RpsDadosPrestador'
-        tomador:
-          $ref: '#/components/schemas/RpsDadosTomador'
-        intermediario:
-          $ref: '#/components/schemas/RpsDadosIntermediario'
-        construcao_civil:
-          $ref: '#/components/schemas/RpsDadosConstrucaoCivil'
-        servicos:
-          items:
-            $ref: '#/components/schemas/RpsDadosServico'
-          minItems: 1
-          type: array
-        outras_informacoes:
-          description: Informações adicionais ao documento.
-          type: string
-      required:
-      - servicos
-      type: object
-    RpsDados:
-      example:
-        identificacao_rps:
-          tipo: tipo
-          numero: numero
-          serie: serie
-        data_emissao: 2000-01-23T04:56:07.000+00:00
-      properties:
-        identificacao_rps:
-          $ref: '#/components/schemas/RpsIdentificacao'
-        data_emissao:
-          format: date-time
-          type: string
-      type: object
-    RpsIdentificacao:
-      example:
-        tipo: tipo
-        numero: numero
-        serie: serie
-      properties:
-        numero:
-          type: string
-        serie:
-          type: string
-        tipo:
-          type: string
-      type: object
-    RpsDadosPrestador:
-      example:
-        fone: fone
-        endereco:
-          uf: uf
-          cidade: cidade
-          complemento: complemento
-          numero: numero
-          logradouro: logradouro
-          bairro: bairro
-          codigo_pais: "1058"
-          codigo_municipio: codigo_municipio
-          pais: Brasil
-          cep: cep
-        incentivador_cultural: true
-        incentivo_fiscal: true
-        optante_simples_nacional: true
-        nome_razao_social: nome_razao_social
-        nome_fantasia: nome_fantasia
-        regime_tributacao: 1
-        cpf_cnpj: cpf_cnpj
-        email: email
-        regime_especial_tributacao: 5
-        inscricao_municipal: inscricao_municipal
-      properties:
-        cpf_cnpj:
-          type: string
-        inscricao_municipal:
-          type: string
-        nome_razao_social:
-          type: string
-        nome_fantasia:
-          type: string
-        fone:
-          type: string
-        email:
-          type: string
-        endereco:
-          $ref: '#/components/schemas/EmpresaEndereco'
-        optante_simples_nacional:
-          type: boolean
-        regime_tributacao:
-          type: integer
-        regime_especial_tributacao:
-          type: integer
-        incentivo_fiscal:
-          type: boolean
-        incentivador_cultural:
-          type: boolean
       type: object
     NfseLoteDpsPedidoEmissao:
       example:
@@ -20432,6 +18761,1150 @@ components:
       - pDifMun
       - pDifUF
       type: object
+    RpsLote:
+      example:
+        numero: numero
+        ambiente: homologacao
+        notas:
+        - codigo_verificacao: codigo_verificacao
+          numero: numero
+          ambiente: homologacao
+          DPS:
+            serie: serie
+            nDPS: nDPS
+          cancelamento:
+            codigo: codigo
+            motivo: motivo
+            data_hora: 2000-01-23T04:56:07.000+00:00
+            id: id
+            mensagens:
+            - codigo: codigo
+              correcao: correcao
+              descricao: descricao
+            - codigo: codigo
+              correcao: correcao
+              descricao: descricao
+            status: pendente
+          created_at: 2000-01-23T04:56:07.000+00:00
+          mensagens:
+          - codigo: codigo
+            correcao: correcao
+            descricao: descricao
+          - codigo: codigo
+            correcao: correcao
+            descricao: descricao
+          declaracao_prestacao_servico:
+            servicos:
+            - codigo_cnae: codigo_cnae
+              tipo_tributacao: 2
+              discriminacao: discriminacao
+              item_lista_servico: item_lista_servico
+              unidade: unidade
+              iss_retido: false
+              exigibilidade_iss: 7
+              numero_processo: numero_processo
+              codigo_tributacao_municipio: codigo_tributacao_municipio
+              responsavel_retencao: 5
+              valores:
+                aliquota_cofins: 6.683562403749608
+                aliquota_ir: 9.018348186070783
+                valor_deducoes: 4.145608029883936
+                valor_pis: 7.386281948385884
+                valor_servicos: 2.027123023002322
+                valor_ir: 1.4894159098541704
+                valor_csll: 6.84685269835264
+                aliquota_pis: 9.369310271410669
+                desconto_condicionado: 6.965117697638846
+                valor_cofins: 1.2315135367772556
+                aliquota_csll: 6.438423552598547
+                valor_inss: 1.0246457001441578
+                valor_outras_retencoes: 7.457744773683766
+                valor_iss: 1.1730742509559433
+                valor_liquido: 5.025004791520295
+                aliquota_iss: 9.965781217890562
+                aliquota_inss: 8.762042012749001
+                desconto_incondicionado: 3.5571952270680973
+                valor_iss_retido: 4.965218492984954
+                valor_unitario: 3.616076749251911
+              codigo_pais: codigo_pais
+              codigo_municipio: codigo_municipio
+              quantidade: 0.9301444243932576
+              codigo_municipio_incidencia: codigo_municipio_incidencia
+            - codigo_cnae: codigo_cnae
+              tipo_tributacao: 2
+              discriminacao: discriminacao
+              item_lista_servico: item_lista_servico
+              unidade: unidade
+              iss_retido: false
+              exigibilidade_iss: 7
+              numero_processo: numero_processo
+              codigo_tributacao_municipio: codigo_tributacao_municipio
+              responsavel_retencao: 5
+              valores:
+                aliquota_cofins: 6.683562403749608
+                aliquota_ir: 9.018348186070783
+                valor_deducoes: 4.145608029883936
+                valor_pis: 7.386281948385884
+                valor_servicos: 2.027123023002322
+                valor_ir: 1.4894159098541704
+                valor_csll: 6.84685269835264
+                aliquota_pis: 9.369310271410669
+                desconto_condicionado: 6.965117697638846
+                valor_cofins: 1.2315135367772556
+                aliquota_csll: 6.438423552598547
+                valor_inss: 1.0246457001441578
+                valor_outras_retencoes: 7.457744773683766
+                valor_iss: 1.1730742509559433
+                valor_liquido: 5.025004791520295
+                aliquota_iss: 9.965781217890562
+                aliquota_inss: 8.762042012749001
+                desconto_incondicionado: 3.5571952270680973
+                valor_iss_retido: 4.965218492984954
+                valor_unitario: 3.616076749251911
+              codigo_pais: codigo_pais
+              codigo_municipio: codigo_municipio
+              quantidade: 0.9301444243932576
+              codigo_municipio_incidencia: codigo_municipio_incidencia
+            tomador:
+              fone: fone
+              endereco:
+                uf: uf
+                cidade: cidade
+                complemento: complemento
+                numero: numero
+                logradouro: logradouro
+                bairro: bairro
+                codigo_pais: "1058"
+                codigo_municipio: codigo_municipio
+                pais: pais
+                cep: cep
+              nome_razao_social: nome_razao_social
+              cpf_cnpj: cpf_cnpj
+              email: email
+              inscricao_municipal: inscricao_municipal
+            prestador:
+              fone: fone
+              endereco:
+                uf: uf
+                cidade: cidade
+                complemento: complemento
+                numero: numero
+                logradouro: logradouro
+                bairro: bairro
+                codigo_pais: "1058"
+                codigo_municipio: codigo_municipio
+                pais: Brasil
+                cep: cep
+              incentivador_cultural: true
+              incentivo_fiscal: true
+              optante_simples_nacional: true
+              nome_razao_social: nome_razao_social
+              nome_fantasia: nome_fantasia
+              regime_tributacao: 1
+              cpf_cnpj: cpf_cnpj
+              email: email
+              regime_especial_tributacao: 5
+              inscricao_municipal: inscricao_municipal
+            rps:
+              identificacao_rps:
+                tipo: tipo
+                numero: numero
+                serie: serie
+              data_emissao: 2000-01-23T04:56:07.000+00:00
+            intermediario:
+              nome_razao_social: nome_razao_social
+              cpf_cnpj: cpf_cnpj
+              inscricao_municipal: inscricao_municipal
+            construcao_civil:
+              codigo_obra: codigo_obra
+              art: art
+            outras_informacoes: outras_informacoes
+            natureza_tributacao: 6
+            competencia: 2000-01-23T04:56:07.000+00:00
+          link_url: link_url
+          id: id
+          data_emissao: 2000-01-23T04:56:07.000+00:00
+          referencia: referencia
+          status: processando
+        - codigo_verificacao: codigo_verificacao
+          numero: numero
+          ambiente: homologacao
+          DPS:
+            serie: serie
+            nDPS: nDPS
+          cancelamento:
+            codigo: codigo
+            motivo: motivo
+            data_hora: 2000-01-23T04:56:07.000+00:00
+            id: id
+            mensagens:
+            - codigo: codigo
+              correcao: correcao
+              descricao: descricao
+            - codigo: codigo
+              correcao: correcao
+              descricao: descricao
+            status: pendente
+          created_at: 2000-01-23T04:56:07.000+00:00
+          mensagens:
+          - codigo: codigo
+            correcao: correcao
+            descricao: descricao
+          - codigo: codigo
+            correcao: correcao
+            descricao: descricao
+          declaracao_prestacao_servico:
+            servicos:
+            - codigo_cnae: codigo_cnae
+              tipo_tributacao: 2
+              discriminacao: discriminacao
+              item_lista_servico: item_lista_servico
+              unidade: unidade
+              iss_retido: false
+              exigibilidade_iss: 7
+              numero_processo: numero_processo
+              codigo_tributacao_municipio: codigo_tributacao_municipio
+              responsavel_retencao: 5
+              valores:
+                aliquota_cofins: 6.683562403749608
+                aliquota_ir: 9.018348186070783
+                valor_deducoes: 4.145608029883936
+                valor_pis: 7.386281948385884
+                valor_servicos: 2.027123023002322
+                valor_ir: 1.4894159098541704
+                valor_csll: 6.84685269835264
+                aliquota_pis: 9.369310271410669
+                desconto_condicionado: 6.965117697638846
+                valor_cofins: 1.2315135367772556
+                aliquota_csll: 6.438423552598547
+                valor_inss: 1.0246457001441578
+                valor_outras_retencoes: 7.457744773683766
+                valor_iss: 1.1730742509559433
+                valor_liquido: 5.025004791520295
+                aliquota_iss: 9.965781217890562
+                aliquota_inss: 8.762042012749001
+                desconto_incondicionado: 3.5571952270680973
+                valor_iss_retido: 4.965218492984954
+                valor_unitario: 3.616076749251911
+              codigo_pais: codigo_pais
+              codigo_municipio: codigo_municipio
+              quantidade: 0.9301444243932576
+              codigo_municipio_incidencia: codigo_municipio_incidencia
+            - codigo_cnae: codigo_cnae
+              tipo_tributacao: 2
+              discriminacao: discriminacao
+              item_lista_servico: item_lista_servico
+              unidade: unidade
+              iss_retido: false
+              exigibilidade_iss: 7
+              numero_processo: numero_processo
+              codigo_tributacao_municipio: codigo_tributacao_municipio
+              responsavel_retencao: 5
+              valores:
+                aliquota_cofins: 6.683562403749608
+                aliquota_ir: 9.018348186070783
+                valor_deducoes: 4.145608029883936
+                valor_pis: 7.386281948385884
+                valor_servicos: 2.027123023002322
+                valor_ir: 1.4894159098541704
+                valor_csll: 6.84685269835264
+                aliquota_pis: 9.369310271410669
+                desconto_condicionado: 6.965117697638846
+                valor_cofins: 1.2315135367772556
+                aliquota_csll: 6.438423552598547
+                valor_inss: 1.0246457001441578
+                valor_outras_retencoes: 7.457744773683766
+                valor_iss: 1.1730742509559433
+                valor_liquido: 5.025004791520295
+                aliquota_iss: 9.965781217890562
+                aliquota_inss: 8.762042012749001
+                desconto_incondicionado: 3.5571952270680973
+                valor_iss_retido: 4.965218492984954
+                valor_unitario: 3.616076749251911
+              codigo_pais: codigo_pais
+              codigo_municipio: codigo_municipio
+              quantidade: 0.9301444243932576
+              codigo_municipio_incidencia: codigo_municipio_incidencia
+            tomador:
+              fone: fone
+              endereco:
+                uf: uf
+                cidade: cidade
+                complemento: complemento
+                numero: numero
+                logradouro: logradouro
+                bairro: bairro
+                codigo_pais: "1058"
+                codigo_municipio: codigo_municipio
+                pais: pais
+                cep: cep
+              nome_razao_social: nome_razao_social
+              cpf_cnpj: cpf_cnpj
+              email: email
+              inscricao_municipal: inscricao_municipal
+            prestador:
+              fone: fone
+              endereco:
+                uf: uf
+                cidade: cidade
+                complemento: complemento
+                numero: numero
+                logradouro: logradouro
+                bairro: bairro
+                codigo_pais: "1058"
+                codigo_municipio: codigo_municipio
+                pais: Brasil
+                cep: cep
+              incentivador_cultural: true
+              incentivo_fiscal: true
+              optante_simples_nacional: true
+              nome_razao_social: nome_razao_social
+              nome_fantasia: nome_fantasia
+              regime_tributacao: 1
+              cpf_cnpj: cpf_cnpj
+              email: email
+              regime_especial_tributacao: 5
+              inscricao_municipal: inscricao_municipal
+            rps:
+              identificacao_rps:
+                tipo: tipo
+                numero: numero
+                serie: serie
+              data_emissao: 2000-01-23T04:56:07.000+00:00
+            intermediario:
+              nome_razao_social: nome_razao_social
+              cpf_cnpj: cpf_cnpj
+              inscricao_municipal: inscricao_municipal
+            construcao_civil:
+              codigo_obra: codigo_obra
+              art: art
+            outras_informacoes: outras_informacoes
+            natureza_tributacao: 6
+            competencia: 2000-01-23T04:56:07.000+00:00
+          link_url: link_url
+          id: id
+          data_emissao: 2000-01-23T04:56:07.000+00:00
+          referencia: referencia
+          status: processando
+        created_at: 2000-01-23T04:56:07.000+00:00
+        id: id
+        referencia: referencia
+        status: novo
+      properties:
+        id:
+          description: ID único do lote gerado automaticamente pela API.
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        status:
+          enum:
+          - novo
+          - fila_envio
+          - fila_consulta
+          - processado
+          - erro
+          type: string
+        numero:
+          type: string
+        ambiente:
+          enum:
+          - homologacao
+          - producao
+          type: string
+        referencia:
+          type: string
+        notas:
+          items:
+            $ref: '#/components/schemas/Nfse'
+          type: array
+      type: object
+    Nfse:
+      example:
+        codigo_verificacao: codigo_verificacao
+        numero: numero
+        ambiente: homologacao
+        DPS:
+          serie: serie
+          nDPS: nDPS
+        cancelamento:
+          codigo: codigo
+          motivo: motivo
+          data_hora: 2000-01-23T04:56:07.000+00:00
+          id: id
+          mensagens:
+          - codigo: codigo
+            correcao: correcao
+            descricao: descricao
+          - codigo: codigo
+            correcao: correcao
+            descricao: descricao
+          status: pendente
+        created_at: 2000-01-23T04:56:07.000+00:00
+        mensagens:
+        - codigo: codigo
+          correcao: correcao
+          descricao: descricao
+        - codigo: codigo
+          correcao: correcao
+          descricao: descricao
+        declaracao_prestacao_servico:
+          servicos:
+          - codigo_cnae: codigo_cnae
+            tipo_tributacao: 2
+            discriminacao: discriminacao
+            item_lista_servico: item_lista_servico
+            unidade: unidade
+            iss_retido: false
+            exigibilidade_iss: 7
+            numero_processo: numero_processo
+            codigo_tributacao_municipio: codigo_tributacao_municipio
+            responsavel_retencao: 5
+            valores:
+              aliquota_cofins: 6.683562403749608
+              aliquota_ir: 9.018348186070783
+              valor_deducoes: 4.145608029883936
+              valor_pis: 7.386281948385884
+              valor_servicos: 2.027123023002322
+              valor_ir: 1.4894159098541704
+              valor_csll: 6.84685269835264
+              aliquota_pis: 9.369310271410669
+              desconto_condicionado: 6.965117697638846
+              valor_cofins: 1.2315135367772556
+              aliquota_csll: 6.438423552598547
+              valor_inss: 1.0246457001441578
+              valor_outras_retencoes: 7.457744773683766
+              valor_iss: 1.1730742509559433
+              valor_liquido: 5.025004791520295
+              aliquota_iss: 9.965781217890562
+              aliquota_inss: 8.762042012749001
+              desconto_incondicionado: 3.5571952270680973
+              valor_iss_retido: 4.965218492984954
+              valor_unitario: 3.616076749251911
+            codigo_pais: codigo_pais
+            codigo_municipio: codigo_municipio
+            quantidade: 0.9301444243932576
+            codigo_municipio_incidencia: codigo_municipio_incidencia
+          - codigo_cnae: codigo_cnae
+            tipo_tributacao: 2
+            discriminacao: discriminacao
+            item_lista_servico: item_lista_servico
+            unidade: unidade
+            iss_retido: false
+            exigibilidade_iss: 7
+            numero_processo: numero_processo
+            codigo_tributacao_municipio: codigo_tributacao_municipio
+            responsavel_retencao: 5
+            valores:
+              aliquota_cofins: 6.683562403749608
+              aliquota_ir: 9.018348186070783
+              valor_deducoes: 4.145608029883936
+              valor_pis: 7.386281948385884
+              valor_servicos: 2.027123023002322
+              valor_ir: 1.4894159098541704
+              valor_csll: 6.84685269835264
+              aliquota_pis: 9.369310271410669
+              desconto_condicionado: 6.965117697638846
+              valor_cofins: 1.2315135367772556
+              aliquota_csll: 6.438423552598547
+              valor_inss: 1.0246457001441578
+              valor_outras_retencoes: 7.457744773683766
+              valor_iss: 1.1730742509559433
+              valor_liquido: 5.025004791520295
+              aliquota_iss: 9.965781217890562
+              aliquota_inss: 8.762042012749001
+              desconto_incondicionado: 3.5571952270680973
+              valor_iss_retido: 4.965218492984954
+              valor_unitario: 3.616076749251911
+            codigo_pais: codigo_pais
+            codigo_municipio: codigo_municipio
+            quantidade: 0.9301444243932576
+            codigo_municipio_incidencia: codigo_municipio_incidencia
+          tomador:
+            fone: fone
+            endereco:
+              uf: uf
+              cidade: cidade
+              complemento: complemento
+              numero: numero
+              logradouro: logradouro
+              bairro: bairro
+              codigo_pais: "1058"
+              codigo_municipio: codigo_municipio
+              pais: pais
+              cep: cep
+            nome_razao_social: nome_razao_social
+            cpf_cnpj: cpf_cnpj
+            email: email
+            inscricao_municipal: inscricao_municipal
+          prestador:
+            fone: fone
+            endereco:
+              uf: uf
+              cidade: cidade
+              complemento: complemento
+              numero: numero
+              logradouro: logradouro
+              bairro: bairro
+              codigo_pais: "1058"
+              codigo_municipio: codigo_municipio
+              pais: Brasil
+              cep: cep
+            incentivador_cultural: true
+            incentivo_fiscal: true
+            optante_simples_nacional: true
+            nome_razao_social: nome_razao_social
+            nome_fantasia: nome_fantasia
+            regime_tributacao: 1
+            cpf_cnpj: cpf_cnpj
+            email: email
+            regime_especial_tributacao: 5
+            inscricao_municipal: inscricao_municipal
+          rps:
+            identificacao_rps:
+              tipo: tipo
+              numero: numero
+              serie: serie
+            data_emissao: 2000-01-23T04:56:07.000+00:00
+          intermediario:
+            nome_razao_social: nome_razao_social
+            cpf_cnpj: cpf_cnpj
+            inscricao_municipal: inscricao_municipal
+          construcao_civil:
+            codigo_obra: codigo_obra
+            art: art
+          outras_informacoes: outras_informacoes
+          natureza_tributacao: 6
+          competencia: 2000-01-23T04:56:07.000+00:00
+        link_url: link_url
+        id: id
+        data_emissao: 2000-01-23T04:56:07.000+00:00
+        referencia: referencia
+        status: processando
+      properties:
+        id:
+          description: ID único da nota gerado automaticamente pela API.
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        status:
+          enum:
+          - processando
+          - autorizada
+          - negada
+          - cancelada
+          - substituida
+          - erro
+          type: string
+        numero:
+          type: string
+        codigo_verificacao:
+          type: string
+        link_url:
+          type: string
+        data_emissao:
+          format: date-time
+          nullable: true
+          type: string
+        ambiente:
+          enum:
+          - homologacao
+          - producao
+          type: string
+        referencia:
+          type: string
+        DPS:
+          $ref: '#/components/schemas/DPS'
+        cancelamento:
+          $ref: '#/components/schemas/NfseCancelamento'
+        mensagens:
+          items:
+            $ref: '#/components/schemas/NfseMensagemRetorno'
+          type: array
+        declaracao_prestacao_servico:
+          $ref: '#/components/schemas/Rps'
+      type: object
+    DPS:
+      description: Grupo de informações da DPS relativas ao serviço prestado.
+      example:
+        serie: serie
+        nDPS: nDPS
+      properties:
+        serie:
+          description: Série do DPS.
+          nullable: true
+          type: string
+        nDPS:
+          description: Número do DPS.
+          nullable: true
+          type: string
+      type: object
+    NfseCancelamento:
+      example:
+        codigo: codigo
+        motivo: motivo
+        data_hora: 2000-01-23T04:56:07.000+00:00
+        id: id
+        mensagens:
+        - codigo: codigo
+          correcao: correcao
+          descricao: descricao
+        - codigo: codigo
+          correcao: correcao
+          descricao: descricao
+        status: pendente
+      properties:
+        id:
+          description: ID único do cancelamento gerado automaticamente pela API.
+          type: string
+        status:
+          enum:
+          - pendente
+          - concluido
+          - rejeitado
+          - erro
+          type: string
+        codigo:
+          type: string
+        motivo:
+          type: string
+        data_hora:
+          format: date-time
+          nullable: true
+          type: string
+        mensagens:
+          items:
+            $ref: '#/components/schemas/NfseMensagemRetorno'
+          type: array
+      type: object
+    NfseMensagemRetorno:
+      example:
+        codigo: codigo
+        correcao: correcao
+        descricao: descricao
+      properties:
+        codigo:
+          type: string
+        descricao:
+          type: string
+        correcao:
+          type: string
+      type: object
+    Rps:
+      description: '*Propriedade obsoleta. Não é mais retornada pela API.*'
+      example:
+        servicos:
+        - codigo_cnae: codigo_cnae
+          tipo_tributacao: 2
+          discriminacao: discriminacao
+          item_lista_servico: item_lista_servico
+          unidade: unidade
+          iss_retido: false
+          exigibilidade_iss: 7
+          numero_processo: numero_processo
+          codigo_tributacao_municipio: codigo_tributacao_municipio
+          responsavel_retencao: 5
+          valores:
+            aliquota_cofins: 6.683562403749608
+            aliquota_ir: 9.018348186070783
+            valor_deducoes: 4.145608029883936
+            valor_pis: 7.386281948385884
+            valor_servicos: 2.027123023002322
+            valor_ir: 1.4894159098541704
+            valor_csll: 6.84685269835264
+            aliquota_pis: 9.369310271410669
+            desconto_condicionado: 6.965117697638846
+            valor_cofins: 1.2315135367772556
+            aliquota_csll: 6.438423552598547
+            valor_inss: 1.0246457001441578
+            valor_outras_retencoes: 7.457744773683766
+            valor_iss: 1.1730742509559433
+            valor_liquido: 5.025004791520295
+            aliquota_iss: 9.965781217890562
+            aliquota_inss: 8.762042012749001
+            desconto_incondicionado: 3.5571952270680973
+            valor_iss_retido: 4.965218492984954
+            valor_unitario: 3.616076749251911
+          codigo_pais: codigo_pais
+          codigo_municipio: codigo_municipio
+          quantidade: 0.9301444243932576
+          codigo_municipio_incidencia: codigo_municipio_incidencia
+        - codigo_cnae: codigo_cnae
+          tipo_tributacao: 2
+          discriminacao: discriminacao
+          item_lista_servico: item_lista_servico
+          unidade: unidade
+          iss_retido: false
+          exigibilidade_iss: 7
+          numero_processo: numero_processo
+          codigo_tributacao_municipio: codigo_tributacao_municipio
+          responsavel_retencao: 5
+          valores:
+            aliquota_cofins: 6.683562403749608
+            aliquota_ir: 9.018348186070783
+            valor_deducoes: 4.145608029883936
+            valor_pis: 7.386281948385884
+            valor_servicos: 2.027123023002322
+            valor_ir: 1.4894159098541704
+            valor_csll: 6.84685269835264
+            aliquota_pis: 9.369310271410669
+            desconto_condicionado: 6.965117697638846
+            valor_cofins: 1.2315135367772556
+            aliquota_csll: 6.438423552598547
+            valor_inss: 1.0246457001441578
+            valor_outras_retencoes: 7.457744773683766
+            valor_iss: 1.1730742509559433
+            valor_liquido: 5.025004791520295
+            aliquota_iss: 9.965781217890562
+            aliquota_inss: 8.762042012749001
+            desconto_incondicionado: 3.5571952270680973
+            valor_iss_retido: 4.965218492984954
+            valor_unitario: 3.616076749251911
+          codigo_pais: codigo_pais
+          codigo_municipio: codigo_municipio
+          quantidade: 0.9301444243932576
+          codigo_municipio_incidencia: codigo_municipio_incidencia
+        tomador:
+          fone: fone
+          endereco:
+            uf: uf
+            cidade: cidade
+            complemento: complemento
+            numero: numero
+            logradouro: logradouro
+            bairro: bairro
+            codigo_pais: "1058"
+            codigo_municipio: codigo_municipio
+            pais: pais
+            cep: cep
+          nome_razao_social: nome_razao_social
+          cpf_cnpj: cpf_cnpj
+          email: email
+          inscricao_municipal: inscricao_municipal
+        prestador:
+          fone: fone
+          endereco:
+            uf: uf
+            cidade: cidade
+            complemento: complemento
+            numero: numero
+            logradouro: logradouro
+            bairro: bairro
+            codigo_pais: "1058"
+            codigo_municipio: codigo_municipio
+            pais: Brasil
+            cep: cep
+          incentivador_cultural: true
+          incentivo_fiscal: true
+          optante_simples_nacional: true
+          nome_razao_social: nome_razao_social
+          nome_fantasia: nome_fantasia
+          regime_tributacao: 1
+          cpf_cnpj: cpf_cnpj
+          email: email
+          regime_especial_tributacao: 5
+          inscricao_municipal: inscricao_municipal
+        rps:
+          identificacao_rps:
+            tipo: tipo
+            numero: numero
+            serie: serie
+          data_emissao: 2000-01-23T04:56:07.000+00:00
+        intermediario:
+          nome_razao_social: nome_razao_social
+          cpf_cnpj: cpf_cnpj
+          inscricao_municipal: inscricao_municipal
+        construcao_civil:
+          codigo_obra: codigo_obra
+          art: art
+        outras_informacoes: outras_informacoes
+        natureza_tributacao: 6
+        competencia: 2000-01-23T04:56:07.000+00:00
+      properties:
+        rps:
+          $ref: '#/components/schemas/RpsDados'
+        competencia:
+          format: date-time
+          type: string
+        natureza_tributacao:
+          description: "Natureza da tributação\r\n1 - Simples Nacional;\r\n2 - Fixo;\r\
+            \n3 - Depósito em juízo;\r\n4 - Exigibilidade suspensa por decisão judicial;\r\
+            \n5 - Exigibilidade suspensa por procedimento administrativo;\r\n6 - Isenç\
+            ão parcial."
+          type: integer
+        prestador:
+          $ref: '#/components/schemas/RpsDadosPrestador'
+        tomador:
+          $ref: '#/components/schemas/RpsDadosTomador'
+        intermediario:
+          $ref: '#/components/schemas/RpsDadosIntermediario'
+        construcao_civil:
+          $ref: '#/components/schemas/RpsDadosConstrucaoCivil'
+        servicos:
+          items:
+            $ref: '#/components/schemas/RpsDadosServico'
+          minItems: 1
+          type: array
+        outras_informacoes:
+          description: Informações adicionais ao documento.
+          type: string
+      required:
+      - servicos
+      type: object
+    RpsDados:
+      example:
+        identificacao_rps:
+          tipo: tipo
+          numero: numero
+          serie: serie
+        data_emissao: 2000-01-23T04:56:07.000+00:00
+      properties:
+        identificacao_rps:
+          $ref: '#/components/schemas/RpsIdentificacao'
+        data_emissao:
+          format: date-time
+          type: string
+      type: object
+    RpsIdentificacao:
+      example:
+        tipo: tipo
+        numero: numero
+        serie: serie
+      properties:
+        numero:
+          type: string
+        serie:
+          type: string
+        tipo:
+          type: string
+      type: object
+    RpsDadosPrestador:
+      example:
+        fone: fone
+        endereco:
+          uf: uf
+          cidade: cidade
+          complemento: complemento
+          numero: numero
+          logradouro: logradouro
+          bairro: bairro
+          codigo_pais: "1058"
+          codigo_municipio: codigo_municipio
+          pais: Brasil
+          cep: cep
+        incentivador_cultural: true
+        incentivo_fiscal: true
+        optante_simples_nacional: true
+        nome_razao_social: nome_razao_social
+        nome_fantasia: nome_fantasia
+        regime_tributacao: 1
+        cpf_cnpj: cpf_cnpj
+        email: email
+        regime_especial_tributacao: 5
+        inscricao_municipal: inscricao_municipal
+      properties:
+        cpf_cnpj:
+          type: string
+        inscricao_municipal:
+          type: string
+        nome_razao_social:
+          type: string
+        nome_fantasia:
+          type: string
+        fone:
+          type: string
+        email:
+          type: string
+        endereco:
+          $ref: '#/components/schemas/EmpresaEndereco'
+        optante_simples_nacional:
+          type: boolean
+        regime_tributacao:
+          type: integer
+        regime_especial_tributacao:
+          type: integer
+        incentivo_fiscal:
+          type: boolean
+        incentivador_cultural:
+          type: boolean
+      type: object
+    RpsDadosTomador:
+      example:
+        fone: fone
+        endereco:
+          uf: uf
+          cidade: cidade
+          complemento: complemento
+          numero: numero
+          logradouro: logradouro
+          bairro: bairro
+          codigo_pais: "1058"
+          codigo_municipio: codigo_municipio
+          pais: pais
+          cep: cep
+        nome_razao_social: nome_razao_social
+        cpf_cnpj: cpf_cnpj
+        email: email
+        inscricao_municipal: inscricao_municipal
+      properties:
+        cpf_cnpj:
+          description: CPF ou CNPJ do tomador/destinatário.
+          type: string
+        inscricao_municipal:
+          description: Inscrição Municipal do tomador/destinatário.
+          type: string
+        nome_razao_social:
+          description: Nome ou Razão Social do tomador/destinatário.
+          type: string
+        fone:
+          description: Telefone do tomador/destinatário.
+          type: string
+        email:
+          description: Email do tomador/destinatário.
+          type: string
+        endereco:
+          $ref: '#/components/schemas/RpsDadosTomadorEndereco'
+      required:
+      - nome_razao_social
+      type: object
+    RpsDadosTomadorEndereco:
+      example:
+        uf: uf
+        cidade: cidade
+        complemento: complemento
+        numero: numero
+        logradouro: logradouro
+        bairro: bairro
+        codigo_pais: "1058"
+        codigo_municipio: codigo_municipio
+        pais: pais
+        cep: cep
+      properties:
+        logradouro:
+          description: Logradouro.
+          type: string
+        numero:
+          description: Número.
+          type: string
+        complemento:
+          description: Complemento.
+          maxLength: 500
+          type: string
+        bairro:
+          description: Bairro.
+          type: string
+        codigo_municipio:
+          description: Código IBGE do município.
+          type: string
+        cidade:
+          description: Cidade.
+          maxLength: 255
+          type: string
+        uf:
+          description: Sigla do estado.
+          type: string
+        codigo_pais:
+          default: "1058"
+          type: string
+        pais:
+          description: Nome do país.
+          maxLength: 255
+          type: string
+        cep:
+          description: "CEP.\r\nUtilize o valor sem máscara."
+          type: string
+      type: object
+    RpsDadosIntermediario:
+      example:
+        nome_razao_social: nome_razao_social
+        cpf_cnpj: cpf_cnpj
+        inscricao_municipal: inscricao_municipal
+      properties:
+        cpf_cnpj:
+          type: string
+        nome_razao_social:
+          type: string
+        inscricao_municipal:
+          type: string
+      type: object
+    RpsDadosConstrucaoCivil:
+      example:
+        codigo_obra: codigo_obra
+        art: art
+      properties:
+        codigo_obra:
+          type: string
+        art:
+          type: string
+      type: object
+    RpsDadosServico:
+      example:
+        codigo_cnae: codigo_cnae
+        tipo_tributacao: 2
+        discriminacao: discriminacao
+        item_lista_servico: item_lista_servico
+        unidade: unidade
+        iss_retido: false
+        exigibilidade_iss: 7
+        numero_processo: numero_processo
+        codigo_tributacao_municipio: codigo_tributacao_municipio
+        responsavel_retencao: 5
+        valores:
+          aliquota_cofins: 6.683562403749608
+          aliquota_ir: 9.018348186070783
+          valor_deducoes: 4.145608029883936
+          valor_pis: 7.386281948385884
+          valor_servicos: 2.027123023002322
+          valor_ir: 1.4894159098541704
+          valor_csll: 6.84685269835264
+          aliquota_pis: 9.369310271410669
+          desconto_condicionado: 6.965117697638846
+          valor_cofins: 1.2315135367772556
+          aliquota_csll: 6.438423552598547
+          valor_inss: 1.0246457001441578
+          valor_outras_retencoes: 7.457744773683766
+          valor_iss: 1.1730742509559433
+          valor_liquido: 5.025004791520295
+          aliquota_iss: 9.965781217890562
+          aliquota_inss: 8.762042012749001
+          desconto_incondicionado: 3.5571952270680973
+          valor_iss_retido: 4.965218492984954
+          valor_unitario: 3.616076749251911
+        codigo_pais: codigo_pais
+        codigo_municipio: codigo_municipio
+        quantidade: 0.9301444243932576
+        codigo_municipio_incidencia: codigo_municipio_incidencia
+      properties:
+        iss_retido:
+          default: false
+          description: Reter ISSQN.
+          type: boolean
+        responsavel_retencao:
+          description: "Responsável pela retenção:\r\n* 0 - Prestador;\r\n* 1 - Tomador;\r\
+            \n* 2 - Intermediário."
+          type: integer
+        item_lista_servico:
+          description: "Código do item da lista de serviço, geralmente segue a LC116,\
+            \ podendo variar de acordo com a prefeitura.\r\n\r\nVocê pode encontrar\
+            \ esse dado no portal da prefeitura, em uma nota emitida ou junto ao contador."
+          type: string
+        codigo_cnae:
+          description: Código CNAE (Classificação Nacional de Atividades Econômicas).
+          type: string
+        codigo_tributacao_municipio:
+          description: Código de tributação do município.
+          type: string
+        discriminacao:
+          description: Detalhamento do serviço prestado.
+          type: string
+        codigo_municipio:
+          description: "Código IBGE do município de prestação do serviço.\r\nCaso\
+            \ não informado, será considerado o município do prestador."
+          type: string
+        codigo_pais:
+          description: Código do país de prestação do serviço.
+          type: string
+        tipo_tributacao:
+          description: "Tipo de Tributação do Serviço:\r\n* 1 - Isento de ISS\r\n\
+            * 2 - Imune\r\n* 3 - Não Incidência no Município\r\n* 4 - Não Tributá\
+            vel\r\n* 5 - Retido\r\n* 6 - Tributável Dentro do Município\r\n* 7 - Tributá\
+            vel Fora do Município\r\n* 8 - Tributável Dentro do Município pelo tomador"
+          type: integer
+        exigibilidade_iss:
+          description: "Exigibilidade do ISS:\r\n* 1 - Exigível\r\n* 2 - Não Incidê\
+            ncia\r\n* 3 - Isenção\r\n* 4 - Exportação\r\n* 5 - Imunidade\r\n* 6 -\
+            \ Suspenso por Decisão Judicial\r\n* 7 - Suspenso por Processo Administrativo"
+          type: integer
+        codigo_municipio_incidencia:
+          description: Código IBGE do município de incidência do ISSQN.
+          type: string
+        numero_processo:
+          description: Número do Processo de Suspensão da Exigibilidade.
+          type: string
+        unidade:
+          description: Unidade do serviço prestado.
+          type: string
+        quantidade:
+          description: Quantidade dos serviços prestados.
+          exclusiveMinimum: true
+          minimum: 0
+          type: number
+        valores:
+          $ref: '#/components/schemas/RpsServicoValores'
+      required:
+      - discriminacao
+      - item_lista_servico
+      - valores
+      type: object
+    RpsServicoValores:
+      example:
+        aliquota_cofins: 6.683562403749608
+        aliquota_ir: 9.018348186070783
+        valor_deducoes: 4.145608029883936
+        valor_pis: 7.386281948385884
+        valor_servicos: 2.027123023002322
+        valor_ir: 1.4894159098541704
+        valor_csll: 6.84685269835264
+        aliquota_pis: 9.369310271410669
+        desconto_condicionado: 6.965117697638846
+        valor_cofins: 1.2315135367772556
+        aliquota_csll: 6.438423552598547
+        valor_inss: 1.0246457001441578
+        valor_outras_retencoes: 7.457744773683766
+        valor_iss: 1.1730742509559433
+        valor_liquido: 5.025004791520295
+        aliquota_iss: 9.965781217890562
+        aliquota_inss: 8.762042012749001
+        desconto_incondicionado: 3.5571952270680973
+        valor_iss_retido: 4.965218492984954
+        valor_unitario: 3.616076749251911
+      properties:
+        valor_unitario:
+          description: Valor unitário do serviço.
+          type: number
+        valor_servicos:
+          description: Valor total do serviço.
+          type: number
+        valor_deducoes:
+          type: number
+        valor_pis:
+          type: number
+        valor_cofins:
+          type: number
+        valor_inss:
+          type: number
+        valor_ir:
+          type: number
+        valor_csll:
+          type: number
+        valor_outras_retencoes:
+          type: number
+        valor_iss:
+          type: number
+        valor_iss_retido:
+          type: number
+        valor_liquido:
+          type: number
+        aliquota_iss:
+          type: number
+        aliquota_pis:
+          type: number
+        aliquota_cofins:
+          type: number
+        aliquota_inss:
+          type: number
+        aliquota_ir:
+          type: number
+        aliquota_csll:
+          type: number
+        desconto_incondicionado:
+          type: number
+        desconto_condicionado:
+          type: number
+      required:
+      - valor_unitario
+      type: object
     RpsLoteListagem:
       example:
         '@count': 0
@@ -21097,90 +20570,6 @@ components:
           items:
             $ref: '#/components/schemas/RpsLote'
           type: array
-      type: object
-    NfsePedidoEmissao:
-      example:
-        rps:
-          servicos:
-          - codigo_cnae: codigo_cnae
-            tipo_tributacao: 2
-            discriminacao: discriminacao
-            item_lista_servico: item_lista_servico
-            unidade: unidade
-            iss_retido: false
-            exigibilidade_iss: 7
-            numero_processo: numero_processo
-            codigo_tributacao_municipio: codigo_tributacao_municipio
-            responsavel_retencao: 5
-            valores:
-              aliquota_cofins: 6.683562403749608
-              aliquota_ir: 9.018348186070783
-              valor_deducoes: 4.145608029883936
-              valor_pis: 7.386281948385884
-              valor_servicos: 2.027123023002322
-              valor_ir: 1.4894159098541704
-              valor_csll: 6.84685269835264
-              aliquota_pis: 9.369310271410669
-              desconto_condicionado: 6.965117697638846
-              valor_cofins: 1.2315135367772556
-              aliquota_csll: 6.438423552598547
-              valor_inss: 1.0246457001441578
-              valor_outras_retencoes: 7.457744773683766
-              valor_iss: 1.1730742509559433
-              valor_liquido: 5.025004791520295
-              aliquota_iss: 9.965781217890562
-              aliquota_inss: 8.762042012749001
-              desconto_incondicionado: 3.5571952270680973
-              valor_iss_retido: 4.965218492984954
-              valor_unitario: 3.616076749251911
-            codigo_pais: codigo_pais
-            codigo_municipio: codigo_municipio
-            quantidade: 0.9301444243932576
-            codigo_municipio_incidencia: codigo_municipio_incidencia
-          tomador:
-            fone: fone
-            endereco:
-              uf: uf
-              cidade: cidade
-              complemento: complemento
-              numero: numero
-              logradouro: logradouro
-              bairro: bairro
-              codigo_pais: "1058"
-              codigo_municipio: codigo_municipio
-              pais: pais
-              cep: cep
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            email: email
-            inscricao_municipal: inscricao_municipal
-          prestador:
-            cpf_cnpj: cpf_cnpj
-          intermediario:
-            nome_razao_social: nome_razao_social
-            cpf_cnpj: cpf_cnpj
-            inscricao_municipal: inscricao_municipal
-          construcao_civil:
-            codigo_obra: codigo_obra
-            art: art
-          outras_informacoes: outras_informacoes
-          natureza_tributacao: 0
-          referencia: referencia
-          data_emissao: 2000-01-23T04:56:07.000+00:00
-          competencia: 2000-01-23T04:56:07.000+00:00
-        ambiente: homologacao
-      properties:
-        ambiente:
-          description: Identificação do Ambiente.
-          enum:
-          - homologacao
-          - producao
-          type: string
-        rps:
-          $ref: '#/components/schemas/RpsPedidoEmissao'
-      required:
-      - ambiente
-      - rps
       type: object
     NfseListagem:
       example:

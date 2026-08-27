@@ -240,29 +240,6 @@ namespace ACBrAPI.Sdk.Api
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>RpsLote</returns>
-        [Obsolete]
-        RpsLote EmitirLoteNfse(RpsPedidoEmissaoLote body);
-
-        /// <summary>
-        /// Emitir lote de NFS-e
-        /// </summary>
-        /// <remarks>
-        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-        /// </remarks>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>ApiResponse of RpsLote</returns>
-        [Obsolete]
-        ApiResponse<RpsLote> EmitirLoteNfseWithHttpInfo(RpsPedidoEmissaoLote body);
-        /// <summary>
-        /// Emitir lote de NFS-e
-        /// </summary>
-        /// <remarks>
-        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-        /// </remarks>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>RpsLote</returns>
         RpsLote EmitirLoteNfseDps(NfseLoteDpsPedidoEmissao body);
 
         /// <summary>
@@ -275,29 +252,6 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="body"></param>
         /// <returns>ApiResponse of RpsLote</returns>
         ApiResponse<RpsLote> EmitirLoteNfseDpsWithHttpInfo(NfseLoteDpsPedidoEmissao body);
-        /// <summary>
-        /// Emitir NFS-e
-        /// </summary>
-        /// <remarks>
-        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
-        /// </remarks>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>Nfse</returns>
-        [Obsolete]
-        Nfse EmitirNfse(NfsePedidoEmissao body);
-
-        /// <summary>
-        /// Emitir NFS-e
-        /// </summary>
-        /// <remarks>
-        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
-        /// </remarks>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>ApiResponse of Nfse</returns>
-        [Obsolete]
-        ApiResponse<Nfse> EmitirNfseWithHttpInfo(NfsePedidoEmissao body);
         /// <summary>
         /// Emitir NFS-e
         /// </summary>
@@ -661,31 +615,6 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RpsLote</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<RpsLote> EmitirLoteNfseAsync(RpsPedidoEmissaoLote body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Emitir lote de NFS-e
-        /// </summary>
-        /// <remarks>
-        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-        /// </remarks>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RpsLote)</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<RpsLote>> EmitirLoteNfseWithHttpInfoAsync(RpsPedidoEmissaoLote body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Emitir lote de NFS-e
-        /// </summary>
-        /// <remarks>
-        /// **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-        /// </remarks>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RpsLote</returns>
         System.Threading.Tasks.Task<RpsLote> EmitirLoteNfseDpsAsync(NfseLoteDpsPedidoEmissao body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -699,31 +628,6 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RpsLote)</returns>
         System.Threading.Tasks.Task<ApiResponse<RpsLote>> EmitirLoteNfseDpsWithHttpInfoAsync(NfseLoteDpsPedidoEmissao body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Emitir NFS-e
-        /// </summary>
-        /// <remarks>
-        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
-        /// </remarks>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Nfse</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<Nfse> EmitirNfseAsync(NfsePedidoEmissao body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Emitir NFS-e
-        /// </summary>
-        /// <remarks>
-        /// **Informações adicionais**:  - Consumo: 1 unidade por requisição.
-        /// </remarks>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Nfse)</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<Nfse>> EmitirNfseWithHttpInfoAsync(NfsePedidoEmissao body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Emitir NFS-e
         /// </summary>
@@ -2349,139 +2253,6 @@ namespace ACBrAPI.Sdk.Api
         /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>RpsLote</returns>
-        [Obsolete]
-        public RpsLote EmitirLoteNfse(RpsPedidoEmissaoLote body)
-        {
-            ACBrAPI.Sdk.Client.ApiResponse<RpsLote> localVarResponse = EmitirLoteNfseWithHttpInfo(body);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-        /// </summary>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>ApiResponse of RpsLote</returns>
-        [Obsolete]
-        public ACBrAPI.Sdk.Client.ApiResponse<RpsLote> EmitirLoteNfseWithHttpInfo(RpsPedidoEmissaoLote body)
-        {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ACBrAPI.Sdk.Client.ApiException(400, "Missing required parameter 'body' when calling NfseApi->EmitirLoteNfse");
-
-            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = body;
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<RpsLote>("/nfse/lotes", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmitirLoteNfse", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-        /// </summary>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RpsLote</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<RpsLote> EmitirLoteNfseAsync(RpsPedidoEmissaoLote body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            ACBrAPI.Sdk.Client.ApiResponse<RpsLote> localVarResponse = await EmitirLoteNfseWithHttpInfoAsync(body, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-        /// </summary>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RpsLote)</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<RpsLote>> EmitirLoteNfseWithHttpInfoAsync(RpsPedidoEmissaoLote body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ACBrAPI.Sdk.Client.ApiException(400, "Missing required parameter 'body' when calling NfseApi->EmitirLoteNfse");
-
-
-            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = body;
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<RpsLote>("/nfse/lotes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmitirLoteNfse", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Emitir lote de NFS-e **Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-        /// </summary>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>RpsLote</returns>
         public RpsLote EmitirLoteNfseDps(NfseLoteDpsPedidoEmissao body)
         {
             ACBrAPI.Sdk.Client.ApiResponse<RpsLote> localVarResponse = EmitirLoteNfseDpsWithHttpInfo(body);
@@ -2599,139 +2370,6 @@ namespace ACBrAPI.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EmitirLoteNfseDps", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
-        /// </summary>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>Nfse</returns>
-        [Obsolete]
-        public Nfse EmitirNfse(NfsePedidoEmissao body)
-        {
-            ACBrAPI.Sdk.Client.ApiResponse<Nfse> localVarResponse = EmitirNfseWithHttpInfo(body);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
-        /// </summary>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>ApiResponse of Nfse</returns>
-        [Obsolete]
-        public ACBrAPI.Sdk.Client.ApiResponse<Nfse> EmitirNfseWithHttpInfo(NfsePedidoEmissao body)
-        {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ACBrAPI.Sdk.Client.ApiException(400, "Missing required parameter 'body' when calling NfseApi->EmitirNfse");
-
-            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = body;
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Nfse>("/nfse", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmitirNfse", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
-        /// </summary>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Nfse</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<Nfse> EmitirNfseAsync(NfsePedidoEmissao body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            ACBrAPI.Sdk.Client.ApiResponse<Nfse> localVarResponse = await EmitirNfseWithHttpInfoAsync(body, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Emitir NFS-e **Informações adicionais**:  - Consumo: 1 unidade por requisição.
-        /// </summary>
-        /// <exception cref="ACBrAPI.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Nfse)</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<Nfse>> EmitirNfseWithHttpInfoAsync(NfsePedidoEmissao body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ACBrAPI.Sdk.Client.ApiException(400, "Missing required parameter 'body' when calling NfseApi->EmitirNfse");
-
-
-            ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = body;
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Nfse>("/nfse", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmitirNfse", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
