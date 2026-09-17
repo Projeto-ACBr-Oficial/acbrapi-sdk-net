@@ -11,7 +11,7 @@ info:
     \ de corpo**\r\n- `grant_type=client_credentials&client_id=SEU_CLIENT_ID&client_secret=SEU_CLIENT_SECRET&scope=empresa%20nfe`\r\
     \n\r\n**Uso do token nas requisições**\r\n- `Authorization: Bearer SEU_ACCESS_TOKEN`"
   title: ACBr API
-  version: 3.1.9
+  version: 3.1.10
 servers:
 - url: https://prod.acbr.api.br/
 security:
@@ -6881,6 +6881,12 @@ components:
       - sefaz
       type: object
     EmpresaConfigNfceSefaz:
+      description: "Configurações do CSC (Código de Segurança do Contribuinte) para\
+        \ emissão\r\nda NFC-e.\r\n\r\nSe informado `id_csc` e `csc`, será utilizada\
+        \ a versão 2 do QR Code da\r\nNFC-e. Para utilizar a versão 3 do QR Code (NT\
+        \ 2025.001), que dispensa o\r\nCSC, envie `id_csc` igual a 0 (zero) e `csc`\
+        \ como string vazia.\r\n\r\nObservação: emitente pessoa física (CPF) utilizar\
+        \ sempre a versão 3 do\r\nQR Code."
       example:
         csc: csc
         id_csc: 6
@@ -6892,9 +6898,6 @@ components:
           description: Código do CSC.
           maxLength: 50
           type: string
-      required:
-      - csc
-      - id_csc
       type: object
     EmpresaConfigNfse:
       example:
@@ -115996,26 +115999,26 @@ components:
 x-tagGroups:
 - name: Geral
   tags:
-  - Empresa
   - Conta
+  - Empresa
 - name: Documentos Fiscais
   tags:
-  - CteOs
-  - Nfse
-  - Dce
-  - Nfcom
   - Cte
+  - CteOs
+  - Dce
   - Mdfe
-  - Nfe
   - Nfce
+  - Nfcom
+  - Nfe
+  - Nfse
 - name: Distribuição DF-e
   tags:
   - Distribuição NF-e
 - name: Auxiliares
   tags:
+  - Cep
+  - Cnpj
   - Debug
   - Email
-  - Cnpj
-  - Cep
 x-original-swagger-version: "2.0"
 

@@ -23,7 +23,7 @@ using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
 namespace ACBrAPI.Sdk.Model
 {
     /// <summary>
-    /// EmpresaConfigNfceSefaz
+    /// Configurações do CSC (Código de Segurança do Contribuinte) para emissão  da NFC-e.    Se informado &#x60;id_csc&#x60; e &#x60;csc&#x60;, será utilizada a versão 2 do QR Code da  NFC-e. Para utilizar a versão 3 do QR Code (NT 2025.001), que dispensa o  CSC, envie &#x60;id_csc&#x60; igual a 0 (zero) e &#x60;csc&#x60; como string vazia.    Observação: emitente pessoa física (CPF) utilizar sempre a versão 3 do  QR Code.
     /// </summary>
     [DataContract(Name = "EmpresaConfigNfceSefaz")]
     public partial class EmpresaConfigNfceSefaz : IEquatable<EmpresaConfigNfceSefaz>, IValidatableObject
@@ -31,21 +31,11 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EmpresaConfigNfceSefaz" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected EmpresaConfigNfceSefaz() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EmpresaConfigNfceSefaz" /> class.
-        /// </summary>
-        /// <param name="idCsc">Número de identificação do CSC. (required).</param>
-        /// <param name="csc">Código do CSC. (required).</param>
+        /// <param name="idCsc">Número de identificação do CSC..</param>
+        /// <param name="csc">Código do CSC..</param>
         public EmpresaConfigNfceSefaz(int idCsc = default(int), string csc = default(string))
         {
             this.id_csc = idCsc;
-            // to ensure "csc" is required (not null)
-            if (csc == null)
-            {
-                throw new ArgumentNullException("csc is a required property for EmpresaConfigNfceSefaz and cannot be null");
-            }
             this.csc = csc;
         }
 
@@ -53,14 +43,14 @@ namespace ACBrAPI.Sdk.Model
         /// Número de identificação do CSC.
         /// </summary>
         /// <value>Número de identificação do CSC.</value>
-        [DataMember(Name = "id_csc", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "id_csc", EmitDefaultValue = false)]
         public int id_csc { get; set; }
 
         /// <summary>
         /// Código do CSC.
         /// </summary>
         /// <value>Código do CSC.</value>
-        [DataMember(Name = "csc", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "csc", EmitDefaultValue = false)]
         public string csc { get; set; }
 
         /// <summary>

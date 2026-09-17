@@ -3,8 +3,8 @@
 Biblioteca para uso da [ACBr API](https://www.acbr.api.br) com Microsoft .NET.
 Consultar também a [documentação oficial da ACBr API](https://dev.acbr.api.br/docs).
 
-- Versão da API: 3.1.9
-- Versão do SDK: 3.1.9
+- Versão da API: 3.1.10
+- Versão do SDK: 3.1.10
 
 <a name="frameworks-supported"></a>
 ## Frameworks suportadas
