@@ -95,12 +95,14 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="provedor">Default: &#x60;\&quot;padrao\&quot;&#x60;    Identificação do provedor para transmissão da DPS:   * &#x60;\&quot;padrao\&quot;&#x60;: Provedor padrão da prefeitura.   * &#x60;\&quot;nacional\&quot;&#x60;: Ambiente de Dados Nacional (ADN) do &lt;a href&#x3D;\&quot;https://www.gov.br/nfse/pt-br\&quot; target&#x3D;\&quot;blank\&quot;&gt;Sistema Nacional NFS-e&lt;/a&gt;..</param>
         /// <param name="ambiente">Identificação do Ambiente. (required).</param>
         /// <param name="referencia">Seu identificador único para este documento. Opcional, ajuda a evitar o envio duplicado de um mesmo documento..</param>
+        /// <param name="numeroLote">Número do lote. Use apenas quando a numeração automática estiver desativada na configuração da empresa..</param>
         /// <param name="documentos">Lista com as informações das DPS relativas aos serviços prestados..</param>
-        public NfseLoteDpsPedidoEmissao(ProvedorEnum? provedor = default(ProvedorEnum?), AmbienteEnum ambiente = default(AmbienteEnum), string referencia = default(string), List<NfseDpsPedidoEmissao> documentos = default(List<NfseDpsPedidoEmissao>))
+        public NfseLoteDpsPedidoEmissao(ProvedorEnum? provedor = default(ProvedorEnum?), AmbienteEnum ambiente = default(AmbienteEnum), string referencia = default(string), long? numeroLote = default(long?), List<NfseDpsPedidoEmissao> documentos = default(List<NfseDpsPedidoEmissao>))
         {
             this.ambiente = ambiente;
             this.provedor = provedor;
             this.referencia = referencia;
+            this.numeroLote = numeroLote;
             this.documentos = documentos;
         }
 
@@ -110,6 +112,13 @@ namespace ACBrAPI.Sdk.Model
         /// <value>Seu identificador único para este documento. Opcional, ajuda a evitar o envio duplicado de um mesmo documento.</value>
         [DataMember(Name = "referencia", EmitDefaultValue = false)]
         public string referencia { get; set; }
+
+        /// <summary>
+        /// Número do lote. Use apenas quando a numeração automática estiver desativada na configuração da empresa.
+        /// </summary>
+        /// <value>Número do lote. Use apenas quando a numeração automática estiver desativada na configuração da empresa.</value>
+        [DataMember(Name = "numeroLote", EmitDefaultValue = true)]
+        public long? numeroLote { get; set; }
 
         /// <summary>
         /// Lista com as informações das DPS relativas aos serviços prestados.
@@ -129,6 +138,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  provedor: ").Append(provedor).Append("\n");
             sb.Append("  ambiente: ").Append(ambiente).Append("\n");
             sb.Append("  referencia: ").Append(referencia).Append("\n");
+            sb.Append("  numeroLote: ").Append(numeroLote).Append("\n");
             sb.Append("  documentos: ").Append(documentos).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -179,6 +189,11 @@ namespace ACBrAPI.Sdk.Model
                     this.referencia.Equals(input.referencia))
                 ) && 
                 (
+                    this.numeroLote == input.numeroLote ||
+                    (this.numeroLote != null &&
+                    this.numeroLote.Equals(input.numeroLote))
+                ) && 
+                (
                     this.documentos == input.documentos ||
                     this.documentos != null &&
                     input.documentos != null &&
@@ -200,6 +215,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.referencia != null)
                 {
                     hashCode = (hashCode * 59) + this.referencia.GetHashCode();
+                }
+                if (this.numeroLote != null)
+                {
+                    hashCode = (hashCode * 59) + this.numeroLote.GetHashCode();
                 }
                 if (this.documentos != null)
                 {

@@ -16,6 +16,7 @@ Todas as URIs relativas a *https://prod.acbr.api.br*
 | [**ConsultarNfse**](NfseApi.md#consultarnfse) | **GET** /nfse/{id} | Consultar NFS-e |
 | [**EmitirLoteNfseDps**](NfseApi.md#emitirlotenfsedps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e |
 | [**EmitirNfseDps**](NfseApi.md#emitirnfsedps) | **POST** /nfse/dps | Emitir NFS-e |
+| [**EnviarEmailNfse**](NfseApi.md#enviaremailnfse) | **POST** /nfse/{id}/email | Enviar e-mail |
 | [**ListarLotesNfse**](NfseApi.md#listarlotesnfse) | **GET** /nfse/lotes | Listar lotes de NFS-e |
 | [**ListarNfse**](NfseApi.md#listarnfse) | **GET** /nfse | Listar NFS-e |
 | [**SincronizarNfse**](NfseApi.md#sincronizarnfse) | **POST** /nfse/{id}/sincronizar | Sincroniza dados na NFS-e a partir da Prefeitura |
@@ -1175,6 +1176,110 @@ catch (ApiException e)
 ### Tipo de retorno
 
 [**Nfse**](Nfse.md)
+
+### Autorização
+
+[oauth2](../README.md#oauth2)
+
+### Headers da requisição HTTP
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### Detalhes da resposta HTTP
+| Código status | Descrição | Headers da resposta |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Voltar ao topo]](#) [[Voltar à listagem da API]](../README.md#documentation-for-api-endpoints) [[Voltar à lista de DTOs]](../README.md#documentation-for-models) [[Voltar ao README]](../README.md)
+
+<a name="enviaremailnfse"></a>
+# **EnviarEmailNfse**
+> EmailStatusResponse EnviarEmailNfse (string id, bool? logotipo = null, string mensagemRodape = null, DfePedidoEnvioEmail body = null)
+
+Enviar e-mail
+
+Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+
+### Exemplo
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using ACBrAPI.Sdk.Api;
+using ACBrAPI.Sdk.Client;
+using ACBrAPI.Sdk.Model;
+
+namespace Example
+{
+    public class EnviarEmailNfseExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://prod.acbr.api.br";
+            // Configure OAuth2 access token for authorization: oauth2
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new NfseApi(httpClient, config, httpClientHandler);
+            var id = "id_example";  // string | ID único da NFS-e gerado pela API.
+            var logotipo = false;  // bool? | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional)  (default to false)
+            var mensagemRodape = "mensagemRodape_example";  // string | Imprime mensagem no rodapé do documento.    O caractere `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * `\"esquerda\"`  * `\"esquerda|centro\"`  * `\"esquerda|centro|direita\"`  * `\"|centro\"`, `\"|centro|\"`  * `\"|centro|direita\"`  * `\"||direita\"`  * `\"esquerda||direita\"`    Default: `\"\"` (optional) 
+            var body = new DfePedidoEnvioEmail(); // DfePedidoEnvioEmail |  (optional) 
+
+            try
+            {
+                // Enviar e-mail
+                EmailStatusResponse result = apiInstance.EnviarEmailNfse(id, logotipo, mensagemRodape, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling NfseApi.EnviarEmailNfse: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Usando a variante EnviarEmailNfseWithHttpInfo
+Esses métodos retornam um objeto ApiResponse que contêm os dados da resposta, o código de status e os headers HTTP.
+
+```csharp
+try
+{
+    // Enviar e-mail
+    ApiResponse<EmailStatusResponse> response = apiInstance.EnviarEmailNfseWithHttpInfo(id, logotipo, mensagemRodape, body);
+    Debug.Write("Código de status: " + response.StatusCode);
+    Debug.Write("Headers da resposta: " + response.Headers);
+    Debug.Write("Conteúdo da resposta: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exceção ao chamar NfseApi.EnviarEmailNfseWithHttpInfo: " + e.Message);
+    Debug.Print("Código de status: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição | Comentários |
+|------|------|-------------|-------|
+| **id** | **string** | ID único da NFS-e gerado pela API. |  |
+| **logotipo** | **bool?** | Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
+| **mensagemRodape** | **string** | Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; | [optional]  |
+| **body** | [**DfePedidoEnvioEmail**](DfePedidoEnvioEmail.md) |  | [optional]  |
+
+### Tipo de retorno
+
+[**EmailStatusResponse**](EmailStatusResponse.md)
 
 ### Autorização
 

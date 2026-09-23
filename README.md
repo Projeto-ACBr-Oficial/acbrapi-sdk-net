@@ -3,8 +3,8 @@
 Biblioteca para uso da [ACBr API](https://www.acbr.api.br) com Microsoft .NET.
 Consultar também a [documentação oficial da ACBr API](https://dev.acbr.api.br/docs).
 
-- Versão da API: 3.1.10
-- Versão do SDK: 3.1.10
+- Versão da API: 3.1.11
+- Versão do SDK: 3.1.11
 
 <a name="frameworks-supported"></a>
 ## Frameworks suportadas
@@ -357,6 +357,7 @@ Classe | Método | Endpoint | Descrição
 *NfseApi* | [**ConsultarNfse**](docs/NfseApi.md#consultarnfse) | **GET** /nfse/{id} | Consultar NFS-e
 *NfseApi* | [**EmitirLoteNfseDps**](docs/NfseApi.md#emitirlotenfsedps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e
 *NfseApi* | [**EmitirNfseDps**](docs/NfseApi.md#emitirnfsedps) | **POST** /nfse/dps | Emitir NFS-e
+*NfseApi* | [**EnviarEmailNfse**](docs/NfseApi.md#enviaremailnfse) | **POST** /nfse/{id}/email | Enviar e-mail
 *NfseApi* | [**ListarLotesNfse**](docs/NfseApi.md#listarlotesnfse) | **GET** /nfse/lotes | Listar lotes de NFS-e
 *NfseApi* | [**ListarNfse**](docs/NfseApi.md#listarnfse) | **GET** /nfse | Listar NFS-e
 *NfseApi* | [**SincronizarNfse**](docs/NfseApi.md#sincronizarnfse) | **POST** /nfse/{id}/sincronizar | Sincroniza dados na NFS-e a partir da Prefeitura
@@ -831,6 +832,7 @@ Classe | Método | Endpoint | Descrição
  - [Model.MdfeSefazVeicReboque](docs/MdfeSefazVeicReboque.md)
  - [Model.MdfeSefazVeicReboqueProp](docs/MdfeSefazVeicReboqueProp.md)
  - [Model.MdfeSefazVeicTracao](docs/MdfeSefazVeicTracao.md)
+ - [Model.NfcePedidoCancelamento](docs/NfcePedidoCancelamento.md)
  - [Model.NfcomPedidoCancelamento](docs/NfcomPedidoCancelamento.md)
  - [Model.NfcomPedidoEmissao](docs/NfcomPedidoEmissao.md)
  - [Model.NfcomSefazALCZFMCBS](docs/NfcomSefazALCZFMCBS.md)

@@ -65,21 +65,18 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="EmpresaConfigNfse" /> class.
         /// </summary>
         /// <param name="regTrib">regTrib.</param>
-        /// <param name="rps">rps (required).</param>
+        /// <param name="rps">rps.</param>
         /// <param name="prefeitura">prefeitura.</param>
+        /// <param name="numeracaoAutomatica">Indicador para que a API controle a numeração da NFSe. (default to true).</param>
         /// <param name="incentivoFiscal">Indicador se a empresa possui algum tipo de incentivo fiscal. (default to false).</param>
         /// <param name="ambiente">Indica se a empresa irá emitir em produção ou homologação. (required).</param>
-        public EmpresaConfigNfse(EmpresaConfigNfseRegTrib regTrib = default(EmpresaConfigNfseRegTrib), EmpresaConfigRps rps = default(EmpresaConfigRps), EmpresaConfigPrefeitura prefeitura = default(EmpresaConfigPrefeitura), bool incentivoFiscal = false, AmbienteEnum ambiente = default(AmbienteEnum))
+        public EmpresaConfigNfse(EmpresaConfigNfseRegTrib regTrib = default(EmpresaConfigNfseRegTrib), EmpresaConfigRps rps = default(EmpresaConfigRps), EmpresaConfigPrefeitura prefeitura = default(EmpresaConfigPrefeitura), bool numeracaoAutomatica = true, bool incentivoFiscal = false, AmbienteEnum ambiente = default(AmbienteEnum))
         {
-            // to ensure "rps" is required (not null)
-            if (rps == null)
-            {
-                throw new ArgumentNullException("rps is a required property for EmpresaConfigNfse and cannot be null");
-            }
-            this.rps = rps;
             this.ambiente = ambiente;
             this.regTrib = regTrib;
+            this.rps = rps;
             this.prefeitura = prefeitura;
+            this.numeracao_automatica = numeracaoAutomatica;
             this.incentivo_fiscal = incentivoFiscal;
         }
 
@@ -92,7 +89,7 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Gets or Sets rps
         /// </summary>
-        [DataMember(Name = "rps", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "rps", EmitDefaultValue = false)]
         public EmpresaConfigRps rps { get; set; }
 
         /// <summary>
@@ -100,6 +97,13 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         [DataMember(Name = "prefeitura", EmitDefaultValue = false)]
         public EmpresaConfigPrefeitura prefeitura { get; set; }
+
+        /// <summary>
+        /// Indicador para que a API controle a numeração da NFSe.
+        /// </summary>
+        /// <value>Indicador para que a API controle a numeração da NFSe.</value>
+        [DataMember(Name = "numeracao_automatica", EmitDefaultValue = true)]
+        public bool numeracao_automatica { get; set; }
 
         /// <summary>
         /// Indicador se a empresa possui algum tipo de incentivo fiscal.
@@ -119,6 +123,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  regTrib: ").Append(regTrib).Append("\n");
             sb.Append("  rps: ").Append(rps).Append("\n");
             sb.Append("  prefeitura: ").Append(prefeitura).Append("\n");
+            sb.Append("  numeracao_automatica: ").Append(numeracao_automatica).Append("\n");
             sb.Append("  incentivo_fiscal: ").Append(incentivo_fiscal).Append("\n");
             sb.Append("  ambiente: ").Append(ambiente).Append("\n");
             sb.Append("}\n");
@@ -172,6 +177,10 @@ namespace ACBrAPI.Sdk.Model
                     this.prefeitura.Equals(input.prefeitura))
                 ) && 
                 (
+                    this.numeracao_automatica == input.numeracao_automatica ||
+                    this.numeracao_automatica.Equals(input.numeracao_automatica)
+                ) && 
+                (
                     this.incentivo_fiscal == input.incentivo_fiscal ||
                     this.incentivo_fiscal.Equals(input.incentivo_fiscal)
                 ) && 
@@ -202,6 +211,7 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.prefeitura.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.numeracao_automatica.GetHashCode();
                 hashCode = (hashCode * 59) + this.incentivo_fiscal.GetHashCode();
                 hashCode = (hashCode * 59) + this.ambiente.GetHashCode();
                 return hashCode;

@@ -28,7 +28,7 @@ namespace ACBrAPI.Sdk.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.1.10";
+        public const string Version = "3.1.11";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -512,8 +512,8 @@ namespace ACBrAPI.Sdk.Client
             string report = "C# SDK (ACBrAPI.Sdk) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
-            report += "    Version of the API: 3.1.10\n";
-            report += "    SDK Package Version: 3.1.10\n";
+            report += "    Version of the API: 3.1.11\n";
+            report += "    SDK Package Version: 3.1.11\n";
 
             return report;
         }

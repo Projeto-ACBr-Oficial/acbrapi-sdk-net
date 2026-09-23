@@ -39,6 +39,8 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="tpAmb">Identificação do Ambiente:  * 1 - Produção  * 2 - Homologação.</param>
         /// <param name="dhEmi">Data e hora da emissão do DPS. Data e hora no formato UTC (Universal Coordinated Time): AAAA-MM-DDThh:mm:ssTZD. (required).</param>
         /// <param name="verAplic">Versão do aplicativo que gerou o DPS..</param>
+        /// <param name="serie">Número do equipamento emissor do DPS ou série do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa..</param>
+        /// <param name="nDPS">Número do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa..</param>
         /// <param name="dCompet">Data em que se iniciou a prestação do serviço: Dia, mês e ano (AAAAMMDD). (AAAA-MM-DDThh:mm:ssTZD).      *Geramos automaticamente quando nenhum valor é informado.*.</param>
         /// <param name="cMotivoEmisTI">Motivo da Emissão da DPS pelo Tomador/Intermediário:  * 1 - Importação de Serviço  * 2 - Tomador/Intermediário obrigado a emitir NFS-e por legislação municipal  * 3 - Tomador/Intermediário emitindo NFS-e por recusa de emissão pelo prestador  * 4 - Tomador/Intermediário emitindo por rejeitar a NFS-e emitida pelo prestador.</param>
         /// <param name="chNFSeRej">Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário..</param>
@@ -49,7 +51,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="serv">serv (required).</param>
         /// <param name="valores">valores (required).</param>
         /// <param name="iBSCBS">iBSCBS.</param>
-        public InfDPS(int? tpAmb = default(int?), DateTime? dhEmi = default(DateTime?), string verAplic = default(string), DateTime? dCompet = default(DateTime?), int? cMotivoEmisTI = default(int?), string chNFSeRej = default(string), Substituicao subst = default(Substituicao), InfoPrestador prest = default(InfoPrestador), InfoTomador toma = default(InfoTomador), InfoIntermediario interm = default(InfoIntermediario), Serv serv = default(Serv), InfoValores valores = default(InfoValores), RTCInfoIBSCBS iBSCBS = default(RTCInfoIBSCBS))
+        public InfDPS(int? tpAmb = default(int?), DateTime? dhEmi = default(DateTime?), string verAplic = default(string), string serie = default(string), string nDPS = default(string), DateTime? dCompet = default(DateTime?), int? cMotivoEmisTI = default(int?), string chNFSeRej = default(string), Substituicao subst = default(Substituicao), InfoPrestador prest = default(InfoPrestador), InfoTomador toma = default(InfoTomador), InfoIntermediario interm = default(InfoIntermediario), Serv serv = default(Serv), InfoValores valores = default(InfoValores), RTCInfoIBSCBS iBSCBS = default(RTCInfoIBSCBS))
         {
             // to ensure "dhEmi" is required (not null)
             if (dhEmi == null)
@@ -77,6 +79,8 @@ namespace ACBrAPI.Sdk.Model
             this.valores = valores;
             this.tpAmb = tpAmb;
             this.verAplic = verAplic;
+            this.serie = serie;
+            this.nDPS = nDPS;
             this.dCompet = dCompet;
             this.cMotivoEmisTI = cMotivoEmisTI;
             this.chNFSeRej = chNFSeRej;
@@ -106,6 +110,20 @@ namespace ACBrAPI.Sdk.Model
         /// <value>Versão do aplicativo que gerou o DPS.</value>
         [DataMember(Name = "verAplic", EmitDefaultValue = true)]
         public string verAplic { get; set; }
+
+        /// <summary>
+        /// Número do equipamento emissor do DPS ou série do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa.
+        /// </summary>
+        /// <value>Número do equipamento emissor do DPS ou série do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa.</value>
+        [DataMember(Name = "serie", EmitDefaultValue = true)]
+        public string serie { get; set; }
+
+        /// <summary>
+        /// Número do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa.
+        /// </summary>
+        /// <value>Número do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa.</value>
+        [DataMember(Name = "nDPS", EmitDefaultValue = true)]
+        public string nDPS { get; set; }
 
         /// <summary>
         /// Data em que se iniciou a prestação do serviço: Dia, mês e ano (AAAAMMDD). (AAAA-MM-DDThh:mm:ssTZD).      *Geramos automaticamente quando nenhum valor é informado.*
@@ -182,6 +200,8 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  tpAmb: ").Append(tpAmb).Append("\n");
             sb.Append("  dhEmi: ").Append(dhEmi).Append("\n");
             sb.Append("  verAplic: ").Append(verAplic).Append("\n");
+            sb.Append("  serie: ").Append(serie).Append("\n");
+            sb.Append("  nDPS: ").Append(nDPS).Append("\n");
             sb.Append("  dCompet: ").Append(dCompet).Append("\n");
             sb.Append("  cMotivoEmisTI: ").Append(cMotivoEmisTI).Append("\n");
             sb.Append("  chNFSeRej: ").Append(chNFSeRej).Append("\n");
@@ -241,6 +261,16 @@ namespace ACBrAPI.Sdk.Model
                     this.verAplic == input.verAplic ||
                     (this.verAplic != null &&
                     this.verAplic.Equals(input.verAplic))
+                ) && 
+                (
+                    this.serie == input.serie ||
+                    (this.serie != null &&
+                    this.serie.Equals(input.serie))
+                ) && 
+                (
+                    this.nDPS == input.nDPS ||
+                    (this.nDPS != null &&
+                    this.nDPS.Equals(input.nDPS))
                 ) && 
                 (
                     this.dCompet == input.dCompet ||
@@ -315,6 +345,14 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.verAplic.GetHashCode();
                 }
+                if (this.serie != null)
+                {
+                    hashCode = (hashCode * 59) + this.serie.GetHashCode();
+                }
+                if (this.nDPS != null)
+                {
+                    hashCode = (hashCode * 59) + this.nDPS.GetHashCode();
+                }
                 if (this.dCompet != null)
                 {
                     hashCode = (hashCode * 59) + this.dCompet.GetHashCode();
@@ -376,6 +414,18 @@ namespace ACBrAPI.Sdk.Model
             if (this.verAplic != null && this.verAplic.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for verAplic, length must be greater than 1.", new [] { "verAplic" });
+            }
+
+            // serie (string) maxLength
+            if (this.serie != null && this.serie.Length > 5)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, length must be less than 5.", new [] { "serie" });
+            }
+
+            // nDPS (string) maxLength
+            if (this.nDPS != null && this.nDPS.Length > 15)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for nDPS, length must be less than 15.", new [] { "nDPS" });
             }
 
             // chNFSeRej (string) maxLength

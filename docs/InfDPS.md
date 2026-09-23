@@ -8,6 +8,8 @@ Nome | Tipo | Descrição | Comentários
 **tpAmb** | **int?** | Identificação do Ambiente:  * 1 - Produção  * 2 - Homologação | [optional] 
 **dhEmi** | **DateTime?** | Data e hora da emissão do DPS. Data e hora no formato UTC (Universal Coordinated Time): AAAA-MM-DDThh:mm:ssTZD. | 
 **verAplic** | **string** | Versão do aplicativo que gerou o DPS. | [optional] 
+**serie** | **string** | Número do equipamento emissor do DPS ou série do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa. | [optional] 
+**nDPS** | **string** | Número do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa. | [optional] 
 **dCompet** | **DateTime?** | Data em que se iniciou a prestação do serviço: Dia, mês e ano (AAAAMMDD). (AAAA-MM-DDThh:mm:ssTZD).      *Geramos automaticamente quando nenhum valor é informado.* | [optional] 
 **cMotivoEmisTI** | **int?** | Motivo da Emissão da DPS pelo Tomador/Intermediário:  * 1 - Importação de Serviço  * 2 - Tomador/Intermediário obrigado a emitir NFS-e por legislação municipal  * 3 - Tomador/Intermediário emitindo NFS-e por recusa de emissão pelo prestador  * 4 - Tomador/Intermediário emitindo por rejeitar a NFS-e emitida pelo prestador | [optional] 
 **chNFSeRej** | **string** | Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário. | [optional] 

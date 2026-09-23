@@ -328,7 +328,7 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>DfeCancelamento</returns>
-        DfeCancelamento CancelarNfce(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento));
+        DfeCancelamento CancelarNfce(string id, NfcePedidoCancelamento body = default(NfcePedidoCancelamento));
 
         /// <summary>
         /// Cancelar uma NFC-e autorizada
@@ -340,7 +340,7 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
-        ApiResponse<DfeCancelamento> CancelarNfceWithHttpInfo(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento));
+        ApiResponse<DfeCancelamento> CancelarNfceWithHttpInfo(string id, NfcePedidoCancelamento body = default(NfcePedidoCancelamento));
         /// <summary>
         /// Consultar o cancelamento da NFC-e
         /// </summary>
@@ -1027,7 +1027,7 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
-        System.Threading.Tasks.Task<DfeCancelamento> CancelarNfceAsync(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DfeCancelamento> CancelarNfceAsync(string id, NfcePedidoCancelamento body = default(NfcePedidoCancelamento), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Cancelar uma NFC-e autorizada
@@ -1040,7 +1040,7 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DfeCancelamento>> CancelarNfceWithHttpInfoAsync(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DfeCancelamento>> CancelarNfceWithHttpInfoAsync(string id, NfcePedidoCancelamento body = default(NfcePedidoCancelamento), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Consultar o cancelamento da NFC-e
         /// </summary>
@@ -3490,7 +3490,7 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>DfeCancelamento</returns>
-        public DfeCancelamento CancelarNfce(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento))
+        public DfeCancelamento CancelarNfce(string id, NfcePedidoCancelamento body = default(NfcePedidoCancelamento))
         {
             ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> localVarResponse = CancelarNfceWithHttpInfo(id, body);
             return localVarResponse.Data;
@@ -3503,7 +3503,7 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="id">ID único da NFC-e gerado pela API.</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of DfeCancelamento</returns>
-        public ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> CancelarNfceWithHttpInfo(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento))
+        public ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> CancelarNfceWithHttpInfo(string id, NfcePedidoCancelamento body = default(NfcePedidoCancelamento))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3556,7 +3556,7 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DfeCancelamento</returns>
-        public async System.Threading.Tasks.Task<DfeCancelamento> CancelarNfceAsync(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DfeCancelamento> CancelarNfceAsync(string id, NfcePedidoCancelamento body = default(NfcePedidoCancelamento), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento> localVarResponse = await CancelarNfceWithHttpInfoAsync(id, body, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3570,7 +3570,7 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DfeCancelamento)</returns>
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento>> CancelarNfceWithHttpInfoAsync(string id, NfePedidoCancelamento body = default(NfePedidoCancelamento), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<DfeCancelamento>> CancelarNfceWithHttpInfoAsync(string id, NfcePedidoCancelamento body = default(NfcePedidoCancelamento), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

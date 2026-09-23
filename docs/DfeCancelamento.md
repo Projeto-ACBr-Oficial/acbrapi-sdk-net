@@ -5,6 +5,7 @@
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
 **justificativa** | **string** | Justificativa do cancelamento. | [optional] 
+**chave_substituta** | **string** | Chave de acesso da NFC-e substituta. Preenchida apenas no cancelamento  por substituição (evento 110112). | [optional] 
 **id** | **string** | ID único gerado pela API para este evento. | [optional] 
 **ambiente** | **string** | Identificação do ambiente. | [optional] 
 **status** | **string** | Status do Evento. | [optional] 

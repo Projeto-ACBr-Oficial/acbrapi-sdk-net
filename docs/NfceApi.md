@@ -1335,7 +1335,7 @@ catch (ApiException e)
 
 <a name="cancelarnfce"></a>
 # **CancelarNfce**
-> DfeCancelamento CancelarNfce (string id, NfePedidoCancelamento body = null)
+> DfeCancelamento CancelarNfce (string id, NfcePedidoCancelamento body = null)
 
 Cancelar uma NFC-e autorizada
 
@@ -1366,7 +1366,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new NfceApi(httpClient, config, httpClientHandler);
             var id = "id_example";  // string | ID único da NFC-e gerado pela API.
-            var body = new NfePedidoCancelamento(); // NfePedidoCancelamento |  (optional) 
+            var body = new NfcePedidoCancelamento(); // NfcePedidoCancelamento |  (optional) 
 
             try
             {
@@ -1410,7 +1410,7 @@ catch (ApiException e)
 | Nome | Tipo | Descrição | Comentários |
 |------|------|-------------|-------|
 | **id** | **string** | ID único da NFC-e gerado pela API. |  |
-| **body** | [**NfePedidoCancelamento**](NfePedidoCancelamento.md) |  | [optional]  |
+| **body** | [**NfcePedidoCancelamento**](NfcePedidoCancelamento.md) |  | [optional]  |
 
 ### Tipo de retorno
 

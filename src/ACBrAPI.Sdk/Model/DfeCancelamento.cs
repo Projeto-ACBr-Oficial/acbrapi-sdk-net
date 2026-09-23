@@ -100,6 +100,7 @@ namespace ACBrAPI.Sdk.Model
         /// Initializes a new instance of the <see cref="DfeCancelamento" /> class.
         /// </summary>
         /// <param name="justificativa">Justificativa do cancelamento..</param>
+        /// <param name="chaveSubstituta">Chave de acesso da NFC-e substituta. Preenchida apenas no cancelamento  por substituição (evento 110112)..</param>
         /// <param name="id">ID único gerado pela API para este evento..</param>
         /// <param name="ambiente">Identificação do ambiente..</param>
         /// <param name="status">Status do Evento..</param>
@@ -114,9 +115,10 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="codigoMensagem">Código da Mensagem..</param>
         /// <param name="mensagem">Mensagem da SEFAZ para o emissor..</param>
         /// <param name="tipoEvento">tipoEvento.</param>
-        public DfeCancelamento(string justificativa = default(string), string id = default(string), AmbienteEnum? ambiente = default(AmbienteEnum?), StatusEnum? status = default(StatusEnum?), DfeAutorEvento autor = default(DfeAutorEvento), string chaveAcesso = default(string), DateTime dataEvento = default(DateTime), int numeroSequencial = default(int), DateTime? dataRecebimento = default(DateTime?), int codigoStatus = default(int), string motivoStatus = default(string), string numeroProtocolo = default(string), int codigoMensagem = default(int), string mensagem = default(string), string tipoEvento = default(string))
+        public DfeCancelamento(string justificativa = default(string), string chaveSubstituta = default(string), string id = default(string), AmbienteEnum? ambiente = default(AmbienteEnum?), StatusEnum? status = default(StatusEnum?), DfeAutorEvento autor = default(DfeAutorEvento), string chaveAcesso = default(string), DateTime dataEvento = default(DateTime), int numeroSequencial = default(int), DateTime? dataRecebimento = default(DateTime?), int codigoStatus = default(int), string motivoStatus = default(string), string numeroProtocolo = default(string), int codigoMensagem = default(int), string mensagem = default(string), string tipoEvento = default(string))
         {
             this.justificativa = justificativa;
+            this.chave_substituta = chaveSubstituta;
             this.id = id;
             this.ambiente = ambiente;
             this.status = status;
@@ -139,6 +141,13 @@ namespace ACBrAPI.Sdk.Model
         /// <value>Justificativa do cancelamento.</value>
         [DataMember(Name = "justificativa", EmitDefaultValue = false)]
         public string justificativa { get; set; }
+
+        /// <summary>
+        /// Chave de acesso da NFC-e substituta. Preenchida apenas no cancelamento  por substituição (evento 110112).
+        /// </summary>
+        /// <value>Chave de acesso da NFC-e substituta. Preenchida apenas no cancelamento  por substituição (evento 110112).</value>
+        [DataMember(Name = "chave_substituta", EmitDefaultValue = false)]
+        public string chave_substituta { get; set; }
 
         /// <summary>
         /// ID único gerado pela API para este evento.
@@ -231,6 +240,7 @@ namespace ACBrAPI.Sdk.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class DfeCancelamento {\n");
             sb.Append("  justificativa: ").Append(justificativa).Append("\n");
+            sb.Append("  chave_substituta: ").Append(chave_substituta).Append("\n");
             sb.Append("  id: ").Append(id).Append("\n");
             sb.Append("  ambiente: ").Append(ambiente).Append("\n");
             sb.Append("  status: ").Append(status).Append("\n");
@@ -284,6 +294,11 @@ namespace ACBrAPI.Sdk.Model
                     this.justificativa == input.justificativa ||
                     (this.justificativa != null &&
                     this.justificativa.Equals(input.justificativa))
+                ) && 
+                (
+                    this.chave_substituta == input.chave_substituta ||
+                    (this.chave_substituta != null &&
+                    this.chave_substituta.Equals(input.chave_substituta))
                 ) && 
                 (
                     this.id == input.id ||
@@ -364,6 +379,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.justificativa != null)
                 {
                     hashCode = (hashCode * 59) + this.justificativa.GetHashCode();
+                }
+                if (this.chave_substituta != null)
+                {
+                    hashCode = (hashCode * 59) + this.chave_substituta.GetHashCode();
                 }
                 if (this.id != null)
                 {
