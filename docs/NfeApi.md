@@ -423,7 +423,7 @@ catch (ApiException e)
 
 <a name="baixarpdfnfe"></a>
 # **BaixarPdfNfe**
-> FileParameter BaixarPdfNfe (string id, bool? logotipo = null, bool? nomeFantasia = null, string formato = null, string mensagemRodape = null, bool? canhoto = null)
+> FileParameter BaixarPdfNfe (string id, bool? logotipo = null, bool? nomeFantasia = null, string formato = null, string mensagemRodape = null, bool? canhoto = null, bool? qrcodeLateral = null, int? largura = null, string margem = null)
 
 Baixar PDF do DANFE
 
@@ -457,11 +457,14 @@ namespace Example
             var formato = "\"padrao\"";  // string | Formato de impressão do DANFE.    Valores disponíveis:  - `padrao`: será utilizado o formato definido no XML da NF-e (tag \"tpImp\");  - `retrato`: tamanho A4 em modo retrato;  - `paisagem`: tamanho A4 em modo paisagem;  - `simplificado`: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - `etiqueta`: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional)  (default to "padrao")
             var mensagemRodape = "mensagemRodape_example";  // string | Imprime mensagem no rodapé do documento.    O caractere `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * `\"esquerda\"`  * `\"esquerda|centro\"`  * `\"esquerda|centro|direita\"`  * `\"|centro\"`, `\"|centro|\"`  * `\"|centro|direita\"`  * `\"||direita\"`  * `\"esquerda||direita\"` (optional) 
             var canhoto = true;  // bool? | Imprime o documento com o bloco de canhoto. (optional)  (default to true)
+            var qrcodeLateral = false;  // bool? | Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6) e disponível apenas para 80 milímetros de largura*. (optional)  (default to false)
+            var largura = 80;  // int? | Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). A NT 2026.003 exige no mínimo 56 mm*. (optional)  (default to 80)
+            var margem = "\"2\"";  // string | Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro `margem` do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional)  (default to "2")
 
             try
             {
                 // Baixar PDF do DANFE
-                FileParameter result = apiInstance.BaixarPdfNfe(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto);
+                FileParameter result = apiInstance.BaixarPdfNfe(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -482,7 +485,7 @@ Esses métodos retornam um objeto ApiResponse que contêm os dados da resposta, 
 try
 {
     // Baixar PDF do DANFE
-    ApiResponse<FileParameter> response = apiInstance.BaixarPdfNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto);
+    ApiResponse<FileParameter> response = apiInstance.BaixarPdfNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem);
     Debug.Write("Código de status: " + response.StatusCode);
     Debug.Write("Headers da resposta: " + response.Headers);
     Debug.Write("Conteúdo da resposta: " + response.Data);
@@ -505,6 +508,9 @@ catch (ApiException e)
 | **formato** | **string** | Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). | [optional] [default to &quot;padrao&quot;] |
 | **mensagemRodape** | **string** | Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; | [optional]  |
 | **canhoto** | **bool?** | Imprime o documento com o bloco de canhoto. | [optional] [default to true] |
+| **qrcodeLateral** | **bool?** | Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. | [optional] [default to false] |
+| **largura** | **int?** | Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. | [optional] [default to 80] |
+| **margem** | **string** | Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. | [optional] [default to &quot;2&quot;] |
 
 ### Tipo de retorno
 
@@ -529,7 +535,7 @@ catch (ApiException e)
 
 <a name="baixarpreviapdfnfe"></a>
 # **BaixarPreviaPdfNfe**
-> FileParameter BaixarPreviaPdfNfe (NfePedidoEmissao body, bool? logotipo = null, bool? nomeFantasia = null, string formato = null, string mensagemRodape = null, bool? canhoto = null)
+> FileParameter BaixarPreviaPdfNfe (NfePedidoEmissao body, bool? logotipo = null, bool? nomeFantasia = null, string formato = null, string mensagemRodape = null, bool? canhoto = null, bool? qrcodeLateral = null, int? largura = null, string margem = null)
 
 Prévia do PDF do DANFE
 
@@ -565,11 +571,14 @@ namespace Example
             var formato = "\"padrao\"";  // string | Formato de impressão do DANFE.    Valores disponíveis:  - `padrao`: será utilizado o formato definido no XML da NF-e (tag \"tpImp\");  - `retrato`: tamanho A4 em modo retrato;  - `paisagem`: tamanho A4 em modo paisagem;  - `simplificado`: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - `etiqueta`: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional)  (default to "padrao")
             var mensagemRodape = "mensagemRodape_example";  // string | Imprime mensagem no rodapé do documento.    O caractere `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * `\"esquerda\"`  * `\"esquerda|centro\"`  * `\"esquerda|centro|direita\"`  * `\"|centro\"`, `\"|centro|\"`  * `\"|centro|direita\"`  * `\"||direita\"`  * `\"esquerda||direita\"` (optional) 
             var canhoto = true;  // bool? | Imprime o documento com o bloco de canhoto. (optional)  (default to true)
+            var qrcodeLateral = false;  // bool? | Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6) e disponível apenas para 80 milímetros de largura*. (optional)  (default to false)
+            var largura = 80;  // int? | Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). A NT 2026.003 exige no mínimo 56 mm*. (optional)  (default to 80)
+            var margem = "\"2\"";  // string | Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro `margem` do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional)  (default to "2")
 
             try
             {
                 // Prévia do PDF do DANFE
-                FileParameter result = apiInstance.BaixarPreviaPdfNfe(body, logotipo, nomeFantasia, formato, mensagemRodape, canhoto);
+                FileParameter result = apiInstance.BaixarPreviaPdfNfe(body, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -590,7 +599,7 @@ Esses métodos retornam um objeto ApiResponse que contêm os dados da resposta, 
 try
 {
     // Prévia do PDF do DANFE
-    ApiResponse<FileParameter> response = apiInstance.BaixarPreviaPdfNfeWithHttpInfo(body, logotipo, nomeFantasia, formato, mensagemRodape, canhoto);
+    ApiResponse<FileParameter> response = apiInstance.BaixarPreviaPdfNfeWithHttpInfo(body, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem);
     Debug.Write("Código de status: " + response.StatusCode);
     Debug.Write("Headers da resposta: " + response.Headers);
     Debug.Write("Conteúdo da resposta: " + response.Data);
@@ -613,6 +622,9 @@ catch (ApiException e)
 | **formato** | **string** | Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). | [optional] [default to &quot;padrao&quot;] |
 | **mensagemRodape** | **string** | Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; | [optional]  |
 | **canhoto** | **bool?** | Imprime o documento com o bloco de canhoto. | [optional] [default to true] |
+| **qrcodeLateral** | **bool?** | Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. | [optional] [default to false] |
+| **largura** | **int?** | Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. | [optional] [default to 80] |
+| **margem** | **string** | Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. | [optional] [default to &quot;2&quot;] |
 
 ### Tipo de retorno
 
@@ -2601,7 +2613,7 @@ catch (ApiException e)
 
 <a name="enviaremailnfe"></a>
 # **EnviarEmailNfe**
-> EmailStatusResponse EnviarEmailNfe (string id, bool? logotipo = null, bool? nomeFantasia = null, string formato = null, string mensagemRodape = null, bool? canhoto = null, DfePedidoEnvioEmail body = null)
+> EmailStatusResponse EnviarEmailNfe (string id, bool? logotipo = null, bool? nomeFantasia = null, string formato = null, string mensagemRodape = null, bool? canhoto = null, bool? qrcodeLateral = null, int? largura = null, string margem = null, DfePedidoEnvioEmail body = null)
 
 Enviar e-mail
 
@@ -2637,12 +2649,15 @@ namespace Example
             var formato = "\"padrao\"";  // string | Formato de impressão do DANFE.    Valores disponíveis:  - `padrao`: será utilizado o formato definido no XML da NF-e (tag \"tpImp\");  - `retrato`: tamanho A4 em modo retrato;  - `paisagem`: tamanho A4 em modo paisagem;  - `simplificado`: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - `etiqueta`: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional)  (default to "padrao")
             var mensagemRodape = "mensagemRodape_example";  // string | Imprime mensagem no rodapé do documento.    O caractere `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * `\"esquerda\"`  * `\"esquerda|centro\"`  * `\"esquerda|centro|direita\"`  * `\"|centro\"`, `\"|centro|\"`  * `\"|centro|direita\"`  * `\"||direita\"`  * `\"esquerda||direita\"` (optional) 
             var canhoto = true;  // bool? | Imprime o documento com o bloco de canhoto. (optional)  (default to true)
+            var qrcodeLateral = false;  // bool? | Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6) e disponível apenas para 80 milímetros de largura*. (optional)  (default to false)
+            var largura = 80;  // int? | Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). A NT 2026.003 exige no mínimo 56 mm*. (optional)  (default to 80)
+            var margem = "\"2\"";  // string | Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro `margem` do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional)  (default to "2")
             var body = new DfePedidoEnvioEmail(); // DfePedidoEnvioEmail |  (optional) 
 
             try
             {
                 // Enviar e-mail
-                EmailStatusResponse result = apiInstance.EnviarEmailNfe(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, body);
+                EmailStatusResponse result = apiInstance.EnviarEmailNfe(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2663,7 +2678,7 @@ Esses métodos retornam um objeto ApiResponse que contêm os dados da resposta, 
 try
 {
     // Enviar e-mail
-    ApiResponse<EmailStatusResponse> response = apiInstance.EnviarEmailNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, body);
+    ApiResponse<EmailStatusResponse> response = apiInstance.EnviarEmailNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem, body);
     Debug.Write("Código de status: " + response.StatusCode);
     Debug.Write("Headers da resposta: " + response.Headers);
     Debug.Write("Conteúdo da resposta: " + response.Data);
@@ -2686,6 +2701,9 @@ catch (ApiException e)
 | **formato** | **string** | Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). | [optional] [default to &quot;padrao&quot;] |
 | **mensagemRodape** | **string** | Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; | [optional]  |
 | **canhoto** | **bool?** | Imprime o documento com o bloco de canhoto. | [optional] [default to true] |
+| **qrcodeLateral** | **bool?** | Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. | [optional] [default to false] |
+| **largura** | **int?** | Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. | [optional] [default to 80] |
+| **margem** | **string** | Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. | [optional] [default to &quot;2&quot;] |
 | **body** | [**DfePedidoEnvioEmail**](DfePedidoEnvioEmail.md) |  | [optional]  |
 
 ### Tipo de retorno

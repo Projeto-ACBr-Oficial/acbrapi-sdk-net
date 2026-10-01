@@ -38,7 +38,8 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="gReeRepRes">gReeRepRes.</param>
         /// <param name="trib">trib (required).</param>
-        public RTCInfoValoresIBSCBS(RTCInfoReeRepRes gReeRepRes = default(RTCInfoReeRepRes), RTCInfoTributosIBSCBS trib = default(RTCInfoTributosIBSCBS))
+        /// <param name="tribAbrasf">tribAbrasf.</param>
+        public RTCInfoValoresIBSCBS(RTCInfoReeRepRes gReeRepRes = default(RTCInfoReeRepRes), RTCInfoTributosIBSCBS trib = default(RTCInfoTributosIBSCBS), RTCInfoTributosAbrasf tribAbrasf = default(RTCInfoTributosAbrasf))
         {
             // to ensure "trib" is required (not null)
             if (trib == null)
@@ -47,6 +48,7 @@ namespace ACBrAPI.Sdk.Model
             }
             this.trib = trib;
             this.gReeRepRes = gReeRepRes;
+            this.tribAbrasf = tribAbrasf;
         }
 
         /// <summary>
@@ -62,6 +64,12 @@ namespace ACBrAPI.Sdk.Model
         public RTCInfoTributosIBSCBS trib { get; set; }
 
         /// <summary>
+        /// Gets or Sets tribAbrasf
+        /// </summary>
+        [DataMember(Name = "tribAbrasf", EmitDefaultValue = false)]
+        public RTCInfoTributosAbrasf tribAbrasf { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -71,6 +79,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("class RTCInfoValoresIBSCBS {\n");
             sb.Append("  gReeRepRes: ").Append(gReeRepRes).Append("\n");
             sb.Append("  trib: ").Append(trib).Append("\n");
+            sb.Append("  tribAbrasf: ").Append(tribAbrasf).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +124,11 @@ namespace ACBrAPI.Sdk.Model
                     this.trib == input.trib ||
                     (this.trib != null &&
                     this.trib.Equals(input.trib))
+                ) && 
+                (
+                    this.tribAbrasf == input.tribAbrasf ||
+                    (this.tribAbrasf != null &&
+                    this.tribAbrasf.Equals(input.tribAbrasf))
                 );
         }
 
@@ -134,6 +148,10 @@ namespace ACBrAPI.Sdk.Model
                 if (this.trib != null)
                 {
                     hashCode = (hashCode * 59) + this.trib.GetHashCode();
+                }
+                if (this.tribAbrasf != null)
+                {
+                    hashCode = (hashCode * 59) + this.tribAbrasf.GetHashCode();
                 }
                 return hashCode;
             }

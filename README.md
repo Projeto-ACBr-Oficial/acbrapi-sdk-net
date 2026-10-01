@@ -3,8 +3,8 @@
 Biblioteca para uso da [ACBr API](https://www.acbr.api.br) com Microsoft .NET.
 Consultar também a [documentação oficial da ACBr API](https://dev.acbr.api.br/docs).
 
-- Versão da API: 3.1.11
-- Versão do SDK: 3.1.11
+- Versão da API: 3.1.12
+- Versão do SDK: 3.1.12
 
 <a name="frameworks-supported"></a>
 ## Frameworks suportadas
@@ -1060,6 +1060,10 @@ Classe | Método | Endpoint | Descrição
  - [Model.RTCInfoIBSCBS](docs/RTCInfoIBSCBS.md)
  - [Model.RTCInfoImovel](docs/RTCInfoImovel.md)
  - [Model.RTCInfoReeRepRes](docs/RTCInfoReeRepRes.md)
+ - [Model.RTCInfoTributosAbrasf](docs/RTCInfoTributosAbrasf.md)
+ - [Model.RTCInfoTributosAbrasfFed](docs/RTCInfoTributosAbrasfFed.md)
+ - [Model.RTCInfoTributosAbrasfMun](docs/RTCInfoTributosAbrasfMun.md)
+ - [Model.RTCInfoTributosAbrasfUF](docs/RTCInfoTributosAbrasfUF.md)
  - [Model.RTCInfoTributosDif](docs/RTCInfoTributosDif.md)
  - [Model.RTCInfoTributosIBSCBS](docs/RTCInfoTributosIBSCBS.md)
  - [Model.RTCInfoTributosSitClas](docs/RTCInfoTributosSitClas.md)

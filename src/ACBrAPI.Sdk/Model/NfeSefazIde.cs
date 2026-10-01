@@ -49,7 +49,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="idDest">Identificador de Local de destino da operação:  * 1 - Interna  * 2 - Interestadual  * 3 - Exterior (required).</param>
         /// <param name="cMunFG">Código do Município de Ocorrência do Fato Gerador (utilizar a tabela do IBGE). (required).</param>
         /// <param name="cMunFGIBS">Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando \&quot;indPres &#x3D; 5 (Operação presencial, fora do estabelecimento)\&quot;, e não estiver preenchido o endereço do destinatário (grupo: E05) nem o local de entrega (grupo: G01)..</param>
-        /// <param name="tpImp">Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica (required).</param>
+        /// <param name="tpImp">Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica  * 6 - DANFE Simplificado Tipo 2 (nas condições do Ajuste SINIEF 13/26) (required).</param>
         /// <param name="tpEmis">Forma de emissão da NF-e:  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line da NFC-e e da NF-e com DANFE Simplificado Tipo 2 (required).</param>
         /// <param name="cDV">Digito Verificador da Chave de Acesso da NF-e.    *Geramos automaticamente quando nenhum valor é informado.*.</param>
         /// <param name="tpAmb">Identificação do Ambiente:  * 1 - Produção  * 2 - Homologação.</param>
@@ -57,7 +57,7 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="tpNFDebito">Tipo de Nota de Débito..</param>
         /// <param name="tpNFCredito">Tipo de Nota de Crédito..</param>
         /// <param name="indFinal">Indica operação com consumidor final:  * 0 - Não  * 1 - Consumidor Final (required).</param>
-        /// <param name="indPres">Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - NFC-e entrega em domicílio  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros (required).</param>
+        /// <param name="indPres">Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - Operação não presencial com NFC-e e NF-e com DANFE Simplificado Tipo 2 (com entrega)  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros (required).</param>
         /// <param name="indIntermed">Indicador de intermediador/marketplace  * 0 - Operação sem intermediador (em site ou plataforma própria)  * 1 - Operação em site ou plataforma de terceiros (intermediadores/marketplace).</param>
         /// <param name="cIndOp">Código indicador do local da operação de fornecimento..</param>
         /// <param name="procEmi">Processo de emissão utilizado com a seguinte codificação:  * 0 - emissão de NF-e com aplicativo do contribuinte  * 1 - emissão de NF-e avulsa pelo Fisco  * 2 - emissão de NF-e avulsa, pelo contribuinte com seu certificado digital, através do site  do Fisco  * 3 - emissão de NF-e pelo contribuinte com aplicativo fornecido pelo Fisco  * 4 - emissão de NF-e por Provedor de Assinatura e Autorização - PAA (required).</param>
@@ -270,9 +270,9 @@ namespace ACBrAPI.Sdk.Model
         public string cMunFGIBS { get; set; }
 
         /// <summary>
-        /// Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica
+        /// Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica  * 6 - DANFE Simplificado Tipo 2 (nas condições do Ajuste SINIEF 13/26)
         /// </summary>
-        /// <value>Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica</value>
+        /// <value>Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica  * 6 - DANFE Simplificado Tipo 2 (nas condições do Ajuste SINIEF 13/26)</value>
         [DataMember(Name = "tpImp", IsRequired = true, EmitDefaultValue = true)]
         public int? tpImp { get; set; }
 
@@ -326,9 +326,9 @@ namespace ACBrAPI.Sdk.Model
         public int? indFinal { get; set; }
 
         /// <summary>
-        /// Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - NFC-e entrega em domicílio  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros
+        /// Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - Operação não presencial com NFC-e e NF-e com DANFE Simplificado Tipo 2 (com entrega)  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros
         /// </summary>
-        /// <value>Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - NFC-e entrega em domicílio  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros</value>
+        /// <value>Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - Operação não presencial com NFC-e e NF-e com DANFE Simplificado Tipo 2 (com entrega)  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros</value>
         [DataMember(Name = "indPres", IsRequired = true, EmitDefaultValue = true)]
         public int? indPres { get; set; }
 

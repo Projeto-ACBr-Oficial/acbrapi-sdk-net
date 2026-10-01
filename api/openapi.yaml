@@ -11,7 +11,7 @@ info:
     \ de corpo**\r\n- `grant_type=client_credentials&client_id=SEU_CLIENT_ID&client_secret=SEU_CLIENT_SECRET&scope=empresa%20nfe`\r\
     \n\r\n**Uso do token nas requisições**\r\n- `Authorization: Bearer SEU_ACCESS_TOKEN`"
   title: ACBr API
-  version: 3.1.11
+  version: 3.1.12
 servers:
 - url: https://prod.acbr.api.br/
 security:
@@ -5589,6 +5589,33 @@ paths:
         schema:
           default: true
           type: boolean
+      - description: "Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.\r\
+          \n\r\n*Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` =\
+          \ 6) e disponível apenas para 80 milímetros de largura*."
+        in: query
+        name: qrcode_lateral
+        schema:
+          default: false
+          type: boolean
+      - description: "Largura do DANFE Simplificado Tipo 2 (em milímetros).\r\n\r\n\
+          *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). A\
+          \ NT 2026.003 exige no mínimo 56 mm*."
+        in: query
+        name: largura
+        schema:
+          default: 80
+          maximum: 80
+          minimum: 56
+          type: integer
+      - description: "Define as margens do DANFE Simplificado Tipo 2 (em milímetros),\
+          \ no mesmo formato do parâmetro `margem` do PDF da NFC-e.\r\n\r\n*Aplicã\
+          vel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). Margens laterais\
+          \ menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*."
+        in: query
+        name: margem
+        schema:
+          default: "2"
+          type: string
       requestBody:
         content:
           application/json:
@@ -5933,6 +5960,33 @@ paths:
         schema:
           default: true
           type: boolean
+      - description: "Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.\r\
+          \n\r\n*Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` =\
+          \ 6) e disponível apenas para 80 milímetros de largura*."
+        in: query
+        name: qrcode_lateral
+        schema:
+          default: false
+          type: boolean
+      - description: "Largura do DANFE Simplificado Tipo 2 (em milímetros).\r\n\r\n\
+          *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). A\
+          \ NT 2026.003 exige no mínimo 56 mm*."
+        in: query
+        name: largura
+        schema:
+          default: 80
+          maximum: 80
+          minimum: 56
+          type: integer
+      - description: "Define as margens do DANFE Simplificado Tipo 2 (em milímetros),\
+          \ no mesmo formato do parâmetro `margem` do PDF da NFC-e.\r\n\r\n*Aplicã\
+          vel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). Margens laterais\
+          \ menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*."
+        in: query
+        name: margem
+        schema:
+          default: "2"
+          type: string
       requestBody:
         content:
           application/json:
@@ -6003,6 +6057,33 @@ paths:
         schema:
           default: true
           type: boolean
+      - description: "Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.\r\
+          \n\r\n*Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` =\
+          \ 6) e disponível apenas para 80 milímetros de largura*."
+        in: query
+        name: qrcode_lateral
+        schema:
+          default: false
+          type: boolean
+      - description: "Largura do DANFE Simplificado Tipo 2 (em milímetros).\r\n\r\n\
+          *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). A\
+          \ NT 2026.003 exige no mínimo 56 mm*."
+        in: query
+        name: largura
+        schema:
+          default: 80
+          maximum: 80
+          minimum: 56
+          type: integer
+      - description: "Define as margens do DANFE Simplificado Tipo 2 (em milímetros),\
+          \ no mesmo formato do parâmetro `margem` do PDF da NFC-e.\r\n\r\n*Aplicã\
+          vel apenas à NF-e com DANFE Simplificado Tipo 2 (`tpImp` = 6). Margens laterais\
+          \ menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*."
+        in: query
+        name: margem
+        schema:
+          default: "2"
+          type: string
       responses:
         "200":
           content:
@@ -11469,6 +11550,23 @@ components:
                       nDocFiscal: nDocFiscal
                       xDocFiscal: xDocFiscal
                       cMunDocFiscal: 519900
+                tribAbrasf:
+                  uf:
+                    pRedAliqUF: 0.6623518433804886
+                    pIBSUF: 0.8289659398142969
+                    vIBSUF: 0.8863729185622827
+                    pAliqEfetUF: 0.4573936264232251
+                  fed:
+                    pRedAliqCBS: 0.043431398824148815
+                    pCBS: 0.3901545264248647
+                    vCBS: 0.17325933120207193
+                    pAliqEfetCBS: 0.294096429748279
+                  vBC: 0.4459605034958679
+                  mun:
+                    pRedAliqMun: 0.18268702177058116
+                    pIBSMun: 0.9254183946267839
+                    vIBSMun: 0.9183123594773993
+                    pAliqEfetMun: 0.3502657762086401
               cIndOp: cIndOp
               dest:
                 fone: fone
@@ -12050,6 +12148,23 @@ components:
                       nDocFiscal: nDocFiscal
                       xDocFiscal: xDocFiscal
                       cMunDocFiscal: 519900
+                tribAbrasf:
+                  uf:
+                    pRedAliqUF: 0.6623518433804886
+                    pIBSUF: 0.8289659398142969
+                    vIBSUF: 0.8863729185622827
+                    pAliqEfetUF: 0.4573936264232251
+                  fed:
+                    pRedAliqCBS: 0.043431398824148815
+                    pCBS: 0.3901545264248647
+                    vCBS: 0.17325933120207193
+                    pAliqEfetCBS: 0.294096429748279
+                  vBC: 0.4459605034958679
+                  mun:
+                    pRedAliqMun: 0.18268702177058116
+                    pIBSMun: 0.9254183946267839
+                    vIBSMun: 0.9183123594773993
+                    pAliqEfetMun: 0.3502657762086401
               cIndOp: cIndOp
               dest:
                 fone: fone
@@ -12631,6 +12746,23 @@ components:
                       nDocFiscal: nDocFiscal
                       xDocFiscal: xDocFiscal
                       cMunDocFiscal: 519900
+                tribAbrasf:
+                  uf:
+                    pRedAliqUF: 0.6623518433804886
+                    pIBSUF: 0.8289659398142969
+                    vIBSUF: 0.8863729185622827
+                    pAliqEfetUF: 0.4573936264232251
+                  fed:
+                    pRedAliqCBS: 0.043431398824148815
+                    pCBS: 0.3901545264248647
+                    vCBS: 0.17325933120207193
+                    pAliqEfetCBS: 0.294096429748279
+                  vBC: 0.4459605034958679
+                  mun:
+                    pRedAliqMun: 0.18268702177058116
+                    pIBSMun: 0.9254183946267839
+                    vIBSMun: 0.9183123594773993
+                    pAliqEfetMun: 0.3502657762086401
               cIndOp: cIndOp
               dest:
                 fone: fone
@@ -13212,6 +13344,23 @@ components:
                       nDocFiscal: nDocFiscal
                       xDocFiscal: xDocFiscal
                       cMunDocFiscal: 519900
+                tribAbrasf:
+                  uf:
+                    pRedAliqUF: 0.6623518433804886
+                    pIBSUF: 0.8289659398142969
+                    vIBSUF: 0.8863729185622827
+                    pAliqEfetUF: 0.4573936264232251
+                  fed:
+                    pRedAliqCBS: 0.043431398824148815
+                    pCBS: 0.3901545264248647
+                    vCBS: 0.17325933120207193
+                    pAliqEfetCBS: 0.294096429748279
+                  vBC: 0.4459605034958679
+                  mun:
+                    pRedAliqMun: 0.18268702177058116
+                    pIBSMun: 0.9254183946267839
+                    vIBSMun: 0.9183123594773993
+                    pAliqEfetMun: 0.3502657762086401
               cIndOp: cIndOp
               dest:
                 fone: fone
@@ -13793,6 +13942,23 @@ components:
                       nDocFiscal: nDocFiscal
                       xDocFiscal: xDocFiscal
                       cMunDocFiscal: 519900
+                tribAbrasf:
+                  uf:
+                    pRedAliqUF: 0.6623518433804886
+                    pIBSUF: 0.8289659398142969
+                    vIBSUF: 0.8863729185622827
+                    pAliqEfetUF: 0.4573936264232251
+                  fed:
+                    pRedAliqCBS: 0.043431398824148815
+                    pCBS: 0.3901545264248647
+                    vCBS: 0.17325933120207193
+                    pAliqEfetCBS: 0.294096429748279
+                  vBC: 0.4459605034958679
+                  mun:
+                    pRedAliqMun: 0.18268702177058116
+                    pIBSMun: 0.9254183946267839
+                    vIBSMun: 0.9183123594773993
+                    pAliqEfetMun: 0.3502657762086401
               cIndOp: cIndOp
               dest:
                 fone: fone
@@ -14417,6 +14583,23 @@ components:
                     nDocFiscal: nDocFiscal
                     xDocFiscal: xDocFiscal
                     cMunDocFiscal: 519900
+              tribAbrasf:
+                uf:
+                  pRedAliqUF: 0.6623518433804886
+                  pIBSUF: 0.8289659398142969
+                  vIBSUF: 0.8863729185622827
+                  pAliqEfetUF: 0.4573936264232251
+                fed:
+                  pRedAliqCBS: 0.043431398824148815
+                  pCBS: 0.3901545264248647
+                  vCBS: 0.17325933120207193
+                  pAliqEfetCBS: 0.294096429748279
+                vBC: 0.4459605034958679
+                mun:
+                  pRedAliqMun: 0.18268702177058116
+                  pIBSMun: 0.9254183946267839
+                  vIBSMun: 0.9183123594773993
+                  pAliqEfetMun: 0.3502657762086401
             cIndOp: cIndOp
             dest:
               fone: fone
@@ -15031,6 +15214,23 @@ components:
                   nDocFiscal: nDocFiscal
                   xDocFiscal: xDocFiscal
                   cMunDocFiscal: 519900
+            tribAbrasf:
+              uf:
+                pRedAliqUF: 0.6623518433804886
+                pIBSUF: 0.8289659398142969
+                vIBSUF: 0.8863729185622827
+                pAliqEfetUF: 0.4573936264232251
+              fed:
+                pRedAliqCBS: 0.043431398824148815
+                pCBS: 0.3901545264248647
+                vCBS: 0.17325933120207193
+                pAliqEfetCBS: 0.294096429748279
+              vBC: 0.4459605034958679
+              mun:
+                pRedAliqMun: 0.18268702177058116
+                pIBSMun: 0.9254183946267839
+                vIBSMun: 0.9183123594773993
+                pAliqEfetMun: 0.3502657762086401
           cIndOp: cIndOp
           dest:
             fone: fone
@@ -15455,6 +15655,7 @@ components:
             \nInformar apenas quando a numeracao automatica estiver desabilitada na\
             \ configuracao da empresa."
           maxLength: 5
+          minLength: 1
           nullable: true
           type: string
         nDPS:
@@ -18090,6 +18291,23 @@ components:
                 nDocFiscal: nDocFiscal
                 xDocFiscal: xDocFiscal
                 cMunDocFiscal: 519900
+          tribAbrasf:
+            uf:
+              pRedAliqUF: 0.6623518433804886
+              pIBSUF: 0.8289659398142969
+              vIBSUF: 0.8863729185622827
+              pAliqEfetUF: 0.4573936264232251
+            fed:
+              pRedAliqCBS: 0.043431398824148815
+              pCBS: 0.3901545264248647
+              vCBS: 0.17325933120207193
+              pAliqEfetCBS: 0.294096429748279
+            vBC: 0.4459605034958679
+            mun:
+              pRedAliqMun: 0.18268702177058116
+              pIBSMun: 0.9254183946267839
+              vIBSMun: 0.9183123594773993
+              pAliqEfetMun: 0.3502657762086401
         cIndOp: cIndOp
         dest:
           fone: fone
@@ -18426,11 +18644,30 @@ components:
               nDocFiscal: nDocFiscal
               xDocFiscal: xDocFiscal
               cMunDocFiscal: 519900
+        tribAbrasf:
+          uf:
+            pRedAliqUF: 0.6623518433804886
+            pIBSUF: 0.8289659398142969
+            vIBSUF: 0.8863729185622827
+            pAliqEfetUF: 0.4573936264232251
+          fed:
+            pRedAliqCBS: 0.043431398824148815
+            pCBS: 0.3901545264248647
+            vCBS: 0.17325933120207193
+            pAliqEfetCBS: 0.294096429748279
+          vBC: 0.4459605034958679
+          mun:
+            pRedAliqMun: 0.18268702177058116
+            pIBSMun: 0.9254183946267839
+            vIBSMun: 0.9183123594773993
+            pAliqEfetMun: 0.3502657762086401
       properties:
         gReeRepRes:
           $ref: '#/components/schemas/RTCInfoReeRepRes'
         trib:
           $ref: '#/components/schemas/RTCInfoTributosIBSCBS'
+        tribAbrasf:
+          $ref: '#/components/schemas/RTCInfoTributosAbrasf'
       required:
       - trib
       type: object
@@ -18865,6 +19102,131 @@ components:
       - pDifCBS
       - pDifMun
       - pDifUF
+      type: object
+    RTCInfoTributosAbrasf:
+      description: "Grupo de informações dos valores do IBS e da CBS utilizado pelos\
+        \ provedores municipais.\r\n\r\n**Atenção**: Para emissões pelo Sistema Nacional\
+        \ NFS-e, esse campo é ignorado."
+      example:
+        uf:
+          pRedAliqUF: 0.6623518433804886
+          pIBSUF: 0.8289659398142969
+          vIBSUF: 0.8863729185622827
+          pAliqEfetUF: 0.4573936264232251
+        fed:
+          pRedAliqCBS: 0.043431398824148815
+          pCBS: 0.3901545264248647
+          vCBS: 0.17325933120207193
+          pAliqEfetCBS: 0.294096429748279
+        vBC: 0.4459605034958679
+        mun:
+          pRedAliqMun: 0.18268702177058116
+          pIBSMun: 0.9254183946267839
+          vIBSMun: 0.9183123594773993
+          pAliqEfetMun: 0.3502657762086401
+      properties:
+        vBC:
+          description: Valor da base de cálculo (BC) do IBS/CBS (R$).
+          minimum: 0
+          nullable: true
+          type: number
+        fed:
+          $ref: '#/components/schemas/RTCInfoTributosAbrasfFed'
+        uf:
+          $ref: '#/components/schemas/RTCInfoTributosAbrasfUF'
+        mun:
+          $ref: '#/components/schemas/RTCInfoTributosAbrasfMun'
+      type: object
+    RTCInfoTributosAbrasfFed:
+      description: Grupo de informações relativas aos valores da CBS.
+      example:
+        pRedAliqCBS: 0.043431398824148815
+        pCBS: 0.3901545264248647
+        vCBS: 0.17325933120207193
+        pAliqEfetCBS: 0.294096429748279
+      properties:
+        pCBS:
+          description: Alíquota da União para CBS.
+          minimum: 0
+          nullable: true
+          type: number
+        pRedAliqCBS:
+          description: Percentual da redução de alíquota da CBS.
+          minimum: 0
+          nullable: true
+          type: number
+        pAliqEfetCBS:
+          description: "Alíquota efetiva da CBS.\r\npAliqEfetCBS = pCBS x (1 - pRedAliqCBS)\
+            \ x (1 - pRedutor)"
+          minimum: 0
+          nullable: true
+          type: number
+        vCBS:
+          description: "Valor da CBS (R$).\r\nvCBS = vBC x (pCBS ou pAliqEfetCBS)"
+          minimum: 0
+          nullable: true
+          type: number
+      type: object
+    RTCInfoTributosAbrasfUF:
+      description: Grupo de informações relativas aos valores do IBS estadual.
+      example:
+        pRedAliqUF: 0.6623518433804886
+        pIBSUF: 0.8289659398142969
+        vIBSUF: 0.8863729185622827
+        pAliqEfetUF: 0.4573936264232251
+      properties:
+        pIBSUF:
+          description: Alíquota da UF para IBS.
+          minimum: 0
+          nullable: true
+          type: number
+        pRedAliqUF:
+          description: Percentual de redução de alíquota estadual.
+          minimum: 0
+          nullable: true
+          type: number
+        pAliqEfetUF:
+          description: "Alíquota efetiva do IBS estadual.\r\npAliqEfetUF = pIBSUF\
+            \ x (1 - pRedAliqUF) x (1 - pRedutor)"
+          minimum: 0
+          nullable: true
+          type: number
+        vIBSUF:
+          description: "Valor do IBS estadual (R$).\r\nvIBSUF = vBC x (pIBSUF ou pAliqEfetUF)"
+          minimum: 0
+          nullable: true
+          type: number
+      type: object
+    RTCInfoTributosAbrasfMun:
+      description: Grupo de informações relativas aos valores do IBS municipal.
+      example:
+        pRedAliqMun: 0.18268702177058116
+        pIBSMun: 0.9254183946267839
+        vIBSMun: 0.9183123594773993
+        pAliqEfetMun: 0.3502657762086401
+      properties:
+        pIBSMun:
+          description: Alíquota do Município para IBS.
+          minimum: 0
+          nullable: true
+          type: number
+        pRedAliqMun:
+          description: Percentual de redução de alíquota municipal.
+          minimum: 0
+          nullable: true
+          type: number
+        pAliqEfetMun:
+          description: "Alíquota efetiva do IBS municipal.\r\npAliqEfetMun = pIBSMun\
+            \ x (1 - pRedAliqMun) x (1 - pRedutor)"
+          minimum: 0
+          nullable: true
+          type: number
+        vIBSMun:
+          description: "Valor do IBS municipal (R$).\r\nvIBSMun = vBC x (pIBSMun ou\
+            \ pAliqEfetMun)"
+          minimum: 0
+          nullable: true
+          type: number
       type: object
     RpsLote:
       example:
@@ -104789,7 +105151,8 @@ components:
         tpImp:
           description: "Formato de impressão do DANFE:\r\n* 0 - Sem DANFE\r\n* 1 -\
             \ DANFe Retrato\r\n* 2 - DANFe Paisagem\r\n* 3 - DANFe Simplificado\r\n\
-            * 4 - DANFe NFC-e\r\n* 5 - DANFe NFC-e em mensagem eletrônica"
+            * 4 - DANFe NFC-e\r\n* 5 - DANFe NFC-e em mensagem eletrônica\r\n* 6 -\
+            \ DANFE Simplificado Tipo 2 (nas condições do Ajuste SINIEF 13/26)"
           nullable: true
           type: integer
         tpEmis:
@@ -104835,9 +105198,10 @@ components:
           description: "Indicador de presença do comprador no estabelecimento comercial\
             \ no momento da operação:\r\n* 0 - Não se aplica (ex.: Nota Fiscal complementar\
             \ ou de ajuste)\r\n* 1 - Operação presencial\r\n* 2 - Não presencial,\
-            \ internet\r\n* 3 - Não presencial, teleatendimento\r\n* 4 - NFC-e entrega\
-            \ em domicílio\r\n* 5 - Operação presencial, fora do estabelecimento\r\
-            \n* 9 - Não presencial, outros"
+            \ internet\r\n* 3 - Não presencial, teleatendimento\r\n* 4 - Operação\
+            \ não presencial com NFC-e e NF-e com DANFE Simplificado Tipo 2 (com entrega)\r\
+            \n* 5 - Operação presencial, fora do estabelecimento\r\n* 9 - Não presencial,\
+            \ outros"
           nullable: true
           type: integer
         indIntermed:

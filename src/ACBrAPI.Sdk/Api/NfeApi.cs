@@ -105,8 +105,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <returns>FileParameter</returns>
-        FileParameter BaixarPdfNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?));
+        FileParameter BaixarPdfNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string));
 
         /// <summary>
         /// Baixar PDF do DANFE
@@ -121,8 +124,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        ApiResponse<FileParameter> BaixarPdfNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?));
+        ApiResponse<FileParameter> BaixarPdfNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string));
         /// <summary>
         /// Prévia do PDF do DANFE
         /// </summary>
@@ -136,8 +142,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <returns>FileParameter</returns>
-        FileParameter BaixarPreviaPdfNfe(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?));
+        FileParameter BaixarPreviaPdfNfe(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string));
 
         /// <summary>
         /// Prévia do PDF do DANFE
@@ -152,8 +161,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        ApiResponse<FileParameter> BaixarPreviaPdfNfeWithHttpInfo(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?));
+        ApiResponse<FileParameter> BaixarPreviaPdfNfeWithHttpInfo(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string));
         /// <summary>
         /// Prévia do XML da NF-e
         /// </summary>
@@ -587,9 +599,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>EmailStatusResponse</returns>
-        EmailStatusResponse EnviarEmailNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
+        EmailStatusResponse EnviarEmailNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
 
         /// <summary>
         /// Enviar e-mail
@@ -604,9 +619,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of EmailStatusResponse</returns>
-        ApiResponse<EmailStatusResponse> EnviarEmailNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
+        ApiResponse<EmailStatusResponse> EnviarEmailNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail));
         /// <summary>
         /// Inutilizar uma sequência de numeração de NF-e
         /// </summary>
@@ -856,9 +874,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
-        System.Threading.Tasks.Task<FileParameter> BaixarPdfNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FileParameter> BaixarPdfNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Baixar PDF do DANFE
@@ -873,9 +894,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPdfNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Prévia do PDF do DANFE
         /// </summary>
@@ -889,9 +913,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
-        System.Threading.Tasks.Task<FileParameter> BaixarPreviaPdfNfeAsync(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FileParameter> BaixarPreviaPdfNfeAsync(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Prévia do PDF do DANFE
@@ -906,9 +933,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPreviaPdfNfeWithHttpInfoAsync(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> BaixarPreviaPdfNfeWithHttpInfoAsync(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Prévia do XML da NF-e
         /// </summary>
@@ -1394,10 +1424,13 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmailStatusResponse</returns>
-        System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Enviar e-mail
@@ -1412,10 +1445,13 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmailStatusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmailStatusResponse>> EnviarEmailNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<EmailStatusResponse>> EnviarEmailNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Inutilizar uma sequência de numeração de NF-e
         /// </summary>
@@ -2292,10 +2328,13 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <returns>FileParameter</returns>
-        public FileParameter BaixarPdfNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?))
+        public FileParameter BaixarPdfNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<FileParameter> localVarResponse = BaixarPdfNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto);
+            ACBrAPI.Sdk.Client.ApiResponse<FileParameter> localVarResponse = BaixarPdfNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem);
             return localVarResponse.Data;
         }
 
@@ -2309,8 +2348,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?))
+        public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPdfNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2352,6 +2394,18 @@ namespace ACBrAPI.Sdk.Api
             if (canhoto != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "canhoto", canhoto));
+            }
+            if (qrcodeLateral != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "qrcode_lateral", qrcodeLateral));
+            }
+            if (largura != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "largura", largura));
+            }
+            if (margem != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "margem", margem));
             }
 
             // authentication (oauth2) required
@@ -2383,11 +2437,14 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
-        public async System.Threading.Tasks.Task<FileParameter> BaixarPdfNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FileParameter> BaixarPdfNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<FileParameter> localVarResponse = await BaixarPdfNfeWithHttpInfoAsync(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, cancellationToken).ConfigureAwait(false);
+            ACBrAPI.Sdk.Client.ApiResponse<FileParameter> localVarResponse = await BaixarPdfNfeWithHttpInfoAsync(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2401,9 +2458,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPdfNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2447,6 +2507,18 @@ namespace ACBrAPI.Sdk.Api
             if (canhoto != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "canhoto", canhoto));
+            }
+            if (qrcodeLateral != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "qrcode_lateral", qrcodeLateral));
+            }
+            if (largura != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "largura", largura));
+            }
+            if (margem != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "margem", margem));
             }
 
             // authentication (oauth2) required
@@ -2479,10 +2551,13 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <returns>FileParameter</returns>
-        public FileParameter BaixarPreviaPdfNfe(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?))
+        public FileParameter BaixarPreviaPdfNfe(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<FileParameter> localVarResponse = BaixarPreviaPdfNfeWithHttpInfo(body, logotipo, nomeFantasia, formato, mensagemRodape, canhoto);
+            ACBrAPI.Sdk.Client.ApiResponse<FileParameter> localVarResponse = BaixarPreviaPdfNfeWithHttpInfo(body, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem);
             return localVarResponse.Data;
         }
 
@@ -2496,8 +2571,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPreviaPdfNfeWithHttpInfo(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?))
+        public ACBrAPI.Sdk.Client.ApiResponse<FileParameter> BaixarPreviaPdfNfeWithHttpInfo(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2539,6 +2617,18 @@ namespace ACBrAPI.Sdk.Api
             if (canhoto != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "canhoto", canhoto));
+            }
+            if (qrcodeLateral != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "qrcode_lateral", qrcodeLateral));
+            }
+            if (largura != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "largura", largura));
+            }
+            if (margem != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "margem", margem));
             }
             localVarRequestOptions.Data = body;
 
@@ -2571,11 +2661,14 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
-        public async System.Threading.Tasks.Task<FileParameter> BaixarPreviaPdfNfeAsync(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FileParameter> BaixarPreviaPdfNfeAsync(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<FileParameter> localVarResponse = await BaixarPreviaPdfNfeWithHttpInfoAsync(body, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, cancellationToken).ConfigureAwait(false);
+            ACBrAPI.Sdk.Client.ApiResponse<FileParameter> localVarResponse = await BaixarPreviaPdfNfeWithHttpInfoAsync(body, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2589,9 +2682,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPreviaPdfNfeWithHttpInfoAsync(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<FileParameter>> BaixarPreviaPdfNfeWithHttpInfoAsync(NfePedidoEmissao body, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2635,6 +2731,18 @@ namespace ACBrAPI.Sdk.Api
             if (canhoto != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "canhoto", canhoto));
+            }
+            if (qrcodeLateral != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "qrcode_lateral", qrcodeLateral));
+            }
+            if (largura != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "largura", largura));
+            }
+            if (margem != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "margem", margem));
             }
             localVarRequestOptions.Data = body;
 
@@ -5290,11 +5398,14 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>EmailStatusResponse</returns>
-        public EmailStatusResponse EnviarEmailNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
+        public EmailStatusResponse EnviarEmailNfe(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = EnviarEmailNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, body);
+            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = EnviarEmailNfeWithHttpInfo(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem, body);
             return localVarResponse.Data;
         }
 
@@ -5308,9 +5419,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of EmailStatusResponse</returns>
-        public ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> EnviarEmailNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
+        public ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> EnviarEmailNfeWithHttpInfo(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5353,6 +5467,18 @@ namespace ACBrAPI.Sdk.Api
             if (canhoto != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "canhoto", canhoto));
+            }
+            if (qrcodeLateral != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "qrcode_lateral", qrcodeLateral));
+            }
+            if (largura != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "largura", largura));
+            }
+            if (margem != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "margem", margem));
             }
             localVarRequestOptions.Data = body;
 
@@ -5385,12 +5511,15 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmailStatusResponse</returns>
-        public async System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<EmailStatusResponse> EnviarEmailNfeAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = await EnviarEmailNfeWithHttpInfoAsync(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, body, cancellationToken).ConfigureAwait(false);
+            ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse> localVarResponse = await EnviarEmailNfeWithHttpInfoAsync(id, logotipo, nomeFantasia, formato, mensagemRodape, canhoto, qrcodeLateral, largura, margem, body, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5404,10 +5533,13 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="formato">Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to &quot;padrao&quot;)</param>
         /// <param name="mensagemRodape">Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)</param>
         /// <param name="canhoto">Imprime o documento com o bloco de canhoto. (optional, default to true)</param>
+        /// <param name="qrcodeLateral">Imprime o QR Code na lateral do DANFE Simplificado Tipo 2.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6) e disponível apenas para 80 milímetros de largura*. (optional, default to false)</param>
+        /// <param name="largura">Largura do DANFE Simplificado Tipo 2 (em milímetros).    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). A NT 2026.003 exige no mínimo 56 mm*. (optional, default to 80)</param>
+        /// <param name="margem">Define as margens do DANFE Simplificado Tipo 2 (em milímetros), no mesmo formato do parâmetro &#x60;margem&#x60; do PDF da NFC-e.    *Aplicãvel apenas à NF-e com DANFE Simplificado Tipo 2 (&#x60;tpImp&#x60; &#x3D; 6). Margens laterais menores que 2 mm são ajustadas para 2 mm, o mínimo da NT 2026.003*. (optional, default to &quot;2&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmailStatusResponse)</returns>
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse>> EnviarEmailNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<EmailStatusResponse>> EnviarEmailNfeWithHttpInfoAsync(string id, bool? logotipo = default(bool?), bool? nomeFantasia = default(bool?), string formato = default(string), string mensagemRodape = default(string), bool? canhoto = default(bool?), bool? qrcodeLateral = default(bool?), int? largura = default(int?), string margem = default(string), DfePedidoEnvioEmail body = default(DfePedidoEnvioEmail), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5452,6 +5584,18 @@ namespace ACBrAPI.Sdk.Api
             if (canhoto != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "canhoto", canhoto));
+            }
+            if (qrcodeLateral != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "qrcode_lateral", qrcodeLateral));
+            }
+            if (largura != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "largura", largura));
+            }
+            if (margem != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "margem", margem));
             }
             localVarRequestOptions.Data = body;
 

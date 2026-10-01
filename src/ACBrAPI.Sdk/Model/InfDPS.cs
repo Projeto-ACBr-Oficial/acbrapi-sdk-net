@@ -422,6 +422,12 @@ namespace ACBrAPI.Sdk.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, length must be less than 5.", new [] { "serie" });
             }
 
+            // serie (string) minLength
+            if (this.serie != null && this.serie.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for serie, length must be greater than 1.", new [] { "serie" });
+            }
+
             // nDPS (string) maxLength
             if (this.nDPS != null && this.nDPS.Length > 15)
             {
