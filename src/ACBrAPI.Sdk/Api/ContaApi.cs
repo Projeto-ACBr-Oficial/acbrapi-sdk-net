@@ -84,8 +84,10 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="top"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
+        /// <param name="clientId"> (optional)</param>
+        /// <param name="incluirIsentos"> (optional)</param>
         /// <returns>ContaExtratoCreditoListagem</returns>
-        ContaExtratoCreditoListagem ListarExtratoCreditosConta(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?));
+        ContaExtratoCreditoListagem ListarExtratoCreditosConta(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), string clientId = default(string), bool? incluirIsentos = default(bool?));
 
         /// <summary>
         /// Consultar o extrato de movimentação de créditos do tenant atual.
@@ -99,8 +101,10 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="top"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
+        /// <param name="clientId"> (optional)</param>
+        /// <param name="incluirIsentos"> (optional)</param>
         /// <returns>ApiResponse of ContaExtratoCreditoListagem</returns>
-        ApiResponse<ContaExtratoCreditoListagem> ListarExtratoCreditosContaWithHttpInfo(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?));
+        ApiResponse<ContaExtratoCreditoListagem> ListarExtratoCreditosContaWithHttpInfo(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), string clientId = default(string), bool? incluirIsentos = default(bool?));
         #endregion Synchronous Operations
     }
 
@@ -189,9 +193,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="top"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
+        /// <param name="clientId"> (optional)</param>
+        /// <param name="incluirIsentos"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContaExtratoCreditoListagem</returns>
-        System.Threading.Tasks.Task<ContaExtratoCreditoListagem> ListarExtratoCreditosContaAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ContaExtratoCreditoListagem> ListarExtratoCreditosContaAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), string clientId = default(string), bool? incluirIsentos = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Consultar o extrato de movimentação de créditos do tenant atual.
@@ -205,9 +211,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="top"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
+        /// <param name="clientId"> (optional)</param>
+        /// <param name="incluirIsentos"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContaExtratoCreditoListagem)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContaExtratoCreditoListagem>> ListarExtratoCreditosContaWithHttpInfoAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ContaExtratoCreditoListagem>> ListarExtratoCreditosContaWithHttpInfoAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), string clientId = default(string), bool? incluirIsentos = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -787,10 +795,12 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="top"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
+        /// <param name="clientId"> (optional)</param>
+        /// <param name="incluirIsentos"> (optional)</param>
         /// <returns>ContaExtratoCreditoListagem</returns>
-        public ContaExtratoCreditoListagem ListarExtratoCreditosConta(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?))
+        public ContaExtratoCreditoListagem ListarExtratoCreditosConta(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), string clientId = default(string), bool? incluirIsentos = default(bool?))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> localVarResponse = ListarExtratoCreditosContaWithHttpInfo(dataInicial, dataFinal, top, skip, limit);
+            ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> localVarResponse = ListarExtratoCreditosContaWithHttpInfo(dataInicial, dataFinal, top, skip, limit, clientId, incluirIsentos);
             return localVarResponse.Data;
         }
 
@@ -803,8 +813,10 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="top"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
+        /// <param name="clientId"> (optional)</param>
+        /// <param name="incluirIsentos"> (optional)</param>
         /// <returns>ApiResponse of ContaExtratoCreditoListagem</returns>
-        public ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> ListarExtratoCreditosContaWithHttpInfo(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?))
+        public ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> ListarExtratoCreditosContaWithHttpInfo(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), string clientId = default(string), bool? incluirIsentos = default(bool?))
         {
             ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
 
@@ -841,6 +853,14 @@ namespace ACBrAPI.Sdk.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (clientId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "client_id", clientId));
+            }
+            if (incluirIsentos != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "incluir_isentos", incluirIsentos));
             }
 
             // authentication (oauth2) required
@@ -871,11 +891,13 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="top"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
+        /// <param name="clientId"> (optional)</param>
+        /// <param name="incluirIsentos"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContaExtratoCreditoListagem</returns>
-        public async System.Threading.Tasks.Task<ContaExtratoCreditoListagem> ListarExtratoCreditosContaAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ContaExtratoCreditoListagem> ListarExtratoCreditosContaAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), string clientId = default(string), bool? incluirIsentos = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> localVarResponse = await ListarExtratoCreditosContaWithHttpInfoAsync(dataInicial, dataFinal, top, skip, limit, cancellationToken).ConfigureAwait(false);
+            ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem> localVarResponse = await ListarExtratoCreditosContaWithHttpInfoAsync(dataInicial, dataFinal, top, skip, limit, clientId, incluirIsentos, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -888,9 +910,11 @@ namespace ACBrAPI.Sdk.Api
         /// <param name="top"> (optional)</param>
         /// <param name="skip"> (optional)</param>
         /// <param name="limit"> (optional)</param>
+        /// <param name="clientId"> (optional)</param>
+        /// <param name="incluirIsentos"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContaExtratoCreditoListagem)</returns>
-        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem>> ListarExtratoCreditosContaWithHttpInfoAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ACBrAPI.Sdk.Client.ApiResponse<ContaExtratoCreditoListagem>> ListarExtratoCreditosContaWithHttpInfoAsync(string dataInicial = default(string), string dataFinal = default(string), int? top = default(int?), int? skip = default(int?), int? limit = default(int?), string clientId = default(string), bool? incluirIsentos = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             ACBrAPI.Sdk.Client.RequestOptions localVarRequestOptions = new ACBrAPI.Sdk.Client.RequestOptions();
@@ -929,6 +953,14 @@ namespace ACBrAPI.Sdk.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (clientId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "client_id", clientId));
+            }
+            if (incluirIsentos != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ACBrAPI.Sdk.Client.ClientUtils.ParameterToMultiMap("", "incluir_isentos", incluirIsentos));
             }
 
             // authentication (oauth2) required

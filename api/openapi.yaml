@@ -232,6 +232,14 @@ paths:
         name: limit
         schema:
           type: integer
+      - in: query
+        name: client_id
+        schema:
+          type: string
+      - in: query
+        name: incluir_isentos
+        schema:
+          type: boolean
       responses:
         "200":
           content:
@@ -6429,29 +6437,6 @@ paths:
       summary: Consultar lote de NFS-e
       tags:
       - Nfse
-  /nfse/{Id}/cancelamento/xml:
-    get:
-      description: "**Informações adicionais**:\r\n- Consumo: Primeira requisição\
-        \ isenta, posteriores 1 unidade por requisição."
-      operationId: BaixarXmlCancelamentoNfse
-      parameters:
-      - description: ID único da NFS-e gerado pela API.
-        in: path
-        name: Id
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                format: binary
-                type: string
-          description: Successful response
-      summary: Baixar XML do evento de cancelamento
-      tags:
-      - Nfse
   /nfse/{id}:
     get:
       description: Consulta os detalhes de uma NFS-e já existente. Forneça o ID único
@@ -6523,6 +6508,29 @@ paths:
       tags:
       - Nfse
       x-codegen-request-body-name: body
+  /nfse/{id}/cancelamento/xml:
+    get:
+      description: "**Informações adicionais**:\r\n- Consumo: Primeira requisição\
+        \ isenta, posteriores 1 unidade por requisição."
+      operationId: BaixarXmlCancelamentoNfse
+      parameters:
+      - description: ID único da NFS-e gerado pela API.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                format: binary
+                type: string
+          description: Successful response
+      summary: Baixar XML do evento de cancelamento
+      tags:
+      - Nfse
   /nfse/{id}/email:
     post:
       description: "Envia o XML e PDF da nota via email.\r\n\r\n**Informações adicionais**:\r\
@@ -29633,23 +29641,33 @@ components:
         '@count': 0
         data:
         - tenant_id: tenant_id
-          http_method: http_method
-          movement_type: movement_type
-          credits: 6.027456183070403
           arquivo_id: arquivo_id
+          origin: origin
+          resource_type: resource_type
           created_at: 2000-01-23T04:56:07.000+00:00
           quota_name: quota_name
           document_id: document_id
           uri: uri
+          client_id: client_id
+          http_method: http_method
+          movement_type: movement_type
+          credits: 6.027456183070403
+          resource_id: resource_id
+          request_id: request_id
         - tenant_id: tenant_id
-          http_method: http_method
-          movement_type: movement_type
-          credits: 6.027456183070403
           arquivo_id: arquivo_id
+          origin: origin
+          resource_type: resource_type
           created_at: 2000-01-23T04:56:07.000+00:00
           quota_name: quota_name
           document_id: document_id
           uri: uri
+          client_id: client_id
+          http_method: http_method
+          movement_type: movement_type
+          credits: 6.027456183070403
+          resource_id: resource_id
+          request_id: request_id
       properties:
         '@count':
           type: integer
@@ -29661,14 +29679,19 @@ components:
     ContaExtratoCredito:
       example:
         tenant_id: tenant_id
-        http_method: http_method
-        movement_type: movement_type
-        credits: 6.027456183070403
         arquivo_id: arquivo_id
+        origin: origin
+        resource_type: resource_type
         created_at: 2000-01-23T04:56:07.000+00:00
         quota_name: quota_name
         document_id: document_id
         uri: uri
+        client_id: client_id
+        http_method: http_method
+        movement_type: movement_type
+        credits: 6.027456183070403
+        resource_id: resource_id
+        request_id: request_id
       properties:
         tenant_id:
           type: string
@@ -29688,6 +29711,16 @@ components:
         http_method:
           type: string
         uri:
+          type: string
+        client_id:
+          type: string
+        origin:
+          type: string
+        resource_type:
+          type: string
+        resource_id:
+          type: string
+        request_id:
           type: string
       type: object
     CtePedidoEmissao:

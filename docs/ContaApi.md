@@ -289,7 +289,7 @@ Este endpoint não recebe nenhum parâmetro.
 
 <a name="listarextratocreditosconta"></a>
 # **ListarExtratoCreditosConta**
-> ContaExtratoCreditoListagem ListarExtratoCreditosConta (string dataInicial = null, string dataFinal = null, int? top = null, int? skip = null, int? limit = null)
+> ContaExtratoCreditoListagem ListarExtratoCreditosConta (string dataInicial = null, string dataFinal = null, int? top = null, int? skip = null, int? limit = null, string clientId = null, bool? incluirIsentos = null)
 
 Consultar o extrato de movimentação de créditos do tenant atual.
 
@@ -322,11 +322,13 @@ namespace Example
             var top = 56;  // int? |  (optional) 
             var skip = 56;  // int? |  (optional) 
             var limit = 56;  // int? |  (optional) 
+            var clientId = "clientId_example";  // string |  (optional) 
+            var incluirIsentos = true;  // bool? |  (optional) 
 
             try
             {
                 // Consultar o extrato de movimentação de créditos do tenant atual.
-                ContaExtratoCreditoListagem result = apiInstance.ListarExtratoCreditosConta(dataInicial, dataFinal, top, skip, limit);
+                ContaExtratoCreditoListagem result = apiInstance.ListarExtratoCreditosConta(dataInicial, dataFinal, top, skip, limit, clientId, incluirIsentos);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -347,7 +349,7 @@ Esses métodos retornam um objeto ApiResponse que contêm os dados da resposta, 
 try
 {
     // Consultar o extrato de movimentação de créditos do tenant atual.
-    ApiResponse<ContaExtratoCreditoListagem> response = apiInstance.ListarExtratoCreditosContaWithHttpInfo(dataInicial, dataFinal, top, skip, limit);
+    ApiResponse<ContaExtratoCreditoListagem> response = apiInstance.ListarExtratoCreditosContaWithHttpInfo(dataInicial, dataFinal, top, skip, limit, clientId, incluirIsentos);
     Debug.Write("Código de status: " + response.StatusCode);
     Debug.Write("Headers da resposta: " + response.Headers);
     Debug.Write("Conteúdo da resposta: " + response.Data);
@@ -369,6 +371,8 @@ catch (ApiException e)
 | **top** | **int?** |  | [optional]  |
 | **skip** | **int?** |  | [optional]  |
 | **limit** | **int?** |  | [optional]  |
+| **clientId** | **string** |  | [optional]  |
+| **incluirIsentos** | **bool?** |  | [optional]  |
 
 ### Tipo de retorno
 

@@ -40,7 +40,12 @@ namespace ACBrAPI.Sdk.Model
         /// <param name="arquivoId">arquivoId.</param>
         /// <param name="httpMethod">httpMethod.</param>
         /// <param name="uri">uri.</param>
-        public ContaExtratoCredito(string tenantId = default(string), DateTime createdAt = default(DateTime), string quotaName = default(string), string movementType = default(string), decimal credits = default(decimal), string documentId = default(string), string arquivoId = default(string), string httpMethod = default(string), string uri = default(string))
+        /// <param name="clientId">clientId.</param>
+        /// <param name="origin">origin.</param>
+        /// <param name="resourceType">resourceType.</param>
+        /// <param name="resourceId">resourceId.</param>
+        /// <param name="requestId">requestId.</param>
+        public ContaExtratoCredito(string tenantId = default(string), DateTime createdAt = default(DateTime), string quotaName = default(string), string movementType = default(string), decimal credits = default(decimal), string documentId = default(string), string arquivoId = default(string), string httpMethod = default(string), string uri = default(string), string clientId = default(string), string origin = default(string), string resourceType = default(string), string resourceId = default(string), string requestId = default(string))
         {
             this.tenant_id = tenantId;
             this.created_at = createdAt;
@@ -51,6 +56,11 @@ namespace ACBrAPI.Sdk.Model
             this.arquivo_id = arquivoId;
             this.http_method = httpMethod;
             this.uri = uri;
+            this.client_id = clientId;
+            this.origin = origin;
+            this.resource_type = resourceType;
+            this.resource_id = resourceId;
+            this.request_id = requestId;
         }
 
         /// <summary>
@@ -108,6 +118,36 @@ namespace ACBrAPI.Sdk.Model
         public string uri { get; set; }
 
         /// <summary>
+        /// Gets or Sets client_id
+        /// </summary>
+        [DataMember(Name = "client_id", EmitDefaultValue = false)]
+        public string client_id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets origin
+        /// </summary>
+        [DataMember(Name = "origin", EmitDefaultValue = false)]
+        public string origin { get; set; }
+
+        /// <summary>
+        /// Gets or Sets resource_type
+        /// </summary>
+        [DataMember(Name = "resource_type", EmitDefaultValue = false)]
+        public string resource_type { get; set; }
+
+        /// <summary>
+        /// Gets or Sets resource_id
+        /// </summary>
+        [DataMember(Name = "resource_id", EmitDefaultValue = false)]
+        public string resource_id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets request_id
+        /// </summary>
+        [DataMember(Name = "request_id", EmitDefaultValue = false)]
+        public string request_id { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -124,6 +164,11 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("  arquivo_id: ").Append(arquivo_id).Append("\n");
             sb.Append("  http_method: ").Append(http_method).Append("\n");
             sb.Append("  uri: ").Append(uri).Append("\n");
+            sb.Append("  client_id: ").Append(client_id).Append("\n");
+            sb.Append("  origin: ").Append(origin).Append("\n");
+            sb.Append("  resource_type: ").Append(resource_type).Append("\n");
+            sb.Append("  resource_id: ").Append(resource_id).Append("\n");
+            sb.Append("  request_id: ").Append(request_id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,6 +247,31 @@ namespace ACBrAPI.Sdk.Model
                     this.uri == input.uri ||
                     (this.uri != null &&
                     this.uri.Equals(input.uri))
+                ) && 
+                (
+                    this.client_id == input.client_id ||
+                    (this.client_id != null &&
+                    this.client_id.Equals(input.client_id))
+                ) && 
+                (
+                    this.origin == input.origin ||
+                    (this.origin != null &&
+                    this.origin.Equals(input.origin))
+                ) && 
+                (
+                    this.resource_type == input.resource_type ||
+                    (this.resource_type != null &&
+                    this.resource_type.Equals(input.resource_type))
+                ) && 
+                (
+                    this.resource_id == input.resource_id ||
+                    (this.resource_id != null &&
+                    this.resource_id.Equals(input.resource_id))
+                ) && 
+                (
+                    this.request_id == input.request_id ||
+                    (this.request_id != null &&
+                    this.request_id.Equals(input.request_id))
                 );
         }
 
@@ -246,6 +316,26 @@ namespace ACBrAPI.Sdk.Model
                 if (this.uri != null)
                 {
                     hashCode = (hashCode * 59) + this.uri.GetHashCode();
+                }
+                if (this.client_id != null)
+                {
+                    hashCode = (hashCode * 59) + this.client_id.GetHashCode();
+                }
+                if (this.origin != null)
+                {
+                    hashCode = (hashCode * 59) + this.origin.GetHashCode();
+                }
+                if (this.resource_type != null)
+                {
+                    hashCode = (hashCode * 59) + this.resource_type.GetHashCode();
+                }
+                if (this.resource_id != null)
+                {
+                    hashCode = (hashCode * 59) + this.resource_id.GetHashCode();
+                }
+                if (this.request_id != null)
+                {
+                    hashCode = (hashCode * 59) + this.request_id.GetHashCode();
                 }
                 return hashCode;
             }

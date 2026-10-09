@@ -1206,7 +1206,7 @@ namespace ACBrAPI.Sdk.Api
             var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("Id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1216,7 +1216,7 @@ namespace ACBrAPI.Sdk.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<FileParameter>("/nfse/{Id}/cancelamento/xml", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<FileParameter>("/nfse/{id}/cancelamento/xml", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1271,7 +1271,7 @@ namespace ACBrAPI.Sdk.Api
             var localVarAccept = ACBrAPI.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("Id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", ACBrAPI.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1282,7 +1282,7 @@ namespace ACBrAPI.Sdk.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<FileParameter>("/nfse/{Id}/cancelamento/xml", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FileParameter>("/nfse/{id}/cancelamento/xml", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
