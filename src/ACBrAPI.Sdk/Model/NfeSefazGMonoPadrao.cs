@@ -23,7 +23,7 @@ using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
 namespace ACBrAPI.Sdk.Model
 {
     /// <summary>
-    /// Grupo de informações da Tributação Monofásica padrão.
+    /// Grupo de informações da Tributação Monofásica Padrão.
     /// </summary>
     [DataContract(Name = "NfeSefazGMonoPadrao")]
     public partial class NfeSefazGMonoPadrao : IEquatable<NfeSefazGMonoPadrao>, IValidatableObject
@@ -38,10 +38,8 @@ namespace ACBrAPI.Sdk.Model
         /// </summary>
         /// <param name="qBCMono">Quantidade tributada na monofasia. (required).</param>
         /// <param name="adRemIBS">Alíquota ad rem do IBS. (required).</param>
-        /// <param name="adRemCBS">Alíquota ad rem da CBS. (required).</param>
         /// <param name="vIBSMono">Valor do IBS monofásico. (required).</param>
-        /// <param name="vCBSMono">Valor da CBS monofásica. (required).</param>
-        public NfeSefazGMonoPadrao(decimal? qBCMono = default(decimal?), decimal? adRemIBS = default(decimal?), decimal? adRemCBS = default(decimal?), decimal? vIBSMono = default(decimal?), decimal? vCBSMono = default(decimal?))
+        public NfeSefazGMonoPadrao(decimal? qBCMono = default(decimal?), decimal? adRemIBS = default(decimal?), decimal? vIBSMono = default(decimal?))
         {
             // to ensure "qBCMono" is required (not null)
             if (qBCMono == null)
@@ -55,24 +53,12 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("adRemIBS is a required property for NfeSefazGMonoPadrao and cannot be null");
             }
             this.adRemIBS = adRemIBS;
-            // to ensure "adRemCBS" is required (not null)
-            if (adRemCBS == null)
-            {
-                throw new ArgumentNullException("adRemCBS is a required property for NfeSefazGMonoPadrao and cannot be null");
-            }
-            this.adRemCBS = adRemCBS;
             // to ensure "vIBSMono" is required (not null)
             if (vIBSMono == null)
             {
                 throw new ArgumentNullException("vIBSMono is a required property for NfeSefazGMonoPadrao and cannot be null");
             }
             this.vIBSMono = vIBSMono;
-            // to ensure "vCBSMono" is required (not null)
-            if (vCBSMono == null)
-            {
-                throw new ArgumentNullException("vCBSMono is a required property for NfeSefazGMonoPadrao and cannot be null");
-            }
-            this.vCBSMono = vCBSMono;
         }
 
         /// <summary>
@@ -90,25 +76,11 @@ namespace ACBrAPI.Sdk.Model
         public decimal? adRemIBS { get; set; }
 
         /// <summary>
-        /// Alíquota ad rem da CBS.
-        /// </summary>
-        /// <value>Alíquota ad rem da CBS.</value>
-        [DataMember(Name = "adRemCBS", IsRequired = true, EmitDefaultValue = true)]
-        public decimal? adRemCBS { get; set; }
-
-        /// <summary>
         /// Valor do IBS monofásico.
         /// </summary>
         /// <value>Valor do IBS monofásico.</value>
         [DataMember(Name = "vIBSMono", IsRequired = true, EmitDefaultValue = true)]
         public decimal? vIBSMono { get; set; }
-
-        /// <summary>
-        /// Valor da CBS monofásica.
-        /// </summary>
-        /// <value>Valor da CBS monofásica.</value>
-        [DataMember(Name = "vCBSMono", IsRequired = true, EmitDefaultValue = true)]
-        public decimal? vCBSMono { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -120,9 +92,7 @@ namespace ACBrAPI.Sdk.Model
             sb.Append("class NfeSefazGMonoPadrao {\n");
             sb.Append("  qBCMono: ").Append(qBCMono).Append("\n");
             sb.Append("  adRemIBS: ").Append(adRemIBS).Append("\n");
-            sb.Append("  adRemCBS: ").Append(adRemCBS).Append("\n");
             sb.Append("  vIBSMono: ").Append(vIBSMono).Append("\n");
-            sb.Append("  vCBSMono: ").Append(vCBSMono).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -169,19 +139,9 @@ namespace ACBrAPI.Sdk.Model
                     this.adRemIBS.Equals(input.adRemIBS))
                 ) && 
                 (
-                    this.adRemCBS == input.adRemCBS ||
-                    (this.adRemCBS != null &&
-                    this.adRemCBS.Equals(input.adRemCBS))
-                ) && 
-                (
                     this.vIBSMono == input.vIBSMono ||
                     (this.vIBSMono != null &&
                     this.vIBSMono.Equals(input.vIBSMono))
-                ) && 
-                (
-                    this.vCBSMono == input.vCBSMono ||
-                    (this.vCBSMono != null &&
-                    this.vCBSMono.Equals(input.vCBSMono))
                 );
         }
 
@@ -202,17 +162,9 @@ namespace ACBrAPI.Sdk.Model
                 {
                     hashCode = (hashCode * 59) + this.adRemIBS.GetHashCode();
                 }
-                if (this.adRemCBS != null)
-                {
-                    hashCode = (hashCode * 59) + this.adRemCBS.GetHashCode();
-                }
                 if (this.vIBSMono != null)
                 {
                     hashCode = (hashCode * 59) + this.vIBSMono.GetHashCode();
-                }
-                if (this.vCBSMono != null)
-                {
-                    hashCode = (hashCode * 59) + this.vCBSMono.GetHashCode();
                 }
                 return hashCode;
             }
@@ -237,22 +189,10 @@ namespace ACBrAPI.Sdk.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for adRemIBS, must be a value greater than or equal to 0.", new [] { "adRemIBS" });
             }
 
-            // adRemCBS (decimal?) minimum
-            if (this.adRemCBS < (decimal?)0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for adRemCBS, must be a value greater than or equal to 0.", new [] { "adRemCBS" });
-            }
-
             // vIBSMono (decimal?) minimum
             if (this.vIBSMono < (decimal?)0)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vIBSMono, must be a value greater than or equal to 0.", new [] { "vIBSMono" });
-            }
-
-            // vCBSMono (decimal?) minimum
-            if (this.vCBSMono < (decimal?)0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for vCBSMono, must be a value greater than or equal to 0.", new [] { "vCBSMono" });
             }
 
             yield break;

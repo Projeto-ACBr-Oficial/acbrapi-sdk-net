@@ -3,8 +3,8 @@
 Biblioteca para uso da [ACBr API](https://www.acbr.api.br) com Microsoft .NET.
 Consultar também a [documentação oficial da ACBr API](https://dev.acbr.api.br/docs).
 
-- Versão da API: 3.1.14
-- Versão do SDK: 3.1.14
+- Versão da API: 3.1.15
+- Versão do SDK: 3.1.15
 
 <a name="frameworks-supported"></a>
 ## Frameworks suportadas
@@ -945,19 +945,35 @@ Classe | Método | Endpoint | Descrição
  - [Model.NfeSefazFat](docs/NfeSefazFat.md)
  - [Model.NfeSefazForDia](docs/NfeSefazForDia.md)
  - [Model.NfeSefazGCBS](docs/NfeSefazGCBS.md)
+ - [Model.NfeSefazGCBSMonoAdRem](docs/NfeSefazGCBSMonoAdRem.md)
+ - [Model.NfeSefazGCBSMonoAdRemGMonoPadrao](docs/NfeSefazGCBSMonoAdRemGMonoPadrao.md)
+ - [Model.NfeSefazGCBSMonoAdRemGMonoRet](docs/NfeSefazGCBSMonoAdRemGMonoRet.md)
+ - [Model.NfeSefazGCBSMonoAdRemGMonoReten](docs/NfeSefazGCBSMonoAdRemGMonoReten.md)
+ - [Model.NfeSefazGCBSMonoAdRemGpBioDiferenca](docs/NfeSefazGCBSMonoAdRemGpBioDiferenca.md)
+ - [Model.NfeSefazGCBSMonoAdValorem](docs/NfeSefazGCBSMonoAdValorem.md)
+ - [Model.NfeSefazGCBSMonoAdValoremGMonoPadrao](docs/NfeSefazGCBSMonoAdValoremGMonoPadrao.md)
+ - [Model.NfeSefazGCBSMonoAdValoremGMonoRet](docs/NfeSefazGCBSMonoAdValoremGMonoRet.md)
+ - [Model.NfeSefazGCBSMonoAdValoremGMonoReten](docs/NfeSefazGCBSMonoAdValoremGMonoReten.md)
+ - [Model.NfeSefazGCBSMonoAdValoremGpBioDiferenca](docs/NfeSefazGCBSMonoAdValoremGpBioDiferenca.md)
  - [Model.NfeSefazGCred](docs/NfeSefazGCred.md)
  - [Model.NfeSefazGEstornoCred](docs/NfeSefazGEstornoCred.md)
  - [Model.NfeSefazGIBS](docs/NfeSefazGIBS.md)
  - [Model.NfeSefazGIBSGIBSMun](docs/NfeSefazGIBSGIBSMun.md)
  - [Model.NfeSefazGIBSGIBSUF](docs/NfeSefazGIBSGIBSUF.md)
+ - [Model.NfeSefazGIBSMonoAdRem](docs/NfeSefazGIBSMonoAdRem.md)
+ - [Model.NfeSefazGIBSMonoAdValorem](docs/NfeSefazGIBSMonoAdValorem.md)
+ - [Model.NfeSefazGIBSMonoAdValoremGMonoPadrao](docs/NfeSefazGIBSMonoAdValoremGMonoPadrao.md)
+ - [Model.NfeSefazGIBSMonoAdValoremGMonoRet](docs/NfeSefazGIBSMonoAdValoremGMonoRet.md)
+ - [Model.NfeSefazGIBSMonoAdValoremGMonoReten](docs/NfeSefazGIBSMonoAdValoremGMonoReten.md)
+ - [Model.NfeSefazGIBSMonoAdValoremGpBioDiferenca](docs/NfeSefazGIBSMonoAdValoremGpBioDiferenca.md)
  - [Model.NfeSefazGIBSMun](docs/NfeSefazGIBSMun.md)
  - [Model.NfeSefazGIBSUF](docs/NfeSefazGIBSUF.md)
  - [Model.NfeSefazGMono](docs/NfeSefazGMono.md)
- - [Model.NfeSefazGMonoDif](docs/NfeSefazGMonoDif.md)
  - [Model.NfeSefazGMonoPadrao](docs/NfeSefazGMonoPadrao.md)
  - [Model.NfeSefazGMonoRet](docs/NfeSefazGMonoRet.md)
  - [Model.NfeSefazGMonoReten](docs/NfeSefazGMonoReten.md)
  - [Model.NfeSefazGPagAntecipado](docs/NfeSefazGPagAntecipado.md)
+ - [Model.NfeSefazGpBioDiferenca](docs/NfeSefazGpBioDiferenca.md)
  - [Model.NfeSefazGuiaTransito](docs/NfeSefazGuiaTransito.md)
  - [Model.NfeSefazIBSCBSMonoTot](docs/NfeSefazIBSCBSMonoTot.md)
  - [Model.NfeSefazIBSCBSMonoTotGCBS](docs/NfeSefazIBSCBSMonoTotGCBS.md)

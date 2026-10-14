@@ -23,7 +23,7 @@ using OpenAPIDateConverter = ACBrAPI.Sdk.Client.OpenAPIDateConverter;
 namespace ACBrAPI.Sdk.Model
 {
     /// <summary>
-    /// Informar essa opção da Choice para Monofasia (CST 620).
+    /// Grupo de Informações do IBS e CBS em operações com imposto monofásico (CST 620).
     /// </summary>
     [DataContract(Name = "NfeSefazMonofasia")]
     public partial class NfeSefazMonofasia : IEquatable<NfeSefazMonofasia>, IValidatableObject
@@ -36,13 +36,13 @@ namespace ACBrAPI.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NfeSefazMonofasia" /> class.
         /// </summary>
-        /// <param name="gMonoPadrao">gMonoPadrao.</param>
-        /// <param name="gMonoReten">gMonoReten.</param>
-        /// <param name="gMonoRet">gMonoRet.</param>
-        /// <param name="gMonoDif">gMonoDif.</param>
-        /// <param name="vTotIBSMonoItem">Total de IBS monofásico do item. (required).</param>
-        /// <param name="vTotCBSMonoItem">Total da CBS monofásica do item. (required).</param>
-        public NfeSefazMonofasia(NfeSefazGMonoPadrao gMonoPadrao = default(NfeSefazGMonoPadrao), NfeSefazGMonoReten gMonoReten = default(NfeSefazGMonoReten), NfeSefazGMonoRet gMonoRet = default(NfeSefazGMonoRet), NfeSefazGMonoDif gMonoDif = default(NfeSefazGMonoDif), decimal? vTotIBSMonoItem = default(decimal?), decimal? vTotCBSMonoItem = default(decimal?))
+        /// <param name="gIBSMonoAdRem">gIBSMonoAdRem.</param>
+        /// <param name="gIBSMonoAdValorem">gIBSMonoAdValorem.</param>
+        /// <param name="gCBSMonoAdRem">gCBSMonoAdRem.</param>
+        /// <param name="gCBSMonoAdValorem">gCBSMonoAdValorem.</param>
+        /// <param name="vTotIBSMonoItem">Total de IBS Monofásico. (required).</param>
+        /// <param name="vTotCBSMonoItem">Total da CBS Monofásica. (required).</param>
+        public NfeSefazMonofasia(NfeSefazGIBSMonoAdRem gIBSMonoAdRem = default(NfeSefazGIBSMonoAdRem), NfeSefazGIBSMonoAdValorem gIBSMonoAdValorem = default(NfeSefazGIBSMonoAdValorem), NfeSefazGCBSMonoAdRem gCBSMonoAdRem = default(NfeSefazGCBSMonoAdRem), NfeSefazGCBSMonoAdValorem gCBSMonoAdValorem = default(NfeSefazGCBSMonoAdValorem), decimal? vTotIBSMonoItem = default(decimal?), decimal? vTotCBSMonoItem = default(decimal?))
         {
             // to ensure "vTotIBSMonoItem" is required (not null)
             if (vTotIBSMonoItem == null)
@@ -56,47 +56,47 @@ namespace ACBrAPI.Sdk.Model
                 throw new ArgumentNullException("vTotCBSMonoItem is a required property for NfeSefazMonofasia and cannot be null");
             }
             this.vTotCBSMonoItem = vTotCBSMonoItem;
-            this.gMonoPadrao = gMonoPadrao;
-            this.gMonoReten = gMonoReten;
-            this.gMonoRet = gMonoRet;
-            this.gMonoDif = gMonoDif;
+            this.gIBSMonoAdRem = gIBSMonoAdRem;
+            this.gIBSMonoAdValorem = gIBSMonoAdValorem;
+            this.gCBSMonoAdRem = gCBSMonoAdRem;
+            this.gCBSMonoAdValorem = gCBSMonoAdValorem;
         }
 
         /// <summary>
-        /// Gets or Sets gMonoPadrao
+        /// Gets or Sets gIBSMonoAdRem
         /// </summary>
-        [DataMember(Name = "gMonoPadrao", EmitDefaultValue = false)]
-        public NfeSefazGMonoPadrao gMonoPadrao { get; set; }
+        [DataMember(Name = "gIBSMonoAdRem", EmitDefaultValue = false)]
+        public NfeSefazGIBSMonoAdRem gIBSMonoAdRem { get; set; }
 
         /// <summary>
-        /// Gets or Sets gMonoReten
+        /// Gets or Sets gIBSMonoAdValorem
         /// </summary>
-        [DataMember(Name = "gMonoReten", EmitDefaultValue = false)]
-        public NfeSefazGMonoReten gMonoReten { get; set; }
+        [DataMember(Name = "gIBSMonoAdValorem", EmitDefaultValue = false)]
+        public NfeSefazGIBSMonoAdValorem gIBSMonoAdValorem { get; set; }
 
         /// <summary>
-        /// Gets or Sets gMonoRet
+        /// Gets or Sets gCBSMonoAdRem
         /// </summary>
-        [DataMember(Name = "gMonoRet", EmitDefaultValue = false)]
-        public NfeSefazGMonoRet gMonoRet { get; set; }
+        [DataMember(Name = "gCBSMonoAdRem", EmitDefaultValue = false)]
+        public NfeSefazGCBSMonoAdRem gCBSMonoAdRem { get; set; }
 
         /// <summary>
-        /// Gets or Sets gMonoDif
+        /// Gets or Sets gCBSMonoAdValorem
         /// </summary>
-        [DataMember(Name = "gMonoDif", EmitDefaultValue = false)]
-        public NfeSefazGMonoDif gMonoDif { get; set; }
+        [DataMember(Name = "gCBSMonoAdValorem", EmitDefaultValue = false)]
+        public NfeSefazGCBSMonoAdValorem gCBSMonoAdValorem { get; set; }
 
         /// <summary>
-        /// Total de IBS monofásico do item.
+        /// Total de IBS Monofásico.
         /// </summary>
-        /// <value>Total de IBS monofásico do item.</value>
+        /// <value>Total de IBS Monofásico.</value>
         [DataMember(Name = "vTotIBSMonoItem", IsRequired = true, EmitDefaultValue = true)]
         public decimal? vTotIBSMonoItem { get; set; }
 
         /// <summary>
-        /// Total da CBS monofásica do item.
+        /// Total da CBS Monofásica.
         /// </summary>
-        /// <value>Total da CBS monofásica do item.</value>
+        /// <value>Total da CBS Monofásica.</value>
         [DataMember(Name = "vTotCBSMonoItem", IsRequired = true, EmitDefaultValue = true)]
         public decimal? vTotCBSMonoItem { get; set; }
 
@@ -108,10 +108,10 @@ namespace ACBrAPI.Sdk.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class NfeSefazMonofasia {\n");
-            sb.Append("  gMonoPadrao: ").Append(gMonoPadrao).Append("\n");
-            sb.Append("  gMonoReten: ").Append(gMonoReten).Append("\n");
-            sb.Append("  gMonoRet: ").Append(gMonoRet).Append("\n");
-            sb.Append("  gMonoDif: ").Append(gMonoDif).Append("\n");
+            sb.Append("  gIBSMonoAdRem: ").Append(gIBSMonoAdRem).Append("\n");
+            sb.Append("  gIBSMonoAdValorem: ").Append(gIBSMonoAdValorem).Append("\n");
+            sb.Append("  gCBSMonoAdRem: ").Append(gCBSMonoAdRem).Append("\n");
+            sb.Append("  gCBSMonoAdValorem: ").Append(gCBSMonoAdValorem).Append("\n");
             sb.Append("  vTotIBSMonoItem: ").Append(vTotIBSMonoItem).Append("\n");
             sb.Append("  vTotCBSMonoItem: ").Append(vTotCBSMonoItem).Append("\n");
             sb.Append("}\n");
@@ -150,24 +150,24 @@ namespace ACBrAPI.Sdk.Model
             }
             return 
                 (
-                    this.gMonoPadrao == input.gMonoPadrao ||
-                    (this.gMonoPadrao != null &&
-                    this.gMonoPadrao.Equals(input.gMonoPadrao))
+                    this.gIBSMonoAdRem == input.gIBSMonoAdRem ||
+                    (this.gIBSMonoAdRem != null &&
+                    this.gIBSMonoAdRem.Equals(input.gIBSMonoAdRem))
                 ) && 
                 (
-                    this.gMonoReten == input.gMonoReten ||
-                    (this.gMonoReten != null &&
-                    this.gMonoReten.Equals(input.gMonoReten))
+                    this.gIBSMonoAdValorem == input.gIBSMonoAdValorem ||
+                    (this.gIBSMonoAdValorem != null &&
+                    this.gIBSMonoAdValorem.Equals(input.gIBSMonoAdValorem))
                 ) && 
                 (
-                    this.gMonoRet == input.gMonoRet ||
-                    (this.gMonoRet != null &&
-                    this.gMonoRet.Equals(input.gMonoRet))
+                    this.gCBSMonoAdRem == input.gCBSMonoAdRem ||
+                    (this.gCBSMonoAdRem != null &&
+                    this.gCBSMonoAdRem.Equals(input.gCBSMonoAdRem))
                 ) && 
                 (
-                    this.gMonoDif == input.gMonoDif ||
-                    (this.gMonoDif != null &&
-                    this.gMonoDif.Equals(input.gMonoDif))
+                    this.gCBSMonoAdValorem == input.gCBSMonoAdValorem ||
+                    (this.gCBSMonoAdValorem != null &&
+                    this.gCBSMonoAdValorem.Equals(input.gCBSMonoAdValorem))
                 ) && 
                 (
                     this.vTotIBSMonoItem == input.vTotIBSMonoItem ||
@@ -190,21 +190,21 @@ namespace ACBrAPI.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.gMonoPadrao != null)
+                if (this.gIBSMonoAdRem != null)
                 {
-                    hashCode = (hashCode * 59) + this.gMonoPadrao.GetHashCode();
+                    hashCode = (hashCode * 59) + this.gIBSMonoAdRem.GetHashCode();
                 }
-                if (this.gMonoReten != null)
+                if (this.gIBSMonoAdValorem != null)
                 {
-                    hashCode = (hashCode * 59) + this.gMonoReten.GetHashCode();
+                    hashCode = (hashCode * 59) + this.gIBSMonoAdValorem.GetHashCode();
                 }
-                if (this.gMonoRet != null)
+                if (this.gCBSMonoAdRem != null)
                 {
-                    hashCode = (hashCode * 59) + this.gMonoRet.GetHashCode();
+                    hashCode = (hashCode * 59) + this.gCBSMonoAdRem.GetHashCode();
                 }
-                if (this.gMonoDif != null)
+                if (this.gCBSMonoAdValorem != null)
                 {
-                    hashCode = (hashCode * 59) + this.gMonoDif.GetHashCode();
+                    hashCode = (hashCode * 59) + this.gCBSMonoAdValorem.GetHashCode();
                 }
                 if (this.vTotIBSMonoItem != null)
                 {
